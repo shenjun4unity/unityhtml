@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第15天 · 博军一笑的个人主页</title>
+        <title>3.4 声音组件 · 博军一笑的个人主页</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -53,6 +53,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="35-gui.html" />
+    
+    
+    <link rel="prev" href="33-灯光与摄像机.html" />
     
 
     </head>
@@ -685,9 +689,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../第3天/3.0 第3天.html">
+        <li class="chapter " data-level="1.6" data-path="3.0 第3天.html">
             
-                <a href="../第3天/3.0 第3天.html">
+                <a href="3.0 第3天.html">
             
                     
                     第3天
@@ -699,9 +703,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../第3天/31-矩阵.html">
+        <li class="chapter " data-level="1.6.1" data-path="31-矩阵.html">
             
-                <a href="../第3天/31-矩阵.html">
+                <a href="31-矩阵.html">
             
                     
                     3.1 矩阵
@@ -712,9 +716,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../第3天/32-quaternion.html">
+        <li class="chapter " data-level="1.6.2" data-path="32-quaternion.html">
             
-                <a href="../第3天/32-quaternion.html">
+                <a href="32-quaternion.html">
             
                     
                     3.2 Quaternion
@@ -725,9 +729,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../第3天/33-灯光与摄像机.html">
+        <li class="chapter " data-level="1.6.3" data-path="33-灯光与摄像机.html">
             
-                <a href="../第3天/33-灯光与摄像机.html">
+                <a href="33-灯光与摄像机.html">
             
                     
                     3.3 灯光与摄像机
@@ -738,9 +742,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../第3天/34-声音组件.html">
+        <li class="chapter active" data-level="1.6.4" data-path="34-声音组件.html">
             
-                <a href="../第3天/34-声音组件.html">
+                <a href="34-声音组件.html">
             
                     
                     3.4 声音组件
@@ -751,9 +755,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../第3天/35-gui.html">
+        <li class="chapter " data-level="1.6.5" data-path="35-gui.html">
             
-                <a href="../第3天/35-gui.html">
+                <a href="35-gui.html">
             
                     
                     3.5 GUI
@@ -1329,9 +1333,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.18" data-path="15.0 第15天.html">
+        <li class="chapter " data-level="1.18" data-path="../第15天/15.0 第15天.html">
             
-                <a href="15.0 第15天.html">
+                <a href="../第15天/15.0 第15天.html">
             
                     
                     第15天
@@ -1681,7 +1685,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第15天</a>
+        <a href=".." >3.4 声音组件</a>
     </h1>
 </div>
 
@@ -1693,9 +1697,250 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x77E5;&#x8BC6;&#x70B9;">&#x77E5;&#x8BC6;&#x70B9;</h2>
-<h4 id="&#x2003;&#x2003;1&#x3001;-&#x4F18;&#x5316;">&#x2003;&#x2003;1&#x3001; &#x4F18;&#x5316;</h4>
-<h4 id="&#x2003;&#x2003;2&#x3001;-unity5x">&#x2003;&#x2003;2&#x3001; Unity5.X</h4>
+                                <h2 id="&#x58F0;&#x97F3;&#x7EC4;&#x4EF6;">&#x58F0;&#x97F3;&#x7EC4;&#x4EF6;</h2>
+<p><strong>AudioListener&#xFF1A;</strong>
+&#x97F3;&#x9891;&#x76D1;&#x542C;&#x7EC4;&#x4EF6;&#x3002;&#x8BE5;&#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x97F3;&#x9891;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4EBA;&#x7684;&#x8033;&#x6735;&#x3002;</p>
+<blockquote>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x4E3A;&#x573A;&#x666F;&#x6DFB;&#x52A0;&#x6444;&#x50CF;&#x673A;&#x65F6;&#xFF0C;Unity &#x4F1A;&#x81EA;&#x52A8;&#x4E3A;&#x6444;&#x50CF;&#x673A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0; AudioListener &#x7EC4;&#x4EF6;&#xFF0C;&#x7531;&#x4E8E;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x8BE5;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7684;&#x5220;&#x9664;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F7F;&#x573A;&#x666F;&#x4E2D;&#x53EA;&#x4FDD;&#x7559;&#x4E00;&#x4E2A;&#x8BE5;&#x7EC4;&#x4EF6;&#x3002;</p>
+</blockquote>
+<p><strong>AudioSource&#xFF1A;</strong>
+&#x58F0;&#x6E90;&#x7EC4;&#x4EF6;&#x3002;&#x8BE5;&#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x64AD;&#x653E; AudioClip&#xFF08;&#x97F3;&#x9891;&#x526A;&#x8F91;&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x8BE5;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x5C5E;&#x6027;&#xFF1A;</p>
+<p>Play On Awake&#xFF1A;&#x5524;&#x9192;&#x65F6;&#x64AD;&#x653E;&#x3002;&#x5982;&#x679C;&#x52FE;&#x9009;&#xFF0C;&#x5219;&#x58F0;&#x97F3;&#x4F1A;&#x5728;&#x573A;&#x666F;&#x542F;&#x52A8;&#x65F6;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#x3002;&#x5982;&#x679C;&#x7981;&#x7528;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528; Play() &#x547D;&#x4EE4;&#x6765;&#x542F;&#x52A8;&#x3002;</p>
+<p>Loop&#xFF1A;&#x5FAA;&#x73AF;&#x3002;&#x5982;&#x679C;&#x52FE;&#x9009;&#xFF0C;&#x97F3;&#x9891;&#x4F1A;&#x5728;&#x7ED3;&#x675F;&#x540E;&#x5FAA;&#x73AF;&#x64AD;&#x653E;&#x3002;</p>
+<p>Priority&#xFF1A;&#x4F18;&#x5148;&#x6743;&#x3002;&#x786E;&#x5B9A;&#x573A;&#x666F;&#x6240;&#x6709;&#x7684;&#x58F0;&#x6E90;&#x4E4B;&#x95F4;&#x7684;&#x4F18;&#x5148;&#x6743;&#xFF08;0 &#x4EE3;&#x8868;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4F18;&#x5148;&#x6743;&#xFF0C;256&#x4EE3;&#x8868;&#x6700;&#x4E0D;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 128&#xFF09;&#x3002;</p>
+<p>Volume&#xFF1A;&#x97F3;&#x91CF;&#x3002;</p>
+<p>Pitch&#xFF1A;&#x97F3;&#x8C03;&#x3002;&#x97F3;&#x8C03;&#x63A7;&#x5236;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x7684;&#x5FEB;&#x6162;&#x3002;1 &#x662F;&#x6B63;&#x5E38;&#x64AD;&#x653E;&#x901F;&#x5EA6;&#x3002;</p>
+<p>2D Sound Settings&#xFF1A;2D &#x58F0;&#x97F3;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x58F0;&#x97F3;&#x8D44;&#x6E90;&#x662F;3D&#x97F3;&#x6548;&#x8FD8;&#x662F;2D&#x97F3;&#x6548;&#xFF0C;&#x662F;&#x7531;AudioImporter&#x6765;&#x8BBE;&#x7F6E;&#x51B3;&#x5B9A;&#x7684;&#x3002;</p>
+<h2 id="audiosource-api">AudioSource API</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bypassEffects</td>
+<td style="text-align:left">&#x76F4;&#x901A;&#x6548;&#x679C;&#xFF08;&#x5E94;&#x7528;&#x8FC7;&#x6EE4;&#x5668;&#x7EC4;&#x4EF6;&#x6216;&#x5168;&#x5C40;&#x76D1;&#x542C;&#x8FC7;&#x6EE4;&#x5668;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">bypassListenerEffects</td>
+<td style="text-align:left">&#x5F53;&#x5728;AudioListener&#x8BBE;&#x7F6E;&#x5168;&#x5C40;&#x6548;&#x679C;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x5E94;&#x7528;&#x5230;&#x7531;AudioSource&#x751F;&#x6210;&#x7684;&#x97F3;&#x9891;&#x4FE1;&#x53F7;&#x3002;&#x5982;&#x679C;AudioSource&#x6B63;&#x5728;&#x6DF7;&#x5408;&#x5668;&#x7EC4;&#x64AD;&#x653E;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x5E94;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">bypassReverbZones</td>
+<td style="text-align:left">&#x5F53;&#x8BBE;&#x7F6E;AudioSource&#x65E0;&#x8DEF;&#x7531;&#x4FE1;&#x53F7;&#x5230;&#x4E0E;&#x6DF7;&#x54CD;&#x533A;&#x57DF;&#x5173;&#x8054;&#x7684;&#x5168;&#x5C40;&#x6DF7;&#x54CD;&#x65F6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>clip</strong></td>
+<td style="text-align:left">&#x9ED8;&#x8BA4;&#x8981;&#x64AD;&#x653E;&#x7684;&#x97F3;&#x9891;&#x526A;&#x8F91;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">dopplerLevel</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x8BE5;AudioSource&#x7684;&#x591A;&#x666E;&#x52D2;&#x5927;&#x5C0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ignoreListenerPause</td>
+<td style="text-align:left">&#x5141;&#x8BB8;AudioListener.pause&#x5C5E;&#x6027;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;true&#x7684;&#x65F6;&#x5019;&#x4F9D;&#x7136;&#x5141;&#x8BB8;AudioSource&#x64AD;&#x653E;&#x3002;&#x8FD9;&#x4E2A;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x83DC;&#x5355;&#x9879;&#x58F0;&#x97F3;&#x6216;&#x8005;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x7684;&#x6682;&#x505C;&#x529F;&#x80FD;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ignoreListenerVolume</td>
+<td style="text-align:left">&#x8FD9;&#x4E2A;&#x4F7F;&#x5F97;AudioSource&#x4E0D;&#x53D7;AudioListener&#x7EC4;&#x4EF6;&#x97F3;&#x91CF;&#x503C;&#x7684;&#x5F71;&#x54CD;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>isPlaying</strong></td>
+<td style="text-align:left">&#x8BE5;&#x97F3;&#x9891;&#x526A;&#x8F91;&#x662F;&#x5426;&#x6B63;&#x64AD;&#x653E;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;?</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>loop</strong></td>
+<td style="text-align:left">&#x8BE5;&#x97F3;&#x9891;&#x526A;&#x8F91;&#x662F;&#x5426;&#x5FAA;&#x73AF;&#xFF1F;</td>
+</tr>
+<tr>
+<td style="text-align:left">maxDistance</td>
+<td style="text-align:left">&#xFF08;&#x5BF9;&#x6570;&#x8870;&#x51CF;&#xFF09;&#x6700;&#x5927;&#x8DDD;&#x79BB;&#x662F;&#x4E00;&#x4E2A;&#x58F0;&#x97F3;&#x505C;&#x6B62;&#x8870;&#x51CF;&#x7684;&#x8DDD;&#x79BB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">minDistance</td>
+<td style="text-align:left">&#x5728;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#x5185;&#xFF0C;AudioSource&#x5C06;&#x505C;&#x6B62;&#x589E;&#x5927;&#x97F3;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">mute</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x9759;&#x97F3;&#x97F3;&#x9891;&#x6E90;&#x3002;Mute&#x662F;&#x8BBE;&#x7F6E;&#x97F3;&#x91CF;&#x4E3A;0&#xFF0C;&#x53D6;&#x6D88;&#x9759;&#x97F3;&#x662F;&#x6062;&#x590D;&#x539F;&#x6765;&#x7684;&#x97F3;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">outputAudioMixerGroup</td>
+<td style="text-align:left">AudioSource&#x5E94;&#x8BE5;&#x8DEF;&#x7531;&#x7684;&#x76EE;&#x6807;&#x7EC4;&#x4FE1;&#x53F7;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">panStereo</td>
+<td style="text-align:left">&#x4EE5;&#x7ACB;&#x4F53;&#x58F0;&#x65B9;&#x5F0F;&#x58F0;&#x50CF;&#x4E00;&#x4E2A;&#x6B63;&#x64AD;&#x653E;&#x7684;&#x58F0;&#x97F3;&#xFF08;&#x5DE6;&#x6216;&#x53F3;&#xFF09;&#xFF0C;&#x8FD9;&#x4EC5;&#x7528;&#x4E8E;&#x5355;&#x58F0;&#x9053;&#x6216;&#x7ACB;&#x4F53;&#x58F0;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">pitch</td>
+<td style="text-align:left">&#x97F3;&#x9891;&#x6E90;&#x7684;&#x97F3;&#x8C03;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>playOnAwake</strong></td>
+<td style="text-align:left">&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x97F3;&#x9891;&#x6E90;&#x5C06;&#x5728;&#x5524;&#x9192;&#x65F6;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">priority</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;AudioSource&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">reverbZoneMix</td>
+<td style="text-align:left">&#x4FE1;&#x53F7;&#x6765;&#x81EA;AudioSource&#x5C06;&#x6DF7;&#x5408;&#x5230;&#x6709;&#x5173;&#x6DF7;&#x54CD;&#x533A;&#x5168;&#x5C40;&#x6DF7;&#x54CD;&#x7684;&#x6570;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">rolloffMode</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;/&#x83B7;&#x53D6;AudioSource&#x968F;&#x7740;&#x8DDD;&#x79BB;&#x600E;&#x6837;&#x8870;&#x51CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">spatialBlend</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x8BE5;&#x97F3;&#x9891;&#x6E90;&#x7531;3D&#x7A7A;&#x95F4;&#x8BA1;&#x7B97;&#xFF08;&#x8870;&#x51CF;&#xFF0C;&#x591A;&#x666E;&#x52D2;&#x7B49;&#xFF09;&#x88AB;&#x5F71;&#x54CD;&#x591A;&#x5C11;&#x3002;0.0&#x4F7F;&#x58F0;&#x97F3;&#x5B8C;&#x5168;2D&#xFF0C;1.0&#x4F7F;&#x58F0;&#x97F3;&#x5B8C;&#x5168;3D&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">spatialize</td>
+<td style="text-align:left">&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x7A7A;&#x95F4;&#x5316;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">spread</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;3d&#x7ACB;&#x4F53;&#x58F0;&#x6216;&#x591A;&#x58F0;&#x9053;&#x626C;&#x58F0;&#x5668;&#x7684;&#x7A7A;&#x95F4;&#x7684;&#x6269;&#x6563;&#x89D2;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>time</strong></td>
+<td style="text-align:left">&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x64AD;&#x653E;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">timeSamples</td>
+<td style="text-align:left">&#x5728;PCM&#x53D6;&#x6837;&#x7684;&#x64AD;&#x653E;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">velocityUpdateMode</td>
+<td style="text-align:left">AudioSource&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x4EE5;&#x56FA;&#x5B9A;&#x6216;&#x52A8;&#x6001;&#x7684;&#x65B9;&#x5F0F;&#x66F4;&#x65B0;&#xFF1F;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>volume</strong></td>
+<td style="text-align:left">&#x97F3;&#x9891;&#x6E90;&#x7684;&#x97F3;&#x91CF;&#xFF08;0.0 ~ 1.0&#xFF09;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x516C;&#x6709;&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GetCustomCurve</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x7ED9;&#x5B9A;AudioSourceCurveType&#x7C7B;&#x578B;&#x7684;&#x5F53;&#x524D;&#x81EA;&#x5B9A;&#x4E49;&#x66F2;&#x7EBF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">GetSpatializerFloat</td>
+<td style="text-align:left">&#x8BFB;&#x53D6;&#x9644;&#x52A0;&#x5230;&#x97F3;&#x9891;&#x6E90;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7A7A;&#x95F4;&#x5316;&#x6548;&#x679C;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Pause</strong></td>
+<td style="text-align:left">&#x6682;&#x505C;&#x6B63;&#x64AD;&#x653E;&#x7684;&#x97F3;&#x9891;&#x526A;&#x8F91;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Play</strong></td>
+<td style="text-align:left">&#x64AD;&#x653E;&#x97F3;&#x9891;&#x526A;&#x8F91;&#xFF0C;&#x5E26;&#x6709;&#x53EF;&#x9009;&#x5EF6;&#x8FDF;&#x53C2;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">PlayDelayed</td>
+<td style="text-align:left">&#x64AD;&#x653E;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x6307;&#x5B9A;&#x5EF6;&#x8FDF;&#x7684;&#x97F3;&#x9891;&#x526A;&#x8F91;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;&#x3002;&#x5EFA;&#x8BAE;&#x7528;&#x6237;&#x66FF;&#x4EE3;&#x8001;&#x51FD;&#x6570;Play(delay)&#xFF0C;&#x63A5;&#x53D7;&#x6307;&#x5B9A;&#x91C7;&#x6837;&#x76F8;&#x5BF9;&#x4E8E;44.1 kHz&#x53C2;&#x8003;&#x901F;&#x7387;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5EF6;&#x8FDF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PlayOneShot</strong></td>
+<td style="text-align:left">&#x64AD;&#x653E;&#x4E00;&#x4E2A;&#x97F3;&#x9891;&#x526A;&#x8F91;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;volumeScale&#x7F29;&#x653E;&#x97F3;&#x9891;&#x6E90;&#x97F3;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">PlayScheduled</td>
+<td style="text-align:left">&#x5728;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x64AD;&#x653E;&#x526A;&#x8F91;&#xFF0C;&#x65F6;&#x95F4;&#x662F;&#x8BFB;&#x53D6;AudioSettings.dspTime&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;&#x7EBF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetCustomCurve</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x7ED9;&#x5B9A;AudioSourceCurveType&#x7C7B;&#x578B;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x66F2;&#x7EBF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetScheduledEndTime</td>
+<td style="text-align:left">&#x66F4;&#x6539;&#x5DF2;&#x5B9A;&#x65F6;&#x64AD;&#x653E;&#x7684;&#x58F0;&#x97F3;&#x5C06;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x6CE8;&#x610F;&#x53D6;&#x51B3;&#x4E8E;&#x65F6;&#x95F4;&#xFF0C;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x91CD;&#x5B9A;&#x65F6;&#x8BF7;&#x6C42;&#x88AB;&#x6EE1;&#x8DB3;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetScheduledStartTime</td>
+<td style="text-align:left">&#x66F4;&#x6539;&#x5DF2;&#x5B9A;&#x65F6;&#x64AD;&#x653E;&#x7684;&#x58F0;&#x97F3;&#x5C06;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetSpatializerFloat</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x9644;&#x52A0;&#x5230;&#x97F3;&#x9891;&#x6E90;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7A7A;&#x95F4;&#x5316;&#x6548;&#x679C;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Stop</strong></td>
+<td style="text-align:left">&#x505C;&#x6B62;&#x64AD;&#x653E;&#x8BE5;&#x526A;&#x8F91;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>UnPause</strong></td>
+<td style="text-align:left">&#x53D6;&#x6D88;&#x8BE5;&#x97F3;&#x9891;&#x6E90;&#x5DF2;&#x6682;&#x505C;&#x7684;&#x64AD;&#x653E;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9759;&#x6001;&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>PlayClipAtPoint</strong></td>
+<td style="text-align:left">&#x5728;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x7ED9;&#x5B9A;&#x4F4D;&#x7F6E;&#x64AD;&#x653E;&#x4E00;&#x4E2A;&#x97F3;&#x9891;&#x526A;&#x8F91;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x793A;&#x4F8B;&#xFF1A;">&#x793A;&#x4F8B;&#xFF1A;</h3>
+<pre><code class="lang-javascript">
+    // When the audio component has stopped playing, play otherClip
+    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        public AudioClip otherClip;
+        AudioSource audio;
+
+        void Start() {
+            audio = GetComponent&lt;AudioSource&gt;();
+        }
+
+        void Update() {
+
+            if (!audio.isPlaying) {
+                audio.clip = otherClip;
+                audio.Play();
+            }
+        }
+    }
+</code></pre>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    [RequireComponent(typeof(AudioSource))]
+    public class ExampleClass : MonoBehaviour {
+
+        public AudioClip clip;
+
+        void Start() {
+            AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2));
+        }
+    }
+</code></pre>
 
                                 
                                 </section>
@@ -1707,6 +1952,14 @@
 
             
                 
+                <a href="33-灯光与摄像机.html" class="navigation navigation-prev " aria-label="Previous page: 3.3 灯光与摄像机">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="35-gui.html" class="navigation navigation-next " aria-label="Next page: 3.5 GUI">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1715,7 +1968,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第15天","level":"1.18","depth":1,"next":{"title":"15.1 优化","level":"1.18.1","depth":2,"ref":"","articles":[]},"previous":{"title":"14.1 项目实战 -- ARPG","level":"1.17.1","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第15天/15.0 第15天.md","mtime":"2016-11-22T14:20:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-24T16:19:32.725Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4 声音组件","level":"1.6.4","depth":2,"next":{"title":"3.5 GUI","level":"1.6.5","depth":2,"path":"第3天/35-gui.md","ref":"第3天/35-gui.md","articles":[]},"previous":{"title":"3.3 灯光与摄像机","level":"1.6.3","depth":2,"path":"第3天/33-灯光与摄像机.md","ref":"第3天/33-灯光与摄像机.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3天/34-声音组件.md","mtime":"2016-11-24T14:44:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-24T16:19:32.725Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

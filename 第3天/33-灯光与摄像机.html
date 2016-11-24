@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第15天 · 博军一笑的个人主页</title>
+        <title>3.3 灯光与摄像机 · 博军一笑的个人主页</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -53,6 +53,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="34-声音组件.html" />
+    
+    
+    <link rel="prev" href="32-quaternion.html" />
     
 
     </head>
@@ -685,9 +689,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../第3天/3.0 第3天.html">
+        <li class="chapter " data-level="1.6" data-path="3.0 第3天.html">
             
-                <a href="../第3天/3.0 第3天.html">
+                <a href="3.0 第3天.html">
             
                     
                     第3天
@@ -699,9 +703,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../第3天/31-矩阵.html">
+        <li class="chapter " data-level="1.6.1" data-path="31-矩阵.html">
             
-                <a href="../第3天/31-矩阵.html">
+                <a href="31-矩阵.html">
             
                     
                     3.1 矩阵
@@ -712,9 +716,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../第3天/32-quaternion.html">
+        <li class="chapter " data-level="1.6.2" data-path="32-quaternion.html">
             
-                <a href="../第3天/32-quaternion.html">
+                <a href="32-quaternion.html">
             
                     
                     3.2 Quaternion
@@ -725,9 +729,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../第3天/33-灯光与摄像机.html">
+        <li class="chapter active" data-level="1.6.3" data-path="33-灯光与摄像机.html">
             
-                <a href="../第3天/33-灯光与摄像机.html">
+                <a href="33-灯光与摄像机.html">
             
                     
                     3.3 灯光与摄像机
@@ -738,9 +742,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../第3天/34-声音组件.html">
+        <li class="chapter " data-level="1.6.4" data-path="34-声音组件.html">
             
-                <a href="../第3天/34-声音组件.html">
+                <a href="34-声音组件.html">
             
                     
                     3.4 声音组件
@@ -751,9 +755,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../第3天/35-gui.html">
+        <li class="chapter " data-level="1.6.5" data-path="35-gui.html">
             
-                <a href="../第3天/35-gui.html">
+                <a href="35-gui.html">
             
                     
                     3.5 GUI
@@ -1329,9 +1333,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.18" data-path="15.0 第15天.html">
+        <li class="chapter " data-level="1.18" data-path="../第15天/15.0 第15天.html">
             
-                <a href="15.0 第15天.html">
+                <a href="../第15天/15.0 第15天.html">
             
                     
                     第15天
@@ -1681,7 +1685,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第15天</a>
+        <a href=".." >3.3 灯光与摄像机</a>
     </h1>
 </div>
 
@@ -1693,10 +1697,28 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x77E5;&#x8BC6;&#x70B9;">&#x77E5;&#x8BC6;&#x70B9;</h2>
-<h4 id="&#x2003;&#x2003;1&#x3001;-&#x4F18;&#x5316;">&#x2003;&#x2003;1&#x3001; &#x4F18;&#x5316;</h4>
-<h4 id="&#x2003;&#x2003;2&#x3001;-unity5x">&#x2003;&#x2003;2&#x3001; Unity5.X</h4>
+                                <h2 id="&#x706F;&#x5149;&#x548C;&#x6444;&#x50CF;&#x673A;">&#x706F;&#x5149;&#x548C;&#x6444;&#x50CF;&#x673A;</h2>
+<hr>
+<p><strong>&#x5149;&#x6E90;&#x7C7B;&#x578B;</strong></p>
+<pre><code>1&#x3001; Directional light: &#x65B9;&#x5411;&#x5149;&#x6E90;
+&#x7C7B;&#x4F3C;&#x4E8E;&#x81EA;&#x7136;&#x754C;&#x7684;&#x592A;&#x9633;&#x5149;&#xFF0C;&#x8BE5;&#x7C7B;&#x578B;&#x5149;&#x6E90;&#x53EF;&#x4EE5;&#x5F71;&#x54CD;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x4E00;&#x5207;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;&#x5149;&#x6E90;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x65E0;&#x5173;&#xFF0C;&#x53EA;&#x4E0E;&#x5149;&#x6E90;&#x7684;&#x89D2;&#x5EA6;&#x6709;&#x5173;&#x3002;&#x662F;&#x6700;&#x4E0D;&#x8017;&#x8D39;&#x56FE;&#x5F62;&#x5904;&#x7406;&#x5668;&#x8D44;&#x6E90;&#x7684;&#x5149;&#x6E90;&#x7C7B;&#x578B;&#x3002;
 
+2&#x3001;Point Light: &#x70B9;&#x5149;&#x6E90;
+&#x70B9;&#x5149;&#x6E90;&#x4ECE;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x53D1;&#x51FA;&#x5149;&#x7EBF;&#xFF0C;&#x5F71;&#x54CD;&#x5176;&#x8303;&#x56F4;&#x5185;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x706F;&#x6CE1;&#x7684;&#x7167;&#x660E;&#x6548;&#x679C;&#x3002;&#x70B9;&#x5149;&#x6E90;&#x7684;&#x9634;&#x5F71;&#x65F6;&#x8F83;&#x8017;&#x8D39;&#x56FE;&#x50CF;&#x5904;&#x7406;&#x5668;&#x8D44;&#x6E90;&#x7684;&#x5149;&#x6E90;&#x7C7B;&#x578B;&#x3002;
+
+3&#x3001;Spltlight: &#x805A;&#x5149;&#x706F;
+&#x706F;&#x5149;&#x4ECE;&#x4E00;&#x70B9;&#x53D1;&#x51FA;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x6309;&#x7167;&#x4E00;&#x4E2A;&#x9525;&#x5F62;&#x7684;&#x8303;&#x56F4;&#x7167;&#x5C04;&#xFF0C;&#x5904;&#x4E8E;&#x9525;&#x5F62;&#x533A;&#x57DF;&#x5185;&#x7684;&#x5BF9;&#x8C61;&#x4F1A;&#x53D7;&#x5230;&#x5149;&#x7167;&#x7167;&#x5C04;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x5C04;&#x706F;&#x7684;&#x7167;&#x660E;&#x6548;&#x679C;&#x3002;&#x805A;&#x5149;&#x706F;&#x662F;&#x8F83;&#x8017;&#x8D39;&#x56FE;&#x5F62;&#x5904;&#x7406;&#x5668;&#x8D44;&#x6E90;&#x7684;&#x706F;&#x5149;&#x7C7B;&#x578B;&#x3002;
+
+4&#x3001;Area Light: &#x533A;&#x57DF;&#x5149;&#xFF0F;&#x9762;&#x5149;&#x6E90;
+&#x8BE5;&#x7C7B;&#x578B;&#x5149;&#x6E90;&#x65E0;&#x6CD5;&#x5E94;&#x7528;&#x4E8E;&#x5B9E;&#x65F6;&#x5149;&#x7167;&#xFF0C;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x5149;&#x7167;&#x8D34;&#x56FE;&#x70D8;&#x7119;&#x3002;
+</code></pre><p><strong>&#x53C2;&#x6570;&#x4ECB;&#x7ECD;&#xFF1A;</strong></p>
+<pre><code>Cookie: &#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x4E3A;&#x5149;&#x6E90;&#x6307;&#x5B9A;&#x62E5;&#x6709; alpha &#x901A;&#x9053;&#x7684;&#x7EB9;&#x7406;&#xFF0C;&#x4F7F;&#x5149;&#x7EBF;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x4EAE;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x5149;&#x6E90;&#x662F;&#x805A;&#x5149;&#x706F;&#x6216;&#x65B9;&#x5411;&#x5149;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;2D &#x7EB9;&#x7406;&#x3002;&#x5982;&#x679C;&#x5149;&#x6E90;&#x662F;&#x4E00;&#x4E2A;&#x70B9;&#x5149;&#x6E90;&#xFF0C;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x4E00;&#x4E2A; Cubemap&#xFF08;&#x7ACB;&#x65B9;&#x4F53;&#x7EB9;&#x7406;&#xFF09;&#x3002;
+
+Cookie Size: &#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x7F29;&#x653E; Cookie &#x6295;&#x5F71;&#x3002;&#x53EA;&#x6709;&#x65B9;&#x5411;&#x5149;&#x6709;&#x8BE5;&#x53C2;&#x6570;&#x3002;
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<pre><code>Forward &#x6E32;&#x67D3;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53EA;&#x6709; Directional light &#x5149;&#x6E90;&#x53EF;&#x4EE5;&#x8868;&#x73B0;&#x9634;&#x5F71;&#x3002;
+Deferred Lighting &#x6E32;&#x67D3;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C; Point light&#x3001;Spot light &#x7C7B;&#x578B;&#x5149;&#x6E90;&#x53EF;&#x4EE5;&#x8868;&#x73B0;&#x9634;&#x5F71;&#xFF08;&#x53EA;&#x6709;&#x53D1;&#x5E03;&#x6210; Web &#x7248;&#x6216;&#x5355;&#x673A;&#x7248;&#x624D;&#x652F;&#x6301;&#xFF09;&#x3002;
+</code></pre>
                                 
                                 </section>
                             
@@ -1707,6 +1729,14 @@
 
             
                 
+                <a href="32-quaternion.html" class="navigation navigation-prev " aria-label="Previous page: 3.2 Quaternion">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="34-声音组件.html" class="navigation navigation-next " aria-label="Next page: 3.4 声音组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1715,7 +1745,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第15天","level":"1.18","depth":1,"next":{"title":"15.1 优化","level":"1.18.1","depth":2,"ref":"","articles":[]},"previous":{"title":"14.1 项目实战 -- ARPG","level":"1.17.1","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第15天/15.0 第15天.md","mtime":"2016-11-22T14:20:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-24T16:19:32.725Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.3 灯光与摄像机","level":"1.6.3","depth":2,"next":{"title":"3.4 声音组件","level":"1.6.4","depth":2,"path":"第3天/34-声音组件.md","ref":"第3天/34-声音组件.md","articles":[]},"previous":{"title":"3.2 Quaternion","level":"1.6.2","depth":2,"path":"第3天/32-quaternion.md","ref":"第3天/32-quaternion.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3天/33-灯光与摄像机.md","mtime":"2016-11-24T12:52:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-24T16:19:32.725Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
