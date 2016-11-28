@@ -658,6 +658,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../第2天/221-输入管理器.html">
+            
+                <a href="../第2天/221-输入管理器.html">
+            
+                    
+                    2.21 输入管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.5.3" data-path="../第2天/13-object.html">
@@ -1726,6 +1745,39 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="quaternion">Quaternion</h2>
+<h3 id="quaternionslerp-&#x7403;&#x5F62;&#x63D2;&#x503C;">Quaternion.Slerp &#x7403;&#x5F62;&#x63D2;&#x503C;</h3>
+<p>&#x7403;&#x5F62;&#x63D2;&#x503C;&#xFF0C;&#x901A;&#x8FC7;t&#x503C;from&#x5411;to&#x4E4B;&#x95F4;&#x63D2;&#x503C;&#x3002;&#x53C2;&#x6570;&#x53D6;&#x503C;&#x8303;&#x56F4;[0,1]&#x3002;</p>
+<p><strong>&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+        public Transform from;
+        public Transform to;
+        public float speed = 0.1F;
+
+        void Update() {
+            transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, Time.time * speed);
+        }
+    }
+</code></pre>
+<hr>
+<h3 id="quaternionlookrotation-&#x6CE8;&#x89C6;&#x65CB;&#x8F6C;">Quaternion.LookRotation &#x6CE8;&#x89C6;&#x65CB;&#x8F6C;</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x6CBF;&#x7740;forward&#xFF08;z&#x8F74;&#xFF09;&#x5E76;&#x4E14;&#x5934;&#x90E8;&#x6CBF;&#x7740;upwards&#xFF08;y&#x8F74;&#xFF09;&#x7684;&#x7EA6;&#x675F;&#x6CE8;&#x89C6;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x4F7F;z&#x8F74;&#x671D;&#x5411;view y&#x8F74;&#x671D;&#x5411;up&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x8BA1;&#x7B97;&#x56DB;&#x5143;&#x6570;&#x3002;&#x5982;&#x679C;&#x7528;&#x4E8E;&#x5B9A;&#x5411;&#x7684;&#x53D8;&#x6362;&#xFF0C;Z&#x8F74;&#x5C06;&#x4F1A;&#x88AB;&#x5BF9;&#x51C6;&#x524D;&#x65B9;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x5411;&#x91CF;&#x6B63;&#x4EA4;&#xFF0C;Y&#x8F74;&#x5411;&#x524D;&#x3002;&#x5982;&#x679C;forward&#x65B9;&#x5411;&#x662F;0&#xFF0C;&#x8BB0;&#x5F55;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</p>
+<p><strong>&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+        public Transform target;
+        void Update() {
+            Vector3 relativePos = target.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+            transform.rotation = rotation;
+        }
+    }
+</code></pre>
 <hr>
 <h3 id="&#x56DB;&#x5143;&#x6570;">&#x56DB;&#x5143;&#x6570;</h3>
 <pre><code>&#x56E0;&#x4E3A;&#x77E9;&#x9635;&#x7684;&#x7F3A;&#x70B9;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x56DB;&#x5143;&#x6570;
@@ -1785,7 +1837,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2 Quaternion","level":"1.6.2","depth":2,"next":{"title":"3.3 灯光与摄像机","level":"1.6.3","depth":2,"path":"第3天/33-灯光与摄像机.md","ref":"第3天/33-灯光与摄像机.md","articles":[]},"previous":{"title":"3.1 矩阵","level":"1.6.1","depth":2,"path":"第3天/31-矩阵.md","ref":"第3天/31-矩阵.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3天/32-quaternion.md","mtime":"2016-11-24T09:22:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-27T15:25:42.222Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2 Quaternion","level":"1.6.2","depth":2,"next":{"title":"3.3 灯光与摄像机","level":"1.6.3","depth":2,"path":"第3天/33-灯光与摄像机.md","ref":"第3天/33-灯光与摄像机.md","articles":[]},"previous":{"title":"3.1 矩阵","level":"1.6.1","depth":2,"path":"第3天/31-矩阵.md","ref":"第3天/31-矩阵.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3天/32-quaternion.md","mtime":"2016-11-28T14:43:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-28T15:03:13.376Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
