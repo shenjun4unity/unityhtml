@@ -948,6 +948,38 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../第6天/611-布料.html">
+            
+                <a href="../第6天/611-布料.html">
+            
+                    
+                    6.11 布料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../第6天/612-关节.html">
+            
+                <a href="../第6天/612-关节.html">
+            
+                    
+                    6.12 关节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -995,14 +1027,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" >
+        <li class="chapter " data-level="1.10.3" data-path="../第7天/73-绘制线的方法.html">
             
-                <span>
+                <a href="../第7天/73-绘制线的方法.html">
             
                     
                     7.3 绘制线的方法
             
-                </span>
+                </a>
             
 
             
@@ -1021,14 +1053,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.5" >
+        <li class="chapter " data-level="1.10.5" data-path="../第7天/75-多线程与协同.html">
             
-                <span>
+                <a href="../第7天/75-多线程与协同.html">
             
                     
                     7.5 多线程与协同
             
-                </span>
+                </a>
             
 
             
@@ -1747,14 +1779,14 @@
                                 <h2 id="&#x7269;&#x7406;&#x7CFB;&#x7EDF;&#xFF08;23&#xFF09;">&#x7269;&#x7406;&#x7CFB;&#x7EDF;&#xFF08;2/3&#xFF09;</h2>
 <h3 id="rigidbody">Rigidbody</h3>
 <p><strong>&#x6982;&#x5FF5;</strong></p>
-<pre><code>    &#x901A;&#x8FC7;&#x7269;&#x7406;&#x6A21;&#x62DF;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x7269;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
-    &#x6DFB;&#x52A0;Rigidbody&#x7EC4;&#x4EF6;&#x5230;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x5C31;&#x7F6E;&#x4E8E;&#x4E86;Unity&#x7684;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x4E0B;&#x4F7F;&#x5176;&#x8FD0;&#x52A8;&#x3002;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#xFF0C;&#x521A;&#x4F53;&#x5BF9;&#x8C61;&#x4E5F;&#x5C06;&#x5728;&#x91CD;&#x529B;&#x7684;&#x5F71;&#x54CD;&#x4E0B;&#x4E0B;&#x843D;&#xFF0C;&#x5982;&#x679C;&#x5E26;&#x6709;&#x78B0;&#x649E;&#x5668;&#x7684;&#x5BF9;&#x8C61;&#x4E0E;&#x4E4B;&#x78B0;&#x649E;&#xFF0C;&#x5E76;&#x5C06;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#x3002;
+<pre><code>&#x901A;&#x8FC7;&#x7269;&#x7406;&#x6A21;&#x62DF;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x7269;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
+&#x6DFB;&#x52A0;Rigidbody&#x7EC4;&#x4EF6;&#x5230;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x5C31;&#x7F6E;&#x4E8E;&#x4E86;Unity&#x7684;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x4E0B;&#x4F7F;&#x5176;&#x8FD0;&#x52A8;&#x3002;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#xFF0C;&#x521A;&#x4F53;&#x5BF9;&#x8C61;&#x4E5F;&#x5C06;&#x5728;&#x91CD;&#x529B;&#x7684;&#x5F71;&#x54CD;&#x4E0B;&#x4E0B;&#x843D;&#xFF0C;&#x5982;&#x679C;&#x5E26;&#x6709;&#x78B0;&#x649E;&#x5668;&#x7684;&#x5BF9;&#x8C61;&#x4E0E;&#x4E4B;&#x78B0;&#x649E;&#xFF0C;&#x5E76;&#x5C06;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#x3002;
 
-    &#x4ECE;&#x811A;&#x672C;&#x6DFB;&#x52A0;&#x529B;&#x5230;&#x521A;&#x4F53;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x4EE5;&#x771F;&#x5B9E;&#x7684;&#x7269;&#x7406;&#x65B9;&#x6CD5;&#x6765;&#x63A7;&#x5236;&#x5B83;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F7F;&#x8F66;&#x7684;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x7ED9;&#x8F6E;&#x80CE;&#x65BD;&#x52A0;&#x529B;&#xFF0C;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x5904;&#x7406;&#x8FD0;&#x52A8;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x9762;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4F1A;&#x6709;&#x66F4;&#x771F;&#x5B9E;&#x7684;&#x52A0;&#x901F;&#x5EA6;&#x548C;&#x6B63;&#x786E;&#x7684;&#x78B0;&#x649E;&#x53CD;&#x5E94;&#x3002;
+&#x4ECE;&#x811A;&#x672C;&#x6DFB;&#x52A0;&#x529B;&#x5230;&#x521A;&#x4F53;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x4EE5;&#x771F;&#x5B9E;&#x7684;&#x7269;&#x7406;&#x65B9;&#x6CD5;&#x6765;&#x63A7;&#x5236;&#x5B83;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F7F;&#x8F66;&#x7684;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x7ED9;&#x8F6E;&#x80CE;&#x65BD;&#x52A0;&#x529B;&#xFF0C;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x5904;&#x7406;&#x8FD0;&#x52A8;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x9762;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4F1A;&#x6709;&#x66F4;&#x771F;&#x5B9E;&#x7684;&#x52A0;&#x901F;&#x5EA6;&#x548C;&#x6B63;&#x786E;&#x7684;&#x78B0;&#x649E;&#x53CD;&#x5E94;&#x3002;
 
-    &#x5728;&#x811A;&#x672C;&#xFF0C;FixedUpdate&#x51FD;&#x6570;&#x4E2D;&#x88AB;&#x63A8;&#x8350;&#x653E;&#x7F6E;&#x5E94;&#x7528;&#x529B;&#x4EE5;&#x53CA;&#x4FEE;&#x6539;&#x521A;&#x4F53;&#x8BBE;&#x7F6E;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;Update&#xFF0C;&#x5E94;&#x7528;&#x5176;&#x4ED6;&#x5927;&#x90E8;&#x5206;&#x66F4;&#x65B0;&#x4EFB;&#x52A1;&#xFF09;&#x3002;&#x7269;&#x7406;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E0E;update&#x662F;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x7269;&#x7406;&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#xFF0C;FixedUpdate&#x88AB;&#x7ACB;&#x5373;&#x8C03;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x6240;&#x4F5C;&#x7684;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x4F1A;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x3002;
+&#x5728;&#x811A;&#x672C;&#xFF0C;FixedUpdate&#x51FD;&#x6570;&#x4E2D;&#x88AB;&#x63A8;&#x8350;&#x653E;&#x7F6E;&#x5E94;&#x7528;&#x529B;&#x4EE5;&#x53CA;&#x4FEE;&#x6539;&#x521A;&#x4F53;&#x8BBE;&#x7F6E;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;Update&#xFF0C;&#x5E94;&#x7528;&#x5176;&#x4ED6;&#x5927;&#x90E8;&#x5206;&#x66F4;&#x65B0;&#x4EFB;&#x52A1;&#xFF09;&#x3002;&#x7269;&#x7406;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E0E;update&#x662F;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x7269;&#x7406;&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#xFF0C;FixedUpdate&#x88AB;&#x7ACB;&#x5373;&#x8C03;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x6240;&#x4F5C;&#x7684;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x4F1A;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x3002;
 
-    &#x5F53;&#x521A;&#x4F53;&#x8FD0;&#x884C;&#x5F00;&#x59CB;&#x5E38;&#x89C1;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x6E38;&#x620F;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x770B;&#x4E0A;&#x53BB;&#x8FD0;&#x884C;&#x50CF;&#x201C;&#x6162;&#x955C;&#x5934;&#x201D;&#x3002;&#x8FD9;&#x5B9E;&#x9645;&#x4E0A;&#x7531;&#x4E8E;&#x4F60;&#x6A21;&#x578B;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x91CD;&#x529B;&#x8BBE;&#x7F6E;&#x5047;&#x5B9A;&#x4E3A;&#x6BCF;&#x4E16;&#x754C;&#x5355;&#x4F4D;1&#x7C73;&#x8DDD;&#x79BB;&#x3002;&#x5BF9;&#x975E;&#x7269;&#x7406;&#x6E38;&#x620F;&#xFF0C;&#x4F60;&#x7684;&#x6A21;&#x578B;&#x7F29;&#x653E;100&#x5355;&#x4F4D;&#x4E5F;&#x6CA1;&#x6709;&#x591A;&#x5927;&#x5DEE;&#x522B;&#xFF0C;&#x4F46;&#x5F53;&#x4F7F;&#x7528;&#x7269;&#x7406;&#x5F15;&#x64CE;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x975E;&#x5E38;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x5E94;&#x8BE5;&#x662F;&#x5C0F;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x8F83;&#x5927;&#x7684;&#x7F29;&#x653E;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x51FA;&#x73B0;&#x4E0B;&#x843D;&#x5F88;&#x6162;&#xFF0C;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x8BA4;&#x4E3A;&#x5B83;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0B;&#x843D;&#x8F83;&#x5927;&#x7684;&#x8DDD;&#x79BB;&#x3002;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x5BF9;&#x8C61;&#x63A5;&#x8FD1;&#x771F;&#x5B9E;&#x751F;&#x6D3B;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x8F7F;&#x8F66;&#x5E94;&#x8BE5;&#x662F;&#x5927;&#x7EA6;4&#x5355;&#x4F4D;=4&#x7C73;&#xFF09;&#x3002;
+&#x5F53;&#x521A;&#x4F53;&#x8FD0;&#x884C;&#x5F00;&#x59CB;&#x5E38;&#x89C1;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x6E38;&#x620F;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x770B;&#x4E0A;&#x53BB;&#x8FD0;&#x884C;&#x50CF;&#x201C;&#x6162;&#x955C;&#x5934;&#x201D;&#x3002;&#x8FD9;&#x5B9E;&#x9645;&#x4E0A;&#x7531;&#x4E8E;&#x4F60;&#x6A21;&#x578B;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x91CD;&#x529B;&#x8BBE;&#x7F6E;&#x5047;&#x5B9A;&#x4E3A;&#x6BCF;&#x4E16;&#x754C;&#x5355;&#x4F4D;1&#x7C73;&#x8DDD;&#x79BB;&#x3002;&#x5BF9;&#x975E;&#x7269;&#x7406;&#x6E38;&#x620F;&#xFF0C;&#x4F60;&#x7684;&#x6A21;&#x578B;&#x7F29;&#x653E;100&#x5355;&#x4F4D;&#x4E5F;&#x6CA1;&#x6709;&#x591A;&#x5927;&#x5DEE;&#x522B;&#xFF0C;&#x4F46;&#x5F53;&#x4F7F;&#x7528;&#x7269;&#x7406;&#x5F15;&#x64CE;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x975E;&#x5E38;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x5E94;&#x8BE5;&#x662F;&#x5C0F;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x8F83;&#x5927;&#x7684;&#x7F29;&#x653E;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x51FA;&#x73B0;&#x4E0B;&#x843D;&#x5F88;&#x6162;&#xFF0C;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x8BA4;&#x4E3A;&#x5B83;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0B;&#x843D;&#x8F83;&#x5927;&#x7684;&#x8DDD;&#x79BB;&#x3002;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x5BF9;&#x8C61;&#x63A5;&#x8FD1;&#x771F;&#x5B9E;&#x751F;&#x6D3B;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x8F7F;&#x8F66;&#x5E94;&#x8BE5;&#x662F;&#x5927;&#x7EA6;4&#x5355;&#x4F4D;=4&#x7C73;&#xFF09;&#x3002;
 </code></pre><blockquote>
 <p>&#x5BF9;&#x4E8E;Unity&#x5F15;&#x64CE;&#x6765;&#x8BF4;&#xFF0C;&#x6240;&#x6709;&#x529B;&#x5B66;&#x7684;&#x5904;&#x7406;&#x90FD;&#x5E94;&#x8BE5;&#x653E;&#x5728;FixedUpdate&#x8FDB;&#x884C;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x8981;&#x66F4;&#x6539;Time&#x5C5E;&#x6027;&#x4E2D;&#x7684;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x66F4;&#x6539;&#x4E86;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x4E0D;&#x540C;&#x6B65;&#x95EE;&#x9898;</p>
@@ -1844,7 +1876,7 @@
 <td style="text-align:left">&#x63D2;&#x503C;&#x5141;&#x8BB8;&#x4F60;&#x4EE5;&#x56FA;&#x5B9A;&#x7684;&#x5E27;&#x7387;&#x5E73;&#x6ED1;&#x7269;&#x7406;&#x8FD0;&#x884C;&#x6548;&#x679C;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">isKinematic</td>
+<td style="text-align:left"><strong>isKinematic</strong></td>
 <td style="text-align:left">&#x63A7;&#x5236;&#x7269;&#x7406;&#x662F;&#x5426;&#x591F;&#x5F71;&#x54CD;&#x8FD9;&#x4E2A;&#x521A;&#x4F53;&#x3002;</td>
 </tr>
 <tr>
@@ -1860,11 +1892,11 @@
 <td style="text-align:left">&#x5F53;&#x975E;&#x7A7F;&#x900F;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x521A;&#x4F53;&#x7684;&#x6700;&#x5927;&#x901F;&#x5EA6;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">position</td>
+<td style="text-align:left"><strong>position</strong></td>
 <td style="text-align:left">&#x8BE5;&#x521A;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">rotation</td>
+<td style="text-align:left"><strong>rotation</strong></td>
 <td style="text-align:left">&#x521A;&#x4F53;&#x7684;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x3002;</td>
 </tr>
 <tr>
@@ -1880,11 +1912,11 @@
 <td style="text-align:left">&#x7528;&#x4E8E;&#x8BE5;&#x521A;&#x4F53;&#x7684;&#x9525;&#x5F62;&#x6469;&#x64E6;&#x529B;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">useGravity</td>
+<td style="text-align:left"><strong>useGravity</strong></td>
 <td style="text-align:left">&#x63A7;&#x5236;&#x91CD;&#x529B;&#x662F;&#x5426;&#x5F71;&#x54CD;&#x6574;&#x4E2A;&#x521A;&#x4F53;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">velocity</td>
+<td style="text-align:left"><strong>velocity</strong></td>
 <td style="text-align:left">&#x521A;&#x4F53;&#x7684;&#x901F;&#x5EA6;&#x5411;&#x91CF;&#x3002;</td>
 </tr>
 <tr>
@@ -1906,7 +1938,7 @@
 <td style="text-align:left">&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x529B;&#x5230;&#x521A;&#x4F53;&#x6765;&#x6A21;&#x62DF;&#x7206;&#x70B8;&#x6548;&#x679C;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">AddForce</td>
+<td style="text-align:left"><strong>AddForce</strong></td>
 <td style="text-align:left">&#x6DFB;&#x52A0;&#x5230;&#x521A;&#x4F53;&#x7684;&#x529B;&#x3002;</td>
 </tr>
 <tr>
@@ -1942,11 +1974,11 @@
 <td style="text-align:left">&#x521A;&#x4F53;&#x5728;&#x4F11;&#x7720;&#x4E48;&#xFF1F;</td>
 </tr>
 <tr>
-<td style="text-align:left">MovePosition</td>
+<td style="text-align:left"><strong>MovePosition</strong></td>
 <td style="text-align:left">&#x79FB;&#x52A8;&#x521A;&#x4F53;&#x5230;&#x65B0;&#x4F4D;&#x7F6E;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">MoveRotation</td>
+<td style="text-align:left"><strong>MoveRotation</strong></td>
 <td style="text-align:left">&#x65CB;&#x8F6C;&#x521A;&#x4F53;&#x5230;&#x65B0;&#x89D2;&#x5EA6;&#x3002;</td>
 </tr>
 <tr>
@@ -2007,7 +2039,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1 物理系统（2／3）","level":"1.8.1","depth":2,"next":{"title":"第6天","level":"1.9","depth":1,"path":"第6天/6.0 第6天.md","ref":"第6天/6.0 第6天.md","articles":[{"title":"6.1 物理系统（3／3）","level":"1.9.1","depth":2,"path":"第6天/61-物理系统（3／3）.md","ref":"第6天/61-物理系统（3／3）.md","articles":[]}]},"previous":{"title":"第5天","level":"1.8","depth":1,"path":"第5天/5.0 第5天.md","ref":"第5天/5.0 第5天.md","articles":[{"title":"5.1 物理系统（2／3）","level":"1.8.1","depth":2,"path":"第5天/51-物理系统（2／3）.md","ref":"第5天/51-物理系统（2／3）.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第5天/51-物理系统（2／3）.md","mtime":"2016-11-24T16:18:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-29T15:17:23.465Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1 物理系统（2／3）","level":"1.8.1","depth":2,"next":{"title":"第6天","level":"1.9","depth":1,"path":"第6天/6.0 第6天.md","ref":"第6天/6.0 第6天.md","articles":[{"title":"6.1 物理系统（3／3）","level":"1.9.1","depth":2,"path":"第6天/61-物理系统（3／3）.md","ref":"第6天/61-物理系统（3／3）.md","articles":[{"title":"6.11 布料","level":"1.9.1.1","depth":3,"path":"第6天/611-布料.md","ref":"第6天/611-布料.md","articles":[]},{"title":"6.12 关节","level":"1.9.1.2","depth":3,"path":"第6天/612-关节.md","ref":"第6天/612-关节.md","articles":[]}]}]},"previous":{"title":"第5天","level":"1.8","depth":1,"path":"第5天/5.0 第5天.md","ref":"第5天/5.0 第5天.md","articles":[{"title":"5.1 物理系统（2／3）","level":"1.8.1","depth":2,"path":"第5天/51-物理系统（2／3）.md","ref":"第5天/51-物理系统（2／3）.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第5天/51-物理系统（2／3）.md","mtime":"2016-11-30T14:04:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-30T14:23:43.159Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
