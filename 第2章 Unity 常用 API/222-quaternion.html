@@ -1,0 +1,2133 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.22 Quaternion · 博军一笑的个人主页</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="223-ray.html" />
+    
+    
+    <link rel="prev" href="221-resources.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../第1章 3D 数学基础/1_0 3D 数学基础.html">
+            
+                <a href="../第1章 3D 数学基础/1_0 3D 数学基础.html">
+            
+                    
+                    第1章 3D 数学基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../第1章 3D 数学基础/11-向量.html">
+            
+                <a href="../第1章 3D 数学基础/11-向量.html">
+            
+                    
+                    1.1 向量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../第1章 3D 数学基础/111-向量运算.html">
+            
+                <a href="../第1章 3D 数学基础/111-向量运算.html">
+            
+                    
+                    1.1.1 向量运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../第1章 3D 数学基础/12-矩阵.html">
+            
+                <a href="../第1章 3D 数学基础/12-矩阵.html">
+            
+                    
+                    1.2 矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../第1章 3D 数学基础/13-欧拉角.html">
+            
+                <a href="../第1章 3D 数学基础/13-欧拉角.html">
+            
+                    
+                    1.3 欧拉角
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../第1章 3D 数学基础/14-四元数.html">
+            
+                <a href="../第1章 3D 数学基础/14-四元数.html">
+            
+                    
+                    1.4 四元数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.0 Unity 常用 API.html">
+            
+                <a href="2.0 Unity 常用 API.html">
+            
+                    
+                    第2章 Unity 常用 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21-monobehaviour.html">
+            
+                <a href="21-monobehaviour.html">
+            
+                    
+                    2.1 MonoBehaviour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="22-gameobject.html">
+            
+                <a href="22-gameobject.html">
+            
+                    
+                    2.2 GameObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="23-tranform.html">
+            
+                <a href="23-tranform.html">
+            
+                    
+                    2.3 Tranform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="24-vector3.html">
+            
+                <a href="24-vector3.html">
+            
+                    
+                    2.4 Vector3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="25-random.html">
+            
+                <a href="25-random.html">
+            
+                    
+                    2.5 Random
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="26-mathf.html">
+            
+                <a href="26-mathf.html">
+            
+                    
+                    2.6 Mathf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="27-time.html">
+            
+                <a href="27-time.html">
+            
+                    
+                    2.7 Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="28-input.html">
+            
+                <a href="28-input.html">
+            
+                    
+                    2.8 Input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="29-gui.html">
+            
+                <a href="29-gui.html">
+            
+                    
+                    2.9 GUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="210-physics.html">
+            
+                <a href="210-physics.html">
+            
+                    
+                    2.10 Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="211-animation.html">
+            
+                <a href="211-animation.html">
+            
+                    
+                    2.11 Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="212-animator.html">
+            
+                <a href="212-animator.html">
+            
+                    
+                    2.12 Animator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="213-rigidbody.html">
+            
+                <a href="213-rigidbody.html">
+            
+                    
+                    2.13 RigidBody
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="214-collision.html">
+            
+                <a href="214-collision.html">
+            
+                    
+                    2.14 Collision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="215-collider.html">
+            
+                <a href="215-collider.html">
+            
+                    
+                    2.15 Collider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="216-charactercontroller.html">
+            
+                <a href="216-charactercontroller.html">
+            
+                    
+                    2.16 CharacterController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="217-camera.html">
+            
+                <a href="217-camera.html">
+            
+                    
+                    2.17 Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="218-audiosource.html">
+            
+                <a href="218-audiosource.html">
+            
+                    
+                    2.18 AudioSource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" >
+            
+                <span>
+            
+                    
+                    2.19 AudioMixer
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" >
+            
+                <span>
+            
+                    
+                    2.20 AssetBundle
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="221-resources.html">
+            
+                <a href="221-resources.html">
+            
+                    
+                    2.21 Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.22" data-path="222-quaternion.html">
+            
+                <a href="222-quaternion.html">
+            
+                    
+                    2.22 Quaternion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="223-ray.html">
+            
+                <a href="223-ray.html">
+            
+                    
+                    2.23 Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="224-raycasthit.html">
+            
+                <a href="224-raycasthit.html">
+            
+                    
+                    2.24 RaycastHit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="225-layermask.html">
+            
+                <a href="225-layermask.html">
+            
+                    
+                    2.25 LayerMask
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../第1天/1.0 第1天.html">
+            
+                <a href="../第1天/1.0 第1天.html">
+            
+                    
+                    第1天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../第1天/11-向量.html">
+            
+                <a href="../第1天/11-向量.html">
+            
+                    
+                    1.1 向量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../第1天/111-向量的数学运算.html">
+            
+                <a href="../第1天/111-向量的数学运算.html">
+            
+                    
+                    1.11 向量的数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../第1天/12-坐标系.html">
+            
+                <a href="../第1天/12-坐标系.html">
+            
+                    
+                    1.2 坐标系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../第1天/13-monobehaviour.html">
+            
+                <a href="../第1天/13-monobehaviour.html">
+            
+                    
+                    1.3 MonoBehaviour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../第1天/14-控制台输出.html">
+            
+                <a href="../第1天/14-控制台输出.html">
+            
+                    
+                    1.4 控制台输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../第1天/15-挂载脚本.html">
+            
+                <a href="../第1天/15-挂载脚本.html">
+            
+                    
+                    1.5 挂载脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../第1天/16-transform-与-transform.html">
+            
+                <a href="../第1天/16-transform-与-transform.html">
+            
+                    
+                    1.6 Transform 与 transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../第1天/17-vector3.html">
+            
+                <a href="../第1天/17-vector3.html">
+            
+                    
+                    1.7 Vector3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../第1天/18-transform.html">
+            
+                <a href="../第1天/18-transform.html">
+            
+                    
+                    1.8 Transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../第2天/2.0 第2天.html">
+            
+                <a href="../第2天/2.0 第2天.html">
+            
+                    
+                    第2天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../第2天/11-time.html">
+            
+                <a href="../第2天/11-time.html">
+            
+                    
+                    2.1 Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../第2天/12-输入控制.html">
+            
+                <a href="../第2天/12-输入控制.html">
+            
+                    
+                    2.2 输入控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../第2天/221-输入管理器.html">
+            
+                <a href="../第2天/221-输入管理器.html">
+            
+                    
+                    2.21 输入管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../第2天/13-object.html">
+            
+                <a href="../第2天/13-object.html">
+            
+                    
+                    2.3 Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../第2天/14-预制体.html">
+            
+                <a href="../第2天/14-预制体.html">
+            
+                    
+                    2.4 预制体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../第2天/25-resources.html">
+            
+                <a href="../第2天/25-resources.html">
+            
+                    
+                    2.5 Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../第2天/25-gameobject-与-gameobject.html">
+            
+                <a href="../第2天/25-gameobject-与-gameobject.html">
+            
+                    
+                    2.6 GameObject 与 gameObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../第3天/3.0 第3天.html">
+            
+                <a href="../第3天/3.0 第3天.html">
+            
+                    
+                    第3天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../第3天/31-矩阵.html">
+            
+                <a href="../第3天/31-矩阵.html">
+            
+                    
+                    3.1 矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../第3天/32-quaternion.html">
+            
+                <a href="../第3天/32-quaternion.html">
+            
+                    
+                    3.2 Quaternion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../第3天/33-灯光与摄像机.html">
+            
+                <a href="../第3天/33-灯光与摄像机.html">
+            
+                    
+                    3.3 灯光与摄像机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../第3天/34-声音组件.html">
+            
+                <a href="../第3天/34-声音组件.html">
+            
+                    
+                    3.4 声音组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../第3天/35-gui.html">
+            
+                <a href="../第3天/35-gui.html">
+            
+                    
+                    3.5 GUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../第4天/4.0 第4天.html">
+            
+                <a href="../第4天/4.0 第4天.html">
+            
+                    
+                    第4天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../第4天/41-mathf.html">
+            
+                <a href="../第4天/41-mathf.html">
+            
+                    
+                    4.1 Mathf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../第4天/42-random.html">
+            
+                <a href="../第4天/42-random.html">
+            
+                    
+                    4.2 Random
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../第4天/43-物理系统1.html">
+            
+                <a href="../第4天/43-物理系统1.html">
+            
+                    
+                    4.3 物理系统（1／3）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../第4天/44-项目实战--3d-打飞机.html">
+            
+                <a href="../第4天/44-项目实战--3d-打飞机.html">
+            
+                    
+                    4.4 项目实战 -- 3D 打飞机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../第5天/5.0 第5天.html">
+            
+                <a href="../第5天/5.0 第5天.html">
+            
+                    
+                    第5天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../第5天/51-物理系统（2／3）.html">
+            
+                <a href="../第5天/51-物理系统（2／3）.html">
+            
+                    
+                    5.1 物理系统（2／3）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../第6天/6.0 第6天.html">
+            
+                <a href="../第6天/6.0 第6天.html">
+            
+                    
+                    第6天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../第6天/61-物理系统（3／3）.html">
+            
+                <a href="../第6天/61-物理系统（3／3）.html">
+            
+                    
+                    6.1 物理系统（3／3）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../第6天/611-布料.html">
+            
+                <a href="../第6天/611-布料.html">
+            
+                    
+                    6.11 布料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../第6天/612-关节.html">
+            
+                <a href="../第6天/612-关节.html">
+            
+                    
+                    6.12 关节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../第7天/7.0 第7天.html">
+            
+                <a href="../第7天/7.0 第7天.html">
+            
+                    
+                    第7天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <span>
+            
+                    
+                    7.1 角色控制器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <span>
+            
+                    
+                    7.2 拖尾效果
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../第7天/73-绘制线的方法.html">
+            
+                <a href="../第7天/73-绘制线的方法.html">
+            
+                    
+                    7.3 绘制线的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" >
+            
+                <span>
+            
+                    
+                    7.4 阴影投射器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../第7天/75-多线程与协同.html">
+            
+                <a href="../第7天/75-多线程与协同.html">
+            
+                    
+                    7.5 多线程与协同
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../第8天/8.0 第8天.html">
+            
+                <a href="../第8天/8.0 第8天.html">
+            
+                    
+                    第8天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../第8天/81-协同.html">
+            
+                <a href="../第8天/81-协同.html">
+            
+                    
+                    8.1 协同
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../第8天/82-向量的点乘与叉乘.html">
+            
+                <a href="../第8天/82-向量的点乘与叉乘.html">
+            
+                    
+                    8.2 向量的点乘与叉乘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../第8天/83-组件间的消息传递.html">
+            
+                <a href="../第8天/83-组件间的消息传递.html">
+            
+                    
+                    8.3 组件间的消息传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../第8天/84-项目实战----塔防游戏.html">
+            
+                <a href="../第8天/84-项目实战----塔防游戏.html">
+            
+                    
+                    8.4 项目实战 -- 塔防游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../第9天/9.0 第9天.html">
+            
+                <a href="../第9天/9.0 第9天.html">
+            
+                    
+                    第9天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../第9天/91-场景的切换.html">
+            
+                <a href="../第9天/91-场景的切换.html">
+            
+                    
+                    9.1 场景的切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../第9天/92-项目实战----塔防游戏.html">
+            
+                <a href="../第9天/92-项目实战----塔防游戏.html">
+            
+                    
+                    9.2 项目实战 -- 塔防游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../第10天/10.0 第10天.html">
+            
+                <a href="../第10天/10.0 第10天.html">
+            
+                    
+                    第10天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" >
+            
+                <span>
+            
+                    
+                    10.1 动画概念
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" >
+            
+                <span>
+            
+                    
+                    10.2 动作系统
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../第11天/11.0 第11天.html">
+            
+                <a href="../第11天/11.0 第11天.html">
+            
+                    
+                    第11天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" >
+            
+                <span>
+            
+                    
+                    11.1 Animator
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../第12天/12.0 第12天.html">
+            
+                <a href="../第12天/12.0 第12天.html">
+            
+                    
+                    第12天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" >
+            
+                <span>
+            
+                    
+                    12.1 Mecanim
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" >
+            
+                <span>
+            
+                    
+                    12.2 IK 反向运动学
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../第13天/13.0 第13天.html">
+            
+                <a href="../第13天/13.0 第13天.html">
+            
+                    
+                    第13天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" >
+            
+                <span>
+            
+                    
+                    13.1 BlendTree2D
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" >
+            
+                <span>
+            
+                    
+                    13.2 Animator 动画的录制
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" >
+            
+                <span>
+            
+                    
+                    13.3 寻路系统
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" >
+            
+                <span>
+            
+                    
+                    13.4 Unity 动作系统制作
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../第14天/14.0 第14天.html">
+            
+                <a href="../第14天/14.0 第14天.html">
+            
+                    
+                    第14天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../第14天/141-项目实战----arpg.html">
+            
+                <a href="../第14天/141-项目实战----arpg.html">
+            
+                    
+                    14.1 项目实战 -- ARPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../第15天/15.0 第15天.html">
+            
+                <a href="../第15天/15.0 第15天.html">
+            
+                    
+                    第15天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" >
+            
+                <span>
+            
+                    
+                    15.1 优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" >
+            
+                <span>
+            
+                    
+                    15.2 Unity5.X
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../第16天/16.0 第16天.html">
+            
+                <a href="../第16天/16.0 第16天.html">
+            
+                    
+                    第16天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" >
+            
+                <span>
+            
+                    
+                    16.1 Unity5.X 声音的处理
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" >
+            
+                <span>
+            
+                    
+                    16.2 Unity5.X 布料系统
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" >
+            
+                <span>
+            
+                    
+                    16.3 Unity5.X 动作系统
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.4" >
+            
+                <span>
+            
+                    
+                    16.4 LOD
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.5" >
+            
+                <span>
+            
+                    
+                    16.5 3D Text
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../第17天/17.0 第17天.html">
+            
+                <a href="../第17天/17.0 第17天.html">
+            
+                    
+                    第17天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" >
+            
+                <span>
+            
+                    
+                    17.1 图片的设置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" >
+            
+                <span>
+            
+                    
+                    17.2 2D 物理关节
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../第17天/173-效应器.html">
+            
+                <a href="../第17天/173-效应器.html">
+            
+                    
+                    17.3 效应器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../第18天/18.0 第18天.html">
+            
+                <a href="../第18天/18.0 第18天.html">
+            
+                    
+                    第18天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" >
+            
+                <span>
+            
+                    
+                    18.1 场景切换
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" >
+            
+                <span>
+            
+                    
+                    18.2 GUI Text 和 GUI Texture
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../第18天/183-项目实战----土豆人大战外星人.html">
+            
+                <a href="../第18天/183-项目实战----土豆人大战外星人.html">
+            
+                    
+                    18.3 项目实战 -- 土豆人大战外星人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../第19天/19.0 第19天.html">
+            
+                <a href="../第19天/19.0 第19天.html">
+            
+                    
+                    第19天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" >
+            
+                <span>
+            
+                    
+                    19.1 美术资源控制
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" >
+            
+                <span>
+            
+                    
+                    19.2 Unity 事件
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../第20天/20.0 第20天.html">
+            
+                <a href="../第20天/20.0 第20天.html">
+            
+                    
+                    第20天
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../第20天/20.1 项目实战 -- 土豆人大战外星人.html">
+            
+                <a href="../第20天/20.1 项目实战 -- 土豆人大战外星人.html">
+            
+                    
+                    20.1 项目实战 -- 土豆人大战外星人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.22 Quaternion</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="quaternion">Quaternion</h2>
+<p>&#x56DB;&#x5143;&#x6570;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x65CB;&#x8F6C;&#x3002;</p>
+<p>&#x5B83;&#x4EEC;&#x662F;&#x7D27;&#x51D1;&#x7684;&#xFF0C;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x4E07;&#x5411;&#x8282;&#x9501;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x5F88;&#x5BB9;&#x6613;&#x88AB;&#x63D2;&#x503C;&#x3002;Unity&#x5185;&#x4F7F;&#x7528;Quaternion&#x8868;&#x793A;&#x6240;&#x6709;&#x65CB;&#x8F6C;&#x3002;</p>
+<p>&#x4ED6;&#x4EEC;&#x57FA;&#x4E8E;&#x590D;&#x6570;&#x5E76;&#x4E14;&#x76F4;&#x89C9;&#x4E0A;&#x4E0D;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x4F60;&#x51E0;&#x4E4E;&#x4E0D;&#x5FC5;&#x8981;&#x8FDB;&#x5165;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x4E2A;&#x4EBA;&#x7684;&#x56DB;&#x5143;&#x6570;&#x7EC4;&#x4EF6;(x,y,z,w)&#xFF1B;</p>
+<h3 id="quaternionslerp-&#x7403;&#x5F62;&#x63D2;&#x503C;">Quaternion.Slerp &#x7403;&#x5F62;&#x63D2;&#x503C;</h3>
+<p>&#x7403;&#x5F62;&#x63D2;&#x503C;&#xFF0C;&#x901A;&#x8FC7;t&#x503C;from&#x5411;to&#x4E4B;&#x95F4;&#x63D2;&#x503C;&#x3002;&#x53C2;&#x6570;&#x53D6;&#x503C;&#x8303;&#x56F4;[0,1]&#x3002;</p>
+<p><strong>&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        public Transform from;
+        public Transform to;
+
+        public float speed = 0.1F;
+
+        void Update() {
+            transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, Time.time * speed);
+        }
+    }
+</code></pre>
+<hr>
+<h3 id="quaternionlookrotation-&#x6CE8;&#x89C6;&#x65CB;&#x8F6C;">Quaternion.LookRotation &#x6CE8;&#x89C6;&#x65CB;&#x8F6C;</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x6CBF;&#x7740;forward&#xFF08;z&#x8F74;&#xFF09;&#x5E76;&#x4E14;&#x5934;&#x90E8;&#x6CBF;&#x7740;upwards&#xFF08;y&#x8F74;&#xFF09;&#x7684;&#x7EA6;&#x675F;&#x6CE8;&#x89C6;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x4F7F;z&#x8F74;&#x671D;&#x5411;view y&#x8F74;&#x671D;&#x5411;up&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x8BA1;&#x7B97;&#x56DB;&#x5143;&#x6570;&#x3002;&#x5982;&#x679C;&#x7528;&#x4E8E;&#x5B9A;&#x5411;&#x7684;&#x53D8;&#x6362;&#xFF0C;Z&#x8F74;&#x5C06;&#x4F1A;&#x88AB;&#x5BF9;&#x51C6;&#x524D;&#x65B9;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x5411;&#x91CF;&#x6B63;&#x4EA4;&#xFF0C;Y&#x8F74;&#x5411;&#x524D;&#x3002;&#x5982;&#x679C;forward&#x65B9;&#x5411;&#x662F;0&#xFF0C;&#x8BB0;&#x5F55;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</p>
+<p><strong>&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+
+        public Transform target;
+
+        void Update() {
+            Vector3 relativePos = target.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+            transform.rotation = rotation;
+        }
+    }
+</code></pre>
+<hr>
+<h3 id="&#x56DB;&#x5143;&#x6570;">&#x56DB;&#x5143;&#x6570;</h3>
+<p> &#x56E0;&#x4E3A;&#x77E9;&#x9635;&#x7684;&#x7F3A;&#x70B9;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x56DB;&#x5143;&#x6570;</p>
+<pre><code>1&#x3001;&#x77E9;&#x9635;&#x7684;&#x5197;&#x4F59;&#x592A;&#x591A;
+
+2&#x3001;&#x77E9;&#x9635;&#x591A;&#x6B21;&#x8FED;&#x4EE3;&#x540E;&#x4F1A;&#x9020;&#x6210;&#x4E07;&#x5411;&#x9501;&#x95EE;&#x9898;
+
+3&#x3001;&#x77E9;&#x9635;&#x7684;&#x884C;&#x5217;&#x6570;&#x603B;&#x662F;&#x5F71;&#x54CD;&#x5411;&#x91CF;&#x7684;&#x7EF4;&#x5EA6;
+</code></pre><p> &#x56DB;&#x5143;&#x7D20;&#x7279;&#x70B9;</p>
+<pre><code>1&#x3001;&#x56DB;&#x5143;&#x6570;&#x6570;&#x636E;&#x91CF;&#x5C0F;&#xFF0C;&#x53EA;&#x6709;&#x56DB;&#x4E2A;&#x5143;&#x7D20;
+
+2&#x3001;&#x56DB;&#x5143;&#x6570;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5411;&#x91CF;&#x53C9;&#x4E58;&#x6765;&#x8BA1;&#x7B97;&#xFF0C;&#x7701;&#x53BB;&#x4E86;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x8BA1;&#x7B97;
+
+3&#x3001;&#x4ED6;&#x4F1A;&#x4E00;&#x76F4;&#x4FDD;&#x6301;&#x5411;&#x91CF;&#x7684;&#x7EF4;&#x5EA6;&#x662F;4&#x7EF4;
+
+
+
+&#x56DB;&#x5143;&#x6570;&#x7EC4;&#x5408;
+
+[ w, v ]
+
+[w , (x, y, z) ]
+
+w&#x662F;&#x5B9E;&#x6570;&#xFF0C; v&#x662F;&#x4E09;&#x4E2A;&#x865A;&#x6570;&#x7684;&#x7EC4;&#x5408;
+
+
+
+&#x8BA1;&#x7B97;
+
+    &#x53C2;&#x7167;&#x590D;&#x6570;&#x56DB;&#x5219;&#x8FD0;&#x7B97;
+
+    &#x4F7F;&#x6211;&#x4EEC;&#x7684;&#x865A;&#x6570;&#x90E8;&#x5206;&#x53D8;&#x6210;&#x8D1F;&#x6570;&#xFF1A;&#x5C31;&#x662F;&#x5171;&#x8F6D;
+
+    q&#xFF0A; &#xFF1D; &#xFF3B;w, (-x, -y, -z)&#xFF3D;
+
+
+
+&#x6C42;&#x6A21;
+
+    ||p|| = sqrt( a*a + b *b );
+
+    ||q|| = sqrt( pow(cos(a /2), 2) + pow(sin(a/2), 2) )
+
+&#x6C42;&#x9006;
+
+    q&#x9006; = q* / ||q||
+</code></pre><p> &#x5C06;&#x9006;&#x548C;&#x5411;&#x91CF;&#x53C9;&#x4E58;&#x5F97;&#x5230;&#x6211;&#x4EEC;&#x56DB;&#x5143;&#x6570;&#x65CB;&#x8F6C;&#x540E;&#x7684;&#x65B0;&#x5750;&#x6807;&#x70B9;</p>
+<p> &#x6CE8;&#x610F;&#x4E8B;&#x9879;</p>
+<pre><code>&#x56DB;&#x5143;&#x6570;&#x4E5F;&#x662F;&#x7EBF;&#x6027;&#x7684;&#xFF0C;&#x5343;&#x4E07;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x65CB;&#x8F6C;
+</code></pre><hr>
+<h3 id="api">API</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9759;&#x6001;&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">identity</td>
+<td style="text-align:left">&#x540C;&#x4E00;&#x6027;&#x65CB;&#x8F6C;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">eulerAngles</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x8868;&#x793A;&#x65CB;&#x8F6C;&#x7684;&#x6B27;&#x62C9;&#x89D2;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">this[int]</td>
+<td style="text-align:left">&#x5206;&#x522B;&#x4F7F;&#x7528; [0]&#x3001;[1]&#x3001; [2]&#x3001; [3]&#xFF0C;&#x8BBF;&#x95EE;x&#x3001;y&#x3001;z&#x3001;w&#x7EC4;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">&#x56DB;&#x5143;&#x6570;&#x7684;W&#x7EC4;&#x4EF6;&#x3002;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x5F88;&#x4E86;&#x89E3;&#x56DB;&#x5143;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">&#x56DB;&#x5143;&#x6570;&#x7684;X&#x7EC4;&#x4EF6;&#x3002;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x5F88;&#x4E86;&#x89E3;&#x56DB;&#x5143;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">y</td>
+<td style="text-align:left">&#x56DB;&#x5143;&#x6570;&#x7684;Y&#x7EC4;&#x4EF6;&#x3002;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x5F88;&#x4E86;&#x89E3;&#x56DB;&#x5143;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">z</td>
+<td style="text-align:left">&#x56DB;&#x5143;&#x6570;&#x7684;Z&#x7EC4;&#x4EF6;&#x3002;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x5F88;&#x4E86;&#x89E3;&#x56DB;&#x5143;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x516C;&#x6709;&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Set</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x5B58;&#x5728;&#x7684;&#x56DB;&#x5143;&#x7D20;&#x7684;x, y, z &#x548C;w &#x7EC4;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetFromToRotation</td>
+<td style="text-align:left">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4ECE;fromDirection&#x5230;toDirection&#x7684;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetLookRotation</td>
+<td style="text-align:left">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x6CBF;&#x7740;forward&#xFF08;z&#x8F74;&#xFF09;&#x5E76;&#x4E14;&#x5934;&#x90E8;&#x6CBF;&#x7740;up&#xFF08;y&#x8F74;&#xFF09;&#x7684;&#x7EA6;&#x675F;&#x6CE8;&#x89C6;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x4F7F;z&#x8F74;&#x671D;&#x5411;view y&#x8F74;&#x671D;&#x5411;up&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ToAngleAxis</td>
+<td style="text-align:left">&#x8F6C;&#x6362;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#x7528;&#x201C;&#x89D2;-&#x8F74;&#x201D;&#x8868;&#x793A;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9759;&#x6001;&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Angle</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;a&#x548C;b&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x89D2;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">AngleAxis</td>
+<td style="text-align:left">&#x7ED5;axis&#x8F74;&#x65CB;&#x8F6C;angle&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Dot</td>
+<td style="text-align:left">&#x4E24;&#x4E2A;&#x65CB;&#x8F6C;&#x4E4B;&#x95F4;&#x7684;&#x70B9;&#x4E58;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Euler</strong></td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#xFF0C;&#x7ED5;z&#x8F74;&#x65CB;&#x8F6C;z&#x5EA6;&#xFF0C;&#x7ED5;x&#x8F74;&#x65CB;&#x8F6C;x&#x5EA6;&#xFF0C;&#x7ED5;y&#x8F74;&#x65CB;&#x8F6C;y&#x5EA6;&#xFF08;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x987A;&#x5E8F;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">FromToRotation</td>
+<td style="text-align:left">&#x4ECE;fromDirection&#x5230;toDirection&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Inverse</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x53CD;&#x5411;&#x7684;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Lerp</td>
+<td style="text-align:left">&#x901A;&#x8FC7;t&#x503C;from&#x5411;to&#x4E4B;&#x95F4;&#x63D2;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x89C4;&#x8303;&#x5316;&#x7ED3;&#x679C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LookRotation</strong></td>
+<td style="text-align:left">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x6CBF;&#x7740;forward&#xFF08;z&#x8F74;&#xFF09;&#x5E76;&#x4E14;&#x5934;&#x90E8;&#x6CBF;&#x7740;upwards&#xFF08;y&#x8F74;&#xFF09;&#x7684;&#x7EA6;&#x675F;&#x6CE8;&#x89C6;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x65CB;&#x8F6C;&#xFF0C;&#x4F7F;z&#x8F74;&#x671D;&#x5411;view y&#x8F74;&#x671D;&#x5411;up&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">RotateTowards</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x4E00;&#x4E2A;&#x89D2;&#x5EA6;&#x4ECE;from&#x5411;to&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Slerp</strong></td>
+<td style="text-align:left">&#x7403;&#x5F62;&#x63D2;&#x503C;&#xFF0C;&#x901A;&#x8FC7;t&#x503C;from&#x5411;to&#x4E4B;&#x95F4;&#x63D2;&#x503C;&#x3002;&#x53C2;&#x6570;&#x53D6;&#x503C;&#x8303;&#x56F4;[0,1]&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SlerpUnclamped</td>
+<td style="text-align:left">&#x7403;&#x5F62;&#x63D2;&#x503C;&#xFF0C;&#x901A;&#x8FC7;t&#x503C;from&#x5411;to&#x4E4B;&#x95F4;&#x63D2;&#x503C;&#x3002;&#x8BE5;&#x53C2;&#x6570;t&#x662F;&#x4E0D;&#x5728;&#x533A;&#x95F4;&#x5185;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operators &#x8FD0;&#x7B97;&#x7B26;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">operator !=</td>
+<td style="text-align:left">&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x56DB;&#x5143;&#x6570;&#x662F;&#x5426;&#x4E0D;&#x540C;&#xFF1F;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>operator* </strong></td>
+<td style="text-align:left">&#x83B7;&#x53D6;lhs &#x7684;&#x65CB;&#x8F6C;&#x72B6;&#x6001;&#x5E76;&#x5E94;&#x7528;rhs&#x7684;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">operator ==</td>
+<td style="text-align:left">&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x56DB;&#x5143;&#x6570;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF1F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x1F51A;</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="221-resources.html" class="navigation navigation-prev " aria-label="Previous page: 2.21 Resources">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="223-ray.html" class="navigation navigation-next " aria-label="Next page: 2.23 Ray">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.22 Quaternion","level":"1.3.22","depth":2,"next":{"title":"2.23 Ray","level":"1.3.23","depth":2,"path":"第2章 Unity 常用 API/223-ray.md","ref":"第2章 Unity 常用 API/223-ray.md","articles":[]},"previous":{"title":"2.21 Resources","level":"1.3.21","depth":2,"path":"第2章 Unity 常用 API/221-resources.md","ref":"第2章 Unity 常用 API/221-resources.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/222-quaternion.md","mtime":"2016-12-02T09:49:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-02T16:26:32.605Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
