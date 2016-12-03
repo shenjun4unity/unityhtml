@@ -525,6 +525,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.26" data-path="226-joint.html">
+            
+                <a href="226-joint.html">
+            
+                    
+                    2.26 Joint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="227-gizmos.html">
+            
+                <a href="227-gizmos.html">
+            
+                    
+                    2.27 Gizmos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="228-resourcerequest.html">
+            
+                <a href="228-resourcerequest.html">
+            
+                    
+                    2.28 ResourceRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1029,6 +1068,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9.1.3" data-path="../第6天/613-力场.html">
+            
+                <a href="../第6天/613-力场.html">
+            
+                    
+                    6.13 力场
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.4" data-path="../第6天/614-物理材质.html">
+            
+                <a href="../第6天/614-物理材质.html">
+            
+                    
+                    6.14 物理材质
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1053,27 +1118,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" >
+        <li class="chapter " data-level="1.10.1" data-path="../第7天/71-角色控制器.html">
             
-                <span>
+                <a href="../第7天/71-角色控制器.html">
             
                     
                     7.1 角色控制器
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" >
+        <li class="chapter " data-level="1.10.2" data-path="../第7天/72-拖尾效果.html">
             
-                <span>
+                <a href="../第7天/72-拖尾效果.html">
             
                     
                     7.2 拖尾效果
             
-                </span>
+                </a>
             
 
             
@@ -1092,14 +1157,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.4" >
+        <li class="chapter " data-level="1.10.4" data-path="../第7天/74-阴影投射器.html">
             
-                <span>
+                <a href="../第7天/74-阴影投射器.html">
             
                     
                     7.4 阴影投射器
             
-                </span>
+                </a>
             
 
             
@@ -1253,27 +1318,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" >
+        <li class="chapter " data-level="1.13.1" data-path="../第10天/101-动画概念.html">
             
-                <span>
+                <a href="../第10天/101-动画概念.html">
             
                     
                     10.1 动画概念
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.13.2" >
+        <li class="chapter " data-level="1.13.2" data-path="../第10天/102-动作系统.html">
             
-                <span>
+                <a href="../第10天/102-动作系统.html">
             
                     
                     10.2 动作系统
             
-                </span>
+                </a>
             
 
             
@@ -1298,14 +1363,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.14.1" >
+        <li class="chapter " data-level="1.14.1" data-path="../第11天/111-animator.html">
             
-                <span>
+                <a href="../第11天/111-animator.html">
             
                     
                     11.1 Animator
             
-                </span>
+                </a>
             
 
             
@@ -1828,7 +1893,180 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="charactercontroller-&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;">CharacterController &#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;</h2>
+<p>&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x8BA9;&#x4F60;&#x5728;&#x53D7;&#x5236;&#x4E8E;&#x78B0;&#x649E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x8FDB;&#x884C;&#x8FD0;&#x52A8;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5904;&#x7406;&#x521A;&#x4F53;&#x3002;</p>
+<p>&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x4E0D;&#x53D7;&#x529B;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x4EC5;&#x5F53;&#x4F60;&#x8C03;&#x7528;Move&#x51FD;&#x6570;&#x65F6;&#x624D;&#x8FD0;&#x52A8;&#x3002;&#x5B83;&#x6267;&#x884C;&#x8FD0;&#x52A8;&#xFF0C;&#x4F46;&#x662F;&#x53D7;&#x5236;&#x4E8E;&#x78B0;&#x649E;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">center</td>
+<td style="text-align:left">&#x76F8;&#x5BF9;&#x4E8E;&#x53D8;&#x6362;&#x4F4D;&#x7F6E;&#x7684;&#x89D2;&#x8272;&#x80F6;&#x56CA;&#x4F53;&#x7684;&#x4E2D;&#x5FC3;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">collisionFlags</td>
+<td style="text-align:left">&#x5728;&#x6700;&#x540E;&#x7684;CharacterController.Move&#x8C03;&#x7528;&#x671F;&#x95F4;&#xFF0C;&#x80F6;&#x56CA;&#x4F53;&#x7684;&#x54EA;&#x4E2A;&#x90E8;&#x5206;&#x4E0E;&#x5468;&#x56F4;&#x73AF;&#x5883;&#x76F8;&#x78B0;&#x649E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">detectCollisions</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x5F00;&#x542F;&#x68C0;&#x6D4B;&#x5176;&#x4ED6;&#x7684;&#x521A;&#x4F53;&#x548C;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x4E0E;&#x672C;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x78B0;&#x649E;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x59CB;&#x7EC8;&#x542F;&#x7528;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x80F6;&#x56CA;&#x4F53;&#x7684;&#x9AD8;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">isGrounded</td>
+<td style="text-align:left">&#x5728;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x79FB;&#x52A8;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x662F;&#x5426;&#x89E6;&#x78B0;&#x5730;&#x9762;&#xFF1F;</td>
+</tr>
+<tr>
+<td style="text-align:left">radius</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x80F6;&#x56CA;&#x4F53;&#x7684;&#x534A;&#x5F84;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">slopeLimit</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7684;&#x5761;&#x5EA6;&#x5EA6;&#x6570;&#x9650;&#x5236;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">stepOffset</td>
+<td style="text-align:left">&#x4EE5;&#x7C73;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7684;&#x53F0;&#x9636;&#x504F;&#x79FB;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">velocity</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x5F53;&#x524D;&#x7684;&#x76F8;&#x5BF9;&#x901F;&#x5EA6;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x516C;&#x6709;&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Move</td>
+<td style="text-align:left">&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF0C;&#x91C7;&#x53D6;&#x7EDD;&#x5BF9;&#x7684;&#x8FD0;&#x52A8;&#x589E;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SimpleMove</td>
+<td style="text-align:left">&#x6839;&#x636E;&#x901F;&#x5EA6;speed&#x79FB;&#x52A8;&#x89D2;&#x8272;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Message &#x6D88;&#x606F;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">OnControllerColliderHit</td>
+<td style="text-align:left">&#x5F53;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x78B0;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x79FB;&#x52A8;&#x7684;&#x78B0;&#x649E;&#x5668;&#x65F6;&#xFF0C;OnControllerColliderHit&#x88AB;&#x8C03;&#x7528;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x793A;&#x4F8B;&#xFF1A;">&#x793A;&#x4F8B;&#xFF1A;</h3>
+<h4 id="charactercontrollermove-&#x79FB;&#x52A8;">CharacterController.Move &#x79FB;&#x52A8;</h4>
+<p>public <strong>CollisionFlags</strong> <strong>Move</strong>(<strong>Vector3</strong> motion);</p>
+<p>&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF0C;&#x91C7;&#x53D6;&#x7EDD;&#x5BF9;&#x7684;&#x8FD0;&#x52A8;&#x589E;&#x91CF;&#x3002;</p>
+<p>&#x5C1D;&#x8BD5;&#x7740;&#x901A;&#x8FC7;motion&#x79FB;&#x52A8;&#x63A7;&#x5236;&#x5668;&#xFF0C;motion&#x53EA;&#x53D7;&#x9650;&#x5236;&#x4E8E;&#x78B0;&#x649E;&#x3002;&#x5B83;&#x5C06;&#x6CBF;&#x7740;&#x78B0;&#x649E;&#x5668;&#x6ED1;&#x52A8;&#x3002;CollisionFlags &#x662F;&#x53D1;&#x751F;&#x4E8E;Move&#x7684;&#x78B0;&#x649E;&#x7684;&#x6982;&#x8981;&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E0D;&#x5E94;&#x7528;&#x4EFB;&#x4F55;&#x91CD;&#x529B;&#x3002;</p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+        public float speed = 6.0F;
+        public float jumpSpeed = 8.0F;
+        public float gravity = 20.0F;
+        private Vector3 moveDirection = Vector3.zero;
+
+        void Update() {
+            CharacterController controller = GetComponent&lt;CharacterController&gt;();
+            if (controller.isGrounded) {
+                moveDirection = new Vector3(Input.GetAxis(&quot;Horizontal&quot;), 0, Input.GetAxis(&quot;Vertical&quot;));
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
+                if (Input.GetButton(&quot;Jump&quot;))
+                    moveDirection.y = jumpSpeed;
+
+            }
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.Move(moveDirection * Time.deltaTime);
+        }
+    }
+</code></pre>
+<hr>
+<h4 id="charactercontrollersimplemove-&#x7B80;&#x5355;&#x79FB;&#x52A8;">CharacterController.SimpleMove &#x7B80;&#x5355;&#x79FB;&#x52A8;</h4>
+<p>public bool SimpleMove(Vector3 speed);</p>
+<p>&#x6839;&#x636E;&#x901F;&#x5EA6;speed&#x79FB;&#x52A8;&#x89D2;&#x8272;&#x3002;</p>
+<p>Y &#x8F74;&#x4E0A;&#x901F;&#x5EA6;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x901F;&#x5EA6;&#x4EE5;&#x7C73;/&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x3002;&#x91CD;&#x529B;&#x88AB;&#x81EA;&#x52A8;&#x5E94;&#x7528;&#x3002;&#x5982;&#x679C;&#x89D2;&#x8272;&#x7740;&#x5730;&#x8FD4;&#x56DE; true&#x3002;&#x5EFA;&#x8BAE;&#x6BCF;&#x5E27;&#x53EA;&#x8C03;&#x7528;&#x4E00;&#x6B21; Move &#x6216;&#x8005; SimpleMove&#x3002;</p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    [RequireComponent(typeof(CharacterController))]
+    public class ExampleClass : MonoBehaviour {
+        public float speed = 3.0F;
+        public float rotateSpeed = 3.0F;
+        void Update() {
+            CharacterController controller = GetComponent&lt;CharacterController&gt;();
+            transform.Rotate(0, Input.GetAxis(&quot;Horizontal&quot;) * rotateSpeed, 0);
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            float curSpeed = speed * Input.GetAxis(&quot;Vertical&quot;);
+            controller.SimpleMove(forward * curSpeed);
+        }
+    }
+</code></pre>
+<hr>
+<h4 id="collisionflags-&#x78B0;&#x649E;&#x6807;&#x8BC6;">CollisionFlags &#x78B0;&#x649E;&#x6807;&#x8BC6;</h4>
+<p>CollisionFlags&#x662F;CharacterController.Move&#x8FD4;&#x56DE;&#x7684;&#x4F4D;&#x63A9;&#x7801;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x679A;&#x4E3E;&#x9879;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">None</td>
+<td style="text-align:left">&#x6CA1;&#x6709;&#x78B0;&#x649E;&#x5230;&#x5176;&#x4ED6;&#x78B0;&#x649E;&#x4F53;</td>
+</tr>
+<tr>
+<td style="text-align:left">Sides</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7684;&#x8FB9;&#x7F18;&#x4E0E;&#x5176;&#x4ED6;&#x78B0;&#x649E;&#x6846;&#x53D1;&#x751F;&#x78B0;&#x649E;</td>
+</tr>
+<tr>
+<td style="text-align:left">Above</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7684;&#x4E0A;&#x90E8;&#x4E0E;&#x5176;&#x4ED6;&#x78B0;&#x649E;&#x6846;&#x53D1;&#x751F;&#x78B0;&#x649E;</td>
+</tr>
+<tr>
+<td style="text-align:left">Below</td>
+<td style="text-align:left">&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7684;&#x4E0B;&#x90E8;&#x4E0E;&#x5176;&#x4ED6;&#x78B0;&#x649E;&#x6846;&#x53D1;&#x751F;&#x78B0;&#x649E;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+        void Update() {
+            CharacterController controller = GetComponent&lt;CharacterController&gt;();
+            if ((controller.collisionFlags &amp; CollisionFlags.Above) != 0)
+                print(&quot;touched the ceiling&quot;);
+
+        }
+    }
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -1855,7 +2093,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.16 CharacterController","level":"1.3.16","depth":2,"next":{"title":"2.17 Camera","level":"1.3.17","depth":2,"path":"第2章 Unity 常用 API/217-camera.md","ref":"第2章 Unity 常用 API/217-camera.md","articles":[]},"previous":{"title":"2.15 Collider","level":"1.3.15","depth":2,"path":"第2章 Unity 常用 API/215-collider.md","ref":"第2章 Unity 常用 API/215-collider.md","articles":[]},"dir":"neutral"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/216-charactercontroller.md","mtime":"2016-12-02T09:52:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-02T16:26:32.605Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.16 CharacterController","level":"1.3.16","depth":2,"next":{"title":"2.17 Camera","level":"1.3.17","depth":2,"path":"第2章 Unity 常用 API/217-camera.md","ref":"第2章 Unity 常用 API/217-camera.md","articles":[]},"previous":{"title":"2.15 Collider","level":"1.3.15","depth":2,"path":"第2章 Unity 常用 API/215-collider.md","ref":"第2章 Unity 常用 API/215-collider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/216-charactercontroller.md","mtime":"2016-12-03T13:52:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-03T17:29:07.445Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

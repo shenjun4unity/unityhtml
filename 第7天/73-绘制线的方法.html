@@ -55,6 +55,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="74-阴影投射器.html" />
+    
+    
+    <link rel="prev" href="72-拖尾效果.html" />
     
 
     </head>
@@ -514,6 +518,45 @@
             
                     
                     2.25 LayerMask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../第2章 Unity 常用 API/226-joint.html">
+            
+                <a href="../第2章 Unity 常用 API/226-joint.html">
+            
+                    
+                    2.26 Joint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="../第2章 Unity 常用 API/227-gizmos.html">
+            
+                <a href="../第2章 Unity 常用 API/227-gizmos.html">
+            
+                    
+                    2.27 Gizmos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="../第2章 Unity 常用 API/228-resourcerequest.html">
+            
+                <a href="../第2章 Unity 常用 API/228-resourcerequest.html">
+            
+                    
+                    2.28 ResourceRequest
             
                 </a>
             
@@ -1025,6 +1068,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9.1.3" data-path="../第6天/613-力场.html">
+            
+                <a href="../第6天/613-力场.html">
+            
+                    
+                    6.13 力场
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.4" data-path="../第6天/614-物理材质.html">
+            
+                <a href="../第6天/614-物理材质.html">
+            
+                    
+                    6.14 物理材质
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1049,27 +1118,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" >
+        <li class="chapter " data-level="1.10.1" data-path="71-角色控制器.html">
             
-                <span>
+                <a href="71-角色控制器.html">
             
                     
                     7.1 角色控制器
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" >
+        <li class="chapter " data-level="1.10.2" data-path="72-拖尾效果.html">
             
-                <span>
+                <a href="72-拖尾效果.html">
             
                     
                     7.2 拖尾效果
             
-                </span>
+                </a>
             
 
             
@@ -1088,14 +1157,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.4" >
+        <li class="chapter " data-level="1.10.4" data-path="74-阴影投射器.html">
             
-                <span>
+                <a href="74-阴影投射器.html">
             
                     
                     7.4 阴影投射器
             
-                </span>
+                </a>
             
 
             
@@ -1249,27 +1318,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" >
+        <li class="chapter " data-level="1.13.1" data-path="../第10天/101-动画概念.html">
             
-                <span>
+                <a href="../第10天/101-动画概念.html">
             
                     
                     10.1 动画概念
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.13.2" >
+        <li class="chapter " data-level="1.13.2" data-path="../第10天/102-动作系统.html">
             
-                <span>
+                <a href="../第10天/102-动作系统.html">
             
                     
                     10.2 动作系统
             
-                </span>
+                </a>
             
 
             
@@ -1294,14 +1363,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.14.1" >
+        <li class="chapter " data-level="1.14.1" data-path="../第11天/111-animator.html">
             
-                <span>
+                <a href="../第11天/111-animator.html">
             
                     
                     11.1 Animator
             
-                </span>
+                </a>
             
 
             
@@ -1824,8 +1893,82 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="linerender">LineRender</h2>
-<h2 id="ondrawgizmos">OnDrawGizmos</h2>
+                                <h2 id="linerender&#xFF08;&#x7EBF;&#x6027;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#xFF09;">LineRender&#xFF08;&#x7EBF;&#x6027;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#xFF09;</h2>
+<p>&#x8BE5;&#x7EBF;&#x6027;&#x6E32;&#x67D3;&#x7528;&#x4E8E;&#x5728;3D&#x7A7A;&#x95F4;&#x4E2D;&#x7ED8;&#x5236;&#x72EC;&#x7ACB;&#x7EBF;&#x6761;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">useWorldSpace</td>
+<td style="text-align:left">&#x5982;&#x679C;&#x542F;&#x7528;&#xFF0C;&#x8BE5;&#x7EBF;&#x6761;&#x5B9A;&#x4E49;&#x5728;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x516C;&#x5171;&#x51FD;&#x6570;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">SetColors</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x65F6;&#x7EBF;&#x6761;&#x989C;&#x8272;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetPosition</td>
+<td style="text-align:left">&#x5728;&#x7EBF;&#x6761;&#x4E0A;&#x8BBE;&#x7F6E;&#x7EBF;&#x6761;&#x7684;&#x9876;&#x70B9;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetPositions</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x7EBF;&#x6761;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x9876;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetVertexCount</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x7EBF;&#x6761;&#x7684;&#x6BB5;&#x6570;&#x7684;&#x6570;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetWidth</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x7684;&#x7EBF;&#x6761;&#x5BBD;&#x5EA6;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="gizmos-api-&#x53C2;&#x89C1;unity-&#x5E38;&#x7528;-api-227">Gizmos API &#x53C2;&#x89C1;Unity &#x5E38;&#x7528; API 2.27</h2>
+<h3 id="monobehaviourondrawgizmos--&#x7ED8;&#x5236;gizmos">MonoBehaviour.OnDrawGizmos()  (&#x7ED8;&#x5236;Gizmos)</h3>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5728;&#x68C0;&#x89C6;&#x9762;&#x677F;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x88AB;&#x6298;&#x53E0;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C06;&#x4E0D;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+        void OnDrawGizmos() {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawSphere(transform.position, 1);
+        }
+    }
+</code></pre>
+<hr>
+<h3 id="monobehaviourondrawgizmosselected-&#x5F53;&#x9009;&#x62E9;&#x65F6;&#x7ED8;&#x5236;gizmos">MonoBehaviour.OnDrawGizmosSelected() (&#x5F53;&#x9009;&#x62E9;&#x65F6;&#x7ED8;&#x5236;Gizmos)</h3>
+<p>Gizmos&#x53EA;&#x5728;&#x7269;&#x4F53;&#x88AB;&#x9009;&#x62E9;&#x7684;&#x65F6;&#x5019;&#x7ED8;&#x5236;&#x3002;Gizmos&#x4E0D;&#x80FD;&#x88AB;&#x70B9;&#x9009;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x4F7F;&#x8BBE;&#x7F6E;&#x66F4;&#x5BB9;&#x6613;&#x3002;&#x4F8B;&#x5982;:&#x4E00;&#x4E2A;&#x7206;&#x70B8;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x7ED8;&#x5236;&#x4E00;&#x4E2A;&#x7403;&#x6765;&#x663E;&#x793A;&#x7206;&#x70B8;&#x534A;&#x5F84;&#x3002;</p>
+<pre><code class="lang-javascript">    using UnityEngine;
+    using System.Collections;
+
+    public class ExampleClass : MonoBehaviour {
+        float explosionRadius = 5.0f;
+        void OnDrawGizmosSelected () {
+            Gizmos.color = Color.white; 
+            Gizmos.DrawSphere (transform.position, explosionRadius);
+        }
+    }
+</code></pre>
 
                                 
                                 </section>
@@ -1837,6 +1980,14 @@
 
             
                 
+                <a href="72-拖尾效果.html" class="navigation navigation-prev " aria-label="Previous page: 7.2 拖尾效果">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="74-阴影投射器.html" class="navigation navigation-next " aria-label="Next page: 7.4 阴影投射器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1845,7 +1996,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7.3 绘制线的方法","level":"1.10.3","depth":2,"next":{"title":"7.4 阴影投射器","level":"1.10.4","depth":2,"ref":"","articles":[]},"previous":{"title":"7.2 拖尾效果","level":"1.10.2","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第7天/73-绘制线的方法.md","mtime":"2016-11-30T14:17:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-02T16:26:32.605Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.3 绘制线的方法","level":"1.10.3","depth":2,"next":{"title":"7.4 阴影投射器","level":"1.10.4","depth":2,"path":"第7天/74-阴影投射器.md","ref":"第7天/74-阴影投射器.md","articles":[]},"previous":{"title":"7.2 拖尾效果","level":"1.10.2","depth":2,"path":"第7天/72-拖尾效果.md","ref":"第7天/72-拖尾效果.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第7天/73-绘制线的方法.md","mtime":"2016-12-03T14:54:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-03T17:29:07.445Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

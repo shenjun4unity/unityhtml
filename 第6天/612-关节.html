@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../第7天/7.0 第7天.html" />
+    <link rel="next" href="613-力场.html" />
     
     
     <link rel="prev" href="611-布料.html" />
@@ -518,6 +518,45 @@
             
                     
                     2.25 LayerMask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../第2章 Unity 常用 API/226-joint.html">
+            
+                <a href="../第2章 Unity 常用 API/226-joint.html">
+            
+                    
+                    2.26 Joint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="../第2章 Unity 常用 API/227-gizmos.html">
+            
+                <a href="../第2章 Unity 常用 API/227-gizmos.html">
+            
+                    
+                    2.27 Gizmos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="../第2章 Unity 常用 API/228-resourcerequest.html">
+            
+                <a href="../第2章 Unity 常用 API/228-resourcerequest.html">
+            
+                    
+                    2.28 ResourceRequest
             
                 </a>
             
@@ -1029,6 +1068,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9.1.3" data-path="613-力场.html">
+            
+                <a href="613-力场.html">
+            
+                    
+                    6.13 力场
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.4" data-path="614-物理材质.html">
+            
+                <a href="614-物理材质.html">
+            
+                    
+                    6.14 物理材质
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1053,27 +1118,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" >
+        <li class="chapter " data-level="1.10.1" data-path="../第7天/71-角色控制器.html">
             
-                <span>
+                <a href="../第7天/71-角色控制器.html">
             
                     
                     7.1 角色控制器
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" >
+        <li class="chapter " data-level="1.10.2" data-path="../第7天/72-拖尾效果.html">
             
-                <span>
+                <a href="../第7天/72-拖尾效果.html">
             
                     
                     7.2 拖尾效果
             
-                </span>
+                </a>
             
 
             
@@ -1092,14 +1157,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.4" >
+        <li class="chapter " data-level="1.10.4" data-path="../第7天/74-阴影投射器.html">
             
-                <span>
+                <a href="../第7天/74-阴影投射器.html">
             
                     
                     7.4 阴影投射器
             
-                </span>
+                </a>
             
 
             
@@ -1253,27 +1318,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" >
+        <li class="chapter " data-level="1.13.1" data-path="../第10天/101-动画概念.html">
             
-                <span>
+                <a href="../第10天/101-动画概念.html">
             
                     
                     10.1 动画概念
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.13.2" >
+        <li class="chapter " data-level="1.13.2" data-path="../第10天/102-动作系统.html">
             
-                <span>
+                <a href="../第10天/102-动作系统.html">
             
                     
                     10.2 动作系统
             
-                </span>
+                </a>
             
 
             
@@ -1298,14 +1363,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.14.1" >
+        <li class="chapter " data-level="1.14.1" data-path="../第11天/111-animator.html">
             
-                <span>
+                <a href="../第11天/111-animator.html">
             
                     
                     11.1 Animator
             
-                </span>
+                </a>
             
 
             
@@ -1828,9 +1893,589 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x94F0;&#x94FE;&#x5173;&#x8282;">&#x94F0;&#x94FE;&#x5173;&#x8282;</h2>
-<h2 id="&#x56FA;&#x5B9A;&#x5173;&#x8282;">&#x56FA;&#x5B9A;&#x5173;&#x8282;</h2>
-<h2 id="&#x5F39;&#x7C27;&#x5173;&#x8282;">&#x5F39;&#x7C27;&#x5173;&#x8282;</h2>
+                                <h2 id="hinge-joint&#xFF08;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;">Hinge Joint&#xFF08;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;</h2>
+<p>&#x2003;&#x2003;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x7531;&#x4E24;&#x4E2A;&#x521A;&#x4F53;&#x7EC4;&#x6210;&#xFF0C;&#x8BE5;&#x5173;&#x8282;&#x4F1A;&#x5BF9;&#x521A;&#x4F53;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x4EEC;&#x5C31;&#x597D;&#x50CF;&#x88AB;&#x8FDE;&#x63A5;&#x5728;&#x4E00;&#x4E2A;&#x94F0;&#x94FE;&#x4E0A;&#x90A3;&#x6837;&#x8FD0;&#x52A8;&#x3002;&#x5B83;&#x975E;&#x5E38;&#x9002;&#x7528;&#x4E8E;&#x5BF9;&#x95E8;&#x7684;&#x6A21;&#x62DF;&#xFF0C;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x5BF9;&#x6A21;&#x578B;&#x94FE;&#x53CA;&#x949F;&#x6446;&#x7B49;&#x7269;&#x4F53;&#x7684;&#x6A21;&#x62DF;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Connected Body</td>
+<td style="text-align:left">&#x8FDE;&#x63A5;&#x521A;&#x4F53;&#x3002;&#xFF08;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x4E3A;&#x5173;&#x8282;&#x6307;&#x5B9A;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x521A;&#x4F53;&#xFF0C;&#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x8BE5;&#x5173;&#x8282;&#x5C06;&#x4E0E;&#x4E16;&#x754C;&#x76F8;&#x8FDE;&#x63A5;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">Anchor</td>
+<td style="text-align:left">&#x951A;&#x70B9;&#x3002;&#xFF08;&#x521A;&#x4F53;&#x53EF;&#x56F4;&#x7ED5;&#x951A;&#x70B9;&#x8FDB;&#x884C;&#x6446;&#x52A8;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x951A;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x8BE5;&#x503C;&#x5E94;&#x7528;&#x4E8E;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">Axis</td>
+<td style="text-align:left">&#x8F74;&#x3002;&#xFF08;&#x5B9A;&#x4E49;&#x4E86;&#x521A;&#x4F53;&#x6446;&#x52A8;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x8BE5;&#x503C;&#x5E94;&#x7528;&#x4E8E;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Use Spring</strong></td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x5F39;&#x7C27;&#x3002;&#xFF08;&#x52FE;&#x9009;&#x8BE5;&#x9879;&#xFF0C;&#x5219;&#x5F39;&#x7C27;&#x4F1A;&#x4F7F;&#x521A;&#x4F53;&#x548C;&#x4E0E;&#x5176;&#x94FE;&#x63A5;&#x7684;&#x4E3B;&#x4F53;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x89D2;&#x5EA6;&#x3002;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x5F53; Use Spring &#x53C2;&#x6570;&#x5F00;&#x542F;&#x65F6;&#x6B64;&#x5C5E;&#x6027;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x529B;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x4F7F;&#x5176;&#x79FB;&#x52A8;&#x5230;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Target Position</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x89D2;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x76EE;&#x6807;&#x89D2;&#x5EA6;&#xFF0C;&#x5F39;&#x7C27;&#x4F1A;&#x62C9;&#x5411;&#x6B64;&#x89D2;&#x5EA6;&#xFF0C;&#x4EE5;&#x5EA6;&#x4E3A;&#x6D4B;&#x91CF;&#x5355;&#x4F4D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>UseMotor</strong></td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x9A6C;&#x8FBE;&#x3002;&#x52FE;&#x9009;&#x6B64;&#x9879;&#xFF0C;&#x9A6C;&#x8FBE;&#x4F1A;&#x4F7F;&#x5BF9;&#x8C61;&#x53D1;&#x751F;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Motro</td>
+<td style="text-align:left">&#x9A6C;&#x8FBE;&#x3002;&#x5F53; Use Motor &#x53C2;&#x6570;&#x5F00;&#x542F;&#x65F6;&#xFF0C;&#x6B64;&#x5C5E;&#x6027;&#x4F1A;&#x88AB;&#x7528;&#x5230;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Target Velocity</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x9884;&#x671F;&#x5C06;&#x8981;&#x8FBE;&#x5230;&#x7684;&#x901F;&#x5EA6;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Force</td>
+<td style="text-align:left">&#x4F5C;&#x7528;&#x529B;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x800C;&#x65BD;&#x52A0;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Free Spin</td>
+<td style="text-align:left">&#x81EA;&#x7531;&#x8F6C;&#x52A8;&#x3002;&#x52FE;&#x9009;&#x6B64;&#x9879;&#xFF0C;&#x5219;&#x9A6C;&#x8FBE;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x505C;&#x6B62;&#xFF0C;&#x65CB;&#x8F6C;&#x53EA;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x5FEB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Use Limits</strong></td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x9650;&#x5236;&#x3002;&#x52FE;&#x9009;&#x6B64;&#x9879;&#xFF0C;&#x5219;&#x94F0;&#x94FE;&#x7684;&#x89D2;&#x5EA6;&#x5C06;&#x88AB;&#x9650;&#x5B9A;&#x5728;&#x6700;&#x5927;&#x503C;&#x548C;&#x6700;&#x5C0F;&#x503C;&#x4E4B;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Limits</td>
+<td style="text-align:left">&#x9650;&#x5236;&#x3002;&#x5F53; Use Limits &#x5F00;&#x542F;&#x65F6;&#xFF0C;&#x6B64;&#x5C5E;&#x6027;&#x5C06;&#x4F1A;&#x88AB;&#x7528;&#x5230;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Min</td>
+<td style="text-align:left">&#x6700;&#x5C0F;&#x503C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x94F0;&#x94FE;&#x80FD;&#x8FBE;&#x5230;&#x7684;&#x6700;&#x5C0F;&#x89D2;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Max</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x503C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x94F0;&#x94FE;&#x80FD;&#x8FBE;&#x5230;&#x7684;&#x6700;&#x5927;&#x89D2;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Min Bounce</td>
+<td style="text-align:left">&#x6700;&#x5C0F;&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x5BF9;&#x8C61;&#x89E6;&#x5230;&#x6700;&#x5C0F;&#x9650;&#x5236;&#x65F6;&#x7684;&#x53CD;&#x5F39;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Max Bounce</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x5BF9;&#x8C61;&#x89E6;&#x5230;&#x6700;&#x5927;&#x9650;&#x5236;&#x65F6;&#x7684;&#x53CD;&#x5F39;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Force</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x529B;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x65AD;&#x5F00;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Torque</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x8F6C;&#x77E9;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x65AD;&#x5F00;&#x94F0;&#x94FE;&#x8282;&#x70B9;&#x6240;&#x9700;&#x7684;&#x8F6C;&#x77E9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5355;&#x72EC;&#x7684;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x8981;&#x5E94;&#x7528;&#x5230;&#x4E00;&#x4E2A;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x94F0;&#x94FE;&#x6216;&#x7ED5;&#x7740; Anchor &#x5C5E;&#x6027;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x70B9;&#x6765;&#x65CB;&#x8F6C;&#xFF0C;&#x6309;&#x7167; Axis &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x7684;&#x8F74;&#x6765;&#x79FB;&#x52A8;&#x3002;&#x4E0D;&#x7528;&#x7ED9;&#x5173;&#x8282;&#x7684; Connected Body &#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x5E0C;&#x671B;&#x5173;&#x8282;&#x7684; Transform &#x5C5E;&#x6027;&#x4F9D;&#x8D56;&#x4E8E;&#x9644;&#x52A0;&#x5BF9;&#x8C61;&#x7684; Transform &#x5C5E;&#x6027;&#x65F6;&#x624D;&#x4E3A;&#x5173;&#x8282;&#x7684; Connected Body &#x5C5E;&#x6027;&#x6765;&#x6DFB;&#x52A0;&#x5BF9;&#x8C61;&#x3002;&#x591A;&#x4E2A;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x4E5F;&#x53EF;&#x4EE5;&#x4E32;&#x8054;&#x8D77;&#x6765;&#x5F62;&#x6210;&#x4E00;&#x6761;&#x94FE;&#x6761;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x94FE;&#x6761;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x73AF;&#x6DFB;&#x52A0;&#x5173;&#x8282;&#xFF0C;&#x5E76;&#x5411; Connected Body &#x90A3;&#x6837;&#x6DFB;&#x52A0;&#x5230;&#x4E0B;&#x4E00;&#x73AF;&#x4E0A;&#x3002;</p>
+<hr>
+<h2 id="fixed-joint&#xFF08;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;">Fixed Joint&#xFF08;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;</h2>
+<p>&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x7EA6;&#x675F;&#x4E00;&#x4E2A;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5BF9;&#x53E6;&#x4E00;&#x4E2A;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x7684;&#x8FD0;&#x52A8;&#x3002;&#x7C7B;&#x4F3C;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x7236;&#x5B50;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x5B83;&#x662F;&#x901A;&#x8FC7;&#x7269;&#x7406;&#x7CFB;&#x7EDF;&#x6765;&#x5B9E;&#x73B0;&#x800C;&#x4E0D;&#x50CF;&#x7236;&#x5B50;&#x5173;&#x7CFB;&#x90A3;&#x6837;&#x662F;&#x901A;&#x8FC7; Transform &#x5C5E;&#x6027;&#x6765;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#x3002;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x9002;&#x7528;&#x4E8E;&#x4EE5;&#x4E0B;&#x7684;&#x60C5;&#x5F62;&#xFF1A;&#x5F53;&#x5E0C;&#x671B;&#x5C06;&#x5BF9;&#x8C61;&#x8F83;&#x5BB9;&#x6613;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5206;&#x5F00;&#x65F6;&#xFF0C;&#x6216;&#x8005;&#x8FDE;&#x63A5;&#x4E24;&#x4E2A;&#x6CA1;&#x6709;&#x7236;&#x5B50;&#x5173;&#x7CFB;&#x7684;&#x5BF9;&#x8C61;&#x4F7F;&#x5176;&#x4E00;&#x8D77;&#x8FD0;&#x52A8;&#xFF0C;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x7684;&#x5BF9;&#x8C61;&#x81EA;&#x8EAB;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Connected Body</td>
+<td style="text-align:left">&#x8FDE;&#x63A5;&#x521A;&#x4F53;&#x3002;&#xFF08;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x4E3A;&#x5173;&#x8282;&#x6307;&#x5B9A;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x521A;&#x4F53;&#xFF0C;&#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x8BE5;&#x5173;&#x8282;&#x5C06;&#x4E0E;&#x4E16;&#x754C;&#x76F8;&#x8FDE;&#x63A5;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Force</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x529B;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x94F0;&#x94FE;&#x5173;&#x8282;&#x65AD;&#x5F00;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Torque</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x8F6C;&#x77E9;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x65AD;&#x5F00;&#x94F0;&#x94FE;&#x8282;&#x70B9;&#x6240;&#x9700;&#x7684;&#x8F6C;&#x77E9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x6709;&#x65F6;&#x6E38;&#x620F;&#x4E2D;&#x4F1A;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x60C5;&#x666F;&#xFF1A;&#x5F53;&#x5E0C;&#x671B;&#x8981;&#x67D0;&#x4E9B;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x6682;&#x65F6;&#x6216;&#x6C38;&#x4E45;&#x6027;&#x7684;&#x7C98;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x5F88;&#x9002;&#x5408;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#x3002;&#x8BE5;&#x7EC4;&#x4EF6;&#x4E0D;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x6765;&#x66F4;&#x6539;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x60F3;&#x8981;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E3A;&#x90A3;&#x4E9B;&#x8981;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x7684;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x53EF;&#x901A;&#x8FC7; Break Force &#x548C; Break Torque &#x5C5E;&#x6027;&#x6765;&#x8BBE;&#x7F6E;&#x5173;&#x8282;&#x7684;&#x5F3A;&#x5EA6;&#x6781;&#x9650;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x4E0D;&#x662F;&#x65E0;&#x7A77;&#x5927;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x65BD;&#x52A0;&#x5230;&#x5BF9;&#x8C61;&#x8EAB;&#x4E0A;&#x7684;&#x529B;&#x6216;&#x8F6C;&#x77E9;&#x5927;&#x4E8E;&#x6B64;&#x6781;&#x9650;&#x503C;&#x65F6;&#xFF0C;&#x56FA;&#x5B9A;&#x5173;&#x8282;&#x5C06;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x5176;&#x5BF9;&#x5BF9;&#x8C61;&#x7684;&#x7EA6;&#x675F;&#x4E5F;&#x5C31;&#x968F;&#x5373;&#x5931;&#x6548;&#x3002;</p>
+<hr>
+<h2 id="spring&#xFF08;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;">Spring&#xFF08;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;</h2>
+<p>&#x2003;&#x2003;   &#x5F39;&#x7C27;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#x53EF;&#x5C06;&#x4E24;&#x4E2A;&#x521A;&#x4F53;&#x8FDE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4F7F;&#x5176;&#x50CF;&#x8FDE;&#x63A5;&#x7740;&#x5F39;&#x7C27;&#x90A3;&#x6837;&#x8FD0;&#x52A8;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x5F3A;&#x5EA6;&#xFF0C;&#x6570;&#x503C;&#x8D8A;&#x9AD8;&#x5F39;&#x7C27;&#x7684;&#x5F3A;&#x5EA6;&#x5C31;&#x8D8A;&#x5927;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x963B;&#x5C3C;&#x7CFB;&#x6570;&#xFF0C;&#x963B;&#x5C3C;&#x7CFB;&#x6570;&#x8D8A;&#x5927;&#xFF0C;&#x5F39;&#x7C27;&#x5F3A;&#x5EA6;&#x51CF;&#x5C0F;&#x7684;&#x5E45;&#x5EA6;&#x8D8A;&#x5927;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Min Distance</td>
+<td style="text-align:left">&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x542F;&#x7528;&#x7684;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#x503C;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5F53;&#x524D;&#x8DDD;&#x79BB;&#x4E0E;&#x521D;&#x59CB;&#x8DDD;&#x79BB;&#x7684;&#x5DEE;&#x5927;&#x4E8E;&#x8BE5;&#x503C;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x5F00;&#x542F;&#x5F39;&#x7C27;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Max Distance</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x8DDD;&#x79BB;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x542F;&#x7528;&#x7684;&#x6700;&#x5927;&#x8DDD;&#x79BB;&#x503C;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5F53;&#x524D;&#x8DDD;&#x79BB;&#x4E0E;&#x521D;&#x59CB;&#x8DDD;&#x79BB;&#x7684;&#x5DEE;&#x5C0F;&#x4E8E;&#x8BE5;&#x503C;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x5F00;&#x542F;&#x5F39;&#x7C27;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Force</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x529B;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x65AD;&#x5F00;&#x6240;&#x9700;&#x7684;&#x8F6C;&#x77E9;&#x529B;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x521A;&#x4F53;&#x7684;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x88AB;&#x62C9;&#x5411;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x53EF;&#x4EE5;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x521A;&#x4F53;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x4E16;&#x754C;&#x3002;&#x5F53;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x79BB;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x8D8A;&#x6765;&#x8D8A;&#x8FDC;&#x65F6;&#xFF0C;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x4F1A;&#x5BF9;&#x5176;&#x65BD;&#x52A0;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x529B;&#x4F7F;&#x5176;&#x56DE;&#x5230;&#x76EE;&#x6807;&#x7684;&#x539F;&#x70B9;&#x4F4D;&#x7F6E;&#xFF0C;&#x7C7B;&#x4F3C;&#x6A61;&#x76AE;&#x7B4B;&#x6216;&#x8005;&#x5F39;&#x5F13;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5F53;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x88AB;&#x521B;&#x5EFA;&#x540E;&#xFF08;&#x9884;&#x89C8;&#x6E38;&#x620F;&#x6A21;&#x5F0F;&#x4E0B;&#xFF09;&#xFF0C;&#x5176;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x662F;&#x7531;&#x4ECE;&#x951A;&#x70B9;&#x5230;&#x8FDE;&#x63A5;&#x7684;&#x521A;&#x4F53;&#xFF08;&#x6216;&#x4E16;&#x754C;&#xFF09;&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x6240;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x5728;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x5C06;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x8BBE;&#x5B9A;&#x7ED9;&#x89D2;&#x8272;&#x6216;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x6765;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5B9E;&#x65F6;&#x7684;&#x63A8;&#x62C9;&#x5F39;&#x7C27;&#x7684;&#x884C;&#x4E3A;&#x5C31;&#x76F8;&#x5BF9;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#x3002;&#x5982;&#x679C;&#x60F3;&#x901A;&#x8FC7;&#x5F39;&#x7C27;&#x5173;&#x8282;&#x6765;&#x63A7;&#x5236;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x521A;&#x4F53;&#x7684;&#x7A7A;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8BE5;&#x7A7A;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x5230; Connected Rigidbody &#x5C5E;&#x6027;&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x6765;&#x63A7;&#x5236;&#x7A7A;&#x5BF9;&#x8C61;&#x7684;&#x79FB;&#x52A8;&#xFF0C;&#x8FDB;&#x800C;&#x5F39;&#x7C27;&#x4E5F;&#x4F1A;&#x968F;&#x7740;&#x7A7A;&#x5BF9;&#x8C61;&#x7684;&#x4F4D;&#x79FB;&#x800C;&#x79FB;&#x52A8;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x9700;&#x8981;&#x5236;&#x5B9A; Connected Body &#x5C5E;&#x6027;&#x6765;&#x8FD0;&#x8F6C;&#x5173;&#x8282;&#x3002;</p>
+<p>&#x5728;&#x7F16;&#x8F91;&#x5668;&#x8FDB;&#x5165;&#x5230;&#x6E38;&#x620F;&#x6A21;&#x5F0F;&#x524D;&#xFF0C;&#x5148;&#x5BF9;&#x5F39;&#x7C27;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x597D;&#x7406;&#x60F3;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5F39;&#x7C27;&#x5173;&#x8282;&#x6240;&#x5728;&#x7684;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;&#x3002;</p>
+</blockquote>
+<hr>
+<h2 id="character-joint&#xFF08;&#x89D2;&#x8272;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;">Character Joint&#xFF08;&#x89D2;&#x8272;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;</h2>
+<p>&#x89D2;&#x8272;&#x5173;&#x8282;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8868;&#x73B0;&#x5E03;&#x5A03;&#x5A03;&#x6548;&#x679C;&#xFF0C;&#x5B83;&#x662F;&#x6269;&#x5C55;&#x7684;&#x7403;&#x5173;&#x8282;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x9650;&#x5236;&#x6BCF;&#x4E00;&#x4E2A;&#x8F74;&#x5411;&#x4E0A;&#x7684;&#x5173;&#x8282;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Connect Body</td>
+<td style="text-align:left">&#x8FDE;&#x63A5;&#x521A;&#x4F53;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Anchor</td>
+<td style="text-align:left">&#x951A;&#x70B9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Axis</td>
+<td style="text-align:left">&#x626D;&#x52A8;&#x8F74;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x7684;&#x626D;&#x52A8;&#x8F74;&#xFF0C;&#x4EE5;&#x6A59;&#x8272;&#x7684;&#x5706;&#x9525;gizmos&#x8868;&#x793A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Swing Axis</td>
+<td style="text-align:left">&#x6446;&#x52A8;&#x8F74;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x7684;&#x6446;&#x52A8;&#x8F74;&#xFF0C;&#x4EE5;&#x7EFF;&#x8272;&#x7684;&#x5706;&#x9525;gizmos&#x8868;&#x793A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Low Twist Limit</td>
+<td style="text-align:left">&#x626D;&#x66F2;&#x4E0B;&#x9650;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x7684;&#x4E0B;&#x9650;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x7684;&#x4E0B;&#x9650;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x4E0B;&#x9650;&#x7684;&#x53CD;&#x5F39;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x4E0B;&#x9650;&#x7684;&#x5F39;&#x7C27;&#x5F3A;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x4E0B;&#x9650;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">High Twist Limit</td>
+<td style="text-align:left">&#x626D;&#x66F2;&#x4E0A;&#x9650;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x7684;&#x4E0A;&#x9650;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x4E0A;&#x9650;&#x7684;&#x53CD;&#x5F39;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x4E0A;&#x9650;&#x7684;&#x5F39;&#x7C27;&#x5F3A;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5173;&#x8282;&#x626D;&#x66F2;&#x4E0A;&#x9650;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Swing 1Limit</td>
+<td style="text-align:left">&#x6446;&#x52A8;&#x9650;&#x5236;1&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Swing 2Limit</td>
+<td style="text-align:left">&#x6446;&#x52A8;&#x9650;&#x5236;2&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Force</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Torque</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x8F6C;&#x77E9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="configurable-joint&#xFF08;&#x53EF;&#x914D;&#x7F6E;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;">Configurable Joint&#xFF08;&#x53EF;&#x914D;&#x7F6E;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#xFF09;</h2>
+<p>&#x2003;&#x2003;&#x53EF;&#x914D;&#x7F6E;&#x5173;&#x8282;&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x5173;&#x8282;&#xFF0C;&#x5B83;&#x5F00;&#x653E;&#x4E86; PhysX &#x5F15;&#x64CE;&#x4E2D;&#x6240;&#x6709;&#x4E0E;&#x5173;&#x8282;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x50CF;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x5173;&#x8282;&#x90A3;&#x6837;&#x6765;&#x521B;&#x9020;&#x5404;&#x79CD;&#x884C;&#x4E3A;&#x3002;&#x53EF;&#x914D;&#x7F6E;&#x5173;&#x8282;&#x6709;&#x4E24;&#x7C7B;&#x4E3B;&#x8981;&#x7684;&#x529F;&#x80FD;&#xFF1A;&#x79FB;&#x52A8;&#xFF0F;&#x65CB;&#x8F6C;&#x9650;&#x5236;&#x548C;&#x79FB;&#x52A8;&#xFF0F;&#x65CB;&#x8F6C;&#x52A0;&#x901F;&#x5EA6;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Connected Body</td>
+<td style="text-align:left">&#x8FDE;&#x63A5;&#x521A;&#x4F53;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Anchor</td>
+<td style="text-align:left">&#x951A;&#x70B9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Axis</td>
+<td style="text-align:left">&#x4E3B;&#x8F74;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Secondary Axis</td>
+<td style="text-align:left">&#x526F;&#x8F74;&#x3002;&#x4E3B;&#x8F74;&#x548C;&#x526F;&#x8F74;&#x5171;&#x540C;&#x51B3;&#x5B9A;&#x4E86;&#x5173;&#x8282;&#x7684;&#x5C40;&#x90E8;&#x5750;&#x6807;&#xFF0C;&#x7B2C;3&#x4E2A;&#x8F74;&#x4E0E;&#x8FD9;&#x4E24;&#x4E2A;&#x8F74;&#x6240;&#x6784;&#x6210;&#x7684;&#x5E73;&#x9762;&#x76F8;&#x5782;&#x76F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">XMotion</td>
+<td style="text-align:left">X&#x8F74;&#x79FB;&#x52A8;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5728;X&#x8F74;&#x7684;&#x79FB;&#x52A8;&#x5F62;&#x5F0F;&#xFF1A;&#x81EA;&#x7531;&#x79FB;&#x52A8;&#x3001;&#x9501;&#x5B9A;&#x79FB;&#x52A8;&#x53CA;&#x9650;&#x5236;&#x6027;&#x79FB;&#x52A8;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">YMotion</td>
+<td style="text-align:left">Y&#x8F74;&#x79FB;&#x52A8;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5728;Y&#x8F74;&#x7684;&#x79FB;&#x52A8;&#x5F62;&#x5F0F;&#xFF1A;&#x81EA;&#x7531;&#x79FB;&#x52A8;&#x3001;&#x9501;&#x5B9A;&#x79FB;&#x52A8;&#x53CA;&#x9650;&#x5236;&#x6027;&#x79FB;&#x52A8;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ZMotion</td>
+<td style="text-align:left">Z&#x8F74;&#x79FB;&#x52A8;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5728;Z&#x8F74;&#x7684;&#x79FB;&#x52A8;&#x5F62;&#x5F0F;&#xFF1A;&#x81EA;&#x7531;&#x79FB;&#x52A8;&#x3001;&#x9501;&#x5B9A;&#x79FB;&#x52A8;&#x53CA;&#x9650;&#x5236;&#x6027;&#x79FB;&#x52A8;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Angular XMotion</td>
+<td style="text-align:left">X&#x8F74;&#x65CB;&#x8F6C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5728;X&#x8F74;&#x7684;&#x65CB;&#x8F6C;&#x5F62;&#x5F0F;&#xFF1A;&#x81EA;&#x7531;&#x65CB;&#x8F6C;&#x3001;&#x9501;&#x5B9A;&#x65CB;&#x8F6C;&#x53CA;&#x9650;&#x5236;&#x6027;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Angular YMotion</td>
+<td style="text-align:left">Y&#x8F74;&#x65CB;&#x8F6C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5728;Y&#x8F74;&#x7684;&#x65CB;&#x8F6C;&#x5F62;&#x5F0F;&#xFF1A;&#x81EA;&#x7531;&#x65CB;&#x8F6C;&#x3001;&#x9501;&#x5B9A;&#x65CB;&#x8F6C;&#x53CA;&#x9650;&#x5236;&#x6027;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Angular ZMotion</td>
+<td style="text-align:left">Z&#x8F74;&#x65CB;&#x8F6C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x5728;Z&#x8F74;&#x7684;&#x65CB;&#x8F6C;&#x5F62;&#x5F0F;&#xFF1A;&#x81EA;&#x7531;&#x65CB;&#x8F6C;&#x3001;&#x9501;&#x5B9A;&#x65CB;&#x8F6C;&#x53CA;&#x9650;&#x5236;&#x6027;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Linear Limit</td>
+<td style="text-align:left">&#x7EBF;&#x6027;&#x9650;&#x5236;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x81EA;&#x5173;&#x8282;&#x539F;&#x70B9;&#x7684;&#x8DDD;&#x79BB;&#x4E3A;&#x57FA;&#x51C6;&#x5BF9;&#x5176;&#x8FD0;&#x52A8;&#x8FB9;&#x754C;&#x52A0;&#x4EE5;&#x9650;&#x5B9A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x9650;&#x5236;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x4ECE;&#x539F;&#x70B9;&#x5230;&#x8FB9;&#x754C;&#x7684;&#x8DDD;&#x79BB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5230;&#x8FB9;&#x754C;&#x65F6;&#x65BD;&#x52A0;&#x7ED9;&#x5B83;&#x7684;&#x53CD;&#x5F39;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5C06;&#x5BF9;&#x8C61;&#x62C9;&#x56DE;&#x8FB9;&#x754C;&#x7684;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Low Anglar XLimit</td>
+<td style="text-align:left">X&#x8F74;&#x65CB;&#x8F6C;&#x4E0B;&#x9650;&#x3002;&#x4EE5;&#x4E0E;&#x5173;&#x8282;&#x521D;&#x59CB;&#x65CB;&#x8F6C;&#x7684;&#x5DEE;&#x503C;&#x4E3A;&#x57FA;&#x7840;&#x8BBE;&#x5B9A;&#x65CB;&#x8F6C;&#x7EA6;&#x675F;&#x4E0B;&#x9650;&#x7684;&#x8FB9;&#x754C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x7684;&#x9650;&#x5236;&#x89D2;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x7684;&#x4E0B;&#x9650;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5230;&#x8FB9;&#x754C;&#x65F6;&#x65BD;&#x52A0;&#x7ED9;&#x5B83;&#x7684;&#x53CD;&#x5F39;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5C06;&#x5BF9;&#x8C61;&#x62C9;&#x56DE;&#x8FB9;&#x754C;&#x7684;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Hight Anglar XLimit</td>
+<td style="text-align:left">X&#x8F74;&#x65CB;&#x8F6C;&#x4E0B;&#x9650;&#x3002;&#x4EE5;&#x4E0E;&#x5173;&#x8282;&#x521D;&#x59CB;&#x65CB;&#x8F6C;&#x7684;&#x5DEE;&#x503C;&#x4E3A;&#x57FA;&#x7840;&#x8BBE;&#x5B9A;&#x65CB;&#x8F6C;&#x7EA6;&#x675F;&#x4E0A;&#x9650;&#x7684;&#x8FB9;&#x754C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x7684;&#x9650;&#x5236;&#x89D2;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x7684;&#x4E0A;&#x9650;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5230;&#x8FB9;&#x754C;&#x65F6;&#x65BD;&#x52A0;&#x7ED9;&#x5B83;&#x7684;&#x53CD;&#x5F39;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5C06;&#x5BF9;&#x8C61;&#x62C9;&#x56DE;&#x8FB9;&#x754C;&#x7684;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Anglar YLimit</td>
+<td style="text-align:left">Y&#x8F74;&#x65CB;&#x8F6C;&#x9650;&#x5236;&#x3002;&#x4EE5;&#x4E0E;&#x5173;&#x8282;&#x521D;&#x59CB;&#x65CB;&#x8F6C;&#x7684;&#x5DEE;&#x503C;&#x4E3A;&#x57FA;&#x7840;&#x8BBE;&#x5B9A;&#x65CB;&#x8F6C;&#x7EA6;&#x675F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x7684;&#x9650;&#x5236;&#x89D2;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x7684;&#x4E0A;&#x9650;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5230;&#x8FB9;&#x754C;&#x65F6;&#x65BD;&#x52A0;&#x7ED9;&#x5B83;&#x7684;&#x53CD;&#x5F39;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5C06;&#x5BF9;&#x8C61;&#x62C9;&#x56DE;&#x8FB9;&#x754C;&#x7684;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Anglar ZLimit</td>
+<td style="text-align:left">Z&#x8F74;&#x65CB;&#x8F6C;&#x9650;&#x5236;&#x3002;&#x4EE5;&#x4E0E;&#x5173;&#x8282;&#x521D;&#x59CB;&#x65CB;&#x8F6C;&#x7684;&#x5DEE;&#x503C;&#x4E3A;&#x57FA;&#x7840;&#x8BBE;&#x5B9A;&#x65CB;&#x8F6C;&#x7EA6;&#x675F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Limit</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x7684;&#x9650;&#x5236;&#x89D2;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x7684;&#x4E0A;&#x9650;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Bounciness</td>
+<td style="text-align:left">&#x53CD;&#x5F39;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5230;&#x8FB9;&#x754C;&#x65F6;&#x65BD;&#x52A0;&#x7ED9;&#x5B83;&#x7684;&#x53CD;&#x5F39;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Spring</td>
+<td style="text-align:left">&#x5F39;&#x7C27;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5C06;&#x5BF9;&#x8C61;&#x62C9;&#x56DE;&#x8FB9;&#x754C;&#x7684;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Damper</td>
+<td style="text-align:left">&#x963B;&#x5C3C;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x963B;&#x5C3C;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Target Position</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3002;&#x5173;&#x8282;&#x5728;X&#x3001;Y&#x3001;Z&#x4E09;&#x4E2A;&#x8F74;&#x4E0A;&#x5E94;&#x8FBE;&#x5230;&#x7684;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Target Velocity</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3002;&#x5173;&#x8282;&#x5728;X&#x3001;Y&#x3001;Z&#x4E09;&#x4E2A;&#x8F74;&#x4E0A;&#x5E94;&#x8FBE;&#x5230;&#x7684;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">XDrive</td>
+<td style="text-align:left">X&#x8F74;&#x9A71;&#x52A8;&#x3002;&#x8BBE;&#x5B9A;&#x4E86;&#x5BF9;&#x8C61;&#x6CBF;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;X&#x8F74;&#x7684;&#x8FD0;&#x52A8;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Mode</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3001;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3001;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53CA;&#x901F;&#x5EA6;&#x3001;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Spring</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x3002;&#x671D;&#x9884;&#x5B9A;&#x4E49;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x76AE;&#x7B4B;&#x7684;&#x62C9;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Damper</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x963B;&#x5C3C;&#x3002;&#x62B5;&#x6297;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Maximum Force</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x3002;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x671D;&#x9884;&#x5B9A;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Velocity&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">YDrive</td>
+<td style="text-align:left">Y&#x8F74;&#x9A71;&#x52A8;&#x3002;&#x8BBE;&#x5B9A;&#x4E86;&#x5BF9;&#x8C61;&#x6CBF;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;Y&#x8F74;&#x7684;&#x8FD0;&#x52A8;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Mode</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3001;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3001;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53CA;&#x901F;&#x5EA6;&#x3001;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Spring</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x3002;&#x671D;&#x9884;&#x5B9A;&#x4E49;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x76AE;&#x7B4B;&#x7684;&#x62C9;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Damper</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x963B;&#x5C3C;&#x3002;&#x62B5;&#x6297;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Maximum Force</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x3002;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x671D;&#x9884;&#x5B9A;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Velocity&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ZDrive</td>
+<td style="text-align:left">Z&#x8F74;&#x9A71;&#x52A8;&#x3002;&#x8BBE;&#x5B9A;&#x4E86;&#x5BF9;&#x8C61;&#x6CBF;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;Z&#x8F74;&#x7684;&#x8FD0;&#x52A8;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Mode</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3001;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3001;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53CA;&#x901F;&#x5EA6;&#x3001;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Spring</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x3002;&#x671D;&#x9884;&#x5B9A;&#x4E49;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x76AE;&#x7B4B;&#x7684;&#x62C9;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Damper</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x963B;&#x5C3C;&#x3002;&#x62B5;&#x6297;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Maximum Force</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x3002;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x671D;&#x9884;&#x5B9A;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Velocity&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Target Rotation</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x65CB;&#x8F6C;&#x3002;&#x76EE;&#x6807;&#x65CB;&#x8F6C;&#x662F;&#x4E00;&#x4E2A;&#x56DB;&#x5143;&#x6570;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x5173;&#x8282;&#x5E94;&#x5F53;&#x65CB;&#x8F6C;&#x5230;&#x7684;&#x89D2;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Target Angular Velocity</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x65CB;&#x8F6C;&#x89D2;&#x901F;&#x5EA6;&#x3002;&#x76EE;&#x6807;&#x65CB;&#x8F6C;&#x89D2;&#x901F;&#x5EA6;&#x662F;&#x4E00;&#x4E2A;&#x4E09;&#x7EF4;&#x5411;&#x91CF;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x5173;&#x8282;&#x5E94;&#x5F53;&#x65CB;&#x8F6C;&#x5230;&#x7684;&#x89D2;&#x901F;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Rotation Drive Mode X&amp;Y&amp;Z</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#x3002;&#x901A;&#x8FC7; X&amp;Y&amp;Z &#x8F74;&#x9A71;&#x52A8;&#x6216;&#x63D2;&#x503C;&#x9A71;&#x52A8;&#x6765;&#x63A7;&#x5236;&#x5BF9;&#x8C61;&#x81EA;&#x8EAB;&#x7684;&#x65CB;&#x8F6C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Angular XDrive</td>
+<td style="text-align:left">X &#x8F74;&#x89D2;&#x9A71;&#x52A8;&#x3002;&#x8BE5;&#x9879;&#x8BBE;&#x5B9A;&#x4E86;&#x5173;&#x8282;&#x5982;&#x4F55;&#x56F4;&#x7ED5; X &#x8F74;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;&#xFF0C;&#x53EA;&#x6709;&#x5F53; Rotation Drive Mode &#x4E3A; Swing &amp; Twist &#x65F6;&#x6B64;&#x9879;&#x624D;&#x751F;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Mode</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3001;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3001;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53CA;&#x901F;&#x5EA6;&#x3001;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Spring</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x3002;&#x671D;&#x9884;&#x5B9A;&#x4E49;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x76AE;&#x7B4B;&#x7684;&#x62C9;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Damper</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x963B;&#x5C3C;&#x3002;&#x62B5;&#x6297;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Maximum Force</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x3002;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x671D;&#x9884;&#x5B9A;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Velocity&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Angular YZDrive</td>
+<td style="text-align:left">YZ &#x8F74;&#x89D2;&#x9A71;&#x52A8;&#x3002;&#x8BE5;&#x9879;&#x8BBE;&#x5B9A;&#x4E86;&#x5173;&#x8282;&#x5982;&#x4F55;&#x56F4;&#x7ED5; Y &#x8F74;&#x548C; Z &#x8F74;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;&#xFF0C;&#x53EA;&#x6709;&#x5F53; Rotation Drive Mode &#x4E3A; Swing &amp; Twist &#x65F6;&#x6B64;&#x9879;&#x624D;&#x751F;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Mode</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3001;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3001;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53CA;&#x901F;&#x5EA6;&#x3001;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Spring</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x3002;&#x671D;&#x9884;&#x5B9A;&#x4E49;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x76AE;&#x7B4B;&#x7684;&#x62C9;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Damper</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x963B;&#x5C3C;&#x3002;&#x62B5;&#x6297;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Maximum Force</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x3002;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x671D;&#x9884;&#x5B9A;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Velocity&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Slerp Drive</td>
+<td style="text-align:left">&#x63D2;&#x503C;&#x9A71;&#x52A8;&#x3002;&#x8BE5;&#x9879;&#x8BBE;&#x5B9A;&#x4E86;&#x5173;&#x8282;&#x5982;&#x4F55;&#x56F4;&#x7ED5;&#x5C40;&#x90E8;&#x6240;&#x6709;&#x7684;&#x5750;&#x6807;&#x8F74;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;&#xFF0C;&#x53EA;&#x6709;&#x5F53; Rotation Drive Mode &#x4E3A; Slerp &#x65F6;&#x8BE5;&#x9879;&#x624D;&#x751F;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Mode</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x3001;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3001;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53CA;&#x901F;&#x5EA6;&#x3001;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Spring</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x529B;&#x3002;&#x671D;&#x9884;&#x5B9A;&#x4E49;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x76AE;&#x7B4B;&#x7684;&#x62C9;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Position Damper</td>
+<td style="text-align:left">&#x4F4D;&#x7F6E;&#x963B;&#x5C3C;&#x3002;&#x62B5;&#x6297;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x7684;&#x529B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Position&#x65F6;&#x8BE5;&#x9879;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x2022; Maximum Force</td>
+<td style="text-align:left">&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x3002;&#x63A8;&#x52A8;&#x5BF9;&#x8C61;&#x671D;&#x9884;&#x5B9A;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#x7684;&#x4F5C;&#x7528;&#x529B;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;Mode&#x5305;&#x542B;Velocity&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Projection Mode</td>
+<td style="text-align:left">&#x6295;&#x5F71;&#x6A21;&#x5F0F;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x5BF9;&#x8C61;&#x79BB;&#x5F00;&#x5176;&#x9650;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x8FC7;&#x8FDC;&#x65F6;&#xFF0C;&#x4F1A;&#x8BA9;&#x8BE5;&#x5BF9;&#x8C61;&#x56DE;&#x5230;&#x5176;&#x53D7;&#x9650;&#x5236;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x53EF;&#x8BBE;&#x5B9A;&#x4E3A;&#x4F4D;&#x7F6E;&#x548C;&#x65CB;&#x8F6C;&#x3001;&#x53EA;&#x6709;&#x4F4D;&#x7F6E;&#x53CA;&#x4E0D;&#x9009;&#x62E9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Projection Distance</td>
+<td style="text-align:left">&#x6295;&#x5F71;&#x8DDD;&#x79BB;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x5BF9;&#x8C61;&#x4E0E;&#x5176;&#x8FDE;&#x63A5;&#x521A;&#x4F53;&#x7684;&#x8DDD;&#x79BB;&#x8D85;&#x8FC7;&#x6295;&#x5F71;&#x8DDD;&#x79BB;&#x65F6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4F1A;&#x56DE;&#x5230;&#x9002;&#x5F53;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Projection Angle</td>
+<td style="text-align:left">&#x6295;&#x5F71;&#x89D2;&#x5EA6;&#x3002;&#x8BE5;&#x9879;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5F53;&#x5BF9;&#x8C61;&#x4E0E;&#x5176;&#x8FDE;&#x63A5;&#x521A;&#x4F53;&#x7684;&#x89D2;&#x5EA6;&#x8D85;&#x8FC7;&#x6295;&#x5F71;&#x89D2;&#x5EA6;&#x65F6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4F1A;&#x56DE;&#x5230;&#x9002;&#x5F53;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Configured In World Space</td>
+<td style="text-align:left">&#x5728;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x914D;&#x7F6E;&#x3002;&#x52FE;&#x9009;&#x8BE5;&#x9879;&#xFF0C;&#x5219;&#x6240;&#x6709;&#x4E0E;&#x76EE;&#x6807;&#x76F8;&#x5173;&#x7684;&#x6570;&#x503C;&#x90FD;&#x4F1A;&#x5728;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x6765;&#x8BA1;&#x7B97;&#xFF0C;&#x800C;&#x4E0D;&#x5728;&#x5BF9;&#x8C61;&#x7684;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x8BA1;&#x7B97;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Swap Bodies</td>
+<td style="text-align:left">&#x52FE;&#x9009;&#x8BE5;&#x9879;&#xFF0C;&#x5219;&#x5E94;&#x7528;&#x4EA4;&#x6362;&#x521A;&#x4F53;&#x529F;&#x80FD;&#x3002;&#x82E5;&#x5F00;&#x542F;&#x6B64;&#x9879;&#xFF0C;&#x8FDE;&#x63A5;&#x7740;&#x7684;&#x4E24;&#x4E2A;&#x521A;&#x4F53;&#x4F1A;&#x53D1;&#x751F;&#x4EA4;&#x6362;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Force</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x529B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Break Torque</td>
+<td style="text-align:left">&#x65AD;&#x5F00;&#x626D;&#x77E9;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x7EC6;&#x8282;&#x8BF4;&#x660E;&#xFF1A;</strong></p>
+<p><strong>1&#x3001;&#x79FB;&#x52A8;&#xFF0F;&#x65CB;&#x8F6C;&#x9650;&#x5236;</strong></p>
+<p>&#x53EF;&#x4EE5;&#x4E3A;&#x6BCF;&#x4E2A;&#x65CB;&#x8F6C;&#x8F74;&#x548C;&#x8FD0;&#x52A8;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x7EA6;&#x675F;&#x3002;&#x9488;&#x5BF9; X &#x8F74;&#x3001;Y &#x8F74;&#x4EE5;&#x53CA; Z &#x8F74;&#x8FD0;&#x52A8;&#x53EF;&#x5B9A;&#x4E49;&#x6CBF;&#x4E0D;&#x540C;&#x8F74;&#x7684;&#x79FB;&#x52A8;&#xFF0C;&#x800C;&#x9488;&#x5BF9; X &#x8F74;&#x3001;Y &#x8F74;&#x548C; Z &#x8F74;&#x65CB;&#x8F6C;&#x53EF;&#x5B9A;&#x4E49;&#x6CBF;&#x4E0D;&#x540C;&#x8F74;&#x65CB;&#x8F6C;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x88AB;&#x8BBE;&#x5B9A;&#x4E3A; Free&#xFF08;&#x4E0D;&#x53D7;&#x7EA6;&#x675F;&#xFF09;&#x3001;Limited&#xFF08;&#x53D7;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9650;&#x5236;&#xFF09;&#x53CA; Locked&#xFF08;&#x9501;&#x5B9A;&#x72B6;&#x6001;&#x65E0;&#x6CD5;&#x8FD0;&#x52A8;&#xFF09;&#x3002;</p>
+<p>1&#xFF09;&#x79FB;&#x52A8;&#x9650;&#x5236;&#xFF1A;&#x5982;&#x679C;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x67D0;&#x4E2A;&#x8F74;&#x7684; Motion &#x5C5E;&#x6027;&#x8BBE;&#x5B9A;&#x4E3A; Limited&#xFF0C;&#x5219;&#x53EF;&#x901A;&#x8FC7;&#x4FEE;&#x6539; Limited &#x5C5E;&#x6027;&#x503C;&#x6765;&#x8BBE;&#x5B9A;&#x8BE5;&#x8F74;&#x7684;&#x8FD0;&#x52A8;&#x7EA6;&#x675F;&#x503C;&#x3002;&#x5BF9;&#x4E8E;&#x5E73;&#x79FB;&#x8FD0;&#x52A8;&#xFF0C;Linear Limited &#x5C5E;&#x6027;&#x5C06;&#x8BBE;&#x5B9A;&#x8BE5;&#x5BF9;&#x8C61;&#x80FD;&#x591F;&#x8FDC;&#x79BB;&#x539F;&#x70B9;&#x7684;&#x6700;&#x5927;&#x8DDD;&#x79BB;&#xFF0C;&#x901A;&#x8FC7;&#x8BE5;&#x5C5E;&#x6027;&#x4E0B;&#x7684; Limited &#x6570;&#x503C;&#x53EF;&#x4EE5;&#x5BF9; Motion &#x5C5E;&#x6027;&#x503C;&#x4E3A; Limited &#x7684;&#x4EFB;&#x4F55;&#x79FB;&#x52A8;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#x3002;</p>
+<p>2&#xFF09;&#x65CB;&#x8F6C;&#x9650;&#x5236;&#xFF1A;&#x65CB;&#x8F6C;&#x9650;&#x5236;&#x4E0E;&#x79FB;&#x52A8;&#x9650;&#x5236;&#x76F8;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F; Angular Motion &#x5C5E;&#x6027;&#x662F;&#x4E0E; Angular Limit &#x76F8;&#x5173;&#x3002;LinearLimit &#x5C5E;&#x6027;&#x8BBE;&#x5B9A;&#x4E86;&#x5BF9; 3 &#x4E2A;&#x8F74;&#x5728;&#x79FB;&#x52A8;&#x4E0A;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x800C; AngularLimit &#x5C5E;&#x6027;&#x5219;&#x8BBE;&#x5B9A;&#x4E86;&#x5BF9;&#x4E8E; 3 &#x4E2A;&#x8F74;&#x8F7D;&#x65CB;&#x8F6C;&#x4E0A;&#x7684;&#x7EA6;&#x675F;&#x3002;</p>
+<p><strong>2&#x3001;&#x79FB;&#x52A8;&#xFF0F;&#x65CB;&#x8F6C;&#x52A0;&#x901F;&#x5EA6;</strong></p>
+<p>&#x4F7F;&#x5BF9;&#x8C61;&#x5230;&#x8FBE;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x6216;&#x65B9;&#x5411;&#x8FD0;&#x52A8;&#xFF0C;&#x6216;&#x5230;&#x8FBE;&#x6307;&#x5B9A;&#x7684;&#x901F;&#x5EA6;&#x6216;&#x89D2;&#x901F;&#x5EA6;&#x3002;&#x6B64;&#x7CFB;&#x7EDF;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x662F;&#xFF1A;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x60F3;&#x8981;&#x5230;&#x8FBE;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x9A71;&#x52A8;&#x529B;&#x6765;&#x63D0;&#x4F9B;&#x52A0;&#x901F;&#x5EA6;&#x4EE5;&#x4FBF;&#x4F7F;&#x5176;&#x5230;&#x8FBE;&#x6B64;&#x76EE;&#x6807;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x9A71;&#x52A8;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x6B64;&#x6A21;&#x5F0F;&#x53EF;&#x5B9A;&#x4E49;&#x8BE5;&#x5BF9;&#x8C61;&#x5F53;&#x524D;&#x7684;&#x76EE;&#x6807;&#x3002;</p>
+<p>1&#xFF09;&#x79FB;&#x52A8;&#x52A0;&#x901F;&#x5EA6; X &#x8F74;&#x3001;Y &#x8F74;&#x548C; Z &#x8F74;&#x7684;&#x9A71;&#x52A8;&#x5C5E;&#x6027;&#x4F7F;&#x5F97;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x6CBF;&#x7740;&#x7279;&#x5B9A;&#x7684;&#x8F74;&#x6765;&#x79FB;&#x52A8;&#xFF0C;&#x6BCF;&#x4E2A;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#x6307;&#x5B9A;&#x4E86;&#x5BF9;&#x8C61;&#x662F;&#x671D;&#x7740;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x8FD8;&#x662F;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x6291;&#x6216;&#x662F;&#x4E24;&#x8005;&#x517C;&#x800C;&#x6709;&#x4E4B;&#x7684;&#x8FD0;&#x52A8;&#x65B9;&#x5F0F;&#x3002;&#x6BD4;&#x5982;&#x5F53; X &#x8F74;&#x9A71;&#x52A8;&#x8BBE;&#x7F6E;&#x4E3A; Position &#x65F6;&#xFF0C;&#x5BF9;&#x8C61;&#x4F1A;&#x671D;&#x7740; X &#x8F74;&#x7684;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x53BB;&#x79FB;&#x52A8;&#x3002;</p>
+<p>&#x5F53;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#x4E3A; Position &#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#x5F39;&#x7C27;&#x503C;&#x5C06;&#x51B3;&#x5B9A;&#x5176;&#x5982;&#x4F55;&#x671D;&#x7740;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x8FD0;&#x52A8;&#xFF1A;&#x540C;&#x6837;&#xFF0C;&#x5F53;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#x4E3A; Velocity  &#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x6700;&#x5927;&#x4F5C;&#x7528;&#x529B;&#x5C06;&#x51B3;&#x5B9A;&#x8BE5;&#x5BF9;&#x8C61;&#x5982;&#x4F55;&#x88AB;&#x52A0;&#x901F;&#x81F3;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x3002;</p>
+<p>2&#xFF09;&#x65CB;&#x8F6C;&#x52A0;&#x901F;&#x5EA6;&#xFF1A;&#x65CB;&#x8F6C;&#x52A0;&#x901F;&#x5EA6;&#x5C5E;&#x6027;&#x4E3A; X &#x8F74;&#x89D2;&#x3001;YZ &#x8F74;&#x89D2;&#x9A71;&#x52A8;&#x53CA;&#x63D2;&#x503C;&#x9A71;&#x52A8;&#xFF0C;&#x5176;&#x529F;&#x80FD;&#x4E0E;&#x79FB;&#x52A8;&#x9A71;&#x52A8;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x662F;&#x63D2;&#x503C;&#x9A71;&#x52A8;&#x4E0E;&#x89D2;&#x9A71;&#x52A8;&#x5728;&#x529F;&#x80FD;&#x4E0A;&#x8868;&#x73B0;&#x4E0D;&#x540C;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x65CB;&#x8F6C;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#x4E2D;&#x9009;&#x62E9;&#x662F;&#x91C7;&#x7528;&#x89D2;&#x9A71;&#x52A8;&#x8FD8;&#x662F;&#x63D2;&#x503C;&#x9A71;&#x52A8;&#xFF0C;&#x4F46;&#x8FD9;&#x4E24;&#x79CD;&#x9A71;&#x52A8;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x88AB;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="joint-api">Joint API</h3>
+<h4 id="&#x53C2;&#x89C1;-unity-&#x5E38;&#x7528;-api">&#x53C2;&#x89C1; Unity &#x5E38;&#x7528; API</h4>
+<p>&#x25CF; 2.26 Joint</p>
 
                                 
                                 </section>
@@ -1847,7 +2492,7 @@
                 </a>
                 
                 
-                <a href="../第7天/7.0 第7天.html" class="navigation navigation-next " aria-label="Next page: 第7天">
+                <a href="613-力场.html" class="navigation navigation-next " aria-label="Next page: 6.13 力场">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1858,7 +2503,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.12 关节","level":"1.9.1.2","depth":3,"next":{"title":"第7天","level":"1.10","depth":1,"path":"第7天/7.0 第7天.md","ref":"第7天/7.0 第7天.md","articles":[{"title":"7.1 角色控制器","level":"1.10.1","depth":2,"ref":"","articles":[]},{"title":"7.2 拖尾效果","level":"1.10.2","depth":2,"ref":"","articles":[]},{"title":"7.3 绘制线的方法","level":"1.10.3","depth":2,"path":"第7天/73-绘制线的方法.md","ref":"第7天/73-绘制线的方法.md","articles":[]},{"title":"7.4 阴影投射器","level":"1.10.4","depth":2,"ref":"","articles":[]},{"title":"7.5 多线程与协同","level":"1.10.5","depth":2,"path":"第7天/75-多线程与协同.md","ref":"第7天/75-多线程与协同.md","articles":[]}]},"previous":{"title":"6.11 布料","level":"1.9.1.1","depth":3,"path":"第6天/611-布料.md","ref":"第6天/611-布料.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第6天/612-关节.md","mtime":"2016-11-30T14:11:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-02T16:26:32.605Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.12 关节","level":"1.9.1.2","depth":3,"next":{"title":"6.13 力场","level":"1.9.1.3","depth":3,"path":"第6天/613-力场.md","ref":"第6天/613-力场.md","articles":[]},"previous":{"title":"6.11 布料","level":"1.9.1.1","depth":3,"path":"第6天/611-布料.md","ref":"第6天/611-布料.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第6天/612-关节.md","mtime":"2016-12-03T14:15:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-03T17:29:07.445Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
