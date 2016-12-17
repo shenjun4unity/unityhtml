@@ -706,14 +706,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.19" >
+        <li class="chapter " data-level="1.3.19" data-path="../第2章 Unity 常用 API/219-audiomixer.html">
             
-                <span>
+                <a href="../第2章 Unity 常用 API/219-audiomixer.html">
             
                     
                     2.19 AudioMixer
             
-                </span>
+                </a>
             
 
             
@@ -2385,15 +2385,155 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="unity5x-&#x52A8;&#x4F5C;&#x7CFB;&#x7EDF;">Unity5.x &#x52A8;&#x4F5C;&#x7CFB;&#x7EDF;</h2>
-<p>Entry &#x72B6;&#x6001;
-Exit &#x72B6;&#x6001;
-Behaviour &#x811A;&#x672C;
-&#x65B0;&#x7684;BlendTree
+                                <h2 id="unity5x-&#x52A8;&#x753B;&#x7CFB;&#x7EDF;">Unity5.x &#x52A8;&#x753B;&#x7CFB;&#x7EDF;</h2>
+<p><img src="../assets/newAnimator04.jpg" alt=""></p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x7684;&#x662F;3&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x662F;Unity&#x81EA;&#x52A8;&#x5E2E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;&#x540C;&#x65F6;&#x4E5F;&#x65E0;&#x6CD5;&#x5220;&#x9664;&#xFF1A;</p>
+<pre><code>Entry&#xFF1A;&#x8868;&#x793A;&#x5F53;&#x8FDB;&#x5165;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x673A;&#x65F6;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x8BE5;&#x72B6;&#x6001;&#x8FDE;&#x63A5;&#x7684;&#x72B6;&#x6001;&#x4F1A;&#x6210;&#x4E3A;&#x8FDB;&#x5165;&#x72B6;&#x6001;&#x673A;&#x540E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF1B;
+Any State&#xFF1A;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x662F;&#x5176;&#x6307;&#x5411;&#x7684;&#x72B6;&#x6001;&#x662F;&#x5728;&#x4EFB;&#x610F;&#x65F6;&#x523B;&#x90FD;&#x53EF;&#x4EE5;&#x5207;&#x6362;&#x8FC7;&#x53BB;&#x7684;&#x72B6;&#x6001;&#xFF1B;
+Exit&#xFF1A;&#x8868;&#x793A;&#x9000;&#x51FA;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4EFB;&#x610F;&#x72B6;&#x6001;&#x6307;&#x5411;&#x8BE5;&#x51FA;&#x53E3;&#xFF0C;&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x4ECE;&#x6307;&#x5B9A;&#x72B6;&#x6001;&#x9000;&#x51FA;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x673A;&#xFF1B;
+</code></pre><p><strong>&#x25CF; Has Exit Time</strong></p>
+<p><img src="../assets/newAnimator05.jpg" alt=""></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x52FE;&#x9009;&#x4E86;&#x8BE5;&#x9879;&#xFF0C;&#x5728;&#x52A8;&#x753B;&#x8F6C;&#x6362;&#x65F6;&#x4F1A;&#x7B49;&#x5F85;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x5B8C;&#x6BD5;&#x624D;&#x4F1A;&#x8F6C;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x662F;&#x5FAA;&#x73AF;&#x52A8;&#x753B;&#x4F1A;&#x7B49;&#x5F85;&#x672C;&#x6B21;&#x64AD;&#x653E;&#x5B8C;&#x6BD5;&#x65F6;&#x8F6C;&#x6362;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x7ACB;&#x5373;&#x8F6C;&#x6362;&#x52A8;&#x753B;&#x7684;&#x60C5;&#x51B5;&#x65F6;&#x8BB0;&#x5F97;&#x8981;&#x53D6;&#x6D88;&#x52FE;&#x9009;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x5F53;&#x6211;&#x5F53;&#x524D;&#x7684;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x5B8C;&#x6BD5;&#x540E;&#x5C31;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x5230;&#x7BAD;&#x5934;&#x6240;&#x6307;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF08;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x8DF3;&#x8F6C;&#x6761;&#x4EF6;&#xFF09;&#xFF0C;&#x6B64;&#x65F6;&#x5FC5;&#x987B;&#x52FE;&#x9009;&#x8BE5;&#x9009;&#x9879;&#xFF0C;&#x5426;&#x5219;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x5B8C;&#x6BD5;&#x540E;&#x5C31;&#x4F1A;&#x5361;&#x5728;&#x6700;&#x540E;&#x4E00;&#x5E27;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5FAA;&#x73AF;&#x52A8;&#x753B;&#x5C31;&#x4F1A;&#x4E00;&#x76F4;&#x5FAA;&#x73AF;&#x64AD;&#x653E;&#x3002;</p>
+<pre><code>&#x65B0;&#x7684;BlendTree
     Direct
         &#x591A;&#x4E2A;&#x52A8;&#x4F5C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x64AD;&#x653E;
             &#x9002;&#x7528;&#x4E8E;&#x505A;&#x9762;&#x90E8;&#x8868;&#x60C5;
-        &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x4E0D;&#x540C;&#x52A8;&#x4F5C;&#x7247;&#x6BB5;&#x7684;&#x6743;&#x91CD;</p>
+        &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x4E0D;&#x540C;&#x52A8;&#x4F5C;&#x7247;&#x6BB5;&#x7684;&#x6743;&#x91CD;
+</code></pre><p><strong>&#x25CF; &#x5E38;&#x7528;API(&#x9700;&#x8981;&#x7EE7;&#x627F;StateMachineBehaviour)&#xFF1A;</strong></p>
+<p><img src="../assets/newAnimator02.png" alt=""></p>
+<p><img src="../assets/newAnimator03.png" alt=""></p>
+<p>&#x5728;&#x65B0;&#x7684;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x8FDE;&#x7EBF;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x660E;&#x4E86;&#xFF0C;&#x6BCF;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#xFF0C;&#x5C31;&#x50CF;&#x4E0B;&#x9762;&#x4E00;&#x6837;&#x8FDE;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x4E86;&#x3002;&#x81F3;&#x4E8E;&#x811A;&#x672C;&#x7684;&#x7F16;&#x5199;&#xFF0C;&#x53EA;&#x9700;&#x70B9;&#x51FB;&#x56FE;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x5728;Inspector&#x9762;&#x677F;&#x4E2D;&#x70B9;&#x51FB;Add Behaviour&#xFF0C;&#x5373;&#x53EF;&#x4E3A;&#x8BE5;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x7F16;&#x5199;&#x811A;&#x672C;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;int&#x53D8;&#x91CF;&#x63A7;&#x5236;&#x6574;&#x4E2A;&#x72B6;&#x6001;&#x673A;&#x7684;&#x72B6;&#x6001;&#x53D8;&#x6362;&#xFF0C;&#x5728;&#x53F3;&#x8FB9;&#x7684;5&#x4E2A;&#x9000;&#x51FA;&#x6761;&#x4EF6;&#x4E2D;&#xFF0C;&#x5168;&#x90E8;&#x53D6;&#x6D88;&#x6389;Has Exit Time(&#x9000;&#x51FA;&#x65F6;&#x95F4;&#x6539;&#x4E3A;&#x7528;&#x811A;&#x672C;&#x63A7;&#x5236;)&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x8981;&#x5728;Awake&#x4E2D;&#x4F7F;&#x7528;Animator.GetBehaviour&#x3002;</p>
+<p><img src="../assets/newAnimator01.png" alt=""></p>
+<pre><code class="lang-javascript">using UnityEngine;  
+using System.Collections;  
+
+public class Idle : StateMachineBehaviour {  
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if (Input.GetKeyDown(KeyCode.H))  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Attack1);  
+        if ((Input.GetAxisRaw(&quot;Horizontal&quot;) != 0) || (Input.GetAxisRaw(&quot;Vertical&quot;) != 0))  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Run);  
+    }  
+
+}
+</code></pre>
+<pre><code class="lang-javascript">using UnityEngine;  
+using System.Collections;  
+
+public class Attack1 : StateMachineBehaviour {  
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if (Input.GetKeyDown(KeyCode.H) &amp;&amp; (stateInfo.normalizedTime &gt; 0.5f))  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Attack2);  
+        if(stateInfo.normalizedTime &gt; 0.9f)  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Idle);  
+    }  
+
+}
+</code></pre>
+<pre><code class="lang-javascript">using UnityEngine;  
+using System.Collections;  
+
+public class Attack2 : StateMachineBehaviour {  
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if (Input.GetKeyDown(KeyCode.H) &amp;&amp; (stateInfo.normalizedTime &gt; 0.5f))  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Attack3);  
+        if (stateInfo.normalizedTime &gt; 0.9f)  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Idle);  
+    }  
+
+}
+</code></pre>
+<pre><code class="lang-javascript">using UnityEngine;  
+using System.Collections;  
+
+public class Attack3 : StateMachineBehaviour {  
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if (stateInfo.normalizedTime &gt; 0.7f)  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Idle);  
+    }  
+
+}
+</code></pre>
+<pre><code class="lang-javascript">using UnityEngine;  
+using System.Collections;  
+
+public class Run : StateMachineBehaviour {  
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)  
+    {  
+        if ((Input.GetAxisRaw(&quot;Horizontal&quot;) == 0) &amp;&amp; (Input.GetAxisRaw(&quot;Vertical&quot;) == 0))  
+            animator.SetInteger(&quot;state&quot;, (int)CharacterState.Idle);  
+    }  
+
+}
+</code></pre>
+<h3 id="&#x25CF;-&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x8F91;&#x5668;">&#x25CF; &#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x8F91;&#x5668;</h3>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4EE3;&#x7801;&#x6765;&#x521B;&#x5EFA;AnimatorController&#x3002;</p>
+<pre><code class="lang-javascript">using UnityEngine;  
+using UnityEditor;  
+using UnityEditor.Animations;  
+
+public class CreateController : EditorWindow {  
+
+    [MenuItem(&quot;Window/CreateController&quot;)]  
+    static void Create()  
+    {  
+        // Creates the controller  
+        var controller = AnimatorController.CreateAnimatorControllerAtPath (&quot;Assets/StateMachineTransitions.controller&quot;);  
+
+        // Add parameters  
+        controller.AddParameter(&quot;TransitionNow&quot;, AnimatorControllerParameterType.Trigger);  
+        controller.AddParameter(&quot;Reset&quot;, AnimatorControllerParameterType.Trigger);  
+        controller.AddParameter(&quot;GotoB1&quot;, AnimatorControllerParameterType.Trigger);  
+        controller.AddParameter(&quot;GotoC&quot;, AnimatorControllerParameterType.Trigger);  
+
+        // Add StateMachines  
+        var rootStateMachine = controller.layers[0].stateMachine;  
+        var stateMachineA = rootStateMachine.AddStateMachine(&quot;smA&quot;);  
+        var stateMachineB = rootStateMachine.AddStateMachine(&quot;smB&quot;);  
+        var stateMachineC = stateMachineB.AddStateMachine(&quot;smC&quot;);  
+
+        // Add States  
+        var stateA1 = stateMachineA.AddState(&quot;stateA1&quot;);  
+        var stateB1 = stateMachineB.AddState(&quot;stateB1&quot;);  
+        var stateB2 = stateMachineB.AddState(&quot;stateB2&quot;);  
+        stateMachineC.AddState(&quot;stateC1&quot;);  
+        var stateC2 = stateMachineC.AddState(&quot;stateC2&quot;); // don&#x2019;t add an entry transition, should entry to state by default  
+
+        // Add Transitions  
+        var exitTransition = stateA1.AddExitTransition();  
+        exitTransition.AddCondition(AnimatorConditionMode.If, 0, &quot;TransitionNow&quot;);  
+        exitTransition.duration = 0;  
+
+        var resetTransition = stateMachineA.AddAnyStateTransition(stateA1);  
+        resetTransition.AddCondition(AnimatorConditionMode.If, 0, &quot;Reset&quot;);  
+        resetTransition.duration = 0;  
+
+        var transitionB1 = stateMachineB.AddEntryTransition(stateB1);  
+        transitionB1.AddCondition(AnimatorConditionMode.If, 0, &quot;GotoB1&quot;);  
+        stateMachineB.AddEntryTransition(stateB2);  
+        stateMachineC.defaultState = stateC2;  
+        var exitTransitionC2 = stateC2.AddExitTransition();  
+        exitTransitionC2.AddCondition(AnimatorConditionMode.If, 0, &quot;TransitionNow&quot;);  
+        exitTransitionC2.duration = 0;  
+
+        var stateMachineTransition = rootStateMachine.AddStateMachineTransition(stateMachineA, stateMachineC);  
+        stateMachineTransition.AddCondition(AnimatorConditionMode.If, 0, &quot;GotoC&quot;);  
+        rootStateMachine.AddStateMachineTransition(stateMachineA, stateMachineB);  
+    }    
+}
+</code></pre>
+<p>&#x1F51A;</p>
 
                                 
                                 </section>
@@ -2421,7 +2561,7 @@ Behaviour &#x811A;&#x672C;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"16.3 Unity5.X 动作系统","level":"1.19.3","depth":2,"next":{"title":"16.4 LOD","level":"1.19.4","depth":2,"path":"第16天/164-lod.md","ref":"第16天/164-lod.md","articles":[]},"previous":{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"path":"第16天/162-unity5x-布料系统.md","ref":"第16天/162-unity5x-布料系统.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第16天/163-unity5x-动作系统.md","mtime":"2016-12-10T12:23:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-15T15:58:29.268Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"16.3 Unity5.X 动作系统","level":"1.19.3","depth":2,"next":{"title":"16.4 LOD","level":"1.19.4","depth":2,"path":"第16天/164-lod.md","ref":"第16天/164-lod.md","articles":[]},"previous":{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"path":"第16天/162-unity5x-布料系统.md","ref":"第16天/162-unity5x-布料系统.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第16天/163-unity5x-动作系统.md","mtime":"2016-12-17T15:16:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-17T17:27:03.712Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

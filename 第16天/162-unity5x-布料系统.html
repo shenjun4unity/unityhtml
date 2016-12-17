@@ -706,14 +706,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.19" >
+        <li class="chapter " data-level="1.3.19" data-path="../第2章 Unity 常用 API/219-audiomixer.html">
             
-                <span>
+                <a href="../第2章 Unity 常用 API/219-audiomixer.html">
             
                     
                     2.19 AudioMixer
             
-                </span>
+                </a>
             
 
             
@@ -2386,6 +2386,45 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="unity5x-&#x5E03;&#x6599;&#x7CFB;&#x7EDF;">Unity5.x &#x5E03;&#x6599;&#x7CFB;&#x7EDF;</h2>
+<p>Unity4&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;SkinnedMeshRenderer&#x4F7F;&#x7528;SkinnedCloth&#xFF0C;&#x6216;&#x8005;&#x5BF9;Cloth Renderer&#x4F7F;&#x7528;Interactive Cloth&#xFF0C;&#x5F88;&#x9EBB;&#x70E6;&#xFF0C;&#x5728;Unity5&#x4E2D;&#xFF0C;Cloth&#x5408;&#x4E8C;&#x4E3A;&#x4E00;&#x4E86;&#x3002;</p>
+<p>Cloth&#x53EA;&#x80FD;&#x5FC5;&#x987B;&#x548C;Skinned Mesh Renderer&#x642D;&#x914D;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E0D;&#x4EE3;&#x8868;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x7684;&#x7269;&#x4F53;&#x65F6;&#x8FD8;&#x5FC5;&#x987B;&#x5728;Max&#x4E2D;&#x5BFC;&#x51FA;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x8499;&#x76AE;&#x4FE1;&#x606F;&#x7684;FBX&#xFF0C;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;GameObject&#x7136;&#x540E;&#x8D4B;&#x4E88;Cloth&#x7EC4;&#x4EF6;&#xFF0C;&#x8FD9;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;Skinned Mesh Renderer&#x7EC4;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5728;Skinned Mesh Renderer&#x7EC4;&#x4EF6;&#x4E2D;&#x8D4B;&#x4E88;&#x57FA;&#x672C;&#x4F53;&#x7684;Mesh&#x4E0A;&#x53BB;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684;&#x6750;&#x8D28;&#x4E5F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x3002;</p>
+<p>&#x5E03;&#x6599;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x5916;&#x90E8;&#x5F71;&#x54CD;&#xFF0C;&#x4F46;&#x5B8C;&#x5168;&#x4E0D;&#x4F1A;&#x5C06;&#x5F71;&#x54CD;&#x8D4B;&#x4E88;&#x5916;&#x90E8;&#x521A;&#x4F53;&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;, &#x5E03;&#x6599;&#x7CFB;&#x7EDF;&#x7684;&#x7269;&#x7406;&#x6A21;&#x62DF;&#x662F;&#x5355;&#x5411;&#x7684;&#x3002;</p>
+<p><img src="../assets/newCloth01.png" alt=""></p>
+<p>&#x51FA;&#x4E8E;&#x6027;&#x80FD;&#x7684;&#x8003;&#x8651;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;Cloth&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#x7684;Collider&#x53EA;&#x6709;&#x4E24;&#x79CD;&#xFF0C;SphereCollider&#x4EE5;&#x53CA;CapsuleCollider&#xFF0C;&#x4F46;&#x662F;SphereCollider&#x53EF;&#x4EE5;&#x8D4B;&#x4E88;&#x4E24;&#x4E2A;&#x4E3A;&#x4E00;&#x7EC4;(&#x5F53;&#x7136;&#x4E86;&#x8FD8;&#x53EF;&#x4EE5;&#x53EA;&#x8D4B;&#x4E88;&#x4E00;&#x4E2A;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x4FDD;&#x6301;null)&#xFF0C;&#x90A3;&#x4E48;&#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x8FD9;&#x4E24;&#x4E2A;SphereCollider&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x7B2C;&#x4E09;&#x79CD;&#xFF0C;Unity&#x4F1A;&#x5C06;&#x8FD9;&#x7EC4;&#x7684;&#x4E24;&#x4E2A;SphereCollider&#x8FDB;&#x884C;&#x76F8;&#x8FDE;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x6709;&#x5706;&#x9525;&#x5F62;&#x7684;Collider</p>
+<p><img src="../assets/newCloth02.png" alt=""></p>
+<p>&#x6253;&#x5F00;&#x7F16;&#x8F91;Constraint&#x6A21;&#x5F0F;</p>
+<p><img src="../assets/newCloth03.png" alt=""></p>
+<p>Max Distance&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x6700;&#x5927;&#x53EF;&#x79FB;&#x52A8;&#x8DDD;&#x79BB;&#x3002;&#x6700;&#x5E38;&#x7528;&#x7684;&#x7528;&#x6CD5;&#x662F;&#x5C06;&#x4E0D;&#x80FD;&#x52A8;&#x7684;&#x9876;&#x70B9;&#x7684;Max Distance&#x8BBE;&#x7F6E;&#x4E3A;0&#x3002;
+Surface Penetration&#x63A7;&#x5236;&#x7684;&#x662F;&#x9876;&#x70B9;&#x6700;&#x5927;&#x53EF;&#x4EE5;&#x5D4C;&#x5165;&#x5230;Mesh&#x91CC;&#x9762;&#x7684;&#x7A0B;&#x5EA6;&#x3002;&#x5728;&#x5E03;&#x6599;&#x7F51;&#x683C;&#x9876;&#x70B9;&#x6BD4;&#x8F83;&#x7A00;&#x758F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x4EE5;&#x660E;&#x663E;&#x5BF9;&#x6BD4;&#x51FA;&#x5DEE;&#x522B;&#x3002;&#x5C06;&#x9876;&#x70B9;&#x7684;Surface Penetration&#x8BBE;&#x7F6E;&#x5F97;&#x5F88;&#x4F4E;&#x4F1A;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x4E0D;&#x6B63;&#x5E38;&#xFF0C;&#x9ED8;&#x8BA4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;Unconstrained&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x8F83;&#x9AD8;&#x7684;&#x503C;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#x3002;</p>
+<p><img src="../assets/newCloth04.png" alt=""></p>
+<p>Visualization&#x8FD9;&#x91CC;&#x80FD;&#x591F;&#x9009;&#x62E9;&#x5F53;&#x524D;&#x5728;Scene&#x89C6;&#x56FE;&#x4E2D;&#x9884;&#x89C8;Max Distance&#x8FD8;&#x662F;Surface Penetration&#x3002;(&#x8FD9;&#x4E24;&#x8005;&#x4E8C;&#x9009;&#x4E00;)&#xFF0C;&#x8FD8;&#x80FD;&#x9009;&#x62E9;&#x662F;&#x5426;&#x8BA9;&#x64CD;&#x4F5C;&#x5F71;&#x54CD;&#x89C6;&#x53E3;&#x80CC;&#x9762;&#x7684;&#x9876;&#x70B9;&#x3002;</p>
+<p>Select&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#x8981;&#x5148;&#x901A;&#x8FC7;&#x6846;&#x9009;&#xFF0C;&#x6216;&#x8005;Shift+&#x70B9;&#x51FB;&#x6765;&#x591A;&#x9009;&#xFF0C;&#x6765;&#x9009;&#x4E2D;&#x9876;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x52FE;&#x9009;Max Distance&#x6216;&#x8005;Surface Penetration&#x524D;&#x9762;&#x7684;&#x590D;&#x9009;&#x6846;&#xFF0C;&#x4EE3;&#x8868;&#x6211;&#x73B0;&#x5728;&#x8981;&#x6539;&#x53D8;&#x9009;&#x4E2D;&#x7684;&#x9876;&#x70B9;&#x7684;&#x503C;&#x4E86;&#xFF01;&#x7136;&#x540E;&#x518D;&#x5728;&#x540E;&#x9762;&#x7684;&#x6570;&#x503C;&#x91CC;&#x9762;&#x8F93;&#x5165;&#x60F3;&#x8981;&#x7684;&#x6570;&#x503C;&#x5C31;OK&#x4E86;&#xFF0C;&#x8981;&#x60F3;&#x5C06;&#x5F53;&#x524D;&#x6709;&#x6570;&#x503C;&#x7684;&#x9876;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;Unconstrained&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x9009;&#x4E2D;&#x90A3;&#x4E9B;&#x5E26;&#x6709;&#x6570;&#x503C;&#x7684;&#x9876;&#x70B9;&#x7136;&#x540E;&#x5C06;&#x5BF9;&#x5E94;&#x590D;&#x9009;&#x6846;&#x53D6;&#x6D88;&#x52FE;&#x9009;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5728;Paint&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x4EE3;&#x8868;&#x8981;&#x7ED8;&#x5236;
+<img src="../assets/newCloth05.png" alt=""></p>
+<p>&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#x4E86;&#xFF01;
+<img src="../assets/newCloth06.png" alt=""></p>
+<p>&#x800C;&#x8FD9;&#x4E2A;&#x590D;&#x9009;&#x6846;&#x4EE3;&#x8868;&#x7684;&#x610F;&#x601D;&#x662F;&#x662F;&#x5426;&#x60F3;&#x4E3A;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x6709;&#x503C;&#x7684;&#x9876;&#x70B9;Paint&#x6210;&#x4E3A;Unconstrained&#x7684;&#x9876;&#x70B9;&#x3002;</p>
+<p><img src="../assets/newCloth07.png" alt=""></p>
+<p><img src="../assets/newCloth08.png" alt=""></p>
+<p>Stretching Stiffness---&#x62C9;&#x626F;&#x786C;&#x5EA6;&#x3002;</p>
+<p>Bending Stiffness---&#x5F2F;&#x66F2;&#x786C;&#x5EA6;&#x3002;</p>
+<p>Use Tethers---&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#xFF0C;&#x7528;&#x4E8E;&#x65B9;&#x5F0F;&#x8FC7;&#x5EA6;&#x62C9;&#x4F38;</p>
+<p>Use Gravity---&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E16;&#x754C;&#x91CD;&#x529B;&#x3002;</p>
+<p>Damping---&#x963B;&#x5C3C;&#x4F1A;&#x5E94;&#x7528;&#x4E8E;&#x6BCF;&#x4E2A;&#x5E03;&#x6599;&#x9876;&#x70B9;&#x3002;&#x8981;&#x60F3;&#x6253;&#x9020;&#x770B;&#x4E0A;&#x53BB;&#x6296;&#x52A8;&#x66F4;&#x5C0F;&#x7684;&#x5E03;&#x6599;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x8FD9;&#x4E2A;&#x3002;</p>
+<p>External Acceleration---&#x5E38;&#x91CF;&#x5916;&#x529B;&#x3002;</p>
+<p>Random Acceleration---&#x968F;&#x673A;&#x5916;&#x529B;&#x3002;</p>
+<p>World Velocity Scale---&#x4E0E;World Acceleration Scale&#x5171;&#x540C;&#x7EC4;&#x6210;&#x5E03;&#x6599;&#x7684;GameObject.transfrom&#x7684;&#x8FD0;&#x52A8;&#x4F1A;&#x5BF9;&#x7269;&#x7406;&#x6A21;&#x62DF;&#x9020;&#x6210;&#x7684;&#x5F71;&#x54CD;&#x6BD4;&#x4F8B;&#x3002;</p>
+<p>World Acceleration Scale---&#x4E0E;World Velocity Scale&#x5171;&#x540C;&#x7EC4;&#x6210;&#x5E03;&#x6599;&#x7684;GameObject.transfrom&#x7684;&#x8FD0;&#x52A8;&#x4F1A;&#x5BF9;&#x7269;&#x7406;&#x6A21;&#x62DF;&#x9020;&#x6210;&#x7684;&#x5F71;&#x54CD;&#x6BD4;&#x4F8B;&#x3002;</p>
+<p><img src="../assets/newCloth09.png" alt=""></p>
+<p>Friction---&#x5F53;&#x5E03;&#x6599;&#x78B0;&#x5230;&#x5728;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x5B58;&#x5728;&#x7684;Collider&#x65F6;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x6469;&#x64E6;&#x529B;&#xFF0C;&#x8FD9;&#x53EA;&#x4F1A;&#x5F71;&#x54CD;&#x5E03;&#x6599;&#x7684;&#x6A21;&#x62DF;&#x3002;&#x4E0A;&#x9762;&#x8BF4;&#x8FC7;&#x4E86;&#x5E03;&#x6599;&#x7684;&#x7269;&#x7406;&#x6A21;&#x62DF;&#x662F;&#x5355;&#x5411;&#x7684;&#x3002;</p>
+<p>Collision Mass Scale---How much to increase mass of colliding particles&#x3002;</p>
+<p>Use Continuous Collision---&#x4F7F;&#x7528;Continuous Collision, &#x589E;&#x52A0;&#x6D88;&#x8017;&#xFF0C;&#x51CF;&#x5C11;&#x76F4;&#x63A5;&#x7A7F;&#x900F;&#x78B0;&#x649E;&#x7684;&#x51E0;&#x7387;&#x3002;</p>
+<p>Use Virtual Particles---Add one virtual particle per triangle to improve collision stability&#x3002;</p>
+<p>Solver Frequency---Number of solver iterations per second&#x3002;&#x663E;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x5316;&#x53C2;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;120&#x5F88;&#x9AD8;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x7740;&#x8C03;&#x4F4E;&#x4E00;&#x4E9B;&#x3002;</p>
+<p>Sleep Threshold---&#x9759;&#x6B62;&#x9608;&#x503C;&#x3002;</p>
+<p>Capsule Colliders---&#x8981;&#x5BF9;&#x5E03;&#x6599;&#x4EA7;&#x751F;&#x4EA4;&#x4E92;&#x7684;&#x80F6;&#x56CA;&#x78B0;&#x649E;&#x4F53;&#x3002;</p>
+<p>Sphere Colliders---&#x8981;&#x5BF9;&#x5E03;&#x6599;&#x4EA7;&#x751F;&#x4EA4;&#x4E92;&#x7684;ClothSphereColliderPairs. &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4ED6;&#x662F;&#x6309;&#x7167;&#x4E00;&#x7EC4;&#x6765;&#x7684;&#xFF0C;&#x4E00;&#x7EC4;&#x4E2D;&#x53EF;&#x4EE5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;SphereCollider&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x4E24;&#x4E2A;&#xFF0C;&#x5F53;&#x6709;&#x4E24;&#x4E2A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x4E2A;SphereCollider&#x4F1A;&#x5728;&#x5E03;&#x6599;&#x7684;&#x78B0;&#x649E;&#x7CFB;&#x7EDF;&#x4E2D;&#x88AB;&#x201C;&#x710A;&#x63A5;&#x201D;&#x8D77;&#x6765;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x4E24;&#x4E2A;&#x5927;&#x5C0F;&#x4E0D;&#x540C;&#x7684;SphereCollider&#x6765;&#x7EC4;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x5706;&#x9525;&#x5F62;&#x72B6;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x4E86;&#x3002;</p>
+<p>&#x1F51A;</p>
 
                                 
                                 </section>
@@ -2413,7 +2452,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"next":{"title":"16.3 Unity5.X 动作系统","level":"1.19.3","depth":2,"path":"第16天/163-unity5x-动作系统.md","ref":"第16天/163-unity5x-动作系统.md","articles":[]},"previous":{"title":"16.1 Unity5.X 声音的处理","level":"1.19.1","depth":2,"path":"第16天/161-unity5x-声音的处理.md","ref":"第16天/161-unity5x-声音的处理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第16天/162-unity5x-布料系统.md","mtime":"2016-12-10T12:23:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-15T15:58:29.268Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"next":{"title":"16.3 Unity5.X 动作系统","level":"1.19.3","depth":2,"path":"第16天/163-unity5x-动作系统.md","ref":"第16天/163-unity5x-动作系统.md","articles":[]},"previous":{"title":"16.1 Unity5.X 声音的处理","level":"1.19.1","depth":2,"path":"第16天/161-unity5x-声音的处理.md","ref":"第16天/161-unity5x-声音的处理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第16天/162-unity5x-布料系统.md","mtime":"2016-12-17T15:13:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-17T17:27:03.712Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
