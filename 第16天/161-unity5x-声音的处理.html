@@ -719,14 +719,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.20" >
+        <li class="chapter " data-level="1.3.20" data-path="../第2章 Unity 常用 API/220-assetbundle.html">
             
-                <span>
+                <a href="../第2章 Unity 常用 API/220-assetbundle.html">
             
                     
                     2.20 AssetBundle
             
-                </span>
+                </a>
             
 
             
@@ -2397,16 +2397,17 @@ AudioMixerSnapShot
 
 &#x4E3E;&#x4F8B;&#xFF1A;
     &#x9A7E;&#x9A76;&#x8231;&#xFF1A;&#x53D1;&#x52A8;&#x673A;&#x7684;&#x58F0;&#x97F3;&#x7684;&#x97F3;&#x91CF;&#x53EF;&#x4EE5;&#x5927;&#x4E9B;&#xFF0C;&#x5916;&#x90E8;&#x7684;&#x6218;&#x6597;&#x58F0;&#x97F3;&#x5C0F;&#x4E9B;
-    &#x5C04;&#x51FB;&#x4ED3;&#xFF1A;&#x53D1;&#x52A8;&#x673A;&#x7684;&#x58F0;&#x97F3;&#x7684;&#x97F3;&#x91CF;&#x53EF;&#x4EE5;&#x5C0F;&#x4E9B;&#xFF0C;&#x6218;&#x6597;&#x7684;&#x751F;&#x610F;&#x5927;&#x4E9B;
+    &#x5C04;&#x51FB;&#x4ED3;&#xFF1A;&#x53D1;&#x52A8;&#x673A;&#x7684;&#x58F0;&#x97F3;&#x7684;&#x97F3;&#x91CF;&#x53EF;&#x4EE5;&#x5C0F;&#x4E9B;&#xFF0C;&#x6218;&#x6597;&#x7684;&#x58F0;&#x97F3;&#x5927;&#x4E9B;
     &#x6295;&#x5F39;&#x4ED3;&#xFF1A;&#x53D1;&#x52A8;&#x673A;&#x7684;&#x58F0;&#x97F3;&#x66F4;&#x5C0F;&#x4E9B;&#xFF0C;&#x6218;&#x6597;&#x7684;&#x58F0;&#x97F3;&#x66F4;&#x5C0F;&#xFF0C;&#x70B8;&#x5F39;&#x7206;&#x70B8;&#x7684;&#x58F0;&#x97F3;&#x5927;&#x4E9B;
 </code></pre><p><img src="../assets/AudioMixer01.png" alt=""></p>
+<p>&#x2003;</p>
 <p><img src="../assets/AudioMixer02.png" alt=""></p>
 <pre><code>S&#xFF1A;&#x6DFB;&#x52A0;&#x5F53;&#x524D;&#x7EC4;&#x5230;&#x4E00;&#x4E2A;&#x72EC;&#x594F;&#x7684;&#x7EC4;&#x96C6;&#x5408;&#x4E2D;
 M&#xFF1A;&#x5C06;&#x5F53;&#x524D;&#x7EC4;&#x9759;&#x97F3;
 B&#xFF1A;&#x4E0D;&#x64AD;&#x653E;&#x5F53;&#x524D;&#x7EC4;&#x7684;&#x6548;&#x679C;
 </code></pre><pre><code>peak = &#x5B9E;&#x65F6;&#x7684;&#x5CF0;&#x503C;
-rms = &#x65B9;&#x5747;&#x6839;, &#x4E00;&#x5B9A;&#x65F6;&#x9650;&#x5185;&#x7684;&#x5E73;&#x5747;&#x503C;
-rms &#x4F7F;&#x7528;&#x4E0A;&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x8033;&#x6735;&#x7684;&#x611F;&#x53D7;, peak &#x5C31;&#x5B9E;&#x5B9E;&#x5728;&#x5728;&#x7684;&#x7535;&#x5B50;&#x6570;&#x503C;.
+rms = &#x65B9;&#x5747;&#x6839;&#xFF0C;&#x4E00;&#x5B9A;&#x65F6;&#x9650;&#x5185;&#x7684;&#x5E73;&#x5747;&#x503C;
+rms &#x4F7F;&#x7528;&#x4E0A;&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x8033;&#x6735;&#x7684;&#x611F;&#x53D7;&#xFF0C;peak &#x5C31;&#x5B9E;&#x5B9E;&#x5728;&#x5728;&#x7684;&#x7535;&#x5B50;&#x6570;&#x503C;&#x3002;
 </code></pre><p>&#x8FD0;&#x884C;&#x540E;&#xFF0C;AudioMixer&#x9762;&#x677F;&#x5C06;&#x51FA;&#x73B0; <code>Edit in Play Mode</code> &#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB; AudioMixer &#x9762;&#x677F;&#x7684; <code>Editor in Play Mode</code> &#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5728;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x4E0B;&#x7F16;&#x8F91;&#x7684; Group&#xFF0C;&#x5728;&#x505C;&#x6B62;&#x8FD0;&#x884C;&#x65F6;&#x5C06;&#x4FDD;&#x5B58;&#x3002;</p>
 <p>&#x5728;&#x64AD;&#x653E;&#x65F6;&#xFF0C;&#x5F00;&#x542F;Edit in Play Mode&#x4E4B;&#x540E;, &#x4EFB;&#x4F55;&#x505A;&#x8FC7;&#x7684;&#x6539;&#x53D8;&#x90FD;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;&#x3002;&#x5E76;&#x4E14;&#x6B64;&#x65F6;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x4FEE;&#x6539;&#x53C2;&#x6570;&#x3002;(&#x6BD4;&#x5982;&#x901A;&#x8FC7;AudioMixer.SetFloat&#x6765;&#x8FDB;&#x884C;&#x53C2;&#x6570;&#x4FEE;&#x6539;&#xFF0C;&#x6216;&#x8005;&#x901A;&#x8FC7;AudioMixerSnapshot.TransitionTo()&#x6765;&#x8F6C;&#x6362;SnapShot&#x90FD;&#x4F1A;&#x65E0;&#x6548;, &#x8FD9;&#x4E5F;&#x662F;&#x5FC5;&#x7136;&#x7684;)&#x3002;</p>
 <hr>
@@ -2414,7 +2415,7 @@ rms &#x4F7F;&#x7528;&#x4E0A;&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x8033;&#x6735;&#x7
 <p>&#xFF08;1&#xFF09;Send &#x4F1A;&#x5C06;&#x8FD9;&#x4E2A;Group &#x7684;&#x4FE1;&#x53F7;&#x4F20;&#x9012;&#x51FA;&#x53BB;&#xFF0C;&#x591A;&#x4E2A;Send&#x53EF;&#x4EE5;&#x5C06;&#x4FE1;&#x53F7;&#x53D1;&#x9001;&#x7ED9;&#x540C;&#x4E00;&#x4E2A;Recevie&#x3002; </p>
 <p>&#xFF08;2&#xFF09;Receive &#x63A5;&#x6536;&#x5176;&#x4ED6; Group &#x53D1;&#x51FA;&#x7684;&#x4FE1;&#x53F7;</p>
 <p>&#xFF08;3&#xFF09;Duck Volume &#xFF0C;&#x63A5;&#x6536;&#x5176;&#x4ED6;Group&#x53D1;&#x9001;&#x7684;&#x4FE1;&#x53F7;&#xFF0C;&#x6539;&#x53D8;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x97F3;&#x91CF;&#x5927;&#x5C0F;&#x3002;</p>
-<p>&#xFF08;4&#xFF09; Low Pass &#x4F4E;&#x901A;&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x5373;&#x53EA;&#x5141;&#x8BB8;&#x4F4E;&#x9891;&#x7387;&#x7684;&#x97F3;&#x6548;&#x64AD;&#x653E;&#x51FA;&#x6765;&#xFF0C;&#x800C;&#x9AD8;&#x9891;&#x7387;&#x7684;&#x97F3;&#x6548;&#x4E0D;&#x64AD;&#x653E;&#x51FA;&#x6765;</p>
+<p>&#xFF08;4&#xFF09;Low Pass &#x4F4E;&#x901A;&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x5373;&#x53EA;&#x5141;&#x8BB8;&#x4F4E;&#x9891;&#x7387;&#x7684;&#x97F3;&#x6548;&#x64AD;&#x653E;&#x51FA;&#x6765;&#xFF0C;&#x800C;&#x9AD8;&#x9891;&#x7387;&#x7684;&#x97F3;&#x6548;&#x4E0D;&#x64AD;&#x653E;&#x51FA;&#x6765;</p>
 <p>&#xFF08;5&#xFF09;High Pass &#x9AD8;&#x901A;&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x5373;&#x53EA;&#x5141;&#x8BB8;&#x9AD8;&#x9891;&#x7387;&#x7684;&#x97F3;&#x6548;&#x64AD;&#x653E;&#x51FA;&#x6765;&#xFF0C;&#x800C;&#x4F4E;&#x9891;&#x7387;&#x7684;&#x97F3;&#x6548;&#x4E0D;&#x64AD;&#x653E;&#x51FA;&#x6765; </p>
 <p>&#xFF08;6&#xFF09;Echo &#x56DE;&#x58F0;&#xFF0C;&#x5373;&#x6DFB;&#x52A0;&#x8BE5;&#x6548;&#x679C;&#xFF0C;&#x8BE5; Grop &#x64AD;&#x653E;&#x7684;&#x58F0;&#x97F3;&#x5C06;&#x4F1A;&#x4EA7;&#x751F;&#x56DE;&#x97F3; </p>
 <p>&#xFF08;7&#xFF09;Flange&#x9576;&#x8FB9;&#x6548;&#x679C;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x8FF7;&#x5E7B;&#x98D8;&#x6E3A;&#x7684;&#x58F0;&#x97F3;&#x3002;</p>
@@ -2446,13 +2447,8 @@ AudioListener
     AudioMixer
         AudioSource
     AudioSource
-</code></pre><h4 id="effect">Effect</h4>
-<pre><code>Receive
-Send
-    &#x53D1;&#x9001;&#x58F0;&#x97F3;&#x4FE1;&#x53F7;
-    &#x591A;&#x4E2A;Send&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x7ED9;&#x540C;&#x4E00;&#x4E2A;Receive
-DuckVolume
-</code></pre>
+</code></pre><p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -2479,7 +2475,7 @@ DuckVolume
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"16.1 Unity5.X 声音的处理","level":"1.19.1","depth":2,"next":{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"path":"第16天/162-unity5x-布料系统.md","ref":"第16天/162-unity5x-布料系统.md","articles":[]},"previous":{"title":"第16天","level":"1.19","depth":1,"path":"第16天/16.0 第16天.md","ref":"第16天/16.0 第16天.md","articles":[{"title":"16.1 Unity5.X 声音的处理","level":"1.19.1","depth":2,"path":"第16天/161-unity5x-声音的处理.md","ref":"第16天/161-unity5x-声音的处理.md","articles":[]},{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"path":"第16天/162-unity5x-布料系统.md","ref":"第16天/162-unity5x-布料系统.md","articles":[]},{"title":"16.3 Unity5.X 动作系统","level":"1.19.3","depth":2,"path":"第16天/163-unity5x-动作系统.md","ref":"第16天/163-unity5x-动作系统.md","articles":[]},{"title":"16.4 LOD","level":"1.19.4","depth":2,"path":"第16天/164-lod.md","ref":"第16天/164-lod.md","articles":[]},{"title":"16.5 3D Text","level":"1.19.5","depth":2,"path":"第16天/165-3d-text.md","ref":"第16天/165-3d-text.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第16天/161-unity5x-声音的处理.md","mtime":"2016-12-17T15:01:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-17T17:27:03.712Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"16.1 Unity5.X 声音的处理","level":"1.19.1","depth":2,"next":{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"path":"第16天/162-unity5x-布料系统.md","ref":"第16天/162-unity5x-布料系统.md","articles":[]},"previous":{"title":"第16天","level":"1.19","depth":1,"path":"第16天/16.0 第16天.md","ref":"第16天/16.0 第16天.md","articles":[{"title":"16.1 Unity5.X 声音的处理","level":"1.19.1","depth":2,"path":"第16天/161-unity5x-声音的处理.md","ref":"第16天/161-unity5x-声音的处理.md","articles":[]},{"title":"16.2 Unity5.X 布料系统","level":"1.19.2","depth":2,"path":"第16天/162-unity5x-布料系统.md","ref":"第16天/162-unity5x-布料系统.md","articles":[]},{"title":"16.3 Unity5.X 动作系统","level":"1.19.3","depth":2,"path":"第16天/163-unity5x-动作系统.md","ref":"第16天/163-unity5x-动作系统.md","articles":[]},{"title":"16.4 LOD","level":"1.19.4","depth":2,"path":"第16天/164-lod.md","ref":"第16天/164-lod.md","articles":[]},{"title":"16.5 3D Text","level":"1.19.5","depth":2,"path":"第16天/165-3d-text.md","ref":"第16天/165-3d-text.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第16天/161-unity5x-声音的处理.md","mtime":"2016-12-18T04:47:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-18T15:39:41.275Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

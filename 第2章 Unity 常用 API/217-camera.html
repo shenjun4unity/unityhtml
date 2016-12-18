@@ -719,14 +719,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.20" >
+        <li class="chapter " data-level="1.3.20" data-path="220-assetbundle.html">
             
-                <span>
+                <a href="220-assetbundle.html">
             
                     
                     2.20 AssetBundle
             
-                </span>
+                </a>
             
 
             
@@ -2385,7 +2385,302 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="camera-&#x6444;&#x50CF;&#x673A;">Camera &#x6444;&#x50CF;&#x673A;</h2>
+<p>Camera&#x662F;&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#xFF0C;&#x73A9;&#x5BB6;&#x901A;&#x8FC7;&#x5B83;&#x770B;&#x4E16;&#x754C;&#x3002;</p>
+<p>&#x5C4F;&#x5E55;&#x7A7A;&#x95F4;&#x70B9;&#x7528;&#x50CF;&#x7D20;&#x5B9A;&#x4E49;&#xFF0C;&#x5C4F;&#x5E55;&#x7684;&#x5DE6;&#x4E0B;&#x4E3A;(0,0);&#x53F3;&#x4E0A;&#x662F;&#xFF08;PixelWidth&#xFF0C;pixelHeight&#xFF09;.Z&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x4EE5;&#x4E16;&#x754C;&#x5355;&#x4F4D;&#x8861;&#x91CF;&#x7684;&#x5230;&#x76F8;&#x673A;&#x7684;&#x8DDD;&#x79BB;&#x3002;</p>
+<p>&#x89C6;&#x53E3;&#x7A7A;&#x95F4;&#x70B9;&#x662F;&#x89C4;&#x8303;&#x7684;&#x5E76;&#x76F8;&#x5BF9;&#x4E8E;&#x76F8;&#x673A;&#x7684;&#x3002;&#x76F8;&#x673A;&#x7684;&#x5DE6;&#x4E0B;&#x4E3A;&#xFF08;0,0&#xFF09;&#xFF1B;&#x53F3;&#x4E0A;&#x662F;&#xFF08;1,1&#xFF09;&#xFF1B;Z&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x4EE5;&#x4E16;&#x754C;&#x4E3A;&#x5355;&#x4F4D;&#x8861;&#x91CF;&#x7684;&#x5230;&#x76F8;&#x673A;&#x7684;&#x8DDD;&#x79BB;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9759;&#x6001;&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">allCameras</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x573A;&#x666F;&#x4E2D;&#x6240;&#x6709;&#x76F8;&#x673A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">allCamerasCount</td>
+<td style="text-align:left">&#x5F53;&#x524D;&#x573A;&#x666F;&#x4E2D;&#x76F8;&#x673A;&#x7684;&#x6570;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>current</strong></td>
+<td style="text-align:left">&#x5F53;&#x524D;&#x7528;&#x4E8E;&#x6E32;&#x67D3;&#x7684;&#x76F8;&#x673A;&#xFF0C;&#x53EA;&#x7528;&#x4E8E;&#x4F4E;&#x7EA7;&#x7684;&#x6E32;&#x67D3;&#x63A7;&#x5236;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>main</strong></td>
+<td style="text-align:left">&#x7B2C;&#x4E00;&#x4E2A;&#x542F;&#x7528;&#x7684;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x201C;MainCamera&#x201D;&#x7684;&#x76F8;&#x673A;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">actualRenderingPath</td>
+<td style="text-align:left">&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x7684;&#x6E32;&#x67D3;&#x8DEF;&#x5F84;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">aspect</td>
+<td style="text-align:left">&#x957F;&#x5BBD;&#x6BD4;&#xFF08;&#x5BBD;&#x5EA6;&#x9664;&#x4EE5;&#x9AD8;&#x5EA6;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">backgroundColor</td>
+<td style="text-align:left">&#x5C4F;&#x5E55;&#x5C06;&#x88AB;&#x6E05;&#x7406;&#x4E3A;&#x8FD9;&#x4E2A;&#x989C;&#x8272;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">cameraToWorldMatrix</td>
+<td style="text-align:left">&#x4ECE;&#x76F8;&#x673A;&#x7A7A;&#x95F4;&#x5230;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x6362;&#x77E9;&#x9635;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">clearFlags</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x5982;&#x4F55;&#x6E05;&#x9664;&#x80CC;&#x666F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">cullingMask</td>
+<td style="text-align:left">&#x8FD9;&#x4E2A;&#x7528;&#x6765;&#x9009;&#x62E9;&#x6027;&#x7684;&#x6E32;&#x67D3;&#x90E8;&#x5206;&#x573A;&#x666F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">depth</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x5728;&#x6E32;&#x67D3;&#x987A;&#x5E8F;&#x4E0A;&#x7684;&#x6DF1;&#x5EA6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">depthTextureMode</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x751F;&#x6210;&#x600E;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x6DF1;&#x5EA6;&#x7EB9;&#x7406;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">eventMask</td>
+<td style="text-align:left">&#x906E;&#x6321;&#x76F8;&#x673A;&#x7684;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x56FE;&#x5C42;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">farClipPlane</td>
+<td style="text-align:left">&#x8FDC;&#x88C1;&#x526A;&#x9762;&#x7684;&#x8DDD;&#x79BB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">fieldOfView</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x7684;&#x89C6;&#x91CE;&#xFF0C;&#x4EE5;&#x5EA6;&#x4E3A;&#x5355;&#x4F4D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">hdr</td>
+<td style="text-align:left">&#x9AD8;&#x52A8;&#x6001;&#x8303;&#x56F4;&#x6E32;&#x67D3;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">layerCullDistances</td>
+<td style="text-align:left">&#x6BCF;&#x5C42;&#x7684;&#x6D88;&#x9690;&#x8DDD;&#x79BB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">layerCullSpherical</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x5982;&#x4F55;&#x6267;&#x884C;&#x6BCF;&#x5C42;&#x7684;&#x6D88;&#x9690;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">nearClipPlane</td>
+<td style="text-align:left">&#x8FD1;&#x88C1;&#x526A;&#x9762;&#x7684;&#x8DDD;&#x79BB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">orthographic</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x662F;&#x6B63;&#x4EA4;&#x7684;&#xFF08;true&#xFF09;&#xFF0C;&#x662F;&#x900F;&#x89C6;&#x7684;&#xFF08;false&#xFF09;&#xFF1F;</td>
+</tr>
+<tr>
+<td style="text-align:left">orthographicSize</td>
+<td style="text-align:left">&#x5728;&#x6B63;&#x4EA4;&#x6A21;&#x5F0F;&#x4E0B;&#x76F8;&#x673A;&#x7684;&#x4E00;&#x534A;&#x5C3A;&#x5BF8;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">pixelHeight</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x6709;&#x591A;&#x9AD8;&#xFF0C;&#x4EE5;&#x50CF;&#x7D20;&#x5355;&#x4F4D;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">pixelRect</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x88AB;&#x6E32;&#x67D3;&#x5230;&#x5C4F;&#x5E55;&#x50CF;&#x7D20;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">pixelWidth</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x6709;&#x591A;&#x5BBD;&#xFF0C;&#x4EE5;&#x50CF;&#x7D20;&#x5355;&#x4F4D;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">projectionMatrix</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6295;&#x5F71;&#x77E9;&#x9635;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">rect</td>
+<td style="text-align:left">&#x76F8;&#x673A;&#x88AB;&#x6E32;&#x67D3;&#x5230;&#x5C4F;&#x5E55;&#x89C4;&#x8303;&#x5316;&#x5750;&#x6807;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">renderingPath</td>
+<td style="text-align:left">&#x6E32;&#x67D3;&#x8DEF;&#x5F84;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">stereoConvergence</td>
+<td style="text-align:left">&#x865A;&#x62DF;&#x773C;&#x76F8;&#x4EA4;&#x70B9;&#x95F4;&#x8DDD;</td>
+</tr>
+<tr>
+<td style="text-align:left">stereoEnabled</td>
+<td style="text-align:left">&#x7ACB;&#x4F53;&#x6E32;&#x67D3;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">stereoSeparation</td>
+<td style="text-align:left">&#x865A;&#x62DF;&#x773C;&#x95F4;&#x8DDD;&#x79BB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">targetTexture</td>
+<td style="text-align:left">&#x63CF;&#x8FF0;&#x6E32;&#x67D3;&#x7EB9;&#x7406;&#xFF08;&#x4EC5;Unity&#x4E13;&#x4E1A;&#x7248;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">transparencySortMode</td>
+<td style="text-align:left">&#x900F;&#x660E;&#x7269;&#x4F53;&#x7684;&#x6392;&#x5E8F;&#x6A21;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">useOcclusionCulling</td>
+<td style="text-align:left">&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x5728;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x4E2D;&#x76F8;&#x673A;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x906E;&#x6321;&#x5254;&#x9664;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">velocity</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x4E2D;&#x76F8;&#x673A;&#x7684;&#x901F;&#x5EA6;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">worldToCameraMatrix</td>
+<td style="text-align:left">&#x4ECE;&#x4E16;&#x754C;&#x5230;&#x76F8;&#x673A;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x6362;&#x77E9;&#x9635;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x516C;&#x6709;&#x51FD;&#x6570;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CalculateObliqueMatrix</td>
+<td style="text-align:left">&#x8BA1;&#x7B97;&#x5E76;&#x8FD4;&#x56DE;&#x503E;&#x659C;&#x63A5;&#x8FD1;&#x6C34;&#x5E73;&#x7684;&#x6295;&#x5F71;&#x77E9;&#x9635;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">CopyFrom</td>
+<td style="text-align:left">&#x4F7F;&#x8FD9;&#x4E2A;&#x76F8;&#x673A;&#x7684;&#x8BBE;&#x7F6E;&#x4E0E;&#x5176;&#x4ED6;&#x76F8;&#x673A;&#x76F8;&#x540C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Render</td>
+<td style="text-align:left">&#x624B;&#x52A8;&#x6E32;&#x67D3;&#x76F8;&#x673A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">RenderToCubemap</td>
+<td style="text-align:left">&#x4ECE;&#x8FD9;&#x4E2A;&#x76F8;&#x673A;&#x6E32;&#x67D3;&#x5230;&#x4E00;&#x4E2A;&#x7ACB;&#x65B9;&#x8D34;&#x56FE;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">RenderWithShader</td>
+<td style="text-align:left">&#x7528;shader&#x66FF;&#x4EE3;&#x6E32;&#x67D3;&#x76F8;&#x673A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ResetAspect</td>
+<td style="text-align:left">&#x6062;&#x590D;&#x957F;&#x5BBD;&#x6BD4;&#x4E3A;&#x5C4F;&#x5E55;&#x7684;&#x957F;&#x5BBD;&#x6BD4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ResetProjectionMatrix</td>
+<td style="text-align:left">&#x8BA9;&#x6295;&#x5F71;&#x53CD;&#x6620;&#x6B63;&#x5E38;&#x7684;&#x76F8;&#x673A;&#x53C2;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ResetReplacementShader</td>
+<td style="text-align:left">&#x4ECE;&#x76F8;&#x673A;&#x4E0A;&#x79FB;&#x9664;shader&#x66FF;&#x6362;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ResetWorldToCameraMatrix</td>
+<td style="text-align:left">&#x5728;&#x573A;&#x666F;&#x4E2D;&#x8BA9;&#x6E32;&#x67D3;&#x4F4D;&#x7F6E;&#x53CD;&#x6620;&#x76F8;&#x673A;&#x7684;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ScreenPointToRay</strong></td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x4E00;&#x6761;&#x5C04;&#x7EBF;&#x4ECE;&#x6444;&#x50CF;&#x673A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5C4F;&#x5E55;&#x70B9;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ScreenToViewportPoint</td>
+<td style="text-align:left">&#x4ECE;&#x5C4F;&#x5E55;&#x7A7A;&#x95F4;&#x5230;&#x89C6;&#x7A97;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ScreenToWorldPoint</td>
+<td style="text-align:left">&#x4ECE;&#x5C4F;&#x5E55;&#x7A7A;&#x95F4;&#x5230;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetReplacementShader</td>
+<td style="text-align:left">&#x4F7F;&#x76F8;&#x673A;&#x6E32;&#x67D3;&#x7528;shader&#x66FF;&#x6362;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetTargetBuffers</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x76F8;&#x673A;&#x6E32;&#x67D3;&#x5230;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;RenderTextures&#x6240;&#x9009;&#x62E9;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ViewportPointToRay</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x4ECE;&#x76F8;&#x673A;&#x51FA;&#x53D1;&#x7A7F;&#x8FC7;&#x89C6;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x5C04;&#x7EBF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ViewportToScreenPoint</td>
+<td style="text-align:left">&#x4ECE;&#x89C6;&#x53E3;&#x7A7A;&#x95F4;&#x5230;&#x5C4F;&#x5E55;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ViewportToWorldPoint</td>
+<td style="text-align:left">&#x4ECE;&#x89C6;&#x7A97;&#x7A7A;&#x95F4;&#x5230;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">WorldToScreenPoint</td>
+<td style="text-align:left">&#x4ECE;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x5230;&#x5C4F;&#x5E55;&#x7A7A;&#x95F4;&#x53D8;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">WorldToViewportPoint</td>
+<td style="text-align:left">&#x4ECE;&#x4E16;&#x754C;&#x7A7A;&#x95F4;&#x5230;&#x89C6;&#x7A97;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9759;&#x6001;&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GetAllCameras</td>
+<td style="text-align:left">&#x7528;&#x5F53;&#x524D;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x6444;&#x50CF;&#x673A;&#x586B;&#x8865;&#x76F8;&#x673A;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6570;&#x7EC4;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Message &#x6D88;&#x606F;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">OnPostRender</td>
+<td style="text-align:left">OnPostRender&#x5728;&#x76F8;&#x673A;&#x6E32;&#x67D3;&#x573A;&#x666F;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">OnPreCull</td>
+<td style="text-align:left">OnPreCull&#x5728;&#x76F8;&#x673A;&#x5F00;&#x59CB;&#x88C1;&#x526A;&#x573A;&#x666F;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">OnRenderImage</td>
+<td style="text-align:left">OnRenderImage&#x5728;&#x6240;&#x6709;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x540E;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x6765;&#x6E32;&#x67D3;&#x56FE;&#x7247;&#x7684;&#x540E;&#x671F;&#x5904;&#x7406;&#x6548;&#x679C;&#xFF08;&#x4EC5;&#x9650;UnityPro&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">OnRenderObject</td>
+<td style="text-align:left">OnRenderObject &#x5728;&#x76F8;&#x673A;&#x6E32;&#x67D3;&#x5B8C;&#x573A;&#x666F;&#x4EE5;&#x540E;&#x88AB;&#x8C03;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">OnWillRenderObject</td>
+<td style="text-align:left">&#x5982;&#x679C;&#x7269;&#x4F53;&#x53EF;&#x89C1;&#xFF0C;&#x6BCF;&#x4E2A;&#x76F8;&#x673A;&#x90FD;&#x4F1A;&#x8C03;&#x7528;OnWillRenderObject&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -2412,7 +2707,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.17 Camera","level":"1.3.17","depth":2,"next":{"title":"2.18 AudioSource","level":"1.3.18","depth":2,"path":"第2章 Unity 常用 API/218-audiosource.md","ref":"第2章 Unity 常用 API/218-audiosource.md","articles":[]},"previous":{"title":"2.16 CharacterController","level":"1.3.16","depth":2,"path":"第2章 Unity 常用 API/216-charactercontroller.md","ref":"第2章 Unity 常用 API/216-charactercontroller.md","articles":[]},"dir":"neutral"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/217-camera.md","mtime":"2016-12-02T09:46:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-17T17:27:03.712Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.17 Camera","level":"1.3.17","depth":2,"next":{"title":"2.18 AudioSource","level":"1.3.18","depth":2,"path":"第2章 Unity 常用 API/218-audiosource.md","ref":"第2章 Unity 常用 API/218-audiosource.md","articles":[]},"previous":{"title":"2.16 CharacterController","level":"1.3.16","depth":2,"path":"第2章 Unity 常用 API/216-charactercontroller.md","ref":"第2章 Unity 常用 API/216-charactercontroller.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/217-camera.md","mtime":"2016-12-18T14:37:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-18T15:39:41.275Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
