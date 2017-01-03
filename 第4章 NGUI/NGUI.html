@@ -55,6 +55,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="41-ngui-事件监听.html" />
+    
     
     <link rel="prev" href="../第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.html" />
     
@@ -2436,6 +2438,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="41-ngui-事件监听.html">
+            
+                <a href="41-ngui-事件监听.html">
+            
+                    
+                    4.1 NGUI 事件监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -2480,56 +2501,99 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="uiroot">UIRoot</h2>
-<pre><code>&#x6CE8;&#x610F;&#xFF1A;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x6253;&#x5F00;&#xFF0C;&#x5426;&#x5219;&#x770B;&#x4E0D;&#x5230;&#x6846;&#xFF0C;&#x65E0;&#x6CD5;&#x7528;&#x9F20;&#x6807;&#x83DC;&#x5355;&#x3002;
-</code></pre><h2 id="lable">Lable</h2>
-<h2 id="sprite">Sprite</h2>
-<pre><code>Slice   &#x4E5D;&#x5BAB;&#x683C; &#x4FEE;&#x6539;Border&#x5C5E;&#x6027;
-Filled  &#x6280;&#x80FD;&#x51B7;&#x5374;&#x52A8;&#x753B;
-</code></pre><h2 id="button">Button</h2>
-<h2 id="panel">Panel</h2>
-<h2 id="widiget">Widiget</h2>
-<h2 id="anchor">Anchor</h2>
-<h2 id="atlasmaker">AtlasMaker</h2>
-<h2 id="dynamicfont">DynamicFont</h2>
-<h2 id="tween">Tween</h2>
-<h2 id="slider">Slider</h2>
-<p>   &#x9700;&#x8981;&#x4F7F;&#x7528;sprite&#x7EC4;&#x4EF6;</p>
-<h2 id="play-sound&#x811A;&#x672C;">Play Sound&#x811A;&#x672C;</h2>
-<h2 id="typewriter-effect&#x811A;&#x672C;-&#xFF08;&#x6253;&#x5B57;&#x673A;&#x6548;&#x679C;&#xFF09;">Typewriter Effect&#x811A;&#x672C; &#xFF08;&#x6253;&#x5B57;&#x673A;&#x6548;&#x679C;&#xFF09;</h2>
-<h2 id="slider-colors&#x811A;&#x672C;">Slider Colors&#x811A;&#x672C;</h2>
-<pre><code>&#x6ED1;&#x52A8;&#x6761;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x989C;&#x8272;&#x4F1A;&#x6709;&#x53D8;&#x5316;&#x3002;
-</code></pre><h2 id="poput-list">Poput List</h2>
-<pre><code>&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5B50;&#x7269;&#x4F53;Label&#xFF0C;&#x7528;Label&#x663E;&#x793A;&#x5F53;&#x524D;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x628A;Lable&#x62D6;&#x5165;&#x4E8B;&#x4EF6;OnValueChange&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x4E3A;SetCurrentSelection&#x3002;
-</code></pre><h2 id="checkbox">CheckBox</h2>
-<pre><code>&#x6DFB;&#x52A0;BoxCollider&#x3001;Toggle Script&#x811A;&#x672C;
+                                <h3 id="1&#x3001;uiroot">1&#x3001;UIRoot</h3>
+<pre><code>    &#x6CE8;&#x610F;&#xFF1A;&#x9700;&#x8981;&#x6253;&#x5F00;Panel&#x7EC4;&#x4EF6;&#xFF0C;&#x5426;&#x5219;&#x770B;&#x4E0D;&#x5230;&#x6846;&#xFF0C;&#x65E0;&#x6CD5;&#x7528;&#x9F20;&#x6807;&#x83DC;&#x5355;&#x3002;
+</code></pre><h3 id="2&#x3001;lable">2&#x3001;Lable</h3>
+<pre><code>    &#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#xFF1A;Unity&#x5B57;&#x4F53;&#xFF08;&#x52A8;&#x6001;&#x5B57;&#x4F53;&#xFF09;&#x3001;NGUI&#x5B57;&#x4F53;
 
-&#x6307;&#x5B9A;UIToggle&#x4E2D;State Transition&#x4E2D;&#x7684;Sprite&#xFF0C;&#x7528;&#x4E8E;&#x5207;&#x6362;&#x72B6;&#x6001;&#x65F6;&#x663E;&#x793A;&#x7684;&#x56FE;&#x7247;&#x3002;
-</code></pre><h2 id="&#x8BBE;&#x8BA1;&#x9009;&#x9879;&#xFF08;&#x58F0;&#x97F3;&#x5927;&#x5C0F;&#x3001;&#x96BE;&#x5EA6;&#x9009;&#x9879;&#xFF09;">&#x8BBE;&#x8BA1;&#x9009;&#x9879;&#xFF08;&#x58F0;&#x97F3;&#x5927;&#x5C0F;&#x3001;&#x96BE;&#x5EA6;&#x9009;&#x9879;&#xFF09;</h2>
-<h2 id="&#x76D1;&#x542C;&#x63A7;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;">&#x76D1;&#x542C;&#x63A7;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;</h2>
+    Typewriter Effect&#x811A;&#x672C; &#xFF08;&#x6253;&#x5B57;&#x673A;&#x6548;&#x679C;&#xFF09;
+</code></pre><h3 id="3&#x3001;sprite">3&#x3001;Sprite</h3>
+<pre><code>    &#x529F;&#x80FD;&#x7C7B;&#x4F3C;UGUI&#x4E2D;&#x7684;Image
+    Slice   &#x4E5D;&#x5BAB;&#x683C; &#x4FEE;&#x6539;Border&#x5C5E;&#x6027;
+    Filled  &#x6280;&#x80FD;&#x51B7;&#x5374;&#x52A8;&#x753B; &#x5B9E;&#x73B0;&#x6280;&#x80FD;&#x7684;CD&#x6548;&#x679C;
+</code></pre><h3 id="4&#x3001;button">4&#x3001;Button</h3>
+<pre><code>Sprite&#x3001;BoxCollider&#x3001;Button
+Play Sound&#x811A;&#x672C;
+
+&#x4E3E;&#x4F8B;&#xFF1A;1&#xFF09;&#x3001;&#x4F7F;&#x7528;Label&#x521B;&#x5EFA;&#x6309;&#x94AE;
+            &#x6DFB;&#x52A0;BoxCollider : &#x7528;&#x4E8E;&#x5C04;&#x7EBF;&#x68C0;&#x6D4B;
+            &#x6DFB;&#x52A0;Button&#x7EC4;&#x4EF6;
+
+     2&#xFF09;&#x3001;&#x4F7F;&#x7528;Sprite&#x521B;&#x5EFA;&#x6309;&#x94AE;&#x3001;&#x6DFB;&#x52A0;&#x5B50;&#x7269;&#x4F53;Label
+            &#x53EF;&#x4EE5;&#x6DFB;&#x52A0;2&#x4E2A;UIButton&#x7EC4;&#x4EF6;&#x6765;&#x5206;&#x522B;&#x63A7;&#x5236;Sprite&#x548C;Label&#x7684;&#x989C;&#x8272;&#x53D8;&#x5316;
+</code></pre><h3 id="5&#x3001;panel">5&#x3001;Panel</h3>
+<pre><code>    &#x7528;&#x4E8E;&#x5206;&#x7EC4;&#x7BA1;&#x7406;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x5BB9;&#x5668;&#x3001;&#x53EF;&#x4EE5;&#x5728;Scene&#x7A97;&#x53E3;&#x4E2D;&#x4F7F;&#x7528;&#x53F3;&#x952E;&#x83DC;&#x5355;&#x529F;&#x80FD;
+    &#x53EF;&#x4EE5;&#x901A;&#x8FC7;Clipping &#x8BBE;&#x7F6E;&#x526A;&#x88C1;&#x533A;&#x57DF;
+</code></pre><h3 id="6&#x3001;widiget">6&#x3001;Widiget</h3>
+<pre><code>    Pivot &#x4E2D;&#x5FC3;&#x70B9;
+    Depth &#x6DF1;&#x5EA6;&#xFF0C;&#x7528;&#x6765;&#x63A7;&#x5236;&#x7ED8;&#x5236;&#x5FAA;&#x5E8F;&#xFF0C;&#x6570;&#x503C;&#x5C0F;&#x7684;&#x5148;&#x7ED8;&#x5236;
+    Size &#x56FE;&#x7247;&#x5C3A;&#x5BF8;
+    Aspect &#x6BD4;&#x4F8B; Free/BasedOnWidth/BasedOnHeight
+    Anchors &#x951A;&#x70B9;&#x8BBE;&#x7F6E;**
+</code></pre><h3 id="7&#x3001;atlasmaker&#xFF08;&#x56FE;&#x96C6;&#x5236;&#x4F5C;&#xFF09;">7&#x3001;AtlasMaker&#xFF08;&#x56FE;&#x96C6;&#x5236;&#x4F5C;&#xFF09;</h3>
+<pre><code>&#x628A;&#x788E;&#x56FE;&#x6574;&#x5408;&#x5230;&#x4E00;&#x5F20;&#x5927;&#x56FE;&#x4E2D;
+</code></pre><blockquote>
+<p>DynamicFont&#xFF08;&#x52A8;&#x6001;&#x5B57;&#x4F53;&#x5236;&#x4F5C;&#xFF09;</p>
+<p>&#x2003;&#x2003;UIFont&#x7EC4;&#x4EF6;</p>
+</blockquote>
+<h3 id="8&#x3001;tween-&#xFF08;&#x8865;&#x95F4;&#x52A8;&#x753B;&#xFF09;">8&#x3001;Tween &#xFF08;&#x8865;&#x95F4;&#x52A8;&#x753B;&#xFF09;</h3>
+<pre><code>    Tween Alpha
+        From/To
+        PlayStyle : Once/Loop/PingPang
+        Duration : &#x6301;&#x7EED;&#x65F6;&#x95F4;
+        StartDelay : &#x591A;&#x5C11;&#x4E8B;&#x4EF6;&#x540E;&#x5F00;&#x59CB;
+        TweenGroup
+        Ignore TimeScale
+
+    Tween Color
+
+    Tween Width
+
+    Tween Height
+
+    Tween Position
+
+    Tween Rotation
+
+    Tween Scale
+
+    Tween Transform
+</code></pre><h3 id="9&#x3001;slider">9&#x3001;Slider</h3>
+<pre><code>   &#x9700;&#x8981;&#x4F7F;&#x7528;slider&#x7EC4;&#x4EF6;
+
+   Slider Colors&#x811A;&#x672C;
+        &#x6ED1;&#x52A8;&#x6761;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x989C;&#x8272;&#x4F1A;&#x6709;&#x53D8;&#x5316;&#x3002;
+</code></pre><h3 id="10&#x3001;poput-list">10&#x3001;Poput List</h3>
+<pre><code>    &#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5B50;&#x7269;&#x4F53;Label&#xFF0C;&#x7528;Label&#x663E;&#x793A;&#x5F53;&#x524D;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x628A;Lable&#x62D6;&#x5165;&#x4E8B;&#x4EF6;OnValueChange&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x4E3A;SetCurrentSelection&#x3002;
+</code></pre><h3 id="11&#x3001;checkbox">11&#x3001;CheckBox</h3>
+<pre><code>    &#x6DFB;&#x52A0;BoxCollider&#x3001;Toggle Script&#x811A;&#x672C;
+
+    &#x6307;&#x5B9A;UIToggle&#x4E2D;State Transition&#x4E2D;&#x7684;Sprite&#xFF0C;&#x7528;&#x4E8E;&#x5207;&#x6362;&#x72B6;&#x6001;&#x65F6;&#x663E;&#x793A;&#x7684;&#x56FE;&#x7247;&#x3002;
+</code></pre><hr>
+<h4 id="&#x7EC3;&#x4E60;&#x4E00;&#xFF1A;&#x8BBE;&#x8BA1;&#x9009;&#x9879;&#xFF08;&#x58F0;&#x97F3;&#x5927;&#x5C0F;&#x3001;&#x96BE;&#x5EA6;&#x9009;&#x9879;&#xFF09;">&#x7EC3;&#x4E60;&#x4E00;&#xFF1A;&#x8BBE;&#x8BA1;&#x9009;&#x9879;&#xFF08;&#x58F0;&#x97F3;&#x5927;&#x5C0F;&#x3001;&#x96BE;&#x5EA6;&#x9009;&#x9879;&#xFF09;</h4>
+<h3 id="12&#x3001;&#x76D1;&#x542C;&#x63A7;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;">12&#x3001;&#x76D1;&#x542C;&#x63A7;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;</h3>
 <pre><code>&#x58F0;&#x97F3;&#x5927;&#x5C0F;  UIProgressBar.current.value &#x7528;&#x6765;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6ED1;&#x52A8;&#x6761;&#x7684;&#x503C;&#xFF08;&#x6700;&#x597D;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;Trim()&#x5904;&#x7406;&#x4E0B;&#xFF09;
 &#x6E38;&#x620F;&#x96BE;&#x5EA6;  UIPopupList.current.value &#x83B7;&#x53D6;&#x5F53;&#x524D;PopupList&#x7684;&#x503C;
 &#x662F;&#x5426;&#x5168;&#x5C4F;  UIToggle.current.value &#x83B7;&#x53D6;&#x5F53;&#x524D;CheckBox&#x7684;&#x503C;
-</code></pre><h2 id="&#x754C;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x5207;&#x6362;">&#x754C;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x5207;&#x6362;</h2>
+</code></pre><h4 id="&#x7EC3;&#x4E60;&#x4E8C;&#xFF1A;&#x754C;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x5207;&#x6362;">&#x7EC3;&#x4E60;&#x4E8C;&#xFF1A;&#x754C;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x5207;&#x6362;</h4>
 <pre><code>&#x5BF9;&#x754C;&#x9762;&#x6DFB;&#x52A0;TweenPosition&#x811A;&#x672C;&#xFF08;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;PlayForward&#x3001;playReverse&#x65B9;&#x6CD5;&#x64AD;&#x653E;&#xFF09;
-</code></pre><h2 id="&#x5B9E;&#x73B0;&#x6280;&#x80FD;&#x7684;cd&#x6548;&#x679C;">&#x5B9E;&#x73B0;&#x6280;&#x80FD;&#x7684;CD&#x6548;&#x679C;</h2>
-<h2 id="&#x8F93;&#x5165;&#x6846;&#xFF08;&#x5355;&#x884C;&#x6587;&#x672C;&#x3001;&#x591A;&#x884C;&#x6587;&#x672C;&#xFF09;">&#x8F93;&#x5165;&#x6846;&#xFF08;&#x5355;&#x884C;&#x6587;&#x672C;&#x3001;&#x591A;&#x884C;&#x6587;&#x672C;&#xFF09;</h2>
+</code></pre><h3 id="13&#x3001;&#x8F93;&#x5165;&#x6846;&#xFF08;&#x5355;&#x884C;&#x6587;&#x672C;&#x3001;&#x591A;&#x884C;&#x6587;&#x672C;&#xFF09;">13&#x3001;&#x8F93;&#x5165;&#x6846;&#xFF08;&#x5355;&#x884C;&#x6587;&#x672C;&#x3001;&#x591A;&#x884C;&#x6587;&#x672C;&#xFF09;</h3>
 <pre><code>InputField&#x811A;&#x672C;&#x7EC4;&#x4EF6;&#xFF08;&#x6307;&#x5B9A;Label&#x5C5E;&#x6027;&#xFF09;
 Widget/Pivot&#x4F1A;&#x5F71;&#x54CD;&#x6587;&#x5B57;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;
-</code></pre><h2 id="&#x6CE8;&#x518C;&#x754C;&#x9762;">&#x6CE8;&#x518C;&#x754C;&#x9762;</h2>
+</code></pre><h4 id="&#x7EC3;&#x4E60;&#x4E09;&#x3001;&#x6CE8;&#x518C;&#x754C;&#x9762;">&#x7EC3;&#x4E60;&#x4E09;&#x3001;&#x6CE8;&#x518C;&#x754C;&#x9762;</h4>
 <pre><code>UIInput&#xFF08;&#x4F7F;&#x7528;value&#x7684;&#x503C;&#x6539;&#x53D8;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#xFF09;
-</code></pre><h2 id="&#x53EF;&#x62D6;&#x62FD;&#x529F;&#x80FD;&#x548C;&#x53EF;&#x8C03;&#x8282;&#x5927;&#x5C0F;">&#x53EF;&#x62D6;&#x62FD;&#x529F;&#x80FD;&#x548C;&#x53EF;&#x8C03;&#x8282;&#x5927;&#x5C0F;</h2>
+</code></pre><h4 id="&#x7EC3;&#x4E60;&#x56DB;&#x3001;&#x53EF;&#x62D6;&#x62FD;&#x529F;&#x80FD;&#x548C;&#x53EF;&#x8C03;&#x8282;&#x5927;&#x5C0F;">&#x7EC3;&#x4E60;&#x56DB;&#x3001;&#x53EF;&#x62D6;&#x62FD;&#x529F;&#x80FD;&#x548C;&#x53EF;&#x8C03;&#x8282;&#x5927;&#x5C0F;</h4>
 <pre><code>&#x6DFB;&#x52A0;UIDrag Object&#x7EC4;&#x4EF6;&#x3001;&#x6DFB;&#x52A0;&#x53F3;&#x4E0B;&#x89D2;&#x62D6;&#x62FD;&#x624B;&#x67C4;&#xFF08;BoxCollider&#x3001;UIDrag Resize&#x811A;&#x672C;&#x3001;&#x8BBE;&#x7F6E;&#x951A;&#x70B9;&#xFF09;
-</code></pre><h2 id="scrollbar-&#x6EDA;&#x52A8;&#x6761;">ScrollBar &#x6EDA;&#x52A8;&#x6761;</h2>
+</code></pre><h3 id="14&#x3001;scrollbar-&#x6EDA;&#x52A8;&#x6761;">14&#x3001;ScrollBar &#x6EDA;&#x52A8;&#x6761;</h3>
 <pre><code>UIScrollBar&#x7EC4;&#x4EF6;&#xFF08;Size&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x62D6;&#x52A8;&#x6761;&#x7684;&#x5927;&#x5C0F;&#xFF09;
-</code></pre><h2 id="textlist&#x6587;&#x672C;&#x5217;&#x8868;">TextList&#x6587;&#x672C;&#x5217;&#x8868;</h2>
+</code></pre><h3 id="15&#x3001;textlist&#x6587;&#x672C;&#x5217;&#x8868;">15&#x3001;TextList&#x6587;&#x672C;&#x5217;&#x8868;</h3>
 <pre><code>&#x4F7F;&#x7528;Label&#xFF0C;&#x7136;&#x540E;&#x6DFB;&#x52A0;UITextList&#x811A;&#x672C;&#x7EC4;&#x4EF6;&#xFF08;&#x8FD0;&#x884C;&#x540E;&#x4F1A;&#x6E05;&#x7A7A;&#x6587;&#x672C;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4EE3;&#x7801;Add&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x6587;&#x672C;&#xFF0C;&#x53EF;&#x62D6;&#x62FD;&#xFF09;
 
 Paragraph Histroy &#x8BBE;&#x7F6E;&#x4FDD;&#x7559;&#x6700;&#x5927;&#x7684;&#x7EAA;&#x5F55;&#x6570;&#x91CF;
 
 Style : Chat &#x4ECE;&#x4E0B;&#x5F80;&#x4E0A;&#x6DFB;&#x52A0;
-</code></pre><h2 id="&#x804A;&#x5929;&#x7CFB;&#x7EDF;&#x7684;&#x80CC;&#x666F;&#x3001;&#x6EDA;&#x52A8;&#x6761;&#xFF08;scrollbar&#xFF09;&#x3001;&#x8F93;&#x5165;&#x5217;&#x8868;&#x6846;textlist&#x3001;&#x8F93;&#x5165;&#x6846;&#xFF08;uiinput&#x3001;&#x53BB;&#x6389;&#x8F93;&#x5165;&#x540E;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#xFF09;">&#x804A;&#x5929;&#x7CFB;&#x7EDF;&#x7684;&#x80CC;&#x666F;&#x3001;&#x6EDA;&#x52A8;&#x6761;&#xFF08;ScrollBar&#xFF09;&#x3001;&#x8F93;&#x5165;&#x5217;&#x8868;&#x6846;(TextList)&#x3001;&#x8F93;&#x5165;&#x6846;&#xFF08;UIInput&#x3001;&#x53BB;&#x6389;&#x8F93;&#x5165;&#x540E;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#xFF09;</h2>
-<h2 id="&#x80CC;&#x5305;">&#x80CC;&#x5305;</h2>
+</code></pre><h3 id="&#x7EC3;&#x4E60;&#x4E94;&#xFF1A;&#x804A;&#x5929;&#x7CFB;&#x7EDF;&#x7684;&#x80CC;&#x666F;&#x3001;&#x6EDA;&#x52A8;&#x6761;&#xFF08;scrollbar&#xFF09;&#x3001;&#x8F93;&#x5165;&#x5217;&#x8868;&#x6846;textlist&#x3001;&#x8F93;&#x5165;&#x6846;&#xFF08;uiinput&#x3001;&#x53BB;&#x6389;&#x8F93;&#x5165;&#x540E;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#xFF09;">&#x7EC3;&#x4E60;&#x4E94;&#xFF1A;&#x804A;&#x5929;&#x7CFB;&#x7EDF;&#x7684;&#x80CC;&#x666F;&#x3001;&#x6EDA;&#x52A8;&#x6761;&#xFF08;ScrollBar&#xFF09;&#x3001;&#x8F93;&#x5165;&#x5217;&#x8868;&#x6846;(TextList)&#x3001;&#x8F93;&#x5165;&#x6846;&#xFF08;UIInput&#x3001;&#x53BB;&#x6389;&#x8F93;&#x5165;&#x540E;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;&#xFF09;</h3>
+<h4 id="&#x7EC3;&#x4E60;&#x516D;&#xFF1A;&#x80CC;&#x5305;">&#x7EC3;&#x4E60;&#x516D;&#xFF1A;&#x80CC;&#x5305;</h4>
 <p>   &#x62D6;&#x62FD;&#x7269;&#x4F53;&#x6DFB;&#x52A0; UIDRagDropItem&#x811A;&#x672C;&#x7EC4;&#x4EF6;</p>
 <pre><code class="lang-javascript">    public class MyDragDropItem : UIDragDropItem
     {
@@ -2551,10 +2615,14 @@ Style : Chat &#x4ECE;&#x4E0B;&#x5F80;&#x4E0A;&#x6DFB;&#x52A0;
 
             
                 
-                <a href="../第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.5 UGUI中的Canvas、Camera和Canvas Scaler">
+                <a href="../第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.html" class="navigation navigation-prev " aria-label="Previous page: 3.5 UGUI中的Canvas、Camera和Canvas Scaler">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="41-ngui-事件监听.html" class="navigation navigation-next " aria-label="Next page: 4.1 NGUI 事件监听">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -2563,7 +2631,7 @@ Style : Chat &#x4ECE;&#x4E0B;&#x5F80;&#x4E0A;&#x6DFB;&#x52A0;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第4章 NGUI","level":"1.25","depth":1,"previous":{"title":"3.5 UGUI中的Canvas、Camera和Canvas Scaler","level":"1.24.5","depth":2,"path":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","ref":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第4章 NGUI/NGUI.md","mtime":"2017-01-01T14:47:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-02T16:07:39.052Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第4章 NGUI","level":"1.25","depth":1,"next":{"title":"4.1 NGUI 事件监听","level":"1.25.1","depth":2,"path":"第4章 NGUI/41-ngui-事件监听.md","ref":"第4章 NGUI/41-ngui-事件监听.md","articles":[]},"previous":{"title":"3.5 UGUI中的Canvas、Camera和Canvas Scaler","level":"1.24.5","depth":2,"path":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","ref":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第4章 NGUI/NGUI.md","mtime":"2017-01-03T16:22:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T16:24:54.797Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

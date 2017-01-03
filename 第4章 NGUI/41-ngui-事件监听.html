@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>14.1 项目实战 -- ARPG · 博军一笑的个人主页</title>
+        <title>4.1 NGUI 事件监听 · 博军一笑的个人主页</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -55,10 +55,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../第15天/15.0 第15天.html" />
     
-    
-    <link rel="prev" href="14.0 第14天.html" />
+    <link rel="prev" href="NGUI.html" />
     
 
     </head>
@@ -1989,9 +1987,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="14.0 第14天.html">
+        <li class="chapter " data-level="1.17" data-path="../第14天/14.0 第14天.html">
             
-                <a href="14.0 第14天.html">
+                <a href="../第14天/14.0 第14天.html">
             
                     
                     第14天
@@ -2003,9 +2001,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.17.1" data-path="141-项目实战----arpg.html">
+        <li class="chapter " data-level="1.17.1" data-path="../第14天/141-项目实战----arpg.html">
             
-                <a href="141-项目实战----arpg.html">
+                <a href="../第14天/141-项目实战----arpg.html">
             
                     
                     14.1 项目实战 -- ARPG
@@ -2427,9 +2425,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.25" data-path="../第4章 NGUI/NGUI.html">
+        <li class="chapter " data-level="1.25" data-path="NGUI.html">
             
-                <a href="../第4章 NGUI/NGUI.html">
+                <a href="NGUI.html">
             
                     
                     第4章 NGUI
@@ -2441,9 +2439,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.25.1" data-path="../第4章 NGUI/41-ngui-事件监听.html">
+        <li class="chapter active" data-level="1.25.1" data-path="41-ngui-事件监听.html">
             
-                <a href="../第4章 NGUI/41-ngui-事件监听.html">
+                <a href="41-ngui-事件监听.html">
             
                     
                     4.1 NGUI 事件监听
@@ -2489,7 +2487,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >14.1 项目实战 -- ARPG</a>
+        <a href=".." >4.1 NGUI 事件监听</a>
     </h1>
 </div>
 
@@ -2501,15 +2499,62 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x9879;&#x76EE;&#x5B9E;&#x6218;----arpg">&#x9879;&#x76EE;&#x5B9E;&#x6218; -- ARPG</h2>
-<pre><code>    1&#x3001;&#x89D2;&#x8272;&#x9700;&#x8981;&#x6709;&#x8FDE;&#x62DB;
-    2&#x3001;&#x9700;&#x8981;&#x6709;&#x5927;&#x62DB;&#xFF1A;&#x81F3;&#x5C11;2&#x4E2A;&#xFF0C;&#x914D;&#x5408;&#x7279;&#x6548;
-    3&#x3001;&#x89C6;&#x89D2;&#xFF1A;&#x56FA;&#x5B9A;&#x89C6;&#x89D2;
-    4&#x3001;&#x654C;&#x4EBA;&#x81F3;&#x5C11;2&#x79CD;&#xFF1A;&#x9700;&#x8981;&#x6709;&#x5BFB;&#x8DEF;
-    5&#x3001;&#x9700;&#x8981;&#x6709;Boss&#xFF1A;&#x81F3;&#x5C11;&#x6709;&#x4E24;&#x79CD;&#x6280;&#x80FD;&#x3001;AI&#x8BBE;&#x5B9A;
-    6&#x3001;&#x4E3B;&#x89D2;&#x6B7B;&#x4EA1;&#x540E;&#x53EF;&#x4EE5;&#x91CD;&#x751F;
-</code></pre><p>&#x8D44;&#x6E90;&#x4E0B;&#x8F7D;&#xFF1A;
-&#x94FE;&#x63A5;: <a href="https://pan.baidu.com/s/1qYhISxu" target="_blank">https://pan.baidu.com/s/1qYhISxu</a> &#x5BC6;&#x7801;: 3avs</p>
+                                <h2 id="ngui&#x4E8B;&#x4EF6;&#x76D1;&#x542C;">NGUI&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</h2>
+<p>NGUI&#x4E8B;&#x4EF6;&#x7684;&#x79CD;&#x7C7B;&#x5F88;&#x591A;&#xFF0C;&#x6BD4;&#x5982;&#x70B9;&#x51FB;&#x3001;&#x53CC;&#x51FB;&#x3001;&#x62D6;&#x52A8;&#x3001;&#x6ED1;&#x52A8;&#x7B49;&#x7B49;&#xFF0C;&#x4ED6;&#x4EEC;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x7684;&#x539F;&#x7406;&#x51E0;&#x4E4E;&#x4E07;&#x5168;&#x4E00;&#x6837;&#xFF0C;&#x672C;&#x6587;&#x53EA;&#x7528;&#x6309;&#x94AE;&#x6765;&#x4E3E;&#x4F8B;&#x3002;</p>
+<p>1.&#x76F4;&#x63A5;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;</p>
+<p>&#x628A;&#x4E0B;&#x9762;&#x811A;&#x672C;&#x76F4;&#x63A5;&#x7ED1;&#x5B9A;&#x5728;&#x6309;&#x94AE;&#x4E0A;&#xFF0C;&#x5F53;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x5230;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5F88;&#x4E0D;&#x7075;&#x6D3B;&#x3002;</p>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">void</span> OnClick()
+    {
+        Debug.Log(<span class="hljs-string">&quot;Button is Click!!!&quot;</span>);
+    }
+</code></pre>
+<p>2.&#x4F7F;&#x7528;SendMessage</p>
+<p>&#x9009;&#x62E9;&#x6309;&#x94AE;&#x540E;&#xFF0C;&#x5728;Unity&#x5BFC;&#x822A;&#x83DC;&#x5355;&#x680F;&#x4E2D;&#x9009;&#x62E9;Component-&gt;Interaction-&gt;Button Message &#x7EC4;&#x4EF6;&#x3002;</p>
+<p>Target&#xFF1A;&#x63A5;&#x6536;&#x6309;&#x94AE;&#x6D88;&#x606F;&#x7684;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>Function Name&#xFF1A;&#x63A5;&#x6536;&#x6309;&#x94AE;&#x6D88;&#x606F;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x62E5;&#x6709;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x811A;&#x672C;&#x5FC5;&#x987B;&#x7ED1;&#x5B9A;&#x5728;&#x4E0A;&#x9762;Target&#x5BF9;&#x8C61;&#x8EAB;&#x4E0A;&#x3002;</p>
+<p>Trigger&#xFF1A;&#x89E6;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;OnClick&#x663E;&#x7136;&#x662F;&#x4E00;&#x6B21;&#x70B9;&#x51FB;&#x3002;</p>
+<p>Include Children &#xFF1A;&#x662F;&#x5426;&#x8BA9;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5B50;&#x5BF9;&#x8C61;&#x4E5F;&#x53D1;&#x9001;&#x8FD9;&#x4E2A;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p><img src="../assets/&#x5C4F;&#x5E55;&#x5FEB;&#x7167;-2013-06-24-&#x4E0B;&#x5348;5.28.53.png" alt=""></p>
+<p>&#x5230;UIButtonMessage.cs&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x4E2D;&#x770B;&#x770B;&#xFF0C;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#x5C31;&#x662F;&#x8C03;&#x7528;Unity&#x81EA;&#x8EAB;&#x7684;SendMessage&#x800C;&#x5DF2;&#x3002;</p>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">void</span> Send ()
+    {
+        <span class="hljs-keyword">if</span> (string.IsNullOrEmpty(functionName)) <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">if</span> (target == <span class="hljs-literal">null</span>) target = gameObject;
+
+        <span class="hljs-keyword">if</span> (includeChildren)
+        {
+            Transform[] transforms = target.GetComponentsInChildren&lt;Transform&gt;();
+
+            <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>, imax = transforms.Length; i &lt; imax; ++i)
+            {
+                Transform t = transforms[i];
+                t.gameObject.SendMessage(functionName, gameObject, SendMessageOptions.DontRequireReceiver);
+            }
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            target.SendMessage(functionName, gameObject, SendMessageOptions.DontRequireReceiver);
+        }
+    }
+</code></pre>
+<p>3.&#x4F7F;&#x7528;UIListener</p>
+<p>&#x8FD9;&#x4E2A;&#x4E5F;&#x662F;&#x63A8;&#x8350;&#x5927;&#x5BB6;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#x6216;&#x8005;&#x7C7B;&#x4E2D;&#x5373;&#x53EF;&#x5F97;&#x5230;&#x6309;&#x94AE;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x3001;&#x628A;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x4EFB;&#x610F;&#x7C7B;&#x4E2D;&#x6216;&#x8005;&#x811A;&#x672C;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">void</span> Awake () 
+    {    
+                <span class="hljs-comment">// &#x83B7;&#x53D6;&#x9700;&#x8981;&#x76D1;&#x542C;&#x7684;&#x6309;&#x94AE;&#x5BF9;&#x8C61;</span>
+        GameObject button = GameObject.Find(<span class="hljs-string">&quot;UI Root/Control - Colored Button&quot;</span>);
+                <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x7684;&#x76D1;&#x542C;&#xFF0C;&#x6307;&#x5411;&#x672C;&#x7C7B;&#x7684;ButtonClick&#x65B9;&#x6CD5;</span>
+        UIEventListener.Get(button).onClick = ButtonClick;
+    }
+
+        <span class="hljs-comment">// &#x6309;&#x94AE;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span>
+    <span class="hljs-keyword">void</span> ButtonClick(GameObject button)
+    {
+        Debug.Log(<span class="hljs-string">&quot;GameObject &quot;</span> + button.name);
+
+    }
+</code></pre>
 
                                 
                                 </section>
@@ -2521,14 +2566,10 @@
 
             
                 
-                <a href="14.0 第14天.html" class="navigation navigation-prev " aria-label="Previous page: 第14天">
+                <a href="NGUI.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第4章 NGUI">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../第15天/15.0 第15天.html" class="navigation navigation-next " aria-label="Next page: 第15天">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2537,7 +2578,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"14.1 项目实战 -- ARPG","level":"1.17.1","depth":2,"next":{"title":"第15天","level":"1.18","depth":1,"path":"第15天/15.0 第15天.md","ref":"第15天/15.0 第15天.md","articles":[{"title":"15.1 优化","level":"1.18.1","depth":2,"path":"第15天/151-优化.md","ref":"第15天/151-优化.md","articles":[]},{"title":"15.2 Unity5.X","level":"1.18.2","depth":2,"path":"第15天/152-unity5x.md","ref":"第15天/152-unity5x.md","articles":[]}]},"previous":{"title":"第14天","level":"1.17","depth":1,"path":"第14天/14.0 第14天.md","ref":"第14天/14.0 第14天.md","articles":[{"title":"14.1 项目实战 -- ARPG","level":"1.17.1","depth":2,"path":"第14天/141-项目实战----arpg.md","ref":"第14天/141-项目实战----arpg.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第14天/141-项目实战----arpg.md","mtime":"2016-12-10T12:09:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T16:24:54.797Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.1 NGUI 事件监听","level":"1.25.1","depth":2,"previous":{"title":"第4章 NGUI","level":"1.25","depth":1,"path":"第4章 NGUI/NGUI.md","ref":"第4章 NGUI/NGUI.md","articles":[{"title":"4.1 NGUI 事件监听","level":"1.25.1","depth":2,"path":"第4章 NGUI/41-ngui-事件监听.md","ref":"第4章 NGUI/41-ngui-事件监听.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第4章 NGUI/41-ngui-事件监听.md","mtime":"2017-01-03T15:48:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T16:24:54.797Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
