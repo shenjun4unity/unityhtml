@@ -1167,6 +1167,58 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.51" data-path="../第2章 Unity 常用 API/251-editorutility.html">
+            
+                <a href="../第2章 Unity 常用 API/251-editorutility.html">
+            
+                    
+                    2.51 EditorUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.52" data-path="../第2章 Unity 常用 API/252-event.html">
+            
+                <a href="../第2章 Unity 常用 API/252-event.html">
+            
+                    
+                    2.52 Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.53" data-path="../第2章 Unity 常用 API/253-handles.html">
+            
+                <a href="../第2章 Unity 常用 API/253-handles.html">
+            
+                    
+                    2.53 Handles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.54" data-path="../第2章 Unity 常用 API/254-handleutility.html">
+            
+                <a href="../第2章 Unity 常用 API/254-handleutility.html">
+            
+                    
+                    2.54 HandleUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2786,52 +2838,52 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="xmlwrite-&#x548C;-xmlreader">XMLWrite &#x548C; XMLReader</h2>
+                                <h2 id="xmlwriter-&#x548C;-xmlreader">XMLWriter &#x548C; XMLReader</h2>
 <h4 id="&#x4E00;&#x3001;&#x5B9A;&#x4E49;">&#x4E00;&#x3001;&#x5B9A;&#x4E49;</h4>
-<p>XMLWrite&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5199;&#x5165;&#x5668;&#xFF0C;&#x8BE5;&#x5199;&#x5165;&#x5668;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x5FEB;&#x901F;&#x3001;&#x975E;&#x7F13;&#x5B58;&#x548C;&#x53EA;&#x8FDB;&#x65B9;&#x5F0F;&#x4EE5;&#x751F;&#x6210;&#x5305;&#x542B; XML &#x6570;&#x636E;&#x7684;&#x6D41;&#x6216;&#x6587;&#x4EF6;&#x3002;</p>
+<p>XMLWriter&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5199;&#x5165;&#x5668;&#xFF0C;&#x8BE5;&#x5199;&#x5165;&#x5668;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x5FEB;&#x901F;&#x3001;&#x975E;&#x7F13;&#x5B58;&#x548C;&#x53EA;&#x8FDB;&#x65B9;&#x5F0F;&#x4EE5;&#x751F;&#x6210;&#x5305;&#x542B; XML &#x6570;&#x636E;&#x7684;&#x6D41;&#x6216;&#x6587;&#x4EF6;&#x3002;</p>
 <p>XMLReader&#x8868;&#x793A;&#x63D0;&#x4F9B;&#x5BF9; XML &#x6570;&#x636E;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x3001;&#x975E;&#x7F13;&#x5B58;&#x3001;&#x53EA;&#x8FDB;&#x8BBF;&#x95EE;&#x7684;&#x8BFB;&#x53D6;&#x5668;&#x3002;</p>
-<pre><code>    &#x547D;&#x540D;&#x7A7A;&#x95F4;:
+<pre><code>&#x547D;&#x540D;&#x7A7A;&#x95F4;:
         System.Xml
     &#x7A0B;&#x5E8F;&#x96C6;:
         System.Xml&#xFF08;System.Xml.dll &#x4E2D;&#xFF09;
-</code></pre><h4 id="&#x4E8C;&#x3001;xmlwrite">&#x4E8C;&#x3001;XMLWrite</h4>
-<p><strong>XMLWrite &#x521B;&#x5EFA; XML &#x58F0;&#x660E;</strong></p>
-<pre><code class="lang-javascript">    <span class="hljs-comment">//&#x5F15;&#x5165;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+</code></pre><h4 id="&#x4E8C;&#x3001;xmlwriter">&#x4E8C;&#x3001;XMLWriter</h4>
+<p><strong>XMLWriter &#x521B;&#x5EFA; XML &#x58F0;&#x660E;</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x5F15;&#x5165;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
     using System.Xml;
 
     XmlTextWriter textWriter = <span class="hljs-keyword">new</span> XmlTextWriter(@<span class="hljs-string">&quot;d:\xmlRead.xml&quot;</span>,Encoding.UTF8);
     textWriter.WriteStartDocument();
 </code></pre>
-<p><strong>XMLWrite &#x521B;&#x5EFA;&#x8282;&#x70B9;</strong></p>
-<pre><code class="lang-javascript">    textWriter.WriteStartElement(&#x201C;root&quot;); 
+<p><strong>XMLWriter &#x521B;&#x5EFA;&#x8282;&#x70B9;</strong></p>
+<pre><code class="lang-javascript">textWriter.WriteStartElement(&#x201C;root&quot;); 
     textWriter.WriteStartElement(&#x201C;Child&quot;);
     // &#x4E3A;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x5C5E;&#x6027;
     textWriter.WriteElementString(&#x201C;SubChild&#x201D;, &#x201C;&#x8FD9;&#x662F;&#x5143;&#x7D20;&#x5185;&#x5BB9;&quot;);
     textWriter.WriteEndElement();
     textWriter.WriteEndElement();
 </code></pre>
-<p><strong>XMLWrite&#x4E3A;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x5C5E;&#x6027;</strong></p>
-<pre><code class="lang-javascript">    textWriter.WriteStartElement(<span class="hljs-string">&quot;Child&quot;</span>);
+<p><strong>XMLWriter&#x4E3A;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x5C5E;&#x6027;</strong></p>
+<pre><code class="lang-javascript">textWriter.WriteStartElement(<span class="hljs-string">&quot;Child&quot;</span>);
     textWriter.WriteAttributeString(<span class="hljs-string">&quot;&#x5C5E;&#x6027;A&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>);
     textWriter.WriteAttributeString(<span class="hljs-string">&quot;&#x5C5E;&#x6027;B&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>);
     textWriter.WriteEndElement();
 </code></pre>
 <p><strong>XMLWrite&#x5199;&#x5165;&#x6CE8;&#x91CA;</strong></p>
-<pre><code class="lang-javascript"> textWriter.WriteComment(&#x201C;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&quot;);
+<pre><code class="lang-javascript">textWriter.WriteComment(&#x201C;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&quot;);
  textWriter.WriteCData(&#x201C;&lt;strong&gt;CData &#x5185;&#x5BB9;&lt;/strong&gt;&quot;);
 </code></pre>
 <p><strong>XMLWrite&#x521B;&#x5EFA;XML &#x8981;&#x70B9;</strong></p>
-<pre><code class="lang-javascript">    XMLWrite &#x5B50;&#x8282;&#x70B9; &#x548C;&#x5C5E;&#x6027; &#x5FC5;&#x987B;&#x5728;WriteEndElement()&#x65B9;&#x6CD5;&#x524D;&#x3002;
+<pre><code class="lang-javascript">XMLWrite &#x5B50;&#x8282;&#x70B9; &#x548C;&#x5C5E;&#x6027; &#x5FC5;&#x987B;&#x5728;WriteEndElement()&#x65B9;&#x6CD5;&#x524D;&#x3002;
     &#x5F00;&#x59CB;&#x5199;&#x5165;&#xFF0C;&#x8C03;&#x7528;WriteStartDocument&#x65B9;&#x6CD5;&#x3002;
     &#x5199;&#x5165;&#x7ED3;&#x675F;&#xFF0C;&#x8C03;&#x7528;WriteEndDocument&#x65B9;&#x6CD5;&#xFF0C;&#x548C;Close&#x65B9;&#x6CD5;&#xFF0C;&#x5173;&#x95ED;&#x6D41;&#x3002;
 </code></pre>
 <h2 id="&#x4E09;&#x3001;xmlreader">&#x4E09;&#x3001;XMLReader</h2>
 <p><strong>XmlReader&#x8BFB;&#x53D6;XML</strong></p>
-<pre><code class="lang-javascript">    <span class="hljs-comment">//&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5916;&#x90E8;XML</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5916;&#x90E8;XML</span>
     XmlTextReader textReader = <span class="hljs-keyword">new</span> XmlTextReader(@<span class="hljs-string">&quot;d:\xmlRead.xml&quot;</span>);
 </code></pre>
 <p><strong>XmlReader&#x8BFB;&#x53D6;&#x8282;&#x70B9;&#x4FE1;&#x606F;</strong></p>
-<pre><code class="lang-javascript">    <span class="hljs-keyword">while</span> (textReader.Read())
+<pre><code class="lang-javascript"><span class="hljs-keyword">while</span> (textReader.Read())
     {
         <span class="hljs-keyword">if</span> (textReader.NodeType == XmlNodeType.Element)
         {
@@ -2841,7 +2893,7 @@
     }
 </code></pre>
 <p><strong>XmlReader&#x8BFB;&#x53D6;&#x5C5E;&#x6027;</strong></p>
-<pre><code class="lang-javascript">    <span class="hljs-comment">//&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x53D6;&#x5F97;&#x5F53;&#x524D;Reader&#x5143;&#x7D20;&#x7684;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF1B;</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x53D6;&#x5F97;&#x5F53;&#x524D;Reader&#x5143;&#x7D20;&#x7684;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF1B;</span>
     textReader.GetAttribute(&#x201C;&#x5C5E;&#x6027;A&#x201D;);
 
     <span class="hljs-comment">//&#x65B9;&#x5F0F;&#x4E8C;&#xFF0C;&#x83B7;&#x53D6;&#x5F53;&#x524D;Reader&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5C06;Reader&#x79FB;&#x52A8;&#x5230;&#x5F53;&#x524D;&#x5C5E;&#x6027;&#xFF1B;    </span>
@@ -2880,7 +2932,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.22 XMLWrite和XMLReader","level":"1.26.2.2","depth":3,"next":{"title":"5.23 XPath详解","level":"1.26.2.3","depth":3,"path":"第5章 其他/523-xpath详解.md","ref":"第5章 其他/523-xpath详解.md","articles":[]},"previous":{"title":"5.21 XMLDocument","level":"1.26.2.1","depth":3,"path":"第5章 其他/521-xmldocument.md","ref":"第5章 其他/521-xmldocument.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第5章 其他/522-xmlwrite和xmlreader.md","mtime":"2017-01-07T11:46:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-08T16:36:57.282Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.22 XMLWrite和XMLReader","level":"1.26.2.2","depth":3,"next":{"title":"5.23 XPath详解","level":"1.26.2.3","depth":3,"path":"第5章 其他/523-xpath详解.md","ref":"第5章 其他/523-xpath详解.md","articles":[]},"previous":{"title":"5.21 XMLDocument","level":"1.26.2.1","depth":3,"path":"第5章 其他/521-xmldocument.md","ref":"第5章 其他/521-xmldocument.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第5章 其他/522-xmlwrite和xmlreader.md","mtime":"2017-01-09T12:57:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T16:39:50.047Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

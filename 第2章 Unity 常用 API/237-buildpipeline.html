@@ -1167,6 +1167,58 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.51" data-path="251-editorutility.html">
+            
+                <a href="251-editorutility.html">
+            
+                    
+                    2.51 EditorUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.52" data-path="252-event.html">
+            
+                <a href="252-event.html">
+            
+                    
+                    2.52 Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.53" data-path="253-handles.html">
+            
+                <a href="253-handles.html">
+            
+                    
+                    2.53 Handles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.54" data-path="254-handleutility.html">
+            
+                <a href="254-handleutility.html">
+            
+                    
+                    2.54 HandleUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2813,22 +2865,14 @@
 <tbody>
 <tr>
 <td style="text-align:left">BuildAssetBundles</td>
-<td style="text-align:left">&#x5728;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x6307;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">BuildPlayer</td>
-<td style="text-align:left">&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">GetCRCForAssetBundle</td>
-<td style="text-align:left">&#x63D0;&#x53D6;&#x7ED9;&#x5B9A;&#x8D44;&#x6E90;&#x5305;&#x7684;CRC&#x6821;&#x9A8C;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">GetHashForAssetBundle</td>
-<td style="text-align:left">&#x63D0;&#x53D6;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x5305;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x3002;</td>
+<td style="text-align:left">&#x5728;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x6307;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x3002;Unity5.x &#x4F1A;&#x591A;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5217;&#x8868;</td>
 </tr>
 </tbody>
 </table>
+<p>|
+|BuildPlayer|&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x3002;|
+|GetCRCForAssetBundle|&#x63D0;&#x53D6;&#x7ED9;&#x5B9A;&#x8D44;&#x6E90;&#x5305;&#x7684;CRC&#x6821;&#x9A8C;&#x3002;|
+|GetHashForAssetBundle|&#x63D0;&#x53D6;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x5305;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x3002;|</p>
 <hr>
 <h4 id="buildpipelinebuildassetbundles-&#x7F16;&#x8BD1;&#x8D44;&#x6E90;&#x5305;">BuildPipeline.BuildAssetBundles &#x7F16;&#x8BD1;&#x8D44;&#x6E90;&#x5305;</h4>
 <p>public static AssetBundleManifest BuildAssetBundles(string outputPath, BuildAssetBundleOptions assetBundleOptions = BuildAssetBundleOptions.None, BuildTarget targetPlatform = BuildTarget.WebPlayer);</p>
@@ -3058,7 +3102,23 @@
 
     }
 </code></pre>
-<p>&#x1F51A;</p>
+<hr>
+<h3 id="buildassetbundleoptions">BuildAssetBundleOptions</h3>
+<pre><code>None    Build assetBundle without any special option.
+UncompressedAssetBundle    Don&apos;t compress the data when creating the asset bundle.
+DisableWriteTypeTree    Do not include type information within the AssetBundle.
+DeterministicAssetBundle    Builds an asset bundle using a hash for the id of the object stored in the asset bundle.
+ForceRebuildAssetBundle    Force rebuild the assetBundles.
+IgnoreTypeTreeChanges    Ignore the type tree changes when doing the incremental build check.
+AppendHashToAssetBundleName    Append the hash to the assetBundle name.
+ChunkBasedCompression    Use chunk-based LZ4 compression when creating the AssetBundle.
+StrictMode    Do not allow the build to succeed if any errors are reporting during it.
+DryRunBuild    Do a dry run build.
+</code></pre><pre><code>CollectDependencies &#x5305;&#x542B;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;
+CompleteAssets &#x5F3A;&#x5236;&#x5305;&#x62EC;&#x6574;&#x4E2A;&#x8D44;&#x6E90;&#x3002;
+DisableWriteTypeTree &#x5728;&#x8D44;&#x6E90;&#x5305;&#x4E0D;&#x5305;&#x542B;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#x3002;
+DeterministicAssetBundle &#x7F16;&#x8BD1;&#x8D44;&#x6E90;&#x5305;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x50A8;&#x5B58;&#x5BF9;&#x8C61;ID&#x5728;&#x8D44;&#x6E90;&#x5305;&#x4E2D;&#x3002;
+</code></pre><p>&#x1F51A;</p>
 
                                 
                                 </section>
@@ -3086,7 +3146,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.37 BuildPipeline","level":"1.3.37","depth":2,"next":{"title":"2.38 EditorGUILayout","level":"1.3.38","depth":2,"path":"第2章 Unity 常用 API/238-editorguilayout.md","ref":"第2章 Unity 常用 API/238-editorguilayout.md","articles":[]},"previous":{"title":"2.36 WWW","level":"1.3.36","depth":2,"path":"第2章 Unity 常用 API/236-www.md","ref":"第2章 Unity 常用 API/236-www.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/237-buildpipeline.md","mtime":"2017-01-06T15:06:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-08T16:36:57.282Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.37 BuildPipeline","level":"1.3.37","depth":2,"next":{"title":"2.38 EditorGUILayout","level":"1.3.38","depth":2,"path":"第2章 Unity 常用 API/238-editorguilayout.md","ref":"第2章 Unity 常用 API/238-editorguilayout.md","articles":[]},"previous":{"title":"2.36 WWW","level":"1.3.36","depth":2,"path":"第2章 Unity 常用 API/236-www.md","ref":"第2章 Unity 常用 API/236-www.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/237-buildpipeline.md","mtime":"2017-01-10T14:47:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T16:39:50.047Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
