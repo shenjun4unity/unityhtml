@@ -3585,27 +3585,27 @@ Selectable&#x7684;&#x610F;&#x601D;&#x662F;&#x53EF;&#x9009;&#x62E9;&#x7684;&#xFF0
 &#x7ED9;button&#x6302;&#x4E0A;Canvas Group&#x7EC4;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x4E0D;&#x52FE;&#x9009;Blocks Raycasts</p>
 <p>5.&#x5224;&#x65AD;&#x9F20;&#x6807;&#x6216;&#x8005;&#x624B;&#x6307;&#x662F;&#x5426;&#x70B9;&#x51FB;&#x5728;UI&#x4E0A;
 &#x5BF9;&#x4E8E;EventSystem.current.IsPointerOverGameObject&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;EventSystem&#x662F;UI&#x7684;&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x6240;&#x4EE5;IsPointerOverGameObject&#x4E2D;&#x7684;GameObject&#x662F;&#x9488;&#x5BF9;UI&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x666E;&#x904D;&#x610F;&#x4E49;&#x4E0A;&#x7684;GameObject</p>
-<pre><code class="lang-javascript">    using UnityEngine;  
-    using UnityEngine.UI;  
-    using UnityEngine.EventSystems;  
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;  
+    <span class="hljs-keyword">using</span> UnityEngine.UI;  
+    <span class="hljs-keyword">using</span> UnityEngine.EventSystems;  
 
-    public class TestTouch : MonoBehaviour {  
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">TestTouch</span> : <span class="hljs-title">MonoBehaviour</span> {  
 
-        public Text text;  
+        <span class="hljs-keyword">public</span> Text text;  
 
-        void Update()   
-        {  
-            if (Input.GetMouseButtonDown(0) || (Input.touchCount &gt; 0 &amp;&amp; Input.GetTouch(0).phase == TouchPhase.Began))  
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)   
+        </span>{  
+            <span class="hljs-keyword">if</span> (Input.GetMouseButtonDown(<span class="hljs-number">0</span>) || (Input.touchCount &gt; <span class="hljs-number">0</span> &amp;&amp; Input.GetTouch(<span class="hljs-number">0</span>).phase == TouchPhase.Began))  
             {  
-    #if UNITY_ANDROID || UNITY_IPHONE  
-                if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))  
-    #else  
-                if (EventSystem.current.IsPointerOverGameObject())  
-    #endif  
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> UNITY_ANDROID || UNITY_IPHONE  </span>
+                <span class="hljs-keyword">if</span> (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(<span class="hljs-number">0</span>).fingerId))  
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">else</span>  </span>
+                <span class="hljs-keyword">if</span> (EventSystem.current.IsPointerOverGameObject())  
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  </span>
 
-                    text.text = &quot;&#x5F53;&#x524D;&#x89E6;&#x6478;&#x5728;UI&#x4E0A;&quot;;  
-                else  
-                    text.text = &quot;&#x5F53;&#x524D;&#x6CA1;&#x6709;&#x89E6;&#x6478;&#x5728;UI&#x4E0A;&quot;;  
+                    text.text = <span class="hljs-string">&quot;&#x5F53;&#x524D;&#x89E6;&#x6478;&#x5728;UI&#x4E0A;&quot;</span>;  
+                <span class="hljs-keyword">else</span>  
+                    text.text = <span class="hljs-string">&quot;&#x5F53;&#x524D;&#x6CA1;&#x6709;&#x89E6;&#x6478;&#x5728;UI&#x4E0A;&quot;</span>;  
             }  
         }  
 
@@ -3613,11 +3613,11 @@ Selectable&#x7684;&#x610F;&#x601D;&#x662F;&#x53EF;&#x9009;&#x62E9;&#x7684;&#xFF0
 </code></pre>
 <hr>
 <h2 id="&#x4E16;&#x754C;&#x5750;&#x6807;&#x8F6C;ugui&#x5750;&#x6807;">&#x4E16;&#x754C;&#x5750;&#x6807;&#x8F6C;UGUI&#x5750;&#x6807;</h2>
-<pre><code class="lang-javascript">    public <span class="hljs-keyword">static</span> Vector3 WorldToUI(Camera camera,Vector3 pos){  
+<pre><code class="lang-csharp">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">WorldToUI</span>(<span class="hljs-params">Camera camera,Vector3 pos</span>)</span>{  
             CanvasScaler scaler = GameObject.Find(<span class="hljs-string">&quot;UIRoot&quot;</span>).GetComponent&lt;CanvasScaler&gt;();  
 
-            float resolutionX = scaler.referenceResolution.x;  
-            float resolutionY = scaler.referenceResolution.y;  
+            <span class="hljs-keyword">float</span> resolutionX = scaler.referenceResolution.x;  
+            <span class="hljs-keyword">float</span> resolutionY = scaler.referenceResolution.y;  
 
             Vector3 viewportPos = camera.WorldToViewportPoint(pos);  
 
@@ -3628,11 +3628,11 @@ Selectable&#x7684;&#x610F;&#x601D;&#x662F;&#x53EF;&#x9009;&#x62E9;&#x7684;&#xFF0
     }  
 
 
-    public <span class="hljs-keyword">static</span> Vector2 WorldToUIPoint(Transform worldGo)  
-        {  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector2 <span class="hljs-title">WorldToUIPoint</span>(<span class="hljs-params">Transform worldGo</span>)  
+        </span>{  
             Vector2 pos;  
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform <span class="hljs-keyword">as</span> RectTransform,  
-                gameCamera.WorldToScreenPoint(worldGo.transform.position), canvas.worldCamera, out pos);  
+                gameCamera.WorldToScreenPoint(worldGo.transform.position), canvas.worldCamera, <span class="hljs-keyword">out</span> pos);  
             RectTransform rect = transform <span class="hljs-keyword">as</span> RectTransform;  
             <span class="hljs-keyword">return</span> pos;  
     }
@@ -3670,7 +3670,7 @@ eventData.pointerCurrentRaycast.gameObject</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4 UGUI 射线检测","level":"1.24.4","depth":2,"next":{"title":"3.5 UGUI中的Canvas、Camera和Canvas Scaler","level":"1.24.5","depth":2,"path":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","ref":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","articles":[]},"previous":{"title":"3.3 UGUI 事件体系分析","level":"1.24.3","depth":2,"path":"第3章 UGUI/33-ugui-事件体系分析.md","ref":"第3章 UGUI/33-ugui-事件体系分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3章 UGUI/34-ugui-射线检测.md","mtime":"2017-01-02T15:45:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4 UGUI 射线检测","level":"1.24.4","depth":2,"next":{"title":"3.5 UGUI中的Canvas、Camera和Canvas Scaler","level":"1.24.5","depth":2,"path":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","ref":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","articles":[]},"previous":{"title":"3.3 UGUI 事件体系分析","level":"1.24.3","depth":2,"path":"第3章 UGUI/33-ugui-事件体系分析.md","ref":"第3章 UGUI/33-ugui-事件体系分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3章 UGUI/34-ugui-射线检测.md","mtime":"2017-04-16T14:50:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

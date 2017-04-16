@@ -3643,22 +3643,22 @@
 <p>public <strong>CollisionFlags</strong> <strong>Move</strong>(<strong>Vector3</strong> motion);</p>
 <p>&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF0C;&#x91C7;&#x53D6;&#x7EDD;&#x5BF9;&#x7684;&#x8FD0;&#x52A8;&#x589E;&#x91CF;&#x3002;</p>
 <p>&#x5C1D;&#x8BD5;&#x7740;&#x901A;&#x8FC7;motion&#x79FB;&#x52A8;&#x63A7;&#x5236;&#x5668;&#xFF0C;motion&#x53EA;&#x53D7;&#x9650;&#x5236;&#x4E8E;&#x78B0;&#x649E;&#x3002;&#x5B83;&#x5C06;&#x6CBF;&#x7740;&#x78B0;&#x649E;&#x5668;&#x6ED1;&#x52A8;&#x3002;CollisionFlags &#x662F;&#x53D1;&#x751F;&#x4E8E;Move&#x7684;&#x78B0;&#x649E;&#x7684;&#x6982;&#x8981;&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E0D;&#x5E94;&#x7528;&#x4EFB;&#x4F55;&#x91CD;&#x529B;&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public float speed = 6.0F;
-        public float jumpSpeed = 8.0F;
-        public float gravity = 20.0F;
-        private Vector3 moveDirection = Vector3.zero;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> speed = <span class="hljs-number">6.0</span>F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> jumpSpeed = <span class="hljs-number">8.0</span>F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> gravity = <span class="hljs-number">20.0</span>F;
+        <span class="hljs-keyword">private</span> Vector3 moveDirection = Vector3.zero;
 
-        void Update() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             CharacterController controller = GetComponent&lt;CharacterController&gt;();
-            if (controller.isGrounded) {
-                moveDirection = new Vector3(Input.GetAxis(&quot;Horizontal&quot;), 0, Input.GetAxis(&quot;Vertical&quot;));
+            <span class="hljs-keyword">if</span> (controller.isGrounded) {
+                moveDirection = <span class="hljs-keyword">new</span> Vector3(Input.GetAxis(<span class="hljs-string">&quot;Horizontal&quot;</span>), <span class="hljs-number">0</span>, Input.GetAxis(<span class="hljs-string">&quot;Vertical&quot;</span>));
                 moveDirection = transform.TransformDirection(moveDirection);
                 moveDirection *= speed;
-                if (Input.GetButton(&quot;Jump&quot;))
+                <span class="hljs-keyword">if</span> (Input.GetButton(<span class="hljs-string">&quot;Jump&quot;</span>))
                     moveDirection.y = jumpSpeed;
 
             }
@@ -3672,18 +3672,18 @@
 <p>public bool SimpleMove(Vector3 speed);</p>
 <p>&#x6839;&#x636E;&#x901F;&#x5EA6;speed&#x79FB;&#x52A8;&#x89D2;&#x8272;&#x3002;</p>
 <p>Y &#x8F74;&#x4E0A;&#x901F;&#x5EA6;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x901F;&#x5EA6;&#x4EE5;&#x7C73;/&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x3002;&#x91CD;&#x529B;&#x88AB;&#x81EA;&#x52A8;&#x5E94;&#x7528;&#x3002;&#x5982;&#x679C;&#x89D2;&#x8272;&#x7740;&#x5730;&#x8FD4;&#x56DE; true&#x3002;&#x5EFA;&#x8BAE;&#x6BCF;&#x5E27;&#x53EA;&#x8C03;&#x7528;&#x4E00;&#x6B21; Move &#x6216;&#x8005; SimpleMove&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    [RequireComponent(typeof(CharacterController))]
-    public class ExampleClass : MonoBehaviour {
-        public float speed = 3.0F;
-        public float rotateSpeed = 3.0F;
-        void Update() {
+    [RequireComponent(<span class="hljs-keyword">typeof</span>(CharacterController))]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> speed = <span class="hljs-number">3.0</span>F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> rotateSpeed = <span class="hljs-number">3.0</span>F;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             CharacterController controller = GetComponent&lt;CharacterController&gt;();
-            transform.Rotate(0, Input.GetAxis(&quot;Horizontal&quot;) * rotateSpeed, 0);
+            transform.Rotate(<span class="hljs-number">0</span>, Input.GetAxis(<span class="hljs-string">&quot;Horizontal&quot;</span>) * rotateSpeed, <span class="hljs-number">0</span>);
             Vector3 forward = transform.TransformDirection(Vector3.forward);
-            float curSpeed = speed * Input.GetAxis(&quot;Vertical&quot;);
+            <span class="hljs-keyword">float</span> curSpeed = speed * Input.GetAxis(<span class="hljs-string">&quot;Vertical&quot;</span>);
             controller.SimpleMove(forward * curSpeed);
         }
     }
@@ -3717,36 +3717,36 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             CharacterController controller = GetComponent&lt;CharacterController&gt;();
-            if ((controller.collisionFlags &amp; CollisionFlags.Above) != 0)
-                print(&quot;touched the ceiling&quot;);
+            <span class="hljs-keyword">if</span> ((controller.collisionFlags &amp; CollisionFlags.Above) != <span class="hljs-number">0</span>)
+                print(<span class="hljs-string">&quot;touched the ceiling&quot;</span>);
 
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class Test : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        //&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7EC4;&#x4EF6;&#x5728;&#x4E0E;&#x5177;&#x6709;&#x975E;&#x89E6;&#x53D1;&#x5668;&#x7684;Collider&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x78B0;&#x649E; &#x65E0;&#x6CD5;&#x68C0;&#x6D4B;&#x4E0E;&#x89E6;&#x53D1;&#x5668;&#x7684;Collider&#x78B0;&#x649E;
-        void OnControllerColliderHit(ControllerColliderHit hit)
-        {
+        <span class="hljs-comment">//&#x89D2;&#x8272;&#x63A7;&#x5236;&#x5668;&#x7EC4;&#x4EF6;&#x5728;&#x4E0E;&#x5177;&#x6709;&#x975E;&#x89E6;&#x53D1;&#x5668;&#x7684;Collider&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x78B0;&#x649E; &#x65E0;&#x6CD5;&#x68C0;&#x6D4B;&#x4E0E;&#x89E6;&#x53D1;&#x5668;&#x7684;Collider&#x78B0;&#x649E;</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnControllerColliderHit</span>(<span class="hljs-params">ControllerColliderHit hit</span>)
+        </span>{
 
-            //&#x5224;&#x65AD;&#x78B0;&#x649E;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5177;&#x5907;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;
+            <span class="hljs-comment">//&#x5224;&#x65AD;&#x78B0;&#x649E;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5177;&#x5907;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;</span>
             GameObject hitObject = hit.collider.gameObject;
             Rigidbody rigidbody = hitObject.rigidbody;
-            if(rigidbody != null &amp;&amp; !rigidbody.isKinematic)
+            <span class="hljs-keyword">if</span>(rigidbody != <span class="hljs-keyword">null</span> &amp;&amp; !rigidbody.isKinematic)
             {
-                //&#x5730;&#x9762;&#x4E5F;&#x5177;&#x5907;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x5224;&#x65AD;&#x4E00;&#x4E0B;
-                if(!hitObject.name.Equals(&quot;Terrain&quot;) )
+                <span class="hljs-comment">//&#x5730;&#x9762;&#x4E5F;&#x5177;&#x5907;&#x521A;&#x4F53;&#x7EC4;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x5224;&#x65AD;&#x4E00;&#x4E0B;</span>
+                <span class="hljs-keyword">if</span>(!hitObject.name.Equals(<span class="hljs-string">&quot;Terrain&quot;</span>) )
                 {
-                    rigidbody.AddForce(new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z) * 10);
+                    rigidbody.AddForce(<span class="hljs-keyword">new</span> Vector3(hit.moveDirection.x, <span class="hljs-number">0</span>, hit.moveDirection.z) * <span class="hljs-number">10</span>);
                 }
             }
          }
@@ -3780,7 +3780,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.16 CharacterController","level":"1.23.16","depth":2,"next":{"title":"2.17 Camera","level":"1.23.17","depth":2,"path":"第2章 Unity 常用 API/217-camera.md","ref":"第2章 Unity 常用 API/217-camera.md","articles":[]},"previous":{"title":"2.15 Collider","level":"1.23.15","depth":2,"path":"第2章 Unity 常用 API/215-collider.md","ref":"第2章 Unity 常用 API/215-collider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/216-charactercontroller.md","mtime":"2016-12-11T06:59:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.16 CharacterController","level":"1.23.16","depth":2,"next":{"title":"2.17 Camera","level":"1.23.17","depth":2,"path":"第2章 Unity 常用 API/217-camera.md","ref":"第2章 Unity 常用 API/217-camera.md","articles":[]},"previous":{"title":"2.15 Collider","level":"1.23.15","depth":2,"path":"第2章 Unity 常用 API/215-collider.md","ref":"第2章 Unity 常用 API/215-collider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/216-charactercontroller.md","mtime":"2017-04-16T14:42:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

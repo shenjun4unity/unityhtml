@@ -3563,21 +3563,21 @@
 <p>&#x25CF; &#x5728;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x6DE1;&#x5165;&#x540D;&#x79F0;&#x4E3A;name&#x7684;&#x52A8;&#x753B;&#x5E76;&#x4E14;&#x6DE1;&#x51FA;&#x5176;&#x4ED6;&#x52A8;&#x753B;&#x3002;</p>
 <p>&#x25CF; &#x5982;&#x679C;&#x6A21;&#x5F0F;&#x662F;PlayMode.StopSameLayer&#xFF0C;&#x5728;&#x540C;&#x4E00;&#x5C42;&#x7684;&#x52A8;&#x753B;&#x5C06;&#x5728;&#x52A8;&#x753B;&#x6DE1;&#x5165;&#x7684;&#x65F6;&#x5019;&#x6DE1;&#x51FA;&#x3002;&#x5982;&#x679C;&#x6A21;&#x5F0F;&#x662F;PlayMode.StopAll&#xFF0C;&#x6240;&#x6709;&#x52A8;&#x753B;&#x5C06;&#x5728;&#x6DE1;&#x5165;&#x7684;&#x65F6;&#x5019;&#x6DE1;&#x51FA;&#x3002;</p>
 <p>&#x25CF; &#x5982;&#x679C;&#x52A8;&#x753B;&#x6CA1;&#x6709;&#x88AB;&#x8BBE;&#x7F6E;&#x6210;&#x5FAA;&#x73AF;&#xFF0C;&#x5B83;&#x5C06;&#x505C;&#x6B62;&#x5E76;&#x4E14;&#x5728;&#x64AD;&#x653E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x5012;&#x5E26;&#x81F3;&#x5F00;&#x59CB;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent&lt;Animation&gt;();
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            anim = GetComponent&lt;Animation&gt;();
+        }
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (Mathf.Abs(Input.GetAxis(<span class="hljs-string">&quot;Vertical&quot;</span>)) &gt; <span class="hljs-number">0.1</span>F)
+                anim.CrossFade(<span class="hljs-string">&quot;Run&quot;</span>);
+            <span class="hljs-keyword">else</span>
+                anim.CrossFade(<span class="hljs-string">&quot;Idle&quot;</span>);
+        }
     }
-    void Update() {
-        if (Mathf.Abs(Input.GetAxis(&quot;Vertical&quot;)) &gt; 0.1F)
-            anim.CrossFade(&quot;Run&quot;);
-        else
-            anim.CrossFade(&quot;Idle&quot;);
-    }
-}
 </code></pre>
 <p>&#x1F51A;</p>
 
@@ -3607,7 +3607,7 @@ public class ExampleClass : MonoBehaviour {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.113 CrossFade","level":"1.23.11.3","depth":3,"next":{"title":"2.114 CrossFadeQueued","level":"1.23.11.4","depth":3,"path":"第2章 Unity 常用 API/2114-crossfadequeued.md","ref":"第2章 Unity 常用 API/2114-crossfadequeued.md","articles":[]},"previous":{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2113-crossfade.md","mtime":"2016-12-10T02:41:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.113 CrossFade","level":"1.23.11.3","depth":3,"next":{"title":"2.114 CrossFadeQueued","level":"1.23.11.4","depth":3,"path":"第2章 Unity 常用 API/2114-crossfadequeued.md","ref":"第2章 Unity 常用 API/2114-crossfadequeued.md","articles":[]},"previous":{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2113-crossfade.md","mtime":"2017-04-16T14:40:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

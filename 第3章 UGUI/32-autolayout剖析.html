@@ -3607,55 +3607,55 @@
 <p>&#x2022; SetChildrenAlongAxis&#xFF1A;&#x901A;&#x8FC7;CalcAlongAxis&#x8BA1;&#x7B97;&#x7684;&#x503C;&#xFF0C;&#x8FDB;&#x884C;&#x5B50;&#x5143;&#x7D20;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x548C;&#x5B50;&#x5143;&#x7D20;&#x5C3A;&#x5BF8;&#x7684;&#x6700;&#x7EC8;&#x8BA1;&#x7B97;&#xFF0C;&#x5E76;&#x8C03;&#x7528;LayoutGroup.SetChildAlongAxis&#x6DFB;&#x52A0;&#x5B50;&#x5143;&#x7D20;&#x3002;</p>
 <p><strong>&#x6B64;&#x6BB5;&#x4EE3;&#x7801;&#x6BD4;&#x8F83;&#x5173;&#x952E;&#xFF0C;&#x6545;&#x76F4;&#x63A5;&#x8D34;&#x51FA;&#x6765;&#xFF1A;</strong></p>
 <p>HorizontalOrVerticalLayoutGroup.cs</p>
-<pre><code class="lang-javascript">protected <span class="hljs-keyword">void</span> SetChildrenAlongAxis(int axis, bool isVertical)
-        {
-            float size = rectTransform.rect.size[axis];
+<pre><code class="lang-csharp">        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetChildrenAlongAxis</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> axis, <span class="hljs-keyword">bool</span> isVertical</span>)
+        </span>{
+            <span class="hljs-keyword">float</span> size = rectTransform.rect.size[axis];
 
-            bool alongOtherAxis = (isVertical ^ (axis == <span class="hljs-number">1</span>));
+            <span class="hljs-keyword">bool</span> alongOtherAxis = (isVertical ^ (axis == <span class="hljs-number">1</span>));
             <span class="hljs-keyword">if</span> (alongOtherAxis)
             {
-                float innerSize = size - (axis == <span class="hljs-number">0</span> ? padding.horizontal : padding.vertical);
-                <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; rectChildren.Count; i++)
+                <span class="hljs-keyword">float</span> innerSize = size - (axis == <span class="hljs-number">0</span> ? padding.horizontal : padding.vertical);
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; rectChildren.Count; i++)
                 {
                     RectTransform child = rectChildren[i];
-                    float min = LayoutUtility.GetMinSize(child, axis);
-                    float preferred = LayoutUtility.GetPreferredSize(child, axis);
-                    float flexible = LayoutUtility.GetFlexibleSize(child, axis);
+                    <span class="hljs-keyword">float</span> min = LayoutUtility.GetMinSize(child, axis);
+                    <span class="hljs-keyword">float</span> preferred = LayoutUtility.GetPreferredSize(child, axis);
+                    <span class="hljs-keyword">float</span> flexible = LayoutUtility.GetFlexibleSize(child, axis);
                     <span class="hljs-keyword">if</span> ((axis == <span class="hljs-number">0</span> ? childForceExpandWidth : childForceExpandHeight))
                         flexible = Mathf.Max(flexible, <span class="hljs-number">1</span>);
 
-                    float requiredSpace = Mathf.Clamp(innerSize, min, flexible &gt; <span class="hljs-number">0</span> ? size : preferred);
-                    float startOffset = GetStartOffset(axis, requiredSpace);
+                    <span class="hljs-keyword">float</span> requiredSpace = Mathf.Clamp(innerSize, min, flexible &gt; <span class="hljs-number">0</span> ? size : preferred);
+                    <span class="hljs-keyword">float</span> startOffset = GetStartOffset(axis, requiredSpace);
                     SetChildAlongAxis(child, axis, startOffset, requiredSpace);
                 }
             }
             <span class="hljs-keyword">else</span>
             {
-                float pos = (axis == <span class="hljs-number">0</span> ? padding.left : padding.top);
+                <span class="hljs-keyword">float</span> pos = (axis == <span class="hljs-number">0</span> ? padding.left : padding.top);
                 <span class="hljs-keyword">if</span> (GetTotalFlexibleSize(axis) == <span class="hljs-number">0</span> &amp;&amp; GetTotalPreferredSize(axis) &lt; size)
                     pos = GetStartOffset(axis, GetTotalPreferredSize(axis) - (axis == <span class="hljs-number">0</span> ? padding.horizontal : padding.vertical));
 
-                float minMaxLerp = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">float</span> minMaxLerp = <span class="hljs-number">0</span>;
                 <span class="hljs-keyword">if</span> (GetTotalMinSize(axis) != GetTotalPreferredSize(axis))
                     minMaxLerp = Mathf.Clamp01((size - GetTotalMinSize(axis)) / (GetTotalPreferredSize(axis) - GetTotalMinSize(axis)));
 
-                float itemFlexibleMultiplier = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">float</span> itemFlexibleMultiplier = <span class="hljs-number">0</span>;
                 <span class="hljs-keyword">if</span> (size &gt; GetTotalPreferredSize(axis))
                 {
                     <span class="hljs-keyword">if</span> (GetTotalFlexibleSize(axis) &gt; <span class="hljs-number">0</span>)
                         itemFlexibleMultiplier = (size - GetTotalPreferredSize(axis)) / GetTotalFlexibleSize(axis);
                 }
 
-                <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; rectChildren.Count; i++)
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; rectChildren.Count; i++)
                 {
                     RectTransform child = rectChildren[i];
-                    float min = LayoutUtility.GetMinSize(child, axis);
-                    float preferred = LayoutUtility.GetPreferredSize(child, axis);
-                    float flexible = LayoutUtility.GetFlexibleSize(child, axis);
+                    <span class="hljs-keyword">float</span> min = LayoutUtility.GetMinSize(child, axis);
+                    <span class="hljs-keyword">float</span> preferred = LayoutUtility.GetPreferredSize(child, axis);
+                    <span class="hljs-keyword">float</span> flexible = LayoutUtility.GetFlexibleSize(child, axis);
                     <span class="hljs-keyword">if</span> ((axis == <span class="hljs-number">0</span> ? childForceExpandWidth : childForceExpandHeight))
                         flexible = Mathf.Max(flexible, <span class="hljs-number">1</span>);
 
-                    float childSize = Mathf.Lerp(min, preferred, minMaxLerp);
+                    <span class="hljs-keyword">float</span> childSize = Mathf.Lerp(min, preferred, minMaxLerp);
                     childSize += flexible * itemFlexibleMultiplier;
                     SetChildAlongAxis(child, axis, pos, childSize);
                     pos += childSize + spacing;
@@ -3684,10 +3684,10 @@
 <p>&#x2022; ButtonA.height = 42</p>
 <p>&#x2022; ButtonB.height = 58</p>
 <p>&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF0C;uGUI&#x7684;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x53C8;&#x4E0D;&#x8BF4;&#x6E05;&#x695A;&#xFF0C;&#x771F;&#x662F;&#x65E0;&#x6BD4;&#x5751;&#x3002;&#x597D;&#x5728;&#x73B0;&#x5728;uGUI&#x7684;&#x6E90;&#x7801;&#x4E86;&#xFF0C;&#x56DE;&#x5230;&#x4E0A;&#x6587;&#x7684;HorizontalOrVerticalLayoutGroup.SetChildrenAlongAxis&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-javascript">    <span class="hljs-comment">//axis&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;0&#x8868;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;1&#x8868;&#x793A;&#x9AD8;&#x5EA6;&#xFF1B;size&#x662F;&#x5B9E;&#x9645;&#x7684;&#x5C3A;&#x5BF8;</span>
-    float minMaxLerp = Mathf.Clamp01((size - GetTotalMinSize(axis)) / (GetTotalPreferredSize(axis) - GetTotalMinSize(axis)));
-    float itemFlexibleMultiplier = (size - GetTotalPreferredSize(axis)) / GetTotalFlexibleSize(axis);
-    float childSize = Mathf.Lerp(min, preferred, minMaxLerp);
+<pre><code class="lang-csharp">    <span class="hljs-comment">//axis&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;0&#x8868;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;1&#x8868;&#x793A;&#x9AD8;&#x5EA6;&#xFF1B;size&#x662F;&#x5B9E;&#x9645;&#x7684;&#x5C3A;&#x5BF8;</span>
+    <span class="hljs-keyword">float</span> minMaxLerp = Mathf.Clamp01((size - GetTotalMinSize(axis)) / (GetTotalPreferredSize(axis) - GetTotalMinSize(axis)));
+    <span class="hljs-keyword">float</span> itemFlexibleMultiplier = (size - GetTotalPreferredSize(axis)) / GetTotalFlexibleSize(axis);
+    <span class="hljs-keyword">float</span> childSize = Mathf.Lerp(min, preferred, minMaxLerp);
     childSize += flexible * itemFlexibleMultiplier;
 </code></pre>
 <p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#xFF0C;&#x5173;&#x952E;&#x4FE1;&#x606F;&#x7EC8;&#x4E8E;&#x66B4;&#x9732;&#x4E86;&#xFF0C;&#x4E0D;&#x8003;&#x8651;flexible&#x65F6;&#xFF0C;childSize&#x662F;min&#x548C;preferred&#x7684;&#x4E00;&#x4E2A;&#x63D2;&#x503C;&#xFF0C;&#x800C;&#x63D2;&#x503C;&#x7CFB;&#x6570;minMaxLerp&#x7684;&#x503C;&#xFF0C;&#x89C1;&#x4EE5;&#x4E0A;&#x516C;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5982;&#x679C;min&#x548C;preferred&#x90FD;&#x4E0D;&#x4E3A;0&#x65F6;&#xFF0C;childSize&#x662F;&#x53D6;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x63D2;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x767E;&#x5206;&#x6BD4;&#x3002;</p>
@@ -3714,7 +3714,7 @@ flexible / totalFlexibleSize * (size - totalPreferredSize)
 <p><strong>2&#x3001;&#x90E8;&#x4EFD;&#x6309;&#x6BD4;&#x4F8B;</strong></p>
 <p>&#x738B;&#x4E09;&#x548C;&#x8001;&#x738B;&#xFF0C;&#x4ED6;&#x5FC5;&#x987B;&#x8981;80&#x5E73;&#x7C73;&#xFF0C;&#x5269;&#x4E0B;&#x7684;120&#x5E73;&#xFF0C;&#x738B;&#x4E00;&#x548C;&#x738B;&#x4E8C;&#x4E00;&#x4EBA;&#x4E00;&#x534A;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x600E;&#x4E48;&#x5206;&#x5462;&#xFF1F;</p>
 <p>&#x7406;&#x8BBA;&#x4E0A;&#x53EA;&#x8981;&#x7ED9;&#x738B;&#x4E09;&#x5206;80&#xFF0C;&#x7ED9;&#x738B;&#x4E00;&#x548C;&#x738B;&#x4E8C;flexible&#x8BBE;&#x4E3A;1&#xFF0C;&#x5373;&#x53EF;&#x3002;&#x4F46;&#x5B9E;&#x9645;&#x7ED3;&#x679C;&#x53C8;&#x4E0D;&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x671F;&#x671B;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x8001;&#x738B;&#x628A;childForceExpandWidth&#x8BBE;&#x4E3A;false&#xFF0C;&#x56E0;&#x4E3A;&#x5728;uGUI&#x5904;&#x7406;&#x4E2D;&#xFF0C;&#x5982;&#x679C;childForceExpandWidth&#x8BBE;&#x4E3A;&#x4E86;true&#xFF0C;&#x5373;&#x4F7F;&#x738B;&#x4E09;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;flexible&#xFF0C;&#x4E5F;&#x4F1A;&#x88AB;&#x5F3A;&#x5236;&#x8BBE;&#x4E3A;1&#x3002;</p>
-<pre><code class="lang-javascript">    <span class="hljs-keyword">if</span> ((axis == <span class="hljs-number">0</span> ? childForceExpandWidth : childForceExpandHeight))
+<pre><code class="lang-csharp">    <span class="hljs-keyword">if</span> ((axis == <span class="hljs-number">0</span> ? childForceExpandWidth : childForceExpandHeight))
         flexible = Mathf.Max(flexible, <span class="hljs-number">1</span>);
 </code></pre>
 <p>&#x1F51A;</p>
@@ -3745,7 +3745,7 @@ flexible / totalFlexibleSize * (size - totalPreferredSize)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2 AutoLayout剖析","level":"1.24.2","depth":2,"next":{"title":"3.3 UGUI 事件体系分析","level":"1.24.3","depth":2,"path":"第3章 UGUI/33-ugui-事件体系分析.md","ref":"第3章 UGUI/33-ugui-事件体系分析.md","articles":[]},"previous":{"title":"3.1 RectTransform剖析","level":"1.24.1","depth":2,"path":"第3章 UGUI/31-recttransform剖析.md","ref":"第3章 UGUI/31-recttransform剖析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3章 UGUI/32-autolayout剖析.md","mtime":"2016-12-26T16:42:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2 AutoLayout剖析","level":"1.24.2","depth":2,"next":{"title":"3.3 UGUI 事件体系分析","level":"1.24.3","depth":2,"path":"第3章 UGUI/33-ugui-事件体系分析.md","ref":"第3章 UGUI/33-ugui-事件体系分析.md","articles":[]},"previous":{"title":"3.1 RectTransform剖析","level":"1.24.1","depth":2,"path":"第3章 UGUI/31-recttransform剖析.md","ref":"第3章 UGUI/31-recttransform剖析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3章 UGUI/32-autolayout剖析.md","mtime":"2017-04-16T14:50:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

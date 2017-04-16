@@ -3566,15 +3566,15 @@
 <p>&#x7136;&#x800C;&#xFF0C;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x6309;&#x7167;&#x540D;&#x79F0;&#x6BD4;&#x5728;&#x68C0;&#x89C6;&#x9762;&#x677F;&#x4E2D;&#x53D6;&#x56DE;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5F53;&#x5728;&#x68C0;&#x89C6;&#x9762;&#x677F;&#x4E2D;&#x6307;&#x5B9A;&#x5F15;&#x7528;&#x662F;&#x4E0D;&#x65B9;&#x4FBF;&#x7684;&#x65F6;&#x5019;&#x3002;&#x4F8B;&#x5982;&#x4F60;&#x6216;&#x8BB8;&#x60F3;&#x4ECE;&#x811A;&#x672C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6E38;&#x620F;&#x7269;&#x4F53;&#xFF0C;&#x4E3A;&#x7A0B;&#x5E8F;&#x751F;&#x6210;&#x7684;&#x7F51;&#x683C;&#x8D4B;&#x503C;&#x4E00;&#x4E2A;&#x7EB9;&#x7406;&#x3002;</p>
 <p>&#x6709;&#x4E9B;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x6700;&#x660E;&#x663E;&#x7684;&#x662F;&#x7EB9;&#x7406;&#xFF0C;&#x5373;&#x4F7F;&#x5728;&#x573A;&#x666F;&#x6CA1;&#x6709;&#x5B9E;&#x4F8B;&#xFF0C;&#x4E5F;&#x6700;&#x5360;&#x5185;&#x5B58;&#x3002;&#x5F53;&#x8D44;&#x6E90;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Resources.UnloadUnusedAssets&#x56DE;&#x6536;&#x5185;&#x5B58;&#x3002;</p>
 <p>&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void Start() {
-            var go = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            var rend = go.GetComponent&lt;Renderer&gt;();
-            rend.material.mainTexture = Resources.Load(&quot;glass&quot;) as Texture;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> go = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            <span class="hljs-keyword">var</span> rend = go.GetComponent&lt;Renderer&gt;();
+            rend.material.mainTexture = Resources.Load(<span class="hljs-string">&quot;glass&quot;</span>) <span class="hljs-keyword">as</span> Texture;
         }
     }
 </code></pre>
@@ -3618,28 +3618,28 @@
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x8DEF;&#x5F84;&#x540D;&#x4F7F;&#x7528;&#x6B63;&#x659C;&#x6760;&#x201C;/&#x201D;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x53CD;&#x659C;&#x6760;&#x201C;\&#x201D;&#x4F1A;&#x4E0D;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x53D1;&#x73B0;&#xFF0C;&#x8FD4;&#x56DE;&#x6240;&#x5728;path&#x5904;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;null&#x3002;&#x5982;&#x679C;&#x6709;type&#x53C2;&#x6570;&#xFF0C;&#x53EA;&#x6709;type&#x7C7B;&#x578B;&#x7684;&#x7269;&#x4F53;&#x5C06;&#x88AB;&#x8FD4;&#x56DE;&#x3002; Path&#x76F8;&#x5BF9;&#x4E8E;Resources&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5FFD;&#x7565;&#x6269;&#x5C55;&#x540D;&#x3002;Resouces&#x6587;&#x4EF6;&#x5939;&#x53EF;&#x4EE5;&#x5728;Assets&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Start() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
             GameObject go = GameObject.CreatePrimitive(PrimitiveType.Plane);
             Renderer rend = go.GetComponent&lt;Renderer&gt;();
-            rend.material.mainTexture = Resources.Load(&quot;glass&quot;) as Texture;
+            rend.material.mainTexture = Resources.Load(<span class="hljs-string">&quot;glass&quot;</span>) <span class="hljs-keyword">as</span> Texture;
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void Start() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
 
-            // Instantiates a prefab named &quot;enemy&quot; located in any Resources
-            // folder in your project&apos;s Assets folder.
-            GameObject instance = Instantiate(Resources.Load(&quot;enemy&quot;, typeof(GameObject))) as GameObject;
+            <span class="hljs-comment">// Instantiates a prefab named &quot;enemy&quot; located in any Resources</span>
+            <span class="hljs-comment">// folder in your project&apos;s Assets folder.</span>
+            GameObject instance = Instantiate(Resources.Load(<span class="hljs-string">&quot;enemy&quot;</span>, <span class="hljs-keyword">typeof</span>(GameObject))) <span class="hljs-keyword">as</span> GameObject;
         }
     }
 </code></pre>
@@ -3661,56 +3661,56 @@
 <p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x52A0;&#x8F7D;&#x7684;Unity&#x7269;&#x4F53;&#x7684;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x542B;&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x3001;&#x9884;&#x5236;&#x4F53;&#x3001;&#x6750;&#x8D28;&#x3001;&#x7F51;&#x683C;&#x3001;&#x7EB9;&#x7406;&#x7B49;&#x7B49;&#x3002;&#x5B83;&#x4E5F;&#x4F1A;&#x5217;&#x51FA;&#x5185;&#x90E8;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8BF7;&#x683C;&#x5916;&#x5C0F;&#x5FC3;&#x5904;&#x7406;&#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x76F8;&#x53CD;Object.FindObjectsOfType&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E5F;&#x4F1A;&#x5217;&#x51FA;&#x7981;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x8BF7;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x975E;&#x5E38;&#x6162;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x5728;&#x6BCF;&#x5E27;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void OnGUI() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnGUI</span>(<span class="hljs-params"></span>) </span>{
 
-            GUILayout.Label(&quot;All &quot; + Resources.FindObjectsOfTypeAll(typeof(UnityEngine.Object)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;All &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(UnityEngine.Object)).Length);
 
-            GUILayout.Label(&quot;Textures &quot; + Resources.FindObjectsOfTypeAll(typeof(Texture)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;Textures &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(Texture)).Length);
 
-            GUILayout.Label(&quot;AudioClips &quot; + Resources.FindObjectsOfTypeAll(typeof(AudioClip)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;AudioClips &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(AudioClip)).Length);
 
-            GUILayout.Label(&quot;Meshes &quot; + Resources.FindObjectsOfTypeAll(typeof(Mesh)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;Meshes &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(Mesh)).Length);
 
-            GUILayout.Label(&quot;Materials &quot; + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;Materials &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(Material)).Length);
 
-            GUILayout.Label(&quot;GameObjects &quot; + Resources.FindObjectsOfTypeAll(typeof(GameObject)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;GameObjects &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(GameObject)).Length);
 
-            GUILayout.Label(&quot;Components &quot; + Resources.FindObjectsOfTypeAll(typeof(Component)).Length);
+            GUILayout.Label(<span class="hljs-string">&quot;Components &quot;</span> + Resources.FindObjectsOfTypeAll(<span class="hljs-keyword">typeof</span>(Component)).Length);
 
         }
 
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEditor;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
+    <span class="hljs-keyword">using</span> System.Collections.Generic;
+    <span class="hljs-keyword">using</span> UnityEditor;
 
-    public class ExampleClass  : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span>  : <span class="hljs-title">MonoBehaviour</span> {
 
-        List&lt;GameObject&gt; GetAllObjectsInScene()  {
+        <span class="hljs-function">List&lt;GameObject&gt; <span class="hljs-title">GetAllObjectsInScene</span>(<span class="hljs-params"></span>)  </span>{
 
-            List&lt;GameObject&gt; objectsInScene = new List&lt;GameObject&gt;();
-            foreach (GameObject go in Resources.FindObjectsOfTypeAll&lt;GameObject&gt;()) {
+            List&lt;GameObject&gt; objectsInScene = <span class="hljs-keyword">new</span> List&lt;GameObject&gt;();
+            <span class="hljs-keyword">foreach</span> (GameObject go <span class="hljs-keyword">in</span> Resources.FindObjectsOfTypeAll&lt;GameObject&gt;()) {
 
-                if (go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave)
-                    continue;
+                <span class="hljs-keyword">if</span> (go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave)
+                    <span class="hljs-keyword">continue</span>;
 
-                if (!EditorUtility.IsPersistent(go.transform.root.gameObject))
-                    continue;
+                <span class="hljs-keyword">if</span> (!EditorUtility.IsPersistent(go.transform.root.gameObject))
+                    <span class="hljs-keyword">continue</span>;
 
                 objectsInScene.Add(go);
             }
 
-            return objectsInScene;
+            <span class="hljs-keyword">return</span> objectsInScene;
         }
     }
 </code></pre>
@@ -3741,7 +3741,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.21 Resources","level":"1.23.21","depth":2,"next":{"title":"2.22 Quaternion","level":"1.23.22","depth":2,"path":"第2章 Unity 常用 API/222-quaternion.md","ref":"第2章 Unity 常用 API/222-quaternion.md","articles":[]},"previous":{"title":"2.20 AssetBundle","level":"1.23.20","depth":2,"path":"第2章 Unity 常用 API/220-assetbundle.md","ref":"第2章 Unity 常用 API/220-assetbundle.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/221-resources.md","mtime":"2016-11-27T15:18:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.21 Resources","level":"1.23.21","depth":2,"next":{"title":"2.22 Quaternion","level":"1.23.22","depth":2,"path":"第2章 Unity 常用 API/222-quaternion.md","ref":"第2章 Unity 常用 API/222-quaternion.md","articles":[]},"previous":{"title":"2.20 AssetBundle","level":"1.23.20","depth":2,"path":"第2章 Unity 常用 API/220-assetbundle.md","ref":"第2章 Unity 常用 API/220-assetbundle.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/221-resources.md","mtime":"2017-04-16T14:45:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

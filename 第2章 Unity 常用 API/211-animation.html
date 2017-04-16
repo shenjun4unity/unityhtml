@@ -3562,15 +3562,15 @@
 <p>&#x4F60;&#x80FD;&#x6307;&#x5B9A;&#x52A8;&#x753B;&#x526A;&#x8F91;&#x5230;&#x52A8;&#x753B;&#x7EC4;&#x4EF6;&#x5E76;&#x4ECE;&#x811A;&#x672C;&#x63A7;&#x5236;&#x64AD;&#x653E;&#x3002;&#x8BE5;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x662F;&#x57FA;&#x4E8E;&#x6743;&#x91CD;&#x5E76;&#x652F;&#x6301;&#x52A8;&#x753B;&#x878D;&#x5408;&#x3001;&#x6DFB;&#x52A0;&#x52A8;&#x753B;&#x3001;&#x52A8;&#x753B;&#x6DF7;&#x5408;&#x3001;&#x5C42;&#x5E76;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#x64AD;&#x653E;&#x7684;&#x5404;&#x4E2A;&#x65B9;&#x9762;&#x3002;</p>
 <p>AnimationState&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6539;&#x53D8;&#x52A8;&#x753B;&#x7684;&#x5C42;&#x3001;&#x4FEE;&#x6539;&#x64AD;&#x653E;&#x901F;&#x5EA6;&#x4EE5;&#x53CA;&#x76F4;&#x63A5;&#x63A7;&#x5236;&#x878D;&#x5408;&#x4E0E;&#x6DF7;&#x5408;&#x3002;</p>
 <p>&#x52A8;&#x753B;&#x4E5F;&#x652F;&#x6301;&#x679A;&#x4E3E;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x5728;AnimationStates&#x4E4B;&#x95F4;&#x5FAA;&#x73AF;&#xFF1A;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public Animation anim;
-        void Start() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
             anim = GetComponent&lt;Animation&gt;();
-            foreach (AnimationState state in anim) {
-                state.speed = 0.5F;
+            <span class="hljs-keyword">foreach</span> (AnimationState state <span class="hljs-keyword">in</span> anim) {
+                state.speed = <span class="hljs-number">0.5</span>F;
             }
         }
     }
@@ -3703,7 +3703,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.11 Animation","level":"1.23.11","depth":2,"next":{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"path":"第2章 Unity 常用 API/2111-addclip.md","ref":"第2章 Unity 常用 API/2111-addclip.md","articles":[]},"previous":{"title":"2.10 Physics","level":"1.23.10","depth":2,"path":"第2章 Unity 常用 API/210-physics.md","ref":"第2章 Unity 常用 API/210-physics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/211-animation.md","mtime":"2016-12-10T02:41:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.11 Animation","level":"1.23.11","depth":2,"next":{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"path":"第2章 Unity 常用 API/2111-addclip.md","ref":"第2章 Unity 常用 API/2111-addclip.md","articles":[]},"previous":{"title":"2.10 Physics","level":"1.23.10","depth":2,"path":"第2章 Unity 常用 API/210-physics.md","ref":"第2章 Unity 常用 API/210-physics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/211-animation.md","mtime":"2017-04-16T14:40:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

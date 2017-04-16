@@ -3589,22 +3589,22 @@
 <p>&#x6307;&#x5B9A;&#x52A8;&#x753B;&#x66F2;&#x7EBF;&#x6765;&#x52A8;&#x753B;&#x7279;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x66F2;&#x7EBF;&#x4E3A;null&#xFF0C;&#x66F2;&#x7EBF;&#x5C06;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x5982;&#x679C;&#x66F2;&#x7EBF;&#x5C5E;&#x6027;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x66F2;&#x7EBF;&#x5C06;&#x88AB;&#x66FF;&#x6362;&#x3002;</p>
 <p>&#x901A;&#x5E38;&#x7684;&#x540D;&#x79F0;&#x662F;: &#x201C;localPosition.x&#x201D;, &#x201C;localPosition.y&#x201D;, &#x201C;localPosition.z&#x201D;, &#x201C;localRotation.x&#x201D;, &#x201C;localRotation.y&#x201D;, &#x201C;localRotation.z&#x201D;, &#x201C;localRotation.w&#x201D; &#x201C;localScale.x&#x201D;, &#x201C;localScale.y&#x201D;, &#x201C;localScale.z&#x201D;.</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-[RequireComponent(typeof(Animation))]
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent&lt;Animation&gt;();
-        AnimationCurve curve = AnimationCurve.Linear(0, 1, 2, 3);
-        AnimationClip clip = new AnimationClip();
-        clip.legacy = true;
-        clip.SetCurve(&quot;&quot;, typeof(Transform), &quot;localPosition.x&quot;, curve);
-        anim.AddClip(clip, &quot;test&quot;);
-        anim.Play(&quot;test&quot;);
+    [RequireComponent(<span class="hljs-keyword">typeof</span>(Animation))]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            anim = GetComponent&lt;Animation&gt;();
+            AnimationCurve curve = AnimationCurve.Linear(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+            AnimationClip clip = <span class="hljs-keyword">new</span> AnimationClip();
+            clip.legacy = <span class="hljs-keyword">true</span>;
+            clip.SetCurve(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-keyword">typeof</span>(Transform), <span class="hljs-string">&quot;localPosition.x&quot;</span>, curve);
+            anim.AddClip(clip, <span class="hljs-string">&quot;test&quot;</span>);
+            anim.Play(<span class="hljs-string">&quot;test&quot;</span>);
+        }
     }
-}
 </code></pre>
 <hr>
 <p>Material&#x6750;&#x8D28;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;shader&#x8F93;&#x51FA;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x5236;&#x4F5C;&#x52A8;&#x753B;&#x3002;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x540D;&#x79F0;&#x662F;&#xFF1A; &#x201C;_MainTex&#x201D;, &#x201C;_BumpMap&#x201D;, &#x201C;_Color&#x201D;, &#x201C;_SpecColor&#x201D;, &#x201C;_Emission&#x201D;&#x3002;&#x5982;&#x4F55;&#x52A8;&#x753B;&#x5316;&#x4E0D;&#x540C;&#x6750;&#x8D28;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#xFF1A;</p>
@@ -3613,26 +3613,26 @@ Vector4 &#x5C5E;&#x6027;&#xFF1A; &#x201C;PropertyName.x&#x201D;, &#x201C;Propert
 Color &#x5C5E;&#x6027;&#xFF1A; &#x201C;PropertyName.r&#x201D;, &#x201C;PropertyName.g&#x201D;, &#x201C;PropertyName.b&#x201D;, &#x201C;PropertyName.a&#x201D; 
 UV &#x65CB;&#x8F6C;&#x5C5E;&#x6027;&#xFF1A;&#x201C;PropertyName.rotation&#x201D; UV &#x504F;&#x79FB;&#x548C;&#x7F29;&#x653E;&#xFF1A; &#x201C;PropertyName.offset.x&#x201D;, &#x201C;PropertyName.offset.y&#x201D;, &#x201C;PropertyName.scale.x&#x201D;, &#x201C;PropertyName.scale.y&#x201D; 
 &#x5BF9;&#x4E8E;&#x5728;&#x540C;&#x4E00;renderer&#x7684;&#x591A;&#x4E2A;&#x7D22;&#x5F15;&#x6750;&#x8D28;&#xFF0C;&#x4F60;&#x80FD;&#x60F3;&#x8FD9;&#x6837;&#x6DFB;&#x52A0;&#x524D;&#x7F00;&#xFF1A;&#x201C;[1]._MainTex.offset.y&#x201D;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-[RequireComponent(typeof(Animation))]
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent&lt;Animation&gt;();
-        AnimationClip clip = new AnimationClip();
-        clip.legacy = true;
-        clip.SetCurve(&quot;&quot;, typeof(Material), &quot;_Color.a&quot;, new AnimationCurve(new Keyframe(0, 0, 0, 0), new Keyframe(1, 1, 0, 0)));
-        clip.SetCurve(&quot;&quot;, typeof(Material), &quot;_MainTex.offset.x&quot;, AnimationCurve.Linear(0, 1, 2, 3));
-        anim.AddClip(clip, clip.name);
-        anim.Play(clip.name);
+    [RequireComponent(<span class="hljs-keyword">typeof</span>(Animation))]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            anim = GetComponent&lt;Animation&gt;();
+            AnimationClip clip = <span class="hljs-keyword">new</span> AnimationClip();
+            clip.legacy = <span class="hljs-keyword">true</span>;
+            clip.SetCurve(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-keyword">typeof</span>(Material), <span class="hljs-string">&quot;_Color.a&quot;</span>, <span class="hljs-keyword">new</span> AnimationCurve(<span class="hljs-keyword">new</span> Keyframe(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-keyword">new</span> Keyframe(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)));
+            clip.SetCurve(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-keyword">typeof</span>(Material), <span class="hljs-string">&quot;_MainTex.offset.x&quot;</span>, AnimationCurve.Linear(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>));
+            anim.AddClip(clip, clip.name);
+            anim.Play(clip.name);
+        }
     }
-}
 </code></pre>
 <hr>
 <p>&#x5C5E;&#x6027;&#x540D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x8D44;&#x6E90;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x8BBE;&#x7F6E;&#x5F3A;&#x5236;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3002;&#x8BE5;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7531;&#x7F16;&#x8F91;&#x5668;&#x5199;&#x5165;&#xFF0C;&#x5C06;&#x5305;&#x542B;&#x5C5E;&#x6027;&#x540D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;yaml&#x6587;&#x4EF6;&#x5199;&#x5165;&#x7684;&#x573A;&#x666F;&#x5BF9;&#x8C61;&#x5C06;&#x5305;&#x542B;&#x76F8;&#x673A;&#x8BBE;&#x7F6E;&#x3002;&#x770B;&#x4E0B;&#x9762;&#x7684;yaml&#x6587;&#x4EF6;&#x3002;</p>
-<pre><code class="lang-javascript">m_BackGroundColor: {r: <span class="hljs-number">.192156866</span>, g: <span class="hljs-number">.301960796</span>, b: <span class="hljs-number">.474509805</span>, a: <span class="hljs-number">.0196078438</span>}
+<pre><code class="lang-csharp">m_BackGroundColor: {r: <span class="hljs-number">.192156866</span>, g: <span class="hljs-number">.301960796</span>, b: <span class="hljs-number">.474509805</span>, a: <span class="hljs-number">.0196078438</span>}
 m_NormalizedViewPortRect:
 serializedVersion: <span class="hljs-number">2</span>
 x: <span class="hljs-number">0</span>
@@ -3641,7 +3641,7 @@ width: <span class="hljs-number">1</span>
 height: <span class="hljs-number">1</span>
 near clip plane: <span class="hljs-number">.300000012</span>
 far clip plane: <span class="hljs-number">1000</span>
-field <span class="hljs-keyword">of</span> view: <span class="hljs-number">60</span>
+field of view: <span class="hljs-number">60</span>
 orthographic: <span class="hljs-number">0</span>
 orthographic size: <span class="hljs-number">5</span>
 m_Depth: <span class="hljs-number">-1</span>
@@ -3675,7 +3675,7 @@ m_Depth: <span class="hljs-number">-1</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.303 SetCurve","level":"1.23.30.3","depth":3,"next":{"title":"2.31 AnimationEvent","level":"1.23.31","depth":2,"path":"第2章 Unity 常用 API/231-animationevent.md","ref":"第2章 Unity 常用 API/231-animationevent.md","articles":[]},"previous":{"title":"2.302 SampleAnimation","level":"1.23.30.2","depth":3,"path":"第2章 Unity 常用 API/2302-sampleanimation.md","ref":"第2章 Unity 常用 API/2302-sampleanimation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2303-setcurve.md","mtime":"2016-12-10T03:22:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.303 SetCurve","level":"1.23.30.3","depth":3,"next":{"title":"2.31 AnimationEvent","level":"1.23.31","depth":2,"path":"第2章 Unity 常用 API/231-animationevent.md","ref":"第2章 Unity 常用 API/231-animationevent.md","articles":[]},"previous":{"title":"2.302 SampleAnimation","level":"1.23.30.2","depth":3,"path":"第2章 Unity 常用 API/2302-sampleanimation.md","ref":"第2章 Unity 常用 API/2302-sampleanimation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2303-setcurve.md","mtime":"2017-04-16T14:46:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -3726,155 +3726,155 @@
 <hr>
 <h3 id="transformtranslate-&#x79FB;&#x52A8;">Transform.Translate &#x79FB;&#x52A8;</h3>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void Update() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             transform.Translate(Vector3.forward * Time.deltaTime);
             transform.Translate(Vector3.up * Time.deltaTime, Space.World);
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void Update() {
-            transform.Translate(0, 0, Time.deltaTime);
-            transform.Translate(0, Time.deltaTime, 0, Space.World);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            transform.Translate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, Time.deltaTime);
+            transform.Translate(<span class="hljs-number">0</span>, Time.deltaTime, <span class="hljs-number">0</span>, Space.World);
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;3&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             transform.Translate(Vector3.right * Time.deltaTime, Camera.main.transform);
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;4&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void Update() {
-            transform.Translate(Time.deltaTime, 0, 0, Camera.main.transform);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            transform.Translate(Time.deltaTime, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, Camera.main.transform);
         }
     }
 </code></pre>
 <hr>
 <h3 id="transformrotate-&#x7ED5;&#x7740;&#x901A;&#x8FC7;&#x7269;&#x4F53;&#x4E2D;&#x5FC3;&#x70B9;&#x7684;&#x67D0;&#x4E2A;&#x8F74;&#x65CB;&#x8F6C;">Transform.Rotate &#x7ED5;&#x7740;&#x901A;&#x8FC7;&#x7269;&#x4F53;&#x4E2D;&#x5FC3;&#x70B9;&#x7684;&#x67D0;&#x4E2A;&#x8F74;&#x65CB;&#x8F6C;</h3>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
 
-    public class ExampleClass : MonoBehaviour 
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> 
     {
-        void Update() 
-        {
-            // Rotate the object around its local Y axis at 1 degree per second
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) 
+        </span>{
+            <span class="hljs-comment">// Rotate the object around its local Y axis at 1 degree per second</span>
             transform.Rotate(Vector3.right * Time.deltaTime);
 
-            // ...also rotate around the World&apos;s Y axis
+            <span class="hljs-comment">// ...also rotate around the World&apos;s Y axis</span>
             transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
 
-    public class ExampleClass : MonoBehaviour 
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> 
     {
-        void Update() 
-        {
-            // Rotate the object around its local Y axis at 1 degree per second
-            transform.Rotate(Time.deltaTime, 0, 0);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) 
+        </span>{
+            <span class="hljs-comment">// Rotate the object around its local Y axis at 1 degree per second</span>
+            transform.Rotate(Time.deltaTime, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
 
-            // ...also rotate around the World&apos;s Y axis
-            transform.Rotate(0, Time.deltaTime, 0, Space.World);
+            <span class="hljs-comment">// ...also rotate around the World&apos;s Y axis</span>
+            transform.Rotate(<span class="hljs-number">0</span>, Time.deltaTime, <span class="hljs-number">0</span>, Space.World);
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;3&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
 
-    public class ExampleClass : MonoBehaviour 
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> 
     {
-        void Update() 
-        {
-            // Rotate the object around its local Y axis at 1 degree per second
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) 
+        </span>{
+            <span class="hljs-comment">// Rotate the object around its local Y axis at 1 degree per second</span>
             transform.Rotate(Vector3.right, Time.deltaTime);
 
-            // ...also rotate around the World&apos;s Y axis
+            <span class="hljs-comment">// ...also rotate around the World&apos;s Y axis</span>
             transform.Rotate(Vector3.up, Time.deltaTime, Space.World);
         }
     }
 </code></pre>
 <hr>
 <h3 id="transformrotatearound-&#x7ED5;&#x7740;&#x4EFB;&#x610F;&#x8F74;&#x65CB;&#x8F6C;">Transform.RotateAround &#x7ED5;&#x7740;&#x4EFB;&#x610F;&#x8F74;&#x65CB;&#x8F6C;</h3>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        void Update() {
-            transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            transform.RotateAround(Vector3.zero, Vector3.up, <span class="hljs-number">20</span> * Time.deltaTime);
         }
     }
 </code></pre>
 <hr>
 <h3 id="transformlookat-&#x4F7F;&#x7269;&#x4F53;&#x7684;z&#x8F74;&#x6307;&#x5411;&#x76EE;&#x6807;">Transform.LookAt &#x4F7F;&#x7269;&#x4F53;&#x7684;Z&#x8F74;&#x6307;&#x5411;&#x76EE;&#x6807;</h3>
 <p><strong>&#x5B9E;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        public Transform target;
+        <span class="hljs-keyword">public</span> Transform target;
 
-        void Update() {
-            // Rotate the camera every frame so it keeps looking at the target 
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// Rotate the camera every frame so it keeps looking at the target </span>
             transform.LookAt(target);
         }
     }
 </code></pre>
 <p><strong>&#x5B9E;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    transform.LookAt(Vector3.zero);
+<pre><code class="lang-csharp">    transform.LookAt(Vector3.zero);
 </code></pre>
 <hr>
 <h3 id="transformtransformpoint">Transform.TransformPoint</h3>
 <p><strong>&#x5B9E;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public GameObject someObject;
-        public Vector3 thePosition;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> GameObject someObject;
+        <span class="hljs-keyword">public</span> Vector3 thePosition;
 
-        void Start() {
-            // Instantiate an object to the right of the current object
-            thePosition = transform.TransformPoint(Vector3.right * 2);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// Instantiate an object to the right of the current object</span>
+            thePosition = transform.TransformPoint(Vector3.right * <span class="hljs-number">2</span>);
             Instantiate(someObject, thePosition, someObject.transform.rotation);
         }
     }
 </code></pre>
 <p><strong>&#x5B9E;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public GameObject someObject;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> GameObject someObject;
 
-        void Start() {
-            // Instantiate an object to the right of the current object
-            Vector3 thePosition = transform.TransformPoint(2, 0, 0);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// Instantiate an object to the right of the current object</span>
+            Vector3 thePosition = transform.TransformPoint(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
             Instantiate(someObject, thePosition, someObject.transform.rotation);
         }
     }
@@ -3907,7 +3907,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3 Tranform","level":"1.23.3","depth":2,"next":{"title":"2.4 Vector3","level":"1.23.4","depth":2,"path":"第2章 Unity 常用 API/24-vector3.md","ref":"第2章 Unity 常用 API/24-vector3.md","articles":[]},"previous":{"title":"2.2 GameObject","level":"1.23.2","depth":2,"path":"第2章 Unity 常用 API/22-gameobject.md","ref":"第2章 Unity 常用 API/22-gameobject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/23-tranform.md","mtime":"2016-11-27T12:55:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 Tranform","level":"1.23.3","depth":2,"next":{"title":"2.4 Vector3","level":"1.23.4","depth":2,"path":"第2章 Unity 常用 API/24-vector3.md","ref":"第2章 Unity 常用 API/24-vector3.md","articles":[]},"previous":{"title":"2.2 GameObject","level":"1.23.2","depth":2,"path":"第2章 Unity 常用 API/22-gameobject.md","ref":"第2章 Unity 常用 API/22-gameobject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/23-tranform.md","mtime":"2017-04-16T14:38:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -3569,15 +3569,15 @@
 <p>&#x6CE8;&#x610F;&#xFF0C;URL&#x4F20;&#x9012;&#x5230;WWW&#x7C7B;&#xFF0C;&#x5FC5;&#x987B;&#x662F;%&#x7F16;&#x7801;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF1A;iPhone&#x652F;&#x6301;http://&#xFF0C; https:// &#x548C; file://&#x534F;&#x8BAE;&#xFF1B;ftp://&#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301;&#x4EC5;&#x9650;&#x4E8E;&#x533F;&#x540D;&#x4E0B;&#x8F7D;&#x3002;&#x5176;&#x4ED6;&#x534F;&#x8BAE;&#x4E0D;&#x88AB;&#x652F;&#x6301;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x5728;windows&#x548C;Windows Store Apps&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x534F;&#x8BAE;&#x6765;&#x8BBF;&#x95EE;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;file:///&#xFF08;&#x5E26;&#x6709;&#x4E09;&#x4E2A;&#x659C;&#x7EBF;&#xFF09;&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public string url = &quot;http://images.earthcam.com/ec_metros/ourcams/fridays.jpg&quot;;
-        IEnumerator Start() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> url = <span class="hljs-string">&quot;http://images.earthcam.com/ec_metros/ourcams/fridays.jpg&quot;</span>;
+        <span class="hljs-function">IEnumerator <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
 
-            WWW www = new WWW(url);
-            yield return www;
+            WWW www = <span class="hljs-keyword">new</span> WWW(url);
+            <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> www;
             renderer.material.mainTexture = www.texture;
         }
     }
@@ -3733,7 +3733,7 @@ LoadFromCacheOrDownload()&#x5FC5;&#x987B;&#x7528;&#x6765;&#x66FF;&#x4EE3;&#x201C
 
 &#x6CE8;&#x610F;&#xFF0C;URL&#x5FC5;&#x987B;&#x662F;&apos;%&apos;&#x8F6C;&#x4E49;&#x7684;&#x3002;
 
-```javascript
+```csharp
     using UnityEngine;
     using System.Collections;
 
@@ -3757,16 +3757,16 @@ LoadFromCacheOrDownload()&#x5FC5;&#x987B;&#x7528;&#x6765;&#x66FF;&#x4EE3;&#x201C
 </code></pre><hr>
 <p>WWW bundle = new WWW(path);</p>
 <p>&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;&#xFF08;&#x65E0;&#x8BBA;&#x662F;&#x670D;&#x52A1;&#x5668;&#x8DEF;&#x5F84;&#x8FD8;&#x662F;&#x672C;&#x5730;&#x8DEF;&#x5F84;&#x4E0B;&#x8F7D;&#x64CD;&#x4F5C;&#x90FD;&#x4E00;&#x6837;&#xFF09;&#x4F46;&#x662F;bundle&#x53EA;&#x80FD;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x9000;&#x51FA;&#x6E38;&#x620F;&#x5728;&#x8FDB;&#x5165;&#x8FD8;&#x5F97;&#x91CD;&#x65B0;&#x4E0B;&#xFF0C;&#x5F88;&#x663E;&#x7136;&#x5728;&#x6E38;&#x620F;&#x4E2D;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
-<pre><code class="lang-javascript">    private IEnumerator LoadMainCacheGameObject(string path)
-    {
+<pre><code class="lang-csharp">    <span class="hljs-function"><span class="hljs-keyword">private</span> IEnumerator <span class="hljs-title">LoadMainCacheGameObject</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> path</span>)
+    </span>{
          WWW bundle = WWW.LoadFromCacheOrDownload(path,<span class="hljs-number">5</span>);
 
          <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> bundle;
 
          <span class="hljs-comment">//&#x52A0;&#x8F7D;&#x5230;&#x6E38;&#x620F;&#x4E2D;</span>
-         <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> Instantiate(bundle.assetBundle.mainAsset);
+         <span class="hljs-function"><span class="hljs-keyword">yield</span> return <span class="hljs-title">Instantiate</span>(<span class="hljs-params">bundle.assetBundle.mainAsset</span>)</span>;
 
-         bundle.assetBundle.Unload(<span class="hljs-literal">false</span>);
+         bundle.assetBundle.Unload(<span class="hljs-keyword">false</span>);
     }
 </code></pre>
 <p>&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x662F;WWW.LoadFromCacheOrDownload(path,5);</p>
@@ -3802,7 +3802,7 @@ LoadFromCacheOrDownload()&#x5FC5;&#x987B;&#x7528;&#x6765;&#x66FF;&#x4EE3;&#x201C
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.36 WWW","level":"1.23.36","depth":2,"next":{"title":"2.37 BuildPipeline","level":"1.23.37","depth":2,"path":"第2章 Unity 常用 API/237-buildpipeline.md","ref":"第2章 Unity 常用 API/237-buildpipeline.md","articles":[]},"previous":{"title":"2.35 NavMeshAgent","level":"1.23.35","depth":2,"path":"第2章 Unity 常用 API/235-navmeshagent.md","ref":"第2章 Unity 常用 API/235-navmeshagent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/236-www.md","mtime":"2017-01-10T14:48:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.36 WWW","level":"1.23.36","depth":2,"next":{"title":"2.37 BuildPipeline","level":"1.23.37","depth":2,"path":"第2章 Unity 常用 API/237-buildpipeline.md","ref":"第2章 Unity 常用 API/237-buildpipeline.md","articles":[]},"previous":{"title":"2.35 NavMeshAgent","level":"1.23.35","depth":2,"path":"第2章 Unity 常用 API/235-navmeshagent.md","ref":"第2章 Unity 常用 API/235-navmeshagent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/236-www.md","mtime":"2017-04-16T14:47:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

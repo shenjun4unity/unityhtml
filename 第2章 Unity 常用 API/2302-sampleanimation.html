@@ -3580,15 +3580,15 @@
 <p>&#x63CF;&#x8FF0; &#xFF1A;</p>
 <p>&#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x91C7;&#x6837;&#x52A8;&#x753B;&#xFF0C;&#x4E3A;&#x4EFB;&#x610F;&#x52A8;&#x753B;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x52A8;&#x753B;&#x754C;&#x9762;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x51FA;&#x4E8E;&#x6027;&#x80FD;&#x7684;&#x8003;&#x8651;&#x3002;&#x8FD9;&#x56DE;&#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x91C7;&#x6837;&#x52A8;&#x753B;&#x3002;&#x5728;&#x526A;&#x8F91;&#x4EFB;&#x610F;&#x52A8;&#x753B;&#x7684;&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;&#x5C06;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x91C7;&#x6837;&#x503C;&#x3002;&#x5927;&#x90E8;&#x5206;&#x65F6;&#x95F4;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Animation.Play&#x66FF;&#x4EE3;&#x3002;SampleAnimation&#x7528;&#x4E8E;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x65E0;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#x5E27;&#x4E4B;&#x95F4;&#x8DF3;&#x8DC3;&#xFF0C;&#x6216;&#x57FA;&#x4E8E;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-public class ExampleClass : MonoBehaviour {
-    public AnimationClip clip;
-    void Update() {
-        clip.SampleAnimation(gameObject, clip.length - Time.time);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> AnimationClip clip;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            clip.SampleAnimation(gameObject, clip.length - Time.time);
+        }
     }
-}
 </code></pre>
 <p>&#x1F51A;</p>
 
@@ -3618,7 +3618,7 @@ public class ExampleClass : MonoBehaviour {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.302 SampleAnimation","level":"1.23.30.2","depth":3,"next":{"title":"2.303 SetCurve","level":"1.23.30.3","depth":3,"path":"第2章 Unity 常用 API/2303-setcurve.md","ref":"第2章 Unity 常用 API/2303-setcurve.md","articles":[]},"previous":{"title":"2.301 AddEvent","level":"1.23.30.1","depth":3,"path":"第2章 Unity 常用 API/2301-addevent.md","ref":"第2章 Unity 常用 API/2301-addevent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2302-sampleanimation.md","mtime":"2016-12-10T03:12:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.302 SampleAnimation","level":"1.23.30.2","depth":3,"next":{"title":"2.303 SetCurve","level":"1.23.30.3","depth":3,"path":"第2章 Unity 常用 API/2303-setcurve.md","ref":"第2章 Unity 常用 API/2303-setcurve.md","articles":[]},"previous":{"title":"2.301 AddEvent","level":"1.23.30.1","depth":3,"path":"第2章 Unity 常用 API/2301-addevent.md","ref":"第2章 Unity 常用 API/2301-addevent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2302-sampleanimation.md","mtime":"2017-04-16T14:46:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

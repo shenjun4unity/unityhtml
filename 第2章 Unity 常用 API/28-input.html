@@ -3585,15 +3585,15 @@
 </tbody>
 </table>
 <p><strong>&#x793A;&#x4F8B;1:</strong></p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span>
     {
-        public void Update()
-        {
-            // &#x5F53;&#x6309;&#x4E0B; &#x6570;&#x5B57;&#x952E;1 &#x7684;&#x90A3;&#x4E00;&#x5E27;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// &#x5F53;&#x6309;&#x4E0B; &#x6570;&#x5B57;&#x952E;1 &#x7684;&#x90A3;&#x4E00;&#x5E27;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+            <span class="hljs-keyword">if</span>(Input.GetKeyDown(KeyCode.Alpha1))
             {
                 Debug.Log(Input.mousePosition);
             }
@@ -3601,16 +3601,16 @@
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;2:</strong></p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span>
     {
-        public void Update()
-        {
-            // &#x5F53;&#x6309;&#x4E0B;a&#x952E;&#x7684;&#x90A3;&#x4E00;&#x5E27;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
-            if(Input.GetKeyDown(&quot;a&quot;))
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// &#x5F53;&#x6309;&#x4E0B;a&#x952E;&#x7684;&#x90A3;&#x4E00;&#x5E27;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+            <span class="hljs-keyword">if</span>(Input.GetKeyDown(<span class="hljs-string">&quot;a&quot;</span>))
             {
                 Debug.Log(Input.mousePosition);
             }
@@ -3644,16 +3644,16 @@
 <p>&#x6570;&#x5B57;&#x952E; 0 &#x8868;&#x793A;&#x9F20;&#x6807;&#x5DE6;&#x952E;&#xFF1B;&#x6570;&#x5B57;&#x952E; 1 &#x8868;&#x793A;&#x9F20;&#x6807;&#x53F3;&#x952E;&#xFF1B;&#x6570;&#x5B57;&#x952E; 2 &#x8868;&#x793A;&#x9F20;&#x6807;&#x4E2D;&#x952E;&#x3002;</p>
 </blockquote>
 <p>&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span>
     {
-        public void Update()
-        {
-            // &#x5F53;&#x6309;&#x4E0B;&#x9F20;&#x6807;&#x5DE6;&#x952E;&#x7684;&#x90A3;&#x4E00;&#x5E27;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
-            if(Input.GetMouseButtonDown(0))
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-comment">// &#x5F53;&#x6309;&#x4E0B;&#x9F20;&#x6807;&#x5DE6;&#x952E;&#x7684;&#x90A3;&#x4E00;&#x5E27;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+            <span class="hljs-keyword">if</span>(Input.GetMouseButtonDown(<span class="hljs-number">0</span>))
             {
                 Debug.Log(Input.mousePosition);
             }
@@ -3685,41 +3685,41 @@
 <p><code>Mouse X</code> &#x548C; <code>Mouse Y</code> &#x6620;&#x5C04;&#x4E8E;&#x9F20;&#x6807;&#x3002;</p>
 </blockquote>
 <p><strong>&#x793A;&#x4F8B;1:</strong></p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        public float speed = 10.0F;
-        public float rotationSpeed = 100.0F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> speed = <span class="hljs-number">10.0</span>F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> rotationSpeed = <span class="hljs-number">100.0</span>F;
 
-        void Update() {
-            float translation = Input.GetAxis(&quot;Vertical&quot;) * speed;
-            float rotation = Input.GetAxis(&quot;Horizontal&quot;) * rotationSpeed;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">float</span> translation = Input.GetAxis(<span class="hljs-string">&quot;Vertical&quot;</span>) * speed;
+            <span class="hljs-keyword">float</span> rotation = Input.GetAxis(<span class="hljs-string">&quot;Horizontal&quot;</span>) * rotationSpeed;
             translation *= Time.deltaTime;
             rotation *= Time.deltaTime;
-            transform.Translate(0, 0, translation);
-            transform.Rotate(0, rotation, 0);
+            transform.Translate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, translation);
+            transform.Rotate(<span class="hljs-number">0</span>, rotation, <span class="hljs-number">0</span>);
         }
     }
 </code></pre>
 <p><strong>&#x793A;&#x4F8B;2:</strong></p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span>
     {
-        public float horizontalSpeed = 2.0F;
-        public float verticalSpeed = 2.0F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> horizontalSpeed = <span class="hljs-number">2.0</span>F;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> verticalSpeed = <span class="hljs-number">2.0</span>F;
 
-        void Update() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
 
-            float h = horizontalSpeed * Input.GetAxis(&quot;Mouse X&quot;);
-            float v = verticalSpeed * Input.GetAxis(&quot;Mouse Y&quot;);
+            <span class="hljs-keyword">float</span> h = horizontalSpeed * Input.GetAxis(<span class="hljs-string">&quot;Mouse X&quot;</span>);
+            <span class="hljs-keyword">float</span> v = verticalSpeed * Input.GetAxis(<span class="hljs-string">&quot;Mouse Y&quot;</span>);
 
-            transform.Rotate(v, h, 0);
+            transform.Rotate(v, h, <span class="hljs-number">0</span>);
         }
     }
 </code></pre>
@@ -3747,17 +3747,17 @@
 </tbody>
 </table>
 <p><strong>&#x793A;&#x4F8B;&#xFF1A;</strong></p>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span>
     {
-        public GameObject projectile;
+        <span class="hljs-keyword">public</span> GameObject projectile;
 
-        void Update()
-        {
-            if (Input.GetButtonDown(&quot;Fire1&quot;))
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-keyword">if</span> (Input.GetButtonDown(<span class="hljs-string">&quot;Fire1&quot;</span>))
                 Instantiate(projectile, transform.position, transform.rotation);
         }
     }
@@ -3918,7 +3918,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.8 Input","level":"1.23.8","depth":2,"next":{"title":"2.9 GUI","level":"1.23.9","depth":2,"path":"第2章 Unity 常用 API/29-gui.md","ref":"第2章 Unity 常用 API/29-gui.md","articles":[]},"previous":{"title":"2.7 Time","level":"1.23.7","depth":2,"path":"第2章 Unity 常用 API/27-time.md","ref":"第2章 Unity 常用 API/27-time.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/28-input.md","mtime":"2016-11-27T11:05:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.8 Input","level":"1.23.8","depth":2,"next":{"title":"2.9 GUI","level":"1.23.9","depth":2,"path":"第2章 Unity 常用 API/29-gui.md","ref":"第2章 Unity 常用 API/29-gui.md","articles":[]},"previous":{"title":"2.7 Time","level":"1.23.7","depth":2,"path":"第2章 Unity 常用 API/27-time.md","ref":"第2章 Unity 常用 API/27-time.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/28-input.md","mtime":"2017-04-16T14:39:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -3682,122 +3682,122 @@
 </tbody>
 </table>
 <h4 id="&#x793A;&#x4F8B;&#xFF1A;">&#x793A;&#x4F8B;&#xFF1A;</h4>
-<pre><code class="lang-javascript">using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    // This is not an editor script.
-    public class MyPlayer : MonoBehaviour {
-        public int armor = 75;
-        public int damage = 25;
-        public GameObject gun;
+    <span class="hljs-comment">// This is not an editor script.</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyPlayer</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> armor = <span class="hljs-number">75</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> damage = <span class="hljs-number">25</span>;
+        <span class="hljs-keyword">public</span> GameObject gun;
 
-        void Update () {
-        // Update logic here...
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// Update logic here...</span>
         }
     }
 </code></pre>
 <p><img src="../assets/CustomEditor.png" alt=""></p>
-<pre><code class="lang-javascript">using UnityEditor;
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEditor;
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    // Custom Editor using SerializedProperties.
-    // Automatic handling of multi-object editing, undo, and prefab overrides.
-    [CustomEditor(typeof(MyPlayer))]
+    <span class="hljs-comment">// Custom Editor using SerializedProperties.</span>
+    <span class="hljs-comment">// Automatic handling of multi-object editing, undo, and prefab overrides.</span>
+    [CustomEditor(<span class="hljs-keyword">typeof</span>(MyPlayer))]
     [CanEditMultipleObjects]
-    public class MyPlayerEditor : Editor {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyPlayerEditor</span> : <span class="hljs-title">Editor</span> {
         SerializedProperty damageProp;
         SerializedProperty armorProp;
         SerializedProperty gunProp;
 
-        void OnEnable () {
-            // Setup the SerializedProperties.
-            damageProp = serializedObject.FindProperty (&quot;damage&quot;);
-            armorProp = serializedObject.FindProperty (&quot;armor&quot;);
-            gunProp = serializedObject.FindProperty (&quot;gun&quot;);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnEnable</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// Setup the SerializedProperties.</span>
+            damageProp = serializedObject.FindProperty (<span class="hljs-string">&quot;damage&quot;</span>);
+            armorProp = serializedObject.FindProperty (<span class="hljs-string">&quot;armor&quot;</span>);
+            gunProp = serializedObject.FindProperty (<span class="hljs-string">&quot;gun&quot;</span>);
         }
 
-        public override void OnInspectorGUI() {
-            // Update the serializedProperty - always do this in the beginning of OnInspectorGUI.
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnInspectorGUI</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// Update the serializedProperty - always do this in the beginning of OnInspectorGUI.</span>
             serializedObject.Update ();
 
-            // Show the custom GUI controls.
-            EditorGUILayout.IntSlider (damageProp, 0, 100, new GUIContent (&quot;Damage&quot;));
+            <span class="hljs-comment">// Show the custom GUI controls.</span>
+            EditorGUILayout.IntSlider (damageProp, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-keyword">new</span> GUIContent (<span class="hljs-string">&quot;Damage&quot;</span>));
 
-            // Only show the damage progress bar if all the objects have the same damage value:
-            if (!damageProp.hasMultipleDifferentValues)
-                ProgressBar (damageProp.intValue / 100.0f, &quot;Damage&quot;);
+            <span class="hljs-comment">// Only show the damage progress bar if all the objects have the same damage value:</span>
+            <span class="hljs-keyword">if</span> (!damageProp.hasMultipleDifferentValues)
+                ProgressBar (damageProp.intValue / <span class="hljs-number">100.0</span>f, <span class="hljs-string">&quot;Damage&quot;</span>);
 
-            EditorGUILayout.IntSlider (armorProp, 0, 100, new GUIContent (&quot;Armor&quot;));
+            EditorGUILayout.IntSlider (armorProp, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-keyword">new</span> GUIContent (<span class="hljs-string">&quot;Armor&quot;</span>));
 
-            // Only show the armor progress bar if all the objects have the same armor value:
-            if (!armorProp.hasMultipleDifferentValues)
-                ProgressBar (armorProp.intValue / 100.0f, &quot;Armor&quot;);
+            <span class="hljs-comment">// Only show the armor progress bar if all the objects have the same armor value:</span>
+            <span class="hljs-keyword">if</span> (!armorProp.hasMultipleDifferentValues)
+                ProgressBar (armorProp.intValue / <span class="hljs-number">100.0</span>f, <span class="hljs-string">&quot;Armor&quot;</span>);
 
-            EditorGUILayout.PropertyField (gunProp, new GUIContent (&quot;Gun Object&quot;));
+            EditorGUILayout.PropertyField (gunProp, <span class="hljs-keyword">new</span> GUIContent (<span class="hljs-string">&quot;Gun Object&quot;</span>));
 
-            // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
+            <span class="hljs-comment">// Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.</span>
             serializedObject.ApplyModifiedProperties ();
         }
 
-        // Custom GUILayout progress bar.
-        void ProgressBar (float value, string label) {
-            // Get a rect for the progress bar using the same margins as a textfield:
-            Rect rect = GUILayoutUtility.GetRect (18, 18, &quot;TextField&quot;);
-            EditorGUI.ProgressBar (rect, value, label);
+        <span class="hljs-comment">// Custom GUILayout progress bar.</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ProgressBar</span> (<span class="hljs-params"><span class="hljs-keyword">float</span> <span class="hljs-keyword">value</span>, <span class="hljs-keyword">string</span> label</span>) </span>{
+            <span class="hljs-comment">// Get a rect for the progress bar using the same margins as a textfield:</span>
+            Rect rect = GUILayoutUtility.GetRect (<span class="hljs-number">18</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&quot;TextField&quot;</span>);
+            EditorGUI.ProgressBar (rect, <span class="hljs-keyword">value</span>, label);
             EditorGUILayout.Space ();
         }
     }
 </code></pre>
 <p>&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x591A;&#x5BF9;&#x8C61;&#x7F16;&#x8F91;&#x3001;&#x64A4;&#x9500;&#x3001;&#x548C;&#x9884;&#x5236;&#x91CD;&#x5199;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x7684;&#xFF0C;&#x811A;&#x672C;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x7531;&#x7F16;&#x8F91;&#x5668;&#x4E0D;&#x4F7F;&#x7528;serializedobject&#x548C;serializedproperty&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEditor;
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEditor;
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
 
-    // Example script with properties.
-    public class MyPlayer : MonoBehaviour {
-        public int damage;
-        public int armor;
-        public GameObject gun;
+    <span class="hljs-comment">// Example script with properties.</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyPlayer</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> damage;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> armor;
+        <span class="hljs-keyword">public</span> GameObject gun;
 
-        // ...other code...
+        <span class="hljs-comment">// ...other code...</span>
     }
 
 
-    // Custom Editor the &quot;old&quot; way by modifying the script variables directly.
-    // No handling of multi-object editing, undo, and prefab overrides!
-    [CustomEditor (typeof(MyPlayer))]
-    public class MyPlayerEditor : Editor {
+    <span class="hljs-comment">// Custom Editor the &quot;old&quot; way by modifying the script variables directly.</span>
+    <span class="hljs-comment">// No handling of multi-object editing, undo, and prefab overrides!</span>
+    [CustomEditor (<span class="hljs-keyword">typeof</span>(MyPlayer))]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyPlayerEditor</span> : <span class="hljs-title">Editor</span> {
 
-        public override void OnInspectorGUI () {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnInspectorGUI</span> (<span class="hljs-params"></span>) </span>{
             MyPlayer mp = (MyPlayer)target;
 
-            mp.damage = EditorGUILayout.IntSlider (&quot;Damage&quot;, mp.damage, 0, 100);
-            ProgressBar (mp.damage / 100.0f, &quot;Damage&quot;);
+            mp.damage = EditorGUILayout.IntSlider (<span class="hljs-string">&quot;Damage&quot;</span>, mp.damage, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+            ProgressBar (mp.damage / <span class="hljs-number">100.0</span>f, <span class="hljs-string">&quot;Damage&quot;</span>);
 
-            mp.armor = EditorGUILayout.IntSlider (&quot;Armor&quot;, mp.armor, 0, 100);
-            ProgressBar (mp.armor / 100.0f, &quot;Armor&quot;);
+            mp.armor = EditorGUILayout.IntSlider (<span class="hljs-string">&quot;Armor&quot;</span>, mp.armor, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+            ProgressBar (mp.armor / <span class="hljs-number">100.0</span>f, <span class="hljs-string">&quot;Armor&quot;</span>);
 
-            bool allowSceneObjects = !EditorUtility.IsPersistent (target);
-            mp.gun = (GameObject)EditorGUILayout.ObjectField (&quot;Gun Object&quot;, mp.gun, typeof(GameObject), allowSceneObjects);
+            <span class="hljs-keyword">bool</span> allowSceneObjects = !EditorUtility.IsPersistent (target);
+            mp.gun = (GameObject)EditorGUILayout.ObjectField (<span class="hljs-string">&quot;Gun Object&quot;</span>, mp.gun, <span class="hljs-keyword">typeof</span>(GameObject), allowSceneObjects);
         }
 
-        // Custom GUILayout progress bar.
-        void ProgressBar (float value, string label) {
-            // Get a rect for the progress bar using the same margins as a textfield:
-            Rect rect = GUILayoutUtility.GetRect (18, 18, &quot;TextField&quot;);
-            EditorGUI.ProgressBar (rect, value, label);
+        <span class="hljs-comment">// Custom GUILayout progress bar.</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ProgressBar</span> (<span class="hljs-params"><span class="hljs-keyword">float</span> <span class="hljs-keyword">value</span>, <span class="hljs-keyword">string</span> label</span>) </span>{
+            <span class="hljs-comment">// Get a rect for the progress bar using the same margins as a textfield:</span>
+            Rect rect = GUILayoutUtility.GetRect (<span class="hljs-number">18</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&quot;TextField&quot;</span>);
+            EditorGUI.ProgressBar (rect, <span class="hljs-keyword">value</span>, label);
             EditorGUILayout.Space ();
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">    <span class="hljs-keyword">void</span> OnSceneGUI()
-    {
+<pre><code class="lang-csharp">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnSceneGUI</span>(<span class="hljs-params"></span>)
+    </span>{
         m_pEvent = Event.current;
         <span class="hljs-keyword">if</span> (m_pEvent.type == EventType.mouseDown &amp;&amp; m_pEvent.button == <span class="hljs-number">1</span>) {
             Ray ray = HandleUtility.GUIPointToWorldRay(m_pEvent.mousePosition);
-            <span class="hljs-keyword">if</span>(isAddNode &amp;&amp; Physics.Raycast(ray, out hit))
+            <span class="hljs-keyword">if</span>(isAddNode &amp;&amp; Physics.Raycast(ray, <span class="hljs-keyword">out</span> hit))
             {
                 GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 go.transform.position = hit.point;
@@ -3838,7 +3838,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.40 Editor","level":"1.23.40","depth":2,"next":{"title":"2.41 GUILayoutUtility","level":"1.23.41","depth":2,"path":"第2章 Unity 常用 API/241-guilayoututility.md","ref":"第2章 Unity 常用 API/241-guilayoututility.md","articles":[]},"previous":{"title":"2.39 EditorGUIUtility","level":"1.23.39","depth":2,"path":"第2章 Unity 常用 API/239-editorguiutility.md","ref":"第2章 Unity 常用 API/239-editorguiutility.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/240-editor.md","mtime":"2017-01-10T15:52:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.40 Editor","level":"1.23.40","depth":2,"next":{"title":"2.41 GUILayoutUtility","level":"1.23.41","depth":2,"path":"第2章 Unity 常用 API/241-guilayoututility.md","ref":"第2章 Unity 常用 API/241-guilayoututility.md","articles":[]},"previous":{"title":"2.39 EditorGUIUtility","level":"1.23.39","depth":2,"path":"第2章 Unity 常用 API/239-editorguiutility.md","ref":"第2章 Unity 常用 API/239-editorguiutility.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/240-editor.md","mtime":"2017-04-16T14:48:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

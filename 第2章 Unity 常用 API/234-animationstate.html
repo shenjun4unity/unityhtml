@@ -3659,20 +3659,20 @@
 <p>&#x6DFB;&#x52A0;&#x5E94;&#x8BE5;&#x52A8;&#x753B;&#x7684;&#x53D8;&#x6362;&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x4F60;&#x51CF;&#x5C11;&#x521B;&#x5EFA;&#x7684;&#x52A8;&#x753B;&#x7684;&#x6570;&#x91CF;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x80FD;&#x6325;&#x624B;&#x52A8;&#x753B;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x5728;&#x95F2;&#x7F6E;&#x89D2;&#x8272;&#x6216;&#x8005;&#x8D70;&#x52A8;&#x89D2;&#x8272;&#x4E0A;&#x53BB;&#x64AD;&#x653E;&#x6325;&#x624B;&#x52A8;&#x753B;&#x3002;&#x4F60;&#x9700;&#x8981;&#x521B;&#x5EFA;2&#x4E2A;&#x6325;&#x624B;&#x52A8;&#x753B;&#x4E00;&#x4E2A;&#x7ED9;&#x95F2;&#x7F6E;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x7ED9;&#x8D70;&#x52A8;&#x7684;&#x3002;&#x901A;&#x8FC7;&#x6DF7;&#x5408;&#x6325;&#x624B;&#x52A8;&#x753B;&#x5C06;&#x4F1A;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#x80A9;&#x8180;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x4E0D;&#x5230;&#x66F4;&#x4F4E;&#x7684;&#x8EAB;&#x4F53;&#xFF0C;&#x5E76;&#x7EE7;&#x7EED;&#x64AD;&#x653E;&#x8D70;&#x52A8;&#x6216;&#x8005;&#x95F2;&#x7F6E;&#x7684;&#x52A8;&#x753B;&#x3002;&#x56E0;&#x6B64;&#x4F60;&#x4EC5;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6325;&#x624B;&#x52A8;&#x753B;&#x3002;</p>
 <p>&#x5982;&#x679C;recursive &#x662F;true &#x6240;&#x6709;&#x5B50;&#x7269;&#x4F53;&#x7684;&#x6DF7;&#x5408;transform&#x5C06;&#x4F1A;&#x88AB;&#x903C;&#x771F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x8C03;&#x7528;AddMixingTransform&#xFF0C;&#x6240;&#x6709;&#x52A8;&#x753B;&#x66F2;&#x7EBF;&#x88AB;&#x4F7F;&#x7528;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> UnityEngine;
+<span class="hljs-keyword">using</span> System.Collections;
 
-public class ExampleScript : MonoBehaviour
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleScript</span> : <span class="hljs-title">MonoBehaviour</span>
 {
-    public Animation anim;
+    <span class="hljs-keyword">public</span> Animation anim;
 
-    void Start()
-    {
-        // Adds a mixing transform using a path instead
-        Transform mixTransform = transform.Find(&quot;root/upper_body/left_shoulder&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-comment">// Adds a mixing transform using a path instead</span>
+        Transform mixTransform = transform.Find(<span class="hljs-string">&quot;root/upper_body/left_shoulder&quot;</span>);
 
-        // Add mixing transform
-        anim[&quot;wave_hand&quot;].AddMixingTransform(mixTransform);
+        <span class="hljs-comment">// Add mixing transform</span>
+        anim[<span class="hljs-string">&quot;wave_hand&quot;</span>].AddMixingTransform(mixTransform);
     }
 }
 </code></pre>
@@ -3704,7 +3704,7 @@ public class ExampleScript : MonoBehaviour
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.34 AnimationState","level":"1.23.34","depth":2,"next":{"title":"2.35 NavMeshAgent","level":"1.23.35","depth":2,"path":"第2章 Unity 常用 API/235-navmeshagent.md","ref":"第2章 Unity 常用 API/235-navmeshagent.md","articles":[]},"previous":{"title":"2.33 SceneManager","level":"1.23.33","depth":2,"path":"第2章 Unity 常用 API/233-scenemanager.md","ref":"第2章 Unity 常用 API/233-scenemanager.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/234-animationstate.md","mtime":"2016-12-10T15:24:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.34 AnimationState","level":"1.23.34","depth":2,"next":{"title":"2.35 NavMeshAgent","level":"1.23.35","depth":2,"path":"第2章 Unity 常用 API/235-navmeshagent.md","ref":"第2章 Unity 常用 API/235-navmeshagent.md","articles":[]},"previous":{"title":"2.33 SceneManager","level":"1.23.33","depth":2,"path":"第2章 Unity 常用 API/233-scenemanager.md","ref":"第2章 Unity 常用 API/233-scenemanager.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/234-animationstate.md","mtime":"2017-04-16T14:46:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

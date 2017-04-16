@@ -3561,41 +3561,41 @@
 <p>public T GetBehaviour();</p>
 <p>&#x63CF;&#x8FF0;&#xFF1A;</p>
 <p>&#x8FD4;&#x56DE;&#x5339;&#x914D;&#x7C7B;&#x578B;T&#x6216;&#x6D3E;&#x751F;&#x81EA;T&#x7684;&#x9996;&#x4E2A;&#x72B6;&#x6001;&#x673A;&#x884C;&#x4E3A;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x8FD4;&#x56DE;null&#x3002;</p>
-<pre><code class="lang-javascript">public class RunBehaviour : StateMachineBehaviour {
+<pre><code class="lang-csharp">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">RunBehaviour</span> : <span class="hljs-title">StateMachineBehaviour</span> {
 
-    // OnStateUpdate is called at each Update frame between OnStateEnter and OnStateExit callback
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) 
-    {
-        if (animator.GetComponent&lt;Recorder&gt;().enabled &amp;&amp; !animator.GetComponent&lt;Recorder&gt;().isRecording) return;
+        <span class="hljs-comment">// OnStateUpdate is called at each Update frame between OnStateEnter and OnStateExit callback</span>
+        <span class="hljs-function"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnStateUpdate</span>(<span class="hljs-params">Animator animator, AnimatorStateInfo stateInfo, <span class="hljs-keyword">int</span> layerIndex</span>) 
+        </span>{
+            <span class="hljs-keyword">if</span> (animator.GetComponent&lt;Recorder&gt;().enabled &amp;&amp; !animator.GetComponent&lt;Recorder&gt;().isRecording) <span class="hljs-keyword">return</span>;
 
-        Transform transform = animator.GetComponent&lt;Transform&gt;();
+            Transform transform = animator.GetComponent&lt;Transform&gt;();
 
-        RaycastHit hitInfo;
-        Vector3 dir = transform.TransformDirection(Vector3.forward);
-        if (Physics.Raycast(transform.position + new Vector3(0, 1.5f, 0), dir, out hitInfo, 10))
-        {
-            if (hitInfo.collider.tag == &quot;Obstacle&quot;)
+            RaycastHit hitInfo;
+            Vector3 dir = transform.TransformDirection(Vector3.forward);
+            <span class="hljs-keyword">if</span> (Physics.Raycast(transform.position + <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>, <span class="hljs-number">1.5</span>f, <span class="hljs-number">0</span>), dir, <span class="hljs-keyword">out</span> hitInfo, <span class="hljs-number">10</span>))
             {
-                animator.GetBehaviour&lt;SlideBehaviour&gt;().target = transform.position + 1.25f * hitInfo.distance * dir;
-                if(hitInfo.distance &lt; 6)
-                    animator.SetTrigger(&quot;Slide&quot;);
+                <span class="hljs-keyword">if</span> (hitInfo.collider.tag == <span class="hljs-string">&quot;Obstacle&quot;</span>)
+                {
+                    animator.GetBehaviour&lt;SlideBehaviour&gt;().target = transform.position + <span class="hljs-number">1.25</span>f * hitInfo.distance * dir;
+                    <span class="hljs-keyword">if</span>(hitInfo.distance &lt; <span class="hljs-number">6</span>)
+                        animator.SetTrigger(<span class="hljs-string">&quot;Slide&quot;</span>);
+                }
             }
         }
     }
-}
 
-public class SlideBehaviour : StateMachineBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">SlideBehaviour</span> : <span class="hljs-title">StateMachineBehaviour</span> {
 
-    public Vector3 target;
+        <span class="hljs-keyword">public</span> Vector3 target;
 
-    public float slideMatchTargetStart = 0.11f;
-    public float slideMatchTargetStop = 0.40f;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> slideMatchTargetStart = <span class="hljs-number">0.11</span>f;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> slideMatchTargetStop = <span class="hljs-number">0.40</span>f;
 
-    // OnStateUpdate is called at each Update frame between OnStateEnter and OnStateExit callback
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        animator.MatchTarget(target, new Quaternion(), AvatarTarget.Root, new MatchTargetWeightMask(new Vector3(1, 0, 1), 0), slideMatchTargetStart, slideMatchTargetStop);
+        <span class="hljs-comment">// OnStateUpdate is called at each Update frame between OnStateEnter and OnStateExit callback</span>
+        <span class="hljs-function"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnStateUpdate</span>(<span class="hljs-params">Animator animator, AnimatorStateInfo stateInfo, <span class="hljs-keyword">int</span> layerIndex</span>) </span>{
+            animator.MatchTarget(target, <span class="hljs-keyword">new</span> Quaternion(), AvatarTarget.Root, <span class="hljs-keyword">new</span> MatchTargetWeightMask(<span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-number">0</span>), slideMatchTargetStart, slideMatchTargetStop);
+        }
     }
-}
 </code></pre>
 
                                 
@@ -3624,7 +3624,7 @@ public class SlideBehaviour : StateMachineBehaviour {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.123 GetBehaviour","level":"1.23.12.3","depth":3,"next":{"title":"2.124 GetBehaviours","level":"1.23.12.4","depth":3,"path":"第2章 Unity 常用 API/2124-getbehaviours.md","ref":"第2章 Unity 常用 API/2124-getbehaviours.md","articles":[]},"previous":{"title":"2.122 CrossFade","level":"1.23.12.2","depth":3,"path":"第2章 Unity 常用 API/2122-crossfade.md","ref":"第2章 Unity 常用 API/2122-crossfade.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2123-getbehaviour.md","mtime":"2016-12-10T09:10:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.123 GetBehaviour","level":"1.23.12.3","depth":3,"next":{"title":"2.124 GetBehaviours","level":"1.23.12.4","depth":3,"path":"第2章 Unity 常用 API/2124-getbehaviours.md","ref":"第2章 Unity 常用 API/2124-getbehaviours.md","articles":[]},"previous":{"title":"2.122 CrossFade","level":"1.23.12.2","depth":3,"path":"第2章 Unity 常用 API/2122-crossfade.md","ref":"第2章 Unity 常用 API/2122-crossfade.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2123-getbehaviour.md","mtime":"2017-04-16T14:41:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

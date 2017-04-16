@@ -3770,39 +3770,39 @@
 </tbody>
 </table>
 <h3 id="&#x793A;&#x4F8B;&#xFF1A;">&#x793A;&#x4F8B;&#xFF1A;</h3>
-<pre><code class="lang-javascript">
-    // When the audio component has stopped playing, play otherClip
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-comment">// When the audio component has stopped playing, play otherClip</span>
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        public AudioClip otherClip;
+        <span class="hljs-keyword">public</span> AudioClip otherClip;
         AudioSource audio;
 
-        void Start() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
             audio = GetComponent&lt;AudioSource&gt;();
         }
 
-        void Update() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
 
-            if (!audio.isPlaying) {
+            <span class="hljs-keyword">if</span> (!audio.isPlaying) {
                 audio.clip = otherClip;
                 audio.Play();
             }
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    [RequireComponent(typeof(AudioSource))]
-    public class ExampleClass : MonoBehaviour {
+    [RequireComponent(<span class="hljs-keyword">typeof</span>(AudioSource))]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        public AudioClip clip;
+        <span class="hljs-keyword">public</span> AudioClip clip;
 
-        void Start() {
-            AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2));
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            AudioSource.PlayClipAtPoint(clip, <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>));
         }
     }
 </code></pre>
@@ -3833,7 +3833,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4 声音组件","level":"1.4.4","depth":2,"next":{"title":"3.5 GUI","level":"1.4.5","depth":2,"path":"第3天/35-gui.md","ref":"第3天/35-gui.md","articles":[]},"previous":{"title":"3.3 灯光与摄像机","level":"1.4.3","depth":2,"path":"第3天/33-灯光与摄像机.md","ref":"第3天/33-灯光与摄像机.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3天/34-声音组件.md","mtime":"2016-12-10T04:47:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4 声音组件","level":"1.4.4","depth":2,"next":{"title":"3.5 GUI","level":"1.4.5","depth":2,"path":"第3天/35-gui.md","ref":"第3天/35-gui.md","articles":[]},"previous":{"title":"3.3 灯光与摄像机","level":"1.4.3","depth":2,"path":"第3天/33-灯光与摄像机.md","ref":"第3天/33-灯光与摄像机.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3天/34-声音组件.md","mtime":"2017-04-16T14:33:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

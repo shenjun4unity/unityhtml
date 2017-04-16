@@ -3567,20 +3567,20 @@
 <p>&#x5982;&#x679C;queue&#x662F;QueueMode.CompleteOthers&#xFF0C;&#x5F53;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x52A8;&#x753B;&#x505C;&#x6B62;&#x64AD;&#x653E;&#xFF0C;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x624D;&#x4F1A;&#x5F00;&#x59CB;&#x3002; 
 &#x5982;&#x679C;queue&#x662F;QueueMode.PlayNow&#xFF0C;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x5C06;&#x5728;&#x4E00;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x4E0B;&#x7ACB;&#x5373;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#x3002;</p>
 <p>&#x5F53;&#x52A8;&#x753B;&#x5B8C;&#x6210;&#x64AD;&#x653E;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x6E05;&#x7406;&#x3002;&#x5728;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x5C06;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent&lt;Animation&gt;();
-    }
-    void Update() {
-        if (Input.GetButtonDown(&quot;Fire1&quot;))
-            anim.PlayQueued(&quot;shoot&quot;, QueueMode.PlayNow);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            anim = GetComponent&lt;Animation&gt;();
+        }
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (Input.GetButtonDown(<span class="hljs-string">&quot;Fire1&quot;</span>))
+                anim.PlayQueued(<span class="hljs-string">&quot;shoot&quot;</span>, QueueMode.PlayNow);
 
+        }
     }
-}
 </code></pre>
 <p>&#x1F51A;</p>
 
@@ -3610,7 +3610,7 @@ public class ExampleClass : MonoBehaviour {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.116 PlayQueued","level":"1.23.11.6","depth":3,"next":{"title":"2.117 Sample","level":"1.23.11.7","depth":3,"path":"第2章 Unity 常用 API/2117-sample.md","ref":"第2章 Unity 常用 API/2117-sample.md","articles":[]},"previous":{"title":"2.115 Play","level":"1.23.11.5","depth":3,"path":"第2章 Unity 常用 API/2115-play.md","ref":"第2章 Unity 常用 API/2115-play.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2116-playqueued.md","mtime":"2016-12-10T02:41:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.116 PlayQueued","level":"1.23.11.6","depth":3,"next":{"title":"2.117 Sample","level":"1.23.11.7","depth":3,"path":"第2章 Unity 常用 API/2117-sample.md","ref":"第2章 Unity 常用 API/2117-sample.md","articles":[]},"previous":{"title":"2.115 Play","level":"1.23.11.5","depth":3,"path":"第2章 Unity 常用 API/2115-play.md","ref":"第2章 Unity 常用 API/2115-play.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2116-playqueued.md","mtime":"2017-04-16T14:40:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

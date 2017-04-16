@@ -3710,63 +3710,63 @@
 <h3 id="&#x793A;&#x4F8B;&#xFF1A;">&#x793A;&#x4F8B;&#xFF1A;</h3>
 <h4 id="physicsraycast-&#x5C04;&#x7EBF;&#x6295;&#x5C04;">Physics.Raycast &#x5C04;&#x7EBF;&#x6295;&#x5C04;</h4>
 <p>public static bool <strong>Raycast</strong>(<strong>Vector3</strong> origin, <strong>Vector3</strong> direction, <strong>float</strong> maxDistance = Mathf.Infinity, <strong>int</strong> layerMask = DefaultRaycastLayers, <strong>QueryTriggerInteraction</strong> queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             Vector3 fwd = transform.TransformDirection(Vector3.forward);
-            if (Physics.Raycast(transform.position, fwd, 10))
-                print(&quot;There is something in front of the object!&quot;);
+            <span class="hljs-keyword">if</span> (Physics.Raycast(transform.position, fwd, <span class="hljs-number">10</span>))
+                print(<span class="hljs-string">&quot;There is something in front of the object!&quot;</span>);
 
         }
     }
 </code></pre>
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5C04;&#x7EBF;&#x4ECE;&#x78B0;&#x649E;&#x4F53;&#x7684;&#x5185;&#x90E8;&#x6216;&#x8005;&#x80CC;&#x9762;&#x6253;&#xFF0C;Raycast&#x4E0D;&#x68C0;&#x6D4B;&#x78B0;&#x649E;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7528;&#x811A;&#x672C;&#x6216;&#x52A8;&#x753B;&#x79FB;&#x52A8;&#x78B0;&#x649E;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x5728;FixedUpdate&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x7269;&#x7406;&#x5E93;&#x80FD;&#x66F4;&#x65B0;&#x5B83;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x6761;&#x5C04;&#x7EBF;&#x5728;&#x5B83;&#x7684;&#x65B0;&#x4F4D;&#x7F6E;&#x4E4B;&#x524D;&#x6253;&#x5230;&#x78B0;&#x649E;&#x5668;&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, -Vector3.up, out hit))
-                float distanceToGround = hit.distance;
+            <span class="hljs-keyword">if</span> (Physics.Raycast(transform.position, -Vector3.up, <span class="hljs-keyword">out</span> hit))
+                <span class="hljs-keyword">float</span> distanceToGround = hit.distance;
 
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, -Vector3.up, out hit, 100.0F))
-                float distanceToGround = hit.distance;
+            <span class="hljs-keyword">if</span> (Physics.Raycast(transform.position, -Vector3.up, <span class="hljs-keyword">out</span> hit, <span class="hljs-number">100.0</span>F))
+                <span class="hljs-keyword">float</span> distanceToGround = hit.distance;
 
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, 100))
-                print(&quot;Hit something&quot;);
+            <span class="hljs-keyword">if</span> (Physics.Raycast(ray, <span class="hljs-number">100</span>))
+                print(<span class="hljs-string">&quot;Hit something&quot;</span>);
 
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100))
+            <span class="hljs-keyword">if</span> (Physics.Raycast(ray, <span class="hljs-keyword">out</span> hit, <span class="hljs-number">100</span>))
                 Debug.DrawLine(ray.origin, hit.point);
 
         }
@@ -3820,19 +3820,19 @@
 <p>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x80F6;&#x56CA;&#x626B;&#x63CF;&#x5230;&#x4EFB;&#x610F;&#x4EA4;&#x53C9;&#x78B0;&#x649E;&#x5668;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false&#x3002;</p>
 <p>&#x80F6;&#x56CA;&#x662F;&#x7531;radius&#x534A;&#x5F84;&#x4E0E;point1&#x548C;point2&#x4F4D;&#x7F6E;&#x7684;&#x4E24;&#x4E2A;&#x7403;&#x5F62;&#x6210;&#x80F6;&#x56CA;&#x7684;&#x4E24;&#x7AEF;&#x5B9A;&#x4E49;&#x3002;&#x8FD4;&#x56DE;&#x80F6;&#x56CA;&#x6CBF;direction&#x65B9;&#x5411;&#x78B0;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x78B0;&#x649E;&#x5668;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x6295;&#x5C04;&#x4E0D;&#x9700;&#x8DB3;&#x591F;&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x8981;&#x627E;&#x51FA;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x7269;&#x4F53;&#xFF0C;&#x5982;&#x4EBA;&#x7269;&#xFF0C;&#x80FD;&#x79FB;&#x52A8;&#x5230;&#x67D0;&#x5904;&#x800C;&#x4E0D;&#x5728;&#x9014;&#x4E2D;&#x78B0;&#x649E;&#x5230;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF0C;&#x80F6;&#x56CA;&#x6295;&#x5C04;&#x4E0D;&#x68C0;&#x6D4B;&#x80F6;&#x56CA;&#x91CD;&#x53E0;&#x7684;&#x78B0;&#x649E;&#x5668;&#x3002;&#x5982;&#x679C;&#x4ECE;&#x811A;&#x672C;&#x6216;&#x52A8;&#x753B;&#x79FB;&#x52A8;&#x78B0;&#x649E;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x5728;FixedUpdate&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4F7F;&#x5F97;&#x7269;&#x7406;&#x5E93;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x5B83;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5728;CapsuleCast&#x78B0;&#x5230;&#x78B0;&#x649E;&#x5668;&#x4E4B;&#x524D;&#x662F;&#x5728;&#x5B83;&#x7684;&#x65B0;&#x4F4D;&#x7F6E;&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        void Update() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
             RaycastHit hit;
             CharacterController charContr = GetComponent&lt;CharacterController&gt;();
-            Vector3 p1 = transform.position + charContr.center + Vector3.up * -charContr.height * 0.5F;
+            Vector3 p1 = transform.position + charContr.center + Vector3.up * -charContr.height * <span class="hljs-number">0.5</span>F;
             Vector3 p2 = p1 + Vector3.up * charContr.height;
-            float distanceToObstacle = 0;
+            <span class="hljs-keyword">float</span> distanceToObstacle = <span class="hljs-number">0</span>;
 
-            // Cast character controller shape 10 meters forward to see if it is about to hit anything.
-            if (Physics.CapsuleCast(p1, p2, charContr.radius, transform.forward, out hit, 10))
+            <span class="hljs-comment">// Cast character controller shape 10 meters forward to see if it is about to hit anything.</span>
+            <span class="hljs-keyword">if</span> (Physics.CapsuleCast(p1, p2, charContr.radius, transform.forward, <span class="hljs-keyword">out</span> hit, <span class="hljs-number">10</span>))
                 distanceToObstacle = hit.distance;
         }
     }
@@ -3864,7 +3864,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.10 Physics","level":"1.23.10","depth":2,"next":{"title":"2.11 Animation","level":"1.23.11","depth":2,"path":"第2章 Unity 常用 API/211-animation.md","ref":"第2章 Unity 常用 API/211-animation.md","articles":[{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"path":"第2章 Unity 常用 API/2111-addclip.md","ref":"第2章 Unity 常用 API/2111-addclip.md","articles":[]},{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},{"title":"2.113 CrossFade","level":"1.23.11.3","depth":3,"path":"第2章 Unity 常用 API/2113-crossfade.md","ref":"第2章 Unity 常用 API/2113-crossfade.md","articles":[]},{"title":"2.114 CrossFadeQueued","level":"1.23.11.4","depth":3,"path":"第2章 Unity 常用 API/2114-crossfadequeued.md","ref":"第2章 Unity 常用 API/2114-crossfadequeued.md","articles":[]},{"title":"2.115 Play","level":"1.23.11.5","depth":3,"path":"第2章 Unity 常用 API/2115-play.md","ref":"第2章 Unity 常用 API/2115-play.md","articles":[]},{"title":"2.116 PlayQueued","level":"1.23.11.6","depth":3,"path":"第2章 Unity 常用 API/2116-playqueued.md","ref":"第2章 Unity 常用 API/2116-playqueued.md","articles":[]},{"title":"2.117 Sample","level":"1.23.11.7","depth":3,"path":"第2章 Unity 常用 API/2117-sample.md","ref":"第2章 Unity 常用 API/2117-sample.md","articles":[]}]},"previous":{"title":"2.9 GUI","level":"1.23.9","depth":2,"path":"第2章 Unity 常用 API/29-gui.md","ref":"第2章 Unity 常用 API/29-gui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/210-physics.md","mtime":"2016-12-02T16:13:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.10 Physics","level":"1.23.10","depth":2,"next":{"title":"2.11 Animation","level":"1.23.11","depth":2,"path":"第2章 Unity 常用 API/211-animation.md","ref":"第2章 Unity 常用 API/211-animation.md","articles":[{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"path":"第2章 Unity 常用 API/2111-addclip.md","ref":"第2章 Unity 常用 API/2111-addclip.md","articles":[]},{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},{"title":"2.113 CrossFade","level":"1.23.11.3","depth":3,"path":"第2章 Unity 常用 API/2113-crossfade.md","ref":"第2章 Unity 常用 API/2113-crossfade.md","articles":[]},{"title":"2.114 CrossFadeQueued","level":"1.23.11.4","depth":3,"path":"第2章 Unity 常用 API/2114-crossfadequeued.md","ref":"第2章 Unity 常用 API/2114-crossfadequeued.md","articles":[]},{"title":"2.115 Play","level":"1.23.11.5","depth":3,"path":"第2章 Unity 常用 API/2115-play.md","ref":"第2章 Unity 常用 API/2115-play.md","articles":[]},{"title":"2.116 PlayQueued","level":"1.23.11.6","depth":3,"path":"第2章 Unity 常用 API/2116-playqueued.md","ref":"第2章 Unity 常用 API/2116-playqueued.md","articles":[]},{"title":"2.117 Sample","level":"1.23.11.7","depth":3,"path":"第2章 Unity 常用 API/2117-sample.md","ref":"第2章 Unity 常用 API/2117-sample.md","articles":[]}]},"previous":{"title":"2.9 GUI","level":"1.23.9","depth":2,"path":"第2章 Unity 常用 API/29-gui.md","ref":"第2章 Unity 常用 API/29-gui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/210-physics.md","mtime":"2017-04-16T14:39:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

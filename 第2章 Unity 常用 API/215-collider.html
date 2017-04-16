@@ -3654,25 +3654,25 @@
 <p><strong>Collider.ClosestPointOnBounds &#x5728;&#x6846;&#x4E0A;&#x6700;&#x8FD1;&#x7684;&#x70B9;</strong></p>
 <p>&#x5230;&#x78B0;&#x649E;&#x5668;&#x7684;&#x6846;&#x6700;&#x8FD1;&#x7684;&#x70B9;&#x3002;</p>
 <p>&#x5F53;&#x5E94;&#x7528;&#x4E8E;&#x7206;&#x70B8;&#x4F24;&#x5BB3;&#xFF0C;&#x8FD9;&#x80FD;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x4F24;&#x5BB3;&#x70B9;&#x6570;&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public float hitPoints = 100.0F;
-        public Collider coll;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> hitPoints = <span class="hljs-number">100.0</span>F;
+        <span class="hljs-keyword">public</span> Collider coll;
 
-        void Start() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
             coll = GetComponent&lt;Collider&gt;();
         }
 
-        void ApplyHitPoints(Vector3 explosionPos, float radius) {
-            // The distance from the explosion position to the surface of the collider.
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ApplyHitPoints</span>(<span class="hljs-params">Vector3 explosionPos, <span class="hljs-keyword">float</span> radius</span>) </span>{
+            <span class="hljs-comment">// The distance from the explosion position to the surface of the collider.</span>
             Vector3 closestPoint = coll.ClosestPointOnBounds(explosionPos);
-            float distance = Vector3.Distance(closestPoint, explosionPos);
+            <span class="hljs-keyword">float</span> distance = Vector3.Distance(closestPoint, explosionPos);
 
-            // The damage should decrease with distance from the explosion.
-            float damage = 1.0F - Mathf.Clamp01(distance / radius);
-            hitPoints -= damage * 10.0F;
+            <span class="hljs-comment">// The damage should decrease with distance from the explosion.</span>
+            <span class="hljs-keyword">float</span> damage = <span class="hljs-number">1.0</span>F - Mathf.Clamp01(distance / radius);
+            hitPoints -= damage * <span class="hljs-number">10.0</span>F;
         }
     }
 </code></pre>
@@ -3702,21 +3702,21 @@
 </tbody>
 </table>
 <p>&#x8FD4;&#x56DE;&#x5E03;&#x5C14;(bool)&#x503C;&#xFF0C;&#x5F53;&#x5C04;&#x7EBF;&#x548C;&#x4EFB;&#x4F55;&#x78B0;&#x649E;&#x5668;&#x76F8;&#x4EA4;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x4E3A;false&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5F53;&#x5C04;&#x7EBF;&#x78B0;&#x89E6;&#x5230;&#x4EFB;&#x4F55;&#x78B0;&#x649E;&#x5668;&#x65F6;&#x8FD4;&#x56DE;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x5047;&#x3002;</p>
-<pre><code class="lang-javascript">    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
-        public Collider coll;
-        void Start() {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Collider coll;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
             coll = GetComponent&lt;Collider&gt;();
         }
-        void Update() {
-            if (Input.GetMouseButtonDown(0)) {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (Input.GetMouseButtonDown(<span class="hljs-number">0</span>)) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                // &#x6295;&#x5C04;&#x4E00;&#x6761;&#x5C04;&#x7EBF;&#xFF08;Ray&#xFF09;&#xFF0C;&#x5B83;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x78B0;&#x649E;&#x5668;&#xFF0C;&#x9664;&#x4E86;&#x8FD9;&#x4E2A;&#x3002;
-                if (coll.Raycast(ray, out hit, 100.0F))
-                    transform.position = ray.GetPoint(100.0F);
+                <span class="hljs-comment">// &#x6295;&#x5C04;&#x4E00;&#x6761;&#x5C04;&#x7EBF;&#xFF08;Ray&#xFF09;&#xFF0C;&#x5B83;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x78B0;&#x649E;&#x5668;&#xFF0C;&#x9664;&#x4E86;&#x8FD9;&#x4E2A;&#x3002;</span>
+                <span class="hljs-keyword">if</span> (coll.Raycast(ray, <span class="hljs-keyword">out</span> hit, <span class="hljs-number">100.0</span>F))
+                    transform.position = ray.GetPoint(<span class="hljs-number">100.0</span>F);
             }
         }
     }
@@ -3748,7 +3748,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.15 Collider","level":"1.23.15","depth":2,"next":{"title":"2.16 CharacterController","level":"1.23.16","depth":2,"path":"第2章 Unity 常用 API/216-charactercontroller.md","ref":"第2章 Unity 常用 API/216-charactercontroller.md","articles":[]},"previous":{"title":"2.14 Collision","level":"1.23.14","depth":2,"path":"第2章 Unity 常用 API/214-collision.md","ref":"第2章 Unity 常用 API/214-collision.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/215-collider.md","mtime":"2016-12-02T14:26:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.15 Collider","level":"1.23.15","depth":2,"next":{"title":"2.16 CharacterController","level":"1.23.16","depth":2,"path":"第2章 Unity 常用 API/216-charactercontroller.md","ref":"第2章 Unity 常用 API/216-charactercontroller.md","articles":[]},"previous":{"title":"2.14 Collision","level":"1.23.14","depth":2,"path":"第2章 Unity 常用 API/214-collision.md","ref":"第2章 Unity 常用 API/214-collision.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/215-collider.md","mtime":"2017-04-16T14:42:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

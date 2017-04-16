@@ -3758,46 +3758,46 @@
 </tbody>
 </table>
 <h3 id="&#x793A;&#x4F8B;&#xFF1A;">&#x793A;&#x4F8B;&#xFF1A;</h3>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        public Texture aTexture;
+        <span class="hljs-keyword">public</span> Texture aTexture;
 
-        void OnGUI() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnGUI</span>(<span class="hljs-params"></span>) </span>{
 
-            if (!aTexture) {
+            <span class="hljs-keyword">if</span> (!aTexture) {
 
-                Debug.LogError(&quot;Assign a Texture in the inspector.&quot;);
-                return;
+                Debug.LogError(<span class="hljs-string">&quot;Assign a Texture in the inspector.&quot;</span>);
+                <span class="hljs-keyword">return</span>;
             }
 
-            GUI.DrawTexture(new Rect(10, 10, 60, 60), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
+            GUI.DrawTexture(<span class="hljs-keyword">new</span> Rect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>), aTexture, ScaleMode.ScaleToFit, <span class="hljs-keyword">true</span>, <span class="hljs-number">10.0</span>F);
         }
     }
 </code></pre>
-<pre><code class="lang-javascript">
-    using UnityEngine;
-    using System.Collections;
+<pre><code class="lang-csharp">
+    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-    public class ExampleClass : MonoBehaviour {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
 
-        public Texture btnTexture;
+        <span class="hljs-keyword">public</span> Texture btnTexture;
 
-        void OnGUI() {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnGUI</span>(<span class="hljs-params"></span>) </span>{
 
-            if (!btnTexture) {
-                Debug.LogError(&quot;Please assign a texture on the inspector&quot;);
-                return;
+            <span class="hljs-keyword">if</span> (!btnTexture) {
+                Debug.LogError(<span class="hljs-string">&quot;Please assign a texture on the inspector&quot;</span>);
+                <span class="hljs-keyword">return</span>;
             }
 
-            if (GUI.Button(new Rect(10, 10, 50, 50), btnTexture))
-                Debug.Log(&quot;Clicked the button with an image&quot;);
+            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>), btnTexture))
+                Debug.Log(<span class="hljs-string">&quot;Clicked the button with an image&quot;</span>);
 
-            if (GUI.Button(new Rect(10, 70, 50, 30), &quot;Click&quot;))
-                Debug.Log(&quot;Clicked the button with text&quot;);
+            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect(<span class="hljs-number">10</span>, <span class="hljs-number">70</span>, <span class="hljs-number">50</span>, <span class="hljs-number">30</span>), <span class="hljs-string">&quot;Click&quot;</span>))
+                Debug.Log(<span class="hljs-string">&quot;Clicked the button with text&quot;</span>);
 
         }
     }
@@ -3830,7 +3830,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.9 GUI","level":"1.23.9","depth":2,"next":{"title":"2.10 Physics","level":"1.23.10","depth":2,"path":"第2章 Unity 常用 API/210-physics.md","ref":"第2章 Unity 常用 API/210-physics.md","articles":[]},"previous":{"title":"2.8 Input","level":"1.23.8","depth":2,"path":"第2章 Unity 常用 API/28-input.md","ref":"第2章 Unity 常用 API/28-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/29-gui.md","mtime":"2016-11-26T09:56:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.9 GUI","level":"1.23.9","depth":2,"next":{"title":"2.10 Physics","level":"1.23.10","depth":2,"path":"第2章 Unity 常用 API/210-physics.md","ref":"第2章 Unity 常用 API/210-physics.md","articles":[]},"previous":{"title":"2.8 Input","level":"1.23.8","depth":2,"path":"第2章 Unity 常用 API/28-input.md","ref":"第2章 Unity 常用 API/28-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/29-gui.md","mtime":"2017-04-16T14:39:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

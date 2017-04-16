@@ -3560,34 +3560,34 @@
                                 <h2 id="animationaddclip-&#x6DFB;&#x52A0;&#x526A;&#x8F91;">Animation.AddClip &#x6DFB;&#x52A0;&#x526A;&#x8F91;</h2>
 <p><strong>public void AddClip(AnimationClip clip, string newName);</strong></p>
 <p>&#x63CF;&#x8FF0; &#xFF1A; &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x52A8;&#x753B;&#x526A;&#x8F91;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-public class ExampleClass : MonoBehaviour {
-    public AnimationClip walkClip;
-    public Animation anim;
-    void Start() {
-        anim = GetComponent&lt;Animation&gt;();
-        anim.AddClip(walkClip, &quot;walk&quot;);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> AnimationClip walkClip;
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            anim = GetComponent&lt;Animation&gt;();
+            anim.AddClip(walkClip, <span class="hljs-string">&quot;walk&quot;</span>);
+        }
     }
-}
 </code></pre>
 <p><strong>public void AddClip(AnimationClip clip, string newName, int firstFrame, int lastFrame, bool addLoopFrame = false);</strong></p>
 <p><strong>&#x53C2;&#x6570; &#xFF1A; addLoopFrame</strong></p>
 <p>&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x5728;&#x6700;&#x540E;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5E27;&#x5339;&#x914D;&#x7B2C;&#x4E00;&#x5E27;&#xFF1F;&#x5982;&#x679C;&#x4F60;&#x5728;&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x7684;&#x52A8;&#x753B;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;</p>
 <p>&#x63CF;&#x8FF0; : &#x5728;firstFrame&#x548C;lastFrame&#x4E4B;&#x95F4;&#x6DFB;&#x52A0;&#x52A8;&#x753B;&#x526A;&#x8F91;&#xFF0C;&#x65B0;&#x7684;&#x52A8;&#x753B;&#x526A;&#x8F91;&#x4E5F;&#x4F1A;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x540D;&#x79F0;&#x4E3A;newName&#x7684;&#x52A8;&#x753B;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x5B58;&#x5728;&#x5177;&#x6709;&#x76F8;&#x540C;&#x540D;&#x79F0;&#x7684;&#x526A;&#x8F91;&#xFF0C;&#x4F1A;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x65B0;&#x526A;&#x8F91;&#x3002;</p>
-<pre><code class="lang-javascript">using UnityEngine;
-using System.Collections;
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> UnityEngine;
+    <span class="hljs-keyword">using</span> System.Collections;
 
-public class ExampleClass : MonoBehaviour {
-    public Animation anim;
-    void Start() {
-        anim = GetComponent&lt;Animation&gt;();
-        anim.AddClip(anim.clip, &quot;shoot&quot;, 0, 10);
-        anim.AddClip(anim.clip, &quot;walk&quot;, 11, 20, true);
-        anim.AddClip(anim.clip, &quot;idle&quot;, 21, 30, true);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClass</span> : <span class="hljs-title">MonoBehaviour</span> {
+        <span class="hljs-keyword">public</span> Animation anim;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>) </span>{
+            anim = GetComponent&lt;Animation&gt;();
+            anim.AddClip(anim.clip, <span class="hljs-string">&quot;shoot&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
+            anim.AddClip(anim.clip, <span class="hljs-string">&quot;walk&quot;</span>, <span class="hljs-number">11</span>, <span class="hljs-number">20</span>, <span class="hljs-keyword">true</span>);
+            anim.AddClip(anim.clip, <span class="hljs-string">&quot;idle&quot;</span>, <span class="hljs-number">21</span>, <span class="hljs-number">30</span>, <span class="hljs-keyword">true</span>);
+        }
     }
-}
 </code></pre>
 <p>&#x1F51A;</p>
 
@@ -3617,7 +3617,7 @@ public class ExampleClass : MonoBehaviour {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"next":{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},"previous":{"title":"2.11 Animation","level":"1.23.11","depth":2,"path":"第2章 Unity 常用 API/211-animation.md","ref":"第2章 Unity 常用 API/211-animation.md","articles":[{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"path":"第2章 Unity 常用 API/2111-addclip.md","ref":"第2章 Unity 常用 API/2111-addclip.md","articles":[]},{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},{"title":"2.113 CrossFade","level":"1.23.11.3","depth":3,"path":"第2章 Unity 常用 API/2113-crossfade.md","ref":"第2章 Unity 常用 API/2113-crossfade.md","articles":[]},{"title":"2.114 CrossFadeQueued","level":"1.23.11.4","depth":3,"path":"第2章 Unity 常用 API/2114-crossfadequeued.md","ref":"第2章 Unity 常用 API/2114-crossfadequeued.md","articles":[]},{"title":"2.115 Play","level":"1.23.11.5","depth":3,"path":"第2章 Unity 常用 API/2115-play.md","ref":"第2章 Unity 常用 API/2115-play.md","articles":[]},{"title":"2.116 PlayQueued","level":"1.23.11.6","depth":3,"path":"第2章 Unity 常用 API/2116-playqueued.md","ref":"第2章 Unity 常用 API/2116-playqueued.md","articles":[]},{"title":"2.117 Sample","level":"1.23.11.7","depth":3,"path":"第2章 Unity 常用 API/2117-sample.md","ref":"第2章 Unity 常用 API/2117-sample.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2111-addclip.md","mtime":"2016-12-10T02:41:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:18:50.551Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"next":{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},"previous":{"title":"2.11 Animation","level":"1.23.11","depth":2,"path":"第2章 Unity 常用 API/211-animation.md","ref":"第2章 Unity 常用 API/211-animation.md","articles":[{"title":"2.111 AddClip","level":"1.23.11.1","depth":3,"path":"第2章 Unity 常用 API/2111-addclip.md","ref":"第2章 Unity 常用 API/2111-addclip.md","articles":[]},{"title":"2.112 Blend","level":"1.23.11.2","depth":3,"path":"第2章 Unity 常用 API/2112-blend.md","ref":"第2章 Unity 常用 API/2112-blend.md","articles":[]},{"title":"2.113 CrossFade","level":"1.23.11.3","depth":3,"path":"第2章 Unity 常用 API/2113-crossfade.md","ref":"第2章 Unity 常用 API/2113-crossfade.md","articles":[]},{"title":"2.114 CrossFadeQueued","level":"1.23.11.4","depth":3,"path":"第2章 Unity 常用 API/2114-crossfadequeued.md","ref":"第2章 Unity 常用 API/2114-crossfadequeued.md","articles":[]},{"title":"2.115 Play","level":"1.23.11.5","depth":3,"path":"第2章 Unity 常用 API/2115-play.md","ref":"第2章 Unity 常用 API/2115-play.md","articles":[]},{"title":"2.116 PlayQueued","level":"1.23.11.6","depth":3,"path":"第2章 Unity 常用 API/2116-playqueued.md","ref":"第2章 Unity 常用 API/2116-playqueued.md","articles":[]},{"title":"2.117 Sample","level":"1.23.11.7","depth":3,"path":"第2章 Unity 常用 API/2117-sample.md","ref":"第2章 Unity 常用 API/2117-sample.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/2111-addclip.md","mtime":"2017-04-16T14:40:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-16T14:53:36.634Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
