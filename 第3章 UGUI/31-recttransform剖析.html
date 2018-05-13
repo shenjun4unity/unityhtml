@@ -2669,6 +2669,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.24.6" data-path="36-recttransformutility.html">
+            
+                <a href="36-recttransformutility.html">
+            
+                    
+                    3.6 RectTransformUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3647,6 +3660,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.27.7.20" data-path="../第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/672-clientscene.html">
+            
+                <a href="../第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/672-clientscene.html">
+            
+                    
+                    6.72 ClientScene
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3854,90 +3880,106 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="recttransform-&#x5256;&#x6790;">RectTransform &#x5256;&#x6790;</h2>
+<p>&#x2003;</p>
 <h3 id="&#x4E00;&#x3001;&#x57FA;&#x672C;&#x8981;&#x70B9;">&#x4E00;&#x3001;&#x57FA;&#x672C;&#x8981;&#x70B9;</h3>
-<p>RectTransform&#x7EE7;&#x627F;&#x4E8E;Transform&#xFF0C;&#x5728; Transform &#x57FA;&#x7840;&#x4E0A;&#xFF0C;RectTransform &#x589E;&#x52A0;&#x4E86; &#x8F74;&#x5FC3;&#xFF08;pivot&#xFF09;&#x3001;&#x951A;&#x70B9;&#xFF08;anchors&#xFF09;&#x3001;&#x548C; &#x5C3A;&#x5BF8;&#x53D8;&#x5316;&#x91CF;&#xFF08;sizeDelta&#xFF09;&#x3002;</p>
-<p>&#x5176;&#x4E2D;anchors&#x548C;pivot&#x90FD;&#x662F;&#x5750;&#x6807;&#x539F;&#x70B9;&#x5728;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;0-1&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#xFF0C;0-1&#x4EE3;&#x8868;&#x7684;&#x662F;&#x6BD4;&#x4F8B;&#x3002;anchors&#x7684;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x662F;&#x5B50;UI&#x76F8;&#x5BF9;&#x7236;UI&#x7684;&#x6BD4;&#x4F8B;&#x4F4D;&#x7F6E;&#xFF0C;pivot&#x7684;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x662F;&#x76F8;&#x5BF9;UI&#x672C;&#x8EAB;&#x7684;&#x6BD4;&#x4F8B;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p><code>RectTransform</code>&#x7EE7;&#x627F;&#x4E8E;<code>Transform</code>&#xFF0C;&#x5728; <code>Transform</code> &#x57FA;&#x7840;&#x4E0A;&#xFF0C;<code>RectTransform</code> &#x589E;&#x52A0;&#x4E86; &#x8F74;&#x5FC3;&#xFF08;<code>pivot</code>&#xFF09;&#x3001;&#x951A;&#x70B9;&#xFF08;<code>anchors</code>&#xFF09;&#x3001;&#x548C; &#x5C3A;&#x5BF8;&#x53D8;&#x5316;&#x91CF;&#xFF08;<code>sizeDelta</code>&#xFF09;&#x3002;</p>
+<p>&#x5176;&#x4E2D;<code>anchors</code>&#x548C;<code>pivot</code>&#x90FD;&#x662F;&#x5750;&#x6807;&#x539F;&#x70B9;&#x5728;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;<code>0-1</code>&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#xFF0C;<code>0-1</code>&#x4EE3;&#x8868;&#x7684;&#x662F;&#x6BD4;&#x4F8B;&#x3002;</p>
+<p><code>anchors</code>&#x7684;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x662F;&#x5B50;UI&#x76F8;&#x5BF9;&#x7236;UI&#x7684;&#x6BD4;&#x4F8B;&#x4F4D;&#x7F6E;&#xFF0C;<code>pivot</code>&#x7684;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x662F;&#x76F8;&#x5BF9;UI&#x672C;&#x8EAB;&#x7684;&#x6BD4;&#x4F8B;&#x4F4D;&#x7F6E;&#x3002;</p>
 <p><img src="../assets/rect_anchors_pivot.png" alt=""></p>
+<p>&#x2003;</p>
 <h3 id="&#x4E8C;&#x3001;anchors&#xFF08;&#x951A;&#x70B9;&#x6216;&#x951A;&#x6846;&#xFF09;">&#x4E8C;&#x3001;Anchors&#xFF08;&#x951A;&#x70B9;&#x6216;&#x951A;&#x6846;&#xFF09;</h3>
-<p>&#x951A;&#x70B9;&#x529F;&#x80FD;&#x7684;&#x5F15;&#x5165;&#xFF0C;&#x4F7F;UI&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x548C;&#x7EDD;&#x5BF9;&#x5E03;&#x5C40;&#xFF0C;&#x81EA;&#x9002;&#x5E94;&#xFF0C;&#x7B49;&#x6BD4;&#x7F29;&#x653E;&#x7B49;&#x5B8C;&#x7F8E;&#x878D;&#x5408;&#x4E00;&#x8D77;&#x3002;&#x5728;uGUI&#x4E2D;Anchors&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x951A;&#x70B9;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x3002;&#x5F53;Anchors&#x6C47;&#x805A;&#x6210;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x79F0;&#x4E4B;&#x4E3A;&#x951A;&#x70B9;&#xFF1B;&#x5F53;Anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x72B6;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x79F0;&#x4E4B;&#x4E3A;&#x951A;&#x6846;&#x3002;Anchors&#x662F;&#x5B50;UI&#x5728;&#x7236;UI&#x4E2D;&#x7684;&#x6620;&#x5C04;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x5B50;UI&#x7684;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#xFF0C;&#x5B50;UI&#x7684;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#xFF0C;&#x8FD8;&#x4F1A;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;(width,height,posX,posY,left,top,right,bottom)&#x76F8;&#x5BF9;Anchors&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x3002;</p>
+<p>&#x951A;&#x70B9;&#x529F;&#x80FD;&#x7684;&#x5F15;&#x5165;&#xFF0C;&#x4F7F;UI&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x548C;&#x7EDD;&#x5BF9;&#x5E03;&#x5C40;&#xFF0C;&#x81EA;&#x9002;&#x5E94;&#xFF0C;&#x7B49;&#x6BD4;&#x7F29;&#x653E;&#x7B49;&#x5B8C;&#x7F8E;&#x878D;&#x5408;&#x4E00;&#x8D77;&#x3002;&#x5728;uGUI&#x4E2D;<code>Anchors</code>&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x951A;&#x70B9;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x3002;&#x5F53;<code>Anchors</code>&#x6C47;&#x805A;&#x6210;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x951A;&#x70B9;</strong>&#xFF1B;&#x5F53;<code>Anchors</code>&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x72B6;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x951A;&#x6846;</strong>&#x3002;<code>Anchors</code>&#x662F;&#x5B50;UI&#x5728;&#x7236;UI&#x4E2D;&#x7684;&#x6620;&#x5C04;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x5B50;UI&#x7684;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#xFF0C;&#x5B50;UI&#x7684;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#xFF0C;&#x8FD8;&#x4F1A;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;(<code>width</code>,<code>height</code>,<code>posX</code>,<code>posY</code>,<code>left</code>,<code>top</code>,<code>right</code>,<code>bottom</code>)&#x76F8;&#x5BF9;<code>Anchors</code>&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x3002;</p>
+<p>&#x2003;</p>
 <h4 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF1A;">&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF1A;</h4>
-<p>&#x2022; Pos (X, Y, Z) &#xFF0C;&#x77E9;&#x5F62;&#x8F74;&#x5FC3;&#x70B9;&#xFF08;pivot&#xFF09;&#x4E0E;&#x951A;&#x70B9;&#xFF08;anchors&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x3002;</p>
-<p>&#x2022; Left, Top, Right, Bottom&#xFF0C;&#x77E9;&#x5F62;&#x7684;&#x56DB;&#x6761;&#x8FB9;&#x4E0E;&#x951A;&#x6846;&#xFF08;anchors&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;&#x3002;</p>
+<p>&#x2022; <code>Pos (X, Y, Z)</code> &#xFF0C;&#x77E9;&#x5F62;&#x8F74;&#x5FC3;&#x70B9;&#xFF08;<code>pivot</code>&#xFF09;&#x4E0E;&#x951A;&#x70B9;&#xFF08;<code>anchors</code>&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x3002;</p>
+<p>&#x2022; <code>Left</code>, <code>Top</code>, <code>Right</code>, <code>Bottom</code>&#xFF0C;&#x77E9;&#x5F62;&#x7684;&#x56DB;&#x6761;&#x8FB9;&#x4E0E;&#x951A;&#x6846;&#xFF08;<code>anchors</code>&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;&#x3002;</p>
+<p>&#x2003;</p>
 <h5 id="&#xFF08;&#x4E00;&#xFF09;anchors&#x662F;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;">&#xFF08;&#x4E00;&#xFF09;Anchors&#x662F;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;</h5>
 <p><img src="../assets/20151031-0.png" alt=""></p>
-<p>&#x2022; &#x5728;&#x6570;&#x503C;&#x4E0A;&#x8868;&#x793A;&#x4E3A;&#xFF1A;achorMin.x==achorMax.x &amp;&amp; achorMin.y==achorMax.y</p>
-<p>&#x2022; Width/Height&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E0D;&#x53D7;Anchors&#x5F71;&#x54CD;&#x3002;</p>
-<p>&#x2022; PosX/PosY&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;&#x8BBE;&#x7F6E;&#x6B64;&#x503C;&#x540E;&#xFF0C;&#x77E9;&#x5F62;&#x8F74;&#x5FC3;&#x70B9;&#x4E0E;&#x951A;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x5C31;&#x6052;&#x5B9A;&#x4E86;&#xFF0C;&#x4E0D;&#x7BA1;&#x5982;&#x4F55;&#x6539;&#x53D8;&#x7236;UI&#x7684;&#x5C3A;&#x5BF8;&#x3002;</p>
+<p>&#x2022; &#x5728;&#x6570;&#x503C;&#x4E0A;&#x8868;&#x793A;&#x4E3A;&#xFF1A;<code>achorMin.x == achorMax.x &amp;&amp; achorMin.y == achorMax.y</code></p>
+<p>&#x2022; <code>Width/Height</code>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E0D;&#x53D7;<code>Anchors</code>&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x2022; <code>PosX/PosY</code>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;&#x8BBE;&#x7F6E;&#x6B64;&#x503C;&#x540E;&#xFF0C;&#x77E9;&#x5F62;&#x8F74;&#x5FC3;&#x70B9;&#x4E0E;&#x951A;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x5C31;&#x6052;&#x5B9A;&#x4E86;&#xFF0C;&#x4E0D;&#x7BA1;&#x5982;&#x4F55;&#x6539;&#x53D8;&#x7236;UI&#x7684;&#x5C3A;&#x5BF8;&#x3002;</p>
 <p>&#x2022; &#x5B50;UI&#x4E0D;&#x4F1A;&#x968F;&#x7236;UI&#x8FDB;&#x884C;&#x62C9;&#x4F38;&#xFF0C;&#x4F4D;&#x7F6E;&#x548C;&#x5927;&#x5C0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x2003;</p>
 <h5 id="&#xFF08;&#x4E8C;&#xFF09;anchors&#x662F;&#x4E00;&#x6761;&#x7EBF;&#x65F6;">&#xFF08;&#x4E8C;&#xFF09;Anchors&#x662F;&#x4E00;&#x6761;&#x7EBF;&#x65F6;</h5>
 <p><img src="../assets/20151031-1.png" alt=""></p>
-<p>&#x2022; &#x4E00;&#x6761;&#x6A2A;&#x7EBF;&#xFF1A;achorMin.y==achorMax.y&#xFF0C;&#x5982;&#x4E0A;&#x56FE;&#x3002;&#x5B50;UI&#x5BBD;&#x5EA6;&#x4F1A;&#x968F;&#x7236;UI&#x8FDB;&#x884C;&#x62C9;&#x4F38;&#xFF0C;&#x9AD8;&#x5EA6;&#x548C;Y&#x65B9;&#x5411;&#x7684;&#x8DDD;&#x79BB;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;&#x6B64;&#x65F6;&#xFF0C;Left,Right,PosY,Height&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;</p>
-<p>&#x2022; &#x4E00;&#x6761;&#x7AD6;&#x7EBF;&#xFF1A;achorMin.x==achorMax.x&#x3002;&#x5B50;UI&#x9AD8;&#x5EA6;&#x4F1A;&#x968F;&#x7236;UI&#x8FDB;&#x884C;&#x62C9;&#x4F38;&#xFF0C;&#x5BBD;&#x5EA6;&#x548C;X&#x65B9;&#x5411;&#x7684;&#x8DDD;&#x79BB;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;&#x6B64;&#x65F6;&#xFF0C;Top,Bottom,PosX,Width&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x2022; <strong>&#x4E00;&#x6761;&#x6A2A;&#x7EBF;</strong>&#xFF1A;<code>achorMin.y == achorMax.y</code>&#xFF0C;&#x5982;&#x4E0A;&#x56FE;&#x3002;&#x5B50;UI&#x5BBD;&#x5EA6;&#x4F1A;&#x968F;&#x7236;UI&#x8FDB;&#x884C;&#x62C9;&#x4F38;&#xFF0C;&#x9AD8;&#x5EA6;&#x548C;Y&#x65B9;&#x5411;&#x7684;&#x8DDD;&#x79BB;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;&#x6B64;&#x65F6;&#xFF0C;<code>Left</code>&#xFF0C;<code>Right</code>&#xFF0C;<code>PosY</code>&#xFF0C;<code>Height</code>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x2022; <strong>&#x4E00;&#x6761;&#x7AD6;&#x7EBF;</strong>&#xFF1A;<code>achorMin.x == achorMax.x</code>&#x3002;&#x5B50;UI&#x9AD8;&#x5EA6;&#x4F1A;&#x968F;&#x7236;UI&#x8FDB;&#x884C;&#x62C9;&#x4F38;&#xFF0C;&#x5BBD;&#x5EA6;&#x548C;X&#x65B9;&#x5411;&#x7684;&#x8DDD;&#x79BB;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;&#x6B64;&#x65F6;&#xFF0C;<code>Top</code>&#xFF0C;<code>Bottom</code>&#xFF0C;<code>PosX</code>&#xFF0C;<code>Width</code>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x2003;</p>
 <h5 id="&#xFF08;&#x4E09;&#xFF09;anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;">&#xFF08;&#x4E09;&#xFF09;Anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;</h5>
 <p><img src="../assets/20151031-2.png" alt=""></p>
-<p>&#x2022; achorMin.x!=achorMax.x &amp;&amp; achorMin.y!=achorMax.y</p>
+<p>&#x2022; <code>achorMin.x != achorMax.x &amp;&amp; achorMin.y != achorMax.y</code></p>
 <p>&#x2022; &#x5B50;UI&#x5BBD;&#x9AD8;&#x90FD;&#x662F;&#x62C9;&#x4F38;&#x72B6;&#x6001;&#x3002;</p>
 <p>&#x2022; &#x5BBD;&#x9AD8;&#x4E0D;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x3002;</p>
-<p>&#x2022; Left, Top, Right, Bottom&#x53EF;&#x8BBE;&#x7F6E;&#xFF0C;&#x77E9;&#x5F62;&#x7684;&#x56DB;&#x6761;&#x8FB9;&#x4E0E;&#x951A;&#x6846;&#x7684;&#x8FB9;&#x95F4;&#x8DDD;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x2022; <code>Left</code>&#xFF0C;<code>Top</code>&#xFF0C;<code>Right</code>&#xFF0C;<code>Bottom</code>&#x53EF;&#x8BBE;&#x7F6E;&#xFF0C;&#x77E9;&#x5F62;&#x7684;&#x56DB;&#x6761;&#x8FB9;&#x4E0E;&#x951A;&#x6846;&#x7684;&#x8FB9;&#x95F4;&#x8DDD;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x2003;</p>
 <h3 id="&#x4E09;&#x3001;anchoredposition">&#x4E09;&#x3001;anchoredPosition</h3>
-<p>anchoredPosition&#x5B98;&#x65B9;&#x63CF;&#x8FF0;&#x4E3A;&#xFF1A;The position of the pivot of this RectTransform relative to the anchor reference point.</p>
-<p>&#x5373;&#xFF1A;RectTransform&#x7684;pivot&#x4E0E;&#x951A;&#x70B9;&#xFF08;anchor reference point&#xFF09;&#x7684;&#x5411;&#x91CF;&#x3002;</p>
+<p><code>anchoredPosition</code>&#x5B98;&#x65B9;&#x63CF;&#x8FF0;&#x4E3A;&#xFF1A;The position of the pivot of this RectTransform relative to the anchor reference point.</p>
+<p>&#x5373;&#xFF1A;<code>RectTransform</code>&#x7684;<code>pivot</code>&#x4E0E;&#x951A;&#x70B9;&#xFF08;a<code>nchor reference point</code>&#xFF09;&#x7684;&#x5411;&#x91CF;&#x3002;</p>
+<p>&#x2003;</p>
 <h5 id="&#xFF08;&#x4E00;&#xFF09;anchros&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;">&#xFF08;&#x4E00;&#xFF09;Anchros&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;</h5>
-<p>Anchros&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x951A;&#x70B9;&#xFF08;anchor reference point&#xFF09;&#x6BD4;&#x8F83;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x5C31;&#x662F;Anchros&#x6C47;&#x805A;&#x7684;&#x8FD9;&#x4E2A;&#x70B9;&#x3002;</p>
+<p><code>Anchros</code>&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x951A;&#x70B9;&#xFF08;<code>anchor reference point</code>&#xFF09;&#x6BD4;&#x8F83;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x5C31;&#x662F;<code>Anchros</code>&#x6C47;&#x805A;&#x7684;&#x8FD9;&#x4E2A;&#x70B9;&#x3002;</p>
 <p><img src="../assets/rect_anchoredpostion.png" alt=""></p>
+<p>&#x2003;</p>
 <h5 id="&#xFF08;&#x4E8C;&#xFF09;anchros&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;">&#xFF08;&#x4E8C;&#xFF09;Anchros&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;</h5>
-<p>Anchros&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;&#xFF0C;&#x951A;&#x70B9;&#xFF08;anchor reference point&#xFF09;&#x7684;&#x4F4D;&#x7F6E;&#x5C31;&#x7A0D;&#x663E;&#x590D;&#x6742;&#xFF0C;&#x6B64;&#x65F6;&#x951A;&#x70B9;&#xFF08;anchor reference point&#xFF09;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x6839;&#x636E;pivot&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x3002;</p>
+<p><code>Anchros</code>&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;&#xFF0C;&#x951A;&#x70B9;&#xFF08;<code>anchor reference point</code>&#xFF09;&#x7684;&#x4F4D;&#x7F6E;&#x5C31;&#x7A0D;&#x663E;&#x590D;&#x6742;&#xFF0C;&#x6B64;&#x65F6;&#x951A;&#x70B9;&#xFF08;<code>anchor reference point</code>&#xFF09;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x6839;&#x636E;<code>pivot</code>&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x3002;</p>
 <p>----&#x5728;&#x6B64;&#x63D2;&#x5165;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#xFF0C;&#x590D;&#x4E60;&#x4E00;&#x4E0B;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x3002;----</p>
 <p>&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x6CD5;&#x662F;&#x6307;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;&#x4E24;&#x4E2A;&#x5DF2;&#x77E5;&#x91CF;&#x7684;&#x76F4;&#x7EBF;&#x6765;&#x786E;&#x5B9A;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x5DF2;&#x77E5;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x672A;&#x77E5;&#x91CF;&#x7684;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <p><img src="../assets/linear_interpolation_0.jpg" alt=""></p>
-<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5DF2;&#x77E5;&#x5750;&#x6807;(x0,y0)&#x4E0E;(x1,y1),&#x8981;&#x5F97;&#x5230;[x0,x1]&#x533A;&#x95F4;&#x5185;&#x67D0;&#x4E00;&#x4F4D;&#x7F6E;x&#x5728;&#x76F4;&#x7EBF;&#x4E0A;&#x7684;&#x503C;&#x3002;&#x6839;&#x636E;&#x56FE;&#x4E2D;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5230;:</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5DF2;&#x77E5;&#x5750;&#x6807;<code>(x0,y0)</code>&#x4E0E;<code>(x1,y1)</code>&#xFF0C;&#x8981;&#x5F97;&#x5230;<code>[x0,x1]</code>&#x533A;&#x95F4;&#x5185;&#x67D0;&#x4E00;&#x4F4D;&#x7F6E;<code>x</code>&#x5728;&#x76F4;&#x7EBF;&#x4E0A;&#x7684;&#x503C;&#x3002;&#x6839;&#x636E;&#x56FE;&#x4E2D;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5230;:</p>
 <p><img src="../assets/linear_interpolation_1.png" alt=""></p>
-<p>&#x2022; y = (1 &#x2212; &#x3B1;)y0 + &#x3B1;y1 &#x6216;&#x8005; y = y0 + &#x3B1;(y1 &#x2212; y0)</p>
-<p>&#x2022; x = (1 &#x2212; &#x3B1;)x0 + &#x3B1;x1 &#x6216;&#x8005; x = x0 + &#x3B1;(x1 &#x2212; x0)</p>
-<p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x3B1;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F97;&#x5230; x,y&#x3002;</p>
+<p>&#x2022; <code>y = (1 &#x2212; &#x3B1;)y0 + &#x3B1;y1</code> &#x6216;&#x8005; <code>y = y0 + &#x3B1;(y1 &#x2212; y0)</code></p>
+<p>&#x2022; <code>x = (1 &#x2212; &#x3B1;)x0 + &#x3B1;x1</code> &#x6216;&#x8005; <code>x = x0 + &#x3B1;(x1 &#x2212; x0)</code></p>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>&#x3B1;</code>&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F97;&#x5230; <code>x</code>&#xFF0C;<code>y</code>&#x3002;</p>
 <h5 id="&#x901A;&#x8FC7;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x8BA1;&#x7B97;&#x951A;&#x70B9;">&#x901A;&#x8FC7;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x8BA1;&#x7B97;&#x951A;&#x70B9;</h5>
-<p>&#x3B1;&#x5373;&#x4E3A;pivot(0-1)&#x7684;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#xFF01;&#x901A;&#x8FC7;&#x4E0B;&#x56FE;&#x5B9E;&#x4F8B;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x3002;</p>
-<p>&#x2022; &#x5DF2;&#x77E5;pivot(0,0.5)&#xFF0C;pivot&#x6240;&#x5728;&#x5750;&#x6807;&#x503C;&#x4E3A;(100,250)</p>
-<p>&#x2022; &#x5DF2;&#x77E5;&#x5DE6;&#x4E0B;&#x89D2;&#x951A;&#x70B9;&#x5750;&#x6807;(x0,y0)=(0,0)</p>
-<p>&#x2022; &#x5DF2;&#x77E5;&#x53F3;&#x4E0A;&#x89D2;&#x951A;&#x70B9;&#x5750;&#x6807;(x1,y1)=(600,500)</p>
-<p>&#x4EE5;&#x4E0A;&#x503C;&#xFF0C;&#x901A;&#x8FC7;Rect&#x7684;Width,Height&#x53CA;Rect&#x4E0E;&#x951A;&#x7684;&#x95F4;&#x8DDD;&#xFF0C;&#x4EE5;&#x951A;&#x5DE6;&#x4E0B;&#x89D2;&#x4E3A;&#x539F;&#x70B9;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x83B7;&#x5F97;&#x3002;</p>
-<p>&#x2022; anchorReferencePointX = (1 &#x2212; 0)x0 + 0x600 = 0;</p>
-<p>&#x2022; anchorReferencePointY = (1 &#x2212; 0.5)x0 + 0.5x500 = 250;</p>
-<p>&#x5F97;&#x5230;&#xFF1A;anchorReferencePoint &#xFF1D; (0,250)</p>
+<p><code>&#x3B1;</code>&#x5373;&#x4E3A;<code>pivot(0-1)</code>&#x7684;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#xFF01;&#x901A;&#x8FC7;&#x4E0B;&#x56FE;&#x5B9E;&#x4F8B;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x2022; &#x5DF2;&#x77E5;<code>pivot(0,0.5)</code>&#xFF0C;<code>pivot</code>&#x6240;&#x5728;&#x5750;&#x6807;&#x503C;&#x4E3A;<code>(100,250)</code></p>
+<p>&#x2022; &#x5DF2;&#x77E5;&#x5DE6;&#x4E0B;&#x89D2;&#x951A;&#x70B9;&#x5750;&#x6807;<code>(x0,y0) = (0,0)</code></p>
+<p>&#x2022; &#x5DF2;&#x77E5;&#x53F3;&#x4E0A;&#x89D2;&#x951A;&#x70B9;&#x5750;&#x6807;<code>(x1,y1) = (600,500)</code></p>
+<p>&#x4EE5;&#x4E0A;&#x503C;&#xFF0C;&#x901A;&#x8FC7;<code>Rect</code>&#x7684;<code>Width</code>&#xFF0C;<code>Height</code>&#x53CA;<code>Rect</code>&#x4E0E;&#x951A;&#x7684;&#x95F4;&#x8DDD;&#xFF0C;&#x4EE5;&#x951A;&#x5DE6;&#x4E0B;&#x89D2;&#x4E3A;&#x539F;&#x70B9;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x83B7;&#x5F97;&#x3002;</p>
+<p>&#x2022; <code>anchorReferencePointX = (1 &#x2212; 0)x0 + 0x600 = 0;</code></p>
+<p>&#x2022; <code>anchorReferencePointY = (1 &#x2212; 0.5)x0 + 0.5x500 = 250;</code></p>
+<p>&#x5F97;&#x5230;&#xFF1A;<code>anchorReferencePoint &#xFF1D; (0,250)</code></p>
 <p><img src="../assets/rect_anchoredpostion2.png" alt=""></p>
-<p>&#x56FE;&#x4E2D;&#x9EC4;&#x70B9;&#x5373;&#x4E3A;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;anchorReferencePoint&#xFF0C;anchorReferencePoint&#x5230;pivot&#x4E4B;&#x95F4;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x5373;&#x4E3A;anchoredPosition&#xFF01;</p>
-<p>anchoredPosition&#xFF1D;pivot(100,250)-anchorReferencePoint(0,250)=(100,0)&#xFF1B;</p>
+<p>&#x56FE;&#x4E2D;&#x9EC4;&#x70B9;&#x5373;&#x4E3A;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;<code>anchorReferencePoint</code>&#xFF0C;<code>anchorReferencePoint</code>&#x5230;<code>pivot</code>&#x4E4B;&#x95F4;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x5373;&#x4E3A;<code>anchoredPosition</code>&#xFF01;</p>
+<pre><code class="lang-csharp">    anchoredPosition &#xFF1D; pivot(<span class="hljs-number">100</span>,<span class="hljs-number">250</span>)-anchorReferencePoint(<span class="hljs-number">0</span>,<span class="hljs-number">250</span>) = (<span class="hljs-number">100</span>,<span class="hljs-number">0</span>)&#xFF1B;
+</code></pre>
+<p>&#x2003;</p>
 <h3 id="&#x56DB;&#x3001;offsetmin&#x4E0E;offsetmax">&#x56DB;&#x3001;offsetMin&#x4E0E;offsetMax</h3>
-<p>&#x2022; offsetMax&#x4E3A;&#x5F53;&#x524D;&#x77E9;&#x5F62;&#x53F3;&#x4E0A;&#x89D2;&#x76F8;&#x5BF9;&#x4E8E;&#x951A;&#x70B9;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x504F;&#x79FB;&#x3002;</p>
-<p>&#x2022; offsetMin&#x4E3A;&#x5F53;&#x524D;&#x77E9;&#x5F62;&#x5DE6;&#x4E0B;&#x89D2;&#x76F8;&#x5BF9;&#x4E8E;&#x951A;&#x70B9;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;&#x504F;&#x79FB;&#x3002;</p>
+<p>&#x2022; <code>offsetMax</code>&#x4E3A;&#x5F53;&#x524D;&#x77E9;&#x5F62;&#x53F3;&#x4E0A;&#x89D2;&#x76F8;&#x5BF9;&#x4E8E;&#x951A;&#x70B9;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x504F;&#x79FB;&#x3002;</p>
+<p>&#x2022; <code>offsetMin</code>&#x4E3A;&#x5F53;&#x524D;&#x77E9;&#x5F62;&#x5DE6;&#x4E0B;&#x89D2;&#x76F8;&#x5BF9;&#x4E8E;&#x951A;&#x70B9;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;&#x504F;&#x79FB;&#x3002;</p>
 <h5 id="1&#x3001;anchors&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;">1&#x3001;Anchors&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;</h5>
-<p>offsetMax/offsetMin&#x7684;&#x8BA1;&#x7B97;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><code>offsetMax/offsetMin</code>&#x7684;&#x8BA1;&#x7B97;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
 <p><img src="../assets/rect_offsetmax_min.png" alt=""></p>
-<p>Anchors&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x5373;&#x4EE5;&#x951A;&#x70B9;&#x4E3A;&#x5750;&#x6807;&#x539F;&#x70B9;&#xFF08;0,0&#xFF09;&#xFF0C;offsetMax&#x548C;offsetMin&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5FEB;&#x901F;&#x5F97;&#x51FA;&#x53F3;&#x4E0A;&#x89D2;&#x548C;&#x5DE6;&#x4E0B;&#x89D2;&#x5728;&#x6B64;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x7684;&#xFF08;x,y&#xFF09;&#x3002;</p>
+<p><code>Anchors</code>&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x5373;&#x4EE5;&#x951A;&#x70B9;&#x4E3A;&#x5750;&#x6807;&#x539F;&#x70B9;<code>&#xFF08;0,0&#xFF09;</code>&#xFF0C;<code>offsetMax</code>&#x548C;<code>offsetMin</code>&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5FEB;&#x901F;&#x5F97;&#x51FA;&#x53F3;&#x4E0A;&#x89D2;&#x548C;&#x5DE6;&#x4E0B;&#x89D2;&#x5728;&#x6B64;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x7684;<code>&#xFF08;x,y&#xFF09;</code>&#x3002;</p>
 <h5 id="2&#xFF64;anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;">2&#xFF64;Anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;</h5>
-<p>offsetMax/offsetMin&#x7684;&#x8BA1;&#x7B97;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><code>offsetMax/offsetMin</code>&#x7684;&#x8BA1;&#x7B97;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
 <p><img src="../assets/rect_offsetMin_offsetMax2.png" alt=""></p>
-<p>Anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4EE5;&#x5DE6;&#x4E0B;&#x89D2;&#x951A;&#x70B9;&#x548C;&#x53F3;&#x4E0A;&#x89D2;&#x951A;&#x70B9;&#x5206;&#x522B;&#x4F5C;&#x4E3A;&#x5750;&#x6807;&#x539F;&#x70B9;&#x753B;&#x4E24;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x4EE5;&#x8BA1;&#x7B97;offsetMin&#x548C;offsetMax.</p>
+<p><code>Anchors</code>&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4EE5;&#x5DE6;&#x4E0B;&#x89D2;&#x951A;&#x70B9;&#x548C;&#x53F3;&#x4E0A;&#x89D2;&#x951A;&#x70B9;&#x5206;&#x522B;&#x4F5C;&#x4E3A;&#x5750;&#x6807;&#x539F;&#x70B9;&#x753B;&#x4E24;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x4EE5;&#x8BA1;&#x7B97;<code>offsetMin</code>&#x548C;<code>offsetMax</code>.</p>
+<p>&#x2003;</p>
 <h3 id="&#x4E94;&#x3001;sizedelta">&#x4E94;&#x3001;sizeDelta</h3>
 <p>&#x5B98;&#x65B9;&#x6587;&#x6863;&#x53EA;&#x7528;&#x4E86;&#x4E00;&#x53E5;&#x82F1;&#x6587;&#x8FDB;&#x884C;&#x4E86;&#x63CF;&#x8FF0;&#xFF1A;The size of this RectTransform relative to the distances between the anchors.</p>
 <p>&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x8D39;&#x89E3;&#xFF1F;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x5F88;&#x591A;&#x7C7B;&#x4F3C;&#x8FD9;&#x79CD;&#xFF0C;&#x63CF;&#x8FF0;&#x4E0D;&#x8BE6;&#x7EC6;&#xFF0C;&#x9020;&#x6210;&#x7406;&#x89E3;&#x4E0A;&#x7684;&#x56F0;&#x96BE;&#x548C;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x589E;&#x52A0;&#x3002;</p>
-<p>sizeDelta&#x662F;&#x951A;&#x70B9;&#x5B9A;&#x4E49;&#x7684;&#x5B50;&#x77E9;&#x5F62;&#x4E0E;&#x951A;&#x70B9;&#x533A;&#x57DF;&#x5927;&#x5C0F;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x79F0;&#x4E4B;&#x4E3A;&#x5C3A;&#x5BF8;&#x53D8;&#x5316;&#x91CF;&#x3002;</p>
+<p><code>sizeDelta</code>&#x662F;&#x951A;&#x70B9;&#x5B9A;&#x4E49;&#x7684;&#x5B50;&#x77E9;&#x5F62;&#x4E0E;&#x951A;&#x70B9;&#x533A;&#x57DF;&#x5927;&#x5C0F;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x5C3A;&#x5BF8;&#x53D8;&#x5316;&#x91CF;</strong>&#x3002;</p>
 <p><img src="../assets/rect_sizeDelta.png" alt=""></p>
-<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x7EA2;&#x8272;&#x533A;&#x57DF;&#x4E3A;&#x951A;&#x70B9;&#x5B9A;&#x4E49;&#x7684;&#x5B50;&#x77E9;&#x5F62;&#xFF0C;&#x77E9;&#x5F62;&#x76F8;&#x5BF9;&#x951A;&#x70B9;&#x7684;&#x504F;&#x79FB;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53F3;&#x4E0A;&#x89D2;&#x4E0E;&#x951A;&#x70B9;&#x53F3;&#x4E0A;&#x89D2;&#x7684;offsetMax&#x5230;&#x5DE6;&#x4E0B;&#x89D2;&#x4E0E;&#x951A;&#x70B9;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;offsetMin&#x4E4B;&#x95F4;&#x7684;&#x5411;&#x91CF;&#xFF08;&#x7EFF;&#x8272;&#x7BAD;&#x5934;&#xFF09;&#x6765;&#x8868;&#x793A;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x7EA2;&#x8272;&#x533A;&#x57DF;&#x4E3A;&#x951A;&#x70B9;&#x5B9A;&#x4E49;&#x7684;&#x5B50;&#x77E9;&#x5F62;&#xFF0C;&#x77E9;&#x5F62;&#x76F8;&#x5BF9;&#x951A;&#x70B9;&#x7684;&#x504F;&#x79FB;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53F3;&#x4E0A;&#x89D2;&#x4E0E;&#x951A;&#x70B9;&#x53F3;&#x4E0A;&#x89D2;&#x7684;<code>offsetMax</code>&#x5230;&#x5DE6;&#x4E0B;&#x89D2;&#x4E0E;&#x951A;&#x70B9;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;<code>offsetMin</code>&#x4E4B;&#x95F4;&#x7684;&#x5411;&#x91CF;&#xFF08;&#x7EFF;&#x8272;&#x7BAD;&#x5934;&#xFF0C;PS&#xFF1A;&#x8C8C;&#x4F3C;&#x753B;&#x53CD;&#x4E86;&#xFF09;&#x6765;&#x8868;&#x793A;&#x3002;</p>
 <h5 id="&#x56E0;&#x6B64;&#x5F97;&#x51FA;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#xFF1A;">&#x56E0;&#x6B64;&#x5F97;&#x51FA;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#xFF1A;</h5>
-<pre><code>    sizeDelta = offsetMax-offsetMin
-</code></pre><h5 id="&#xFF08;&#x4E00;&#xFF09;&#x5982;&#x4F55;&#x52A8;&#x6001;recttransform&#x7684;&#x5927;&#x5C0F;">&#xFF08;&#x4E00;&#xFF09;&#x5982;&#x4F55;&#x52A8;&#x6001;RectTransform&#x7684;&#x5927;&#x5C0F;</h5>
+<pre><code class="lang-csharp">    sizeDelta = offsetMax - offsetMin
+</code></pre>
+<p>&#x2003;</p>
+<h5 id="&#xFF08;&#x4E00;&#xFF09;&#x5982;&#x4F55;&#x52A8;&#x6001;recttransform&#x7684;&#x5927;&#x5C0F;">&#xFF08;&#x4E00;&#xFF09;&#x5982;&#x4F55;&#x52A8;&#x6001;RectTransform&#x7684;&#x5927;&#x5C0F;</h5>
 <p><strong>1&#x3001;Anchors&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;</strong></p>
-<p>sizeDelta&#xFF08;x,y&#xFF09;&#x4E0E;Rect&#x7684;&#x5BBD;&#x9AD8;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;RectTransform&#x4E0E;&#x951A;&#x70B9;&#x504F;&#x79FB;&#x91CF;&#x5C31;&#x662F;&#x672C;&#x8EAB;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
-<p>RectTransform&#x7684;Rect&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x5F53;&#x9700;&#x8981;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;RectTransform&#x7684;&#x5C3A;&#x5BF8;&#x65F6;&#xFF0C;&#x5728;Anchors&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;sizeDelta&#x7684;x,y&#x6765;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;RectTransform&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x5BBD;&#x548C;&#x9AD8;&#x3002;</p>
+<p><code>sizeDelta&#xFF08;x,y&#xFF09;</code>&#x4E0E;<code>Rect</code>&#x7684;&#x5BBD;&#x9AD8;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;<code>RectTransform</code>&#x4E0E;&#x951A;&#x70B9;&#x504F;&#x79FB;&#x91CF;&#x5C31;&#x662F;&#x672C;&#x8EAB;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<p><code>RectTransform</code>&#x7684;<code>Rect</code>&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x5F53;&#x9700;&#x8981;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;<code>RectTransform</code>&#x7684;&#x5C3A;&#x5BF8;&#x65F6;&#xFF0C;&#x5728;<code>Anchors</code>&#x6C47;&#x805A;&#x4E00;&#x4E2A;&#x70B9;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>sizeDelta</code>&#x7684;<code>x</code>&#xFF0C;<code>y</code>&#x6765;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;<code>RectTransform</code>&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x5BBD;&#x548C;&#x9AD8;&#x3002;</p>
 <p><strong>2&#x3001;Anchors&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x65F6;</strong></p>
-<p>sizeDelta&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;Rect&#x5927;&#x5C0F;&#xFF0C;&#x4F46;&#x7406;&#x89E3;&#x4E0A;&#x4E0D;&#x592A;&#x597D;&#x8F6C;&#x6362;&#x3002;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;offsetMax&#x548C;offsetMin&#x7684;&#x504F;&#x79FB;&#x91CF;&#x6765;&#x52A8;&#x6001;&#x8C03;&#x6574;Rect&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;&#xFF0C;&#x540E;&#x7EED;&#x4F1A;&#x6DFB;&#x52A0;&#x672C;&#x77E5;&#x8BC6;&#x70B9;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p><code>sizeDelta</code>&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<code>Rect</code>&#x5927;&#x5C0F;&#xFF0C;&#x4F46;&#x7406;&#x89E3;&#x4E0A;&#x4E0D;&#x592A;&#x597D;&#x8F6C;&#x6362;&#x3002;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>offsetMax</code>&#x548C;<code>offsetMin</code>&#x7684;&#x504F;&#x79FB;&#x91CF;&#x6765;&#x52A8;&#x6001;&#x8C03;&#x6574;<code>Rect</code>&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;&#xFF0C;&#x540E;&#x7EED;&#x4F1A;&#x6DFB;&#x52A0;&#x672C;&#x77E5;&#x8BC6;&#x70B9;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x2003;    </p>
 <h5 id="&#xFF08;&#x4E8C;&#xFF09;sizedelta&#x7684;&#x8BA1;&#x7B97;&#x5B9E;&#x4F8B;">&#xFF08;&#x4E8C;&#xFF09;sizeDelta&#x7684;&#x8BA1;&#x7B97;&#x5B9E;&#x4F8B;</h5>
-<p>&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x7EA2;&#x8272;&#x533A;&#x57DF;&#x7684;Anchors&#x662F;&#x4E00;&#x4E2A;anchorMin(0,0)&#x5230;anchorMax(1,1)&#x7684;&#x5168;&#x62C9;&#x4F38;&#x951A;&#x6846;&#xFF0C;left,right,top,bottom&#x5168;&#x4E3A;50&#x3002;    </p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x7EA2;&#x8272;&#x533A;&#x57DF;&#x7684;<code>Anchors</code>&#x662F;&#x4E00;&#x4E2A;<code>anchorMin(0,0)</code>&#x5230;<code>anchorMax(1,1)</code>&#x7684;&#x5168;&#x62C9;&#x4F38;&#x951A;&#x6846;&#xFF0C;<code>left</code>&#xFF0C;<code>right</code>&#xFF0C;<code>top</code>&#xFF0C;<code>bottom</code>&#x5168;&#x4E3A;50&#x3002;    </p>
 <p><img src="../assets/20151029200000.png" alt=""></p>
 <p><img src="../assets/20151029195918.png" alt=""></p>
-<p>&#x7EA2;&#x7EBF;&#x5185;&#x6570;&#x636E;&#xFF0C;sizeDelta = offsetMax-offsetMin&#x5F97;&#x5230;&#x7684;&#x5411;&#x91CF;&#x3002;
-&#x5373;&#xFF1A;sizeDelta &#xFF1D; (-50-50,-50-50) = (-100,-100)</p>
+<p>&#x7EA2;&#x7EBF;&#x5185;&#x6570;&#x636E;&#xFF0C;<code>sizeDelta = offsetMax - offsetMin</code>&#x5F97;&#x5230;&#x7684;&#x5411;&#x91CF;&#x3002;
+&#x5373;&#xFF1A;<code>sizeDelta &#xFF1D; (-50-50,-50-50) = (-100,-100)</code></p>
 <p>&#x1F51A;</p>
 
                                 
@@ -3966,7 +4008,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1 RectTransform剖析","level":"1.24.1","depth":2,"next":{"title":"3.2 AutoLayout剖析","level":"1.24.2","depth":2,"path":"第3章 UGUI/32-autolayout剖析.md","ref":"第3章 UGUI/32-autolayout剖析.md","articles":[]},"previous":{"title":"第3章 UGUI","level":"1.24","depth":1,"path":"第3章 UGUI/第3章-ugui.md","ref":"第3章 UGUI/第3章-ugui.md","articles":[{"title":"3.1 RectTransform剖析","level":"1.24.1","depth":2,"path":"第3章 UGUI/31-recttransform剖析.md","ref":"第3章 UGUI/31-recttransform剖析.md","articles":[]},{"title":"3.2 AutoLayout剖析","level":"1.24.2","depth":2,"path":"第3章 UGUI/32-autolayout剖析.md","ref":"第3章 UGUI/32-autolayout剖析.md","articles":[]},{"title":"3.3 UGUI 事件体系分析","level":"1.24.3","depth":2,"path":"第3章 UGUI/33-ugui-事件体系分析.md","ref":"第3章 UGUI/33-ugui-事件体系分析.md","articles":[]},{"title":"3.4 UGUI 射线检测","level":"1.24.4","depth":2,"path":"第3章 UGUI/34-ugui-射线检测.md","ref":"第3章 UGUI/34-ugui-射线检测.md","articles":[]},{"title":"3.5 UGUI中的Canvas、Camera和Canvas Scaler","level":"1.24.5","depth":2,"path":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","ref":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3章 UGUI/31-recttransform剖析.md","mtime":"2017-10-30T14:13:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-10T13:22:45.147Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1 RectTransform剖析","level":"1.24.1","depth":2,"next":{"title":"3.2 AutoLayout剖析","level":"1.24.2","depth":2,"path":"第3章 UGUI/32-autolayout剖析.md","ref":"第3章 UGUI/32-autolayout剖析.md","articles":[]},"previous":{"title":"第3章 UGUI","level":"1.24","depth":1,"path":"第3章 UGUI/第3章-ugui.md","ref":"第3章 UGUI/第3章-ugui.md","articles":[{"title":"3.1 RectTransform剖析","level":"1.24.1","depth":2,"path":"第3章 UGUI/31-recttransform剖析.md","ref":"第3章 UGUI/31-recttransform剖析.md","articles":[]},{"title":"3.2 AutoLayout剖析","level":"1.24.2","depth":2,"path":"第3章 UGUI/32-autolayout剖析.md","ref":"第3章 UGUI/32-autolayout剖析.md","articles":[]},{"title":"3.3 UGUI 事件体系分析","level":"1.24.3","depth":2,"path":"第3章 UGUI/33-ugui-事件体系分析.md","ref":"第3章 UGUI/33-ugui-事件体系分析.md","articles":[]},{"title":"3.4 UGUI 射线检测","level":"1.24.4","depth":2,"path":"第3章 UGUI/34-ugui-射线检测.md","ref":"第3章 UGUI/34-ugui-射线检测.md","articles":[]},{"title":"3.5 UGUI中的Canvas、Camera和Canvas Scaler","level":"1.24.5","depth":2,"path":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","ref":"第3章 UGUI/35-ugui中的canvas、camera和canvas-scaler.md","articles":[]},{"title":"3.6 RectTransformUtility","level":"1.24.6","depth":2,"path":"第3章 UGUI/36-recttransformutility.md","ref":"第3章 UGUI/36-recttransformutility.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第3章 UGUI/31-recttransform剖析.md","mtime":"2018-05-11T08:20:41.514Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-13T12:32:28.728Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

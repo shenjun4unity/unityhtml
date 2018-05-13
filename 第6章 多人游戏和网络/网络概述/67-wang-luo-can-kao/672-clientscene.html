@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>6.718 NetworkTransport · 博军一笑的个人主页</title>
+        <title>6.72 ClientScene · 博军一笑的个人主页</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -55,10 +55,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="6719-networkwriter.html" />
+    <link rel="next" href="../68-cwang-luo-bian-cheng.html" />
     
     
-    <link rel="prev" href="6717-networktransformvisualizer.html" />
+    <link rel="prev" href="6719-networkwriter.html" />
     
 
     </head>
@@ -3634,7 +3634,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.27.7.18" data-path="6718-networktransport.html">
+        <li class="chapter " data-level="1.27.7.18" data-path="6718-networktransport.html">
             
                 <a href="6718-networktransport.html">
             
@@ -3660,7 +3660,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.27.7.20" data-path="672-clientscene.html">
+        <li class="chapter active" data-level="1.27.7.20" data-path="672-clientscene.html">
             
                 <a href="672-clientscene.html">
             
@@ -3867,7 +3867,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >6.718 NetworkTransport</a>
+        <a href="../../.." >6.72 ClientScene</a>
     </h1>
 </div>
 
@@ -3879,8 +3879,128 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="networktransport">NetworkTransport</h2>
-<p>NetworkTransport&#x662F;&#x4F4E;&#x7EA7;API&#x7684;&#x63A5;&#x53E3;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7C7B;&#x3002;</p>
+                                <h2 id="clientscene">ClientScene</h2>
+<h4 id="&#x63CF;&#x8FF0;">&#x63CF;&#x8FF0;</h4>
+<p>&#x5305;&#x542B;&#x9759;&#x6001;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;&#x548C;&#x529F;&#x80FD;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7BA1;&#x7406;&#x5668;&#x3002;</p>
+<p>&#x8BE5;&#x7BA1;&#x7406;&#x5668;&#x5305;&#x542B;&#x5BF9;&#x8DDF;&#x8E2A;&#x7684;&#x9759;&#x6001;&#x672C;&#x5730;&#x5BF9;&#x8C61;&#xFF08;&#x5982;<code>spawner</code>&#x6CE8;&#x518C;&#xFF09;&#x7684;&#x5F15;&#x7528;&#x3002;&#x5F53;&#x5B83;&#x4EEC;&#x81EA;&#x5DF1;&#x6CA1;&#x6709;&#x6CE8;&#x518C;&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x5177;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x6D88;&#x606F;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8BBE;&#x7F6E;&#x4E3A;&#x5C31;&#x7EEA;&#x540E;&#xFF0C;&#x7BA1;&#x7406;&#x5668;&#x5904;&#x7406;&#x6DFB;&#x52A0;/&#x5220;&#x9664;&#x73A9;&#x5BB6;&#x5BF9;&#x8C61;&#x5230;&#x6E38;&#x620F;&#x3002;</p>
+<p><code>ClientScene</code>&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#xFF0C;&#x5B83;&#x6709;&#x9759;&#x6001;&#x7684;&#x4FBF;&#x5229;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;<code>ClientScene.Ready()</code>&#x3002;</p>
+<p><code>ClientScene</code>&#x7531;<code>NetworkManager</code>&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x5B83;&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x7531;&#x4E8E;<code>ClientScene</code>&#x7BA1;&#x7406;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x7684;&#x73A9;&#x5BB6;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x5BA2;&#x6237;&#x7AEF;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x73A9;&#x5BB6;&#x3002;&#x5F53;&#x8BBE;&#x7F6E;&#x4E86;<code>auto-add-players</code>&#x65F6;&#xFF0C;<code>NetworkManager</code>&#x4F1A;&#x81EA;&#x52A8;&#x901A;&#x8FC7;<code>ClientScene</code>&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x51FD;&#x6570;<code>ClientScene.AddPlayer()</code>&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x5B8C;&#x6210;&#x3002;&#x8FD9;&#x4F1A;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>AddPlayer</code>&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x4F1A;&#x4E3A;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x73A9;&#x5BB6;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x548C;<code>NetworkServer</code>&#x4E00;&#x6837;&#xFF0C;<code>ClientScene</code>&#x4E5F;&#x7406;&#x89E3;&#x672C;&#x5730;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x901A;&#x8FC7;&#x542F;&#x52A8;&#x672C;&#x5730;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x65F6;&#xFF09;&#xFF0C;&#x51FD;&#x6570;<code>ClientScene.ConnectLocalServer()</code>&#x7528;&#x4E8E;&#x6210;&#x4E3A;&#x4E3B;&#x673A;&#x3002;</p>
+<h4 id="&#x9759;&#x6001;&#x5C5E;&#x6027;">&#x9759;&#x6001;&#x5C5E;&#x6027;</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">localPlayers</td>
+<td style="text-align:left">&#x6DFB;&#x52A0;&#x5230;&#x6E38;&#x620F;&#x4E2D;&#x7684;&#x5217;&#x8868;&#x7684;&#x6240;&#x6709;&#x73A9;&#x5BB6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">objects</td>
+<td style="text-align:left">&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4EA7;&#x751F;&#x7684;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x5178;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">prefabs</td>
+<td style="text-align:left">&#x8FD9;&#x662F;&#x4F7F;&#x7528;<code>ClientScene.RegisterPrefab()</code>&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x6CE8;&#x518C;&#x7684;&#x9884;&#x5236;&#x4EF6;&#x7684;&#x5B57;&#x5178;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ready</td>
+<td style="text-align:left">&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;&#x5DF2;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x5C31;&#x7EEA;&#x65F6;&#x8FD4;&#x56DE;<code>true</code>&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">readyConnection</td>
+<td style="text-align:left">&#x5F53;&#x524D;&#x201C;&#x5C31;&#x7EEA;&#x201D;&#x7684;<code>NetworkConnection</code>&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x662F;&#x4E0E;&#x751F;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">reconnectId</td>
+<td style="text-align:left">&#x5728;&#x65E7;&#x4E3B;&#x673A;&#x4E22;&#x5931;&#x540E;&#x5BA2;&#x6237;&#x7AEF;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x5230;&#x65B0;&#x6E38;&#x620F;&#x4E3B;&#x673A;&#x65F6;&#x4F7F;&#x7528;&#x7684;<code>reconnectId</code>&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ReconnectIdHost</td>
+<td style="text-align:left">&#x65E7;&#x4E3B;&#x673A;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x5230;&#x65B0;&#x4E3B;&#x673A;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x5E38;&#x91CF;ID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ReconnectIdInvalid</td>
+<td style="text-align:left">&#x65E0;&#x6548;&#x7684;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;ID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">spawnableObjects</td>
+<td style="text-align:left">&#x8FD9;&#x662F;&#x573A;&#x666F;&#x4E2D;&#x88AB;&#x7981;&#x7528;&#x7684;<code>NetworkIdentity</code>&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x5178;&#xFF0C;&#x53EF;&#x80FD;&#x6765;&#x81EA;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6D88;&#x606F;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x9759;&#x6001;&#x65B9;&#x6CD5;">&#x9759;&#x6001;&#x65B9;&#x6CD5;</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AddPlayer</td>
+<td style="text-align:left">&#x8FD9;&#x4E3A;&#x8BE5;&#x5BA2;&#x6237;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x73A9;&#x5BB6;<code>GameObject</code>&#x3002;<br>&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x5C06;<code>AddPlayer</code>&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x8C03;&#x7528;<code>NetworkManager.OnServerAddPlayer</code>&#x3002;<br>&#x5982;&#x679C;&#x989D;&#x5916;&#x7684;&#x6D88;&#x606F;&#x88AB;&#x4F20;&#x9012;&#x7ED9;&#x4E86;<code>AddPlayer</code>&#xFF0C;&#x90A3;&#x4E48;<code>OnServerAddPlayer</code>&#x5C06;&#x88AB;&#x5305;&#x542B;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#x7684;<code>NetworkReader</code>&#x8C03;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ClearSpawners</td>
+<td style="text-align:left">&#x8FD9;&#x5C06;&#x6E05;&#x9664;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5DF2;&#x6CE8;&#x518C;<code>spawn</code>&#x9884;&#x5236;&#x548C;<code>spawn</code>&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ConnectLocalServer</td>
+<td style="text-align:left">&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5BA2;&#x6237;&#x7AEF;&#x5B9E;&#x4F8B;&#x5E76;&#x5C06;&#x5176;&#x8FDE;&#x63A5;&#x5230;&#x672C;&#x5730;&#x670D;&#x52A1;&#x5668;&#x3002;<br>&#x8FD9;&#x4F7F;&#x5BA2;&#x6237;&#x7AEF;&#x6210;&#x4E3A;&#x201C;&#x4E3B;&#x673A;&#x201D; - &#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">DestroyAllClientObjects</td>
+<td style="text-align:left">&#x9500;&#x6BC1;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x8054;&#x7F51;&#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">FindLocalObject</td>
+<td style="text-align:left">&#x8FD9;&#x5C06;&#x627E;&#x5230;&#x5177;&#x6709;&#x6307;&#x5B9A;&#x7F51;&#x7EDC;ID&#x7684;&#x672C;&#x5730;<code>NetworkIdentity</code>&#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Ready</td>
+<td style="text-align:left">&#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5DF2;&#x51C6;&#x5907;&#x597D;&#x8FDB;&#x5165;&#x6E38;&#x620F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">RegisterPrefab</td>
+<td style="text-align:left">&#x6CE8;&#x518C;UNET&#x751F;&#x6210;&#x7CFB;&#x7EDF;&#x7684;&#x9884;&#x5236;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">RegisterSpawnHandler</td>
+<td style="text-align:left">&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5148;&#x8FDB;&#x7684;&#x751F;&#x6210;&#x529F;&#x80FD;&#xFF0C;&#x7528;UNET&#x751F;&#x6210;&#x7CFB;&#x7EDF;&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;<code>assetId</code>&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">RemovePlayer</td>
+<td style="text-align:left">&#x4ECE;&#x6E38;&#x620F;&#x4E2D;&#x79FB;&#x9664;&#x6307;&#x5B9A;&#x7684;&#x73A9;&#x5BB6;ID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SendReconnectMessage</td>
+<td style="text-align:left">&#x5411;&#x4E3B;&#x673A;&#x8FC1;&#x79FB;&#x671F;&#x95F4;&#x4F7F;&#x7528;&#x7684;&#x65B0;&#x4E3B;&#x673A;&#x53D1;&#x9001;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x6D88;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetLocalObject</td>
+<td style="text-align:left"><code>NetId</code>&#x662F;&#x5206;&#x914D;&#x7ED9;&#x6E38;&#x620F;&#x4E2D;&#x5177;&#x6709;<code>NetworkIdentity</code>&#x7EC4;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x7684;&#x552F;&#x4E00;&#x7F16;&#x53F7;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">SetReconnectId</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x4E3B;&#x673A;&#x8FC1;&#x79FB;&#x540E;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x5230;&#x65B0;&#x4E3B;&#x673A;&#x65F6;<code>ClientScene</code>&#x5C06;&#x4F7F;&#x7528;&#x7684;<code>Id</code>&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">UnregisterPrefab</td>
+<td style="text-align:left">&#x5220;&#x9664;&#x7528;<code>ClientScene.RegisterPrefab</code>&#x8BBE;&#x7F6E;&#x7684;&#x6CE8;&#x518C;<code>spawn</code>&#x9884;&#x5236;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">UnregisterSpawnHandler</td>
+<td style="text-align:left">&#x5220;&#x9664;&#x5DF2;&#x6CE8;&#x518C;&#x7684;<code>ClientScene.RegisterHandler()</code>&#x6CE8;&#x518C;&#x7684;<code>spawn</code>&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
 <p>&#x1F51A;</p>
 
                                 
@@ -3893,12 +4013,12 @@
 
             
                 
-                <a href="6717-networktransformvisualizer.html" class="navigation navigation-prev " aria-label="Previous page: 6.717 NetworkTransformVisualizer">
+                <a href="6719-networkwriter.html" class="navigation navigation-prev " aria-label="Previous page: 6.719 NetworkWriter">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="6719-networkwriter.html" class="navigation navigation-next " aria-label="Next page: 6.719 NetworkWriter">
+                <a href="../68-cwang-luo-bian-cheng.html" class="navigation navigation-next " aria-label="Next page: 6.8 C#网络编程">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3909,7 +4029,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.718 NetworkTransport","level":"1.27.7.18","depth":3,"next":{"title":"6.719 NetworkWriter","level":"1.27.7.19","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6719-networkwriter.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6719-networkwriter.md","articles":[]},"previous":{"title":"6.717 NetworkTransformVisualizer","level":"1.27.7.17","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6717-networktransformvisualizer.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6717-networktransformvisualizer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6718-networktransport.md","mtime":"2018-04-10T12:21:34.215Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-13T12:32:28.728Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.72 ClientScene","level":"1.27.7.20","depth":3,"next":{"title":"6.8 C#网络编程","level":"1.27.8","depth":2,"path":"第6章 多人游戏和网络/网络概述/68-cwang-luo-bian-cheng.md","ref":"第6章 多人游戏和网络/网络概述/68-cwang-luo-bian-cheng.md","articles":[]},"previous":{"title":"6.719 NetworkWriter","level":"1.27.7.19","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6719-networkwriter.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6719-networkwriter.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/672-clientscene.md","mtime":"2018-04-30T04:34:09.394Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-13T12:32:28.728Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

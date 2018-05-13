@@ -2669,6 +2669,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.24.6" data-path="../../../第3章 UGUI/36-recttransformutility.html">
+            
+                <a href="../../../第3章 UGUI/36-recttransformutility.html">
+            
+                    
+                    3.6 RectTransformUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3647,6 +3660,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.27.7.20" data-path="672-clientscene.html">
+            
+                <a href="672-clientscene.html">
+            
+                    
+                    6.72 ClientScene
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3881,6 +3907,254 @@
 </table>
 <h3 id="&#x7EC6;&#x8282;">&#x7EC6;&#x8282;</h3>
 <p><code>NetworkManagerHUD</code>&#x5141;&#x8BB8;&#x60A8;&#x5728;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x67E5;&#x770B;&#x8BB8;&#x591A;&#x7EC6;&#x8282;&#xFF0C;&#x4F8B;&#x5982;&#x8FDE;&#x63A5;&#xFF0C;&#x5DF2;&#x77E5;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#x5217;&#x8868;&#x548C;&#x6D3B;&#x52A8;&#x73A9;&#x5BB6;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="&#x6E90;&#x7801;">&#x6E90;&#x7801;</h3>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.Collections.Generic;
+    <span class="hljs-keyword">using</span> System.ComponentModel;
+    <span class="hljs-keyword">using</span> UnityEngine.Networking.Match;
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">UnityEngine.Networking</span>
+    {
+        [EditorBrowsable(EditorBrowsableState.Never), AddComponentMenu(<span class="hljs-string">&quot;Network/NetworkManagerHUD&quot;</span>), RequireComponent(<span class="hljs-keyword">typeof</span>(NetworkManager))]
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">NetworkManagerHUD</span> : <span class="hljs-title">MonoBehaviour</span>
+        {
+            <span class="hljs-keyword">public</span> NetworkManager manager;
+            [SerializeField]
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> showGUI = <span class="hljs-keyword">true</span>;
+            [SerializeField]
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> offsetX;
+            [SerializeField]
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> offsetY;
+            <span class="hljs-keyword">private</span> <span class="hljs-keyword">bool</span> m_ShowServer;
+            <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Awake</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">this</span>.manager = <span class="hljs-keyword">base</span>.GetComponent&lt;NetworkManager&gt;();
+            }
+            <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.showGUI)
+                {
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.manager.IsClientConnected() &amp;&amp; !NetworkServer.active &amp;&amp; <span class="hljs-keyword">this</span>.manager.matchMaker == <span class="hljs-keyword">null</span>)
+                {
+                    <span class="hljs-keyword">if</span> (Application.platform != RuntimePlatform.WebGLPlayer)
+                    {
+                        <span class="hljs-keyword">if</span> (Input.GetKeyDown(KeyCode.S))
+                        {
+                            <span class="hljs-keyword">this</span>.manager.StartServer();
+                        }
+                        <span class="hljs-keyword">if</span> (Input.GetKeyDown(KeyCode.H))
+                        {
+                            <span class="hljs-keyword">this</span>.manager.StartHost();
+                        }
+                    }
+                    <span class="hljs-keyword">if</span> (Input.GetKeyDown(KeyCode.C))
+                    {
+                        <span class="hljs-keyword">this</span>.manager.StartClient();
+                    }
+                }
+                <span class="hljs-keyword">if</span> (NetworkServer.active &amp;&amp; <span class="hljs-keyword">this</span>.manager.IsClientConnected() &amp;&amp; Input.GetKeyDown(KeyCode.X))
+                {
+                    <span class="hljs-keyword">this</span>.manager.StopHost();
+                }
+            }
+            <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnGUI</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.showGUI)
+                {
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span> + <span class="hljs-keyword">this</span>.offsetX;
+                <span class="hljs-keyword">int</span> num2 = <span class="hljs-number">40</span> + <span class="hljs-keyword">this</span>.offsetY;
+                <span class="hljs-keyword">bool</span> flag = <span class="hljs-keyword">this</span>.manager.client == <span class="hljs-keyword">null</span> || <span class="hljs-keyword">this</span>.manager.client.connection == <span class="hljs-keyword">null</span> || <span class="hljs-keyword">this</span>.manager.client.connection.connectionId == <span class="hljs-number">-1</span>;
+                <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.manager.IsClientConnected() &amp;&amp; !NetworkServer.active &amp;&amp; <span class="hljs-keyword">this</span>.manager.matchMaker == <span class="hljs-keyword">null</span>)
+                {
+                    <span class="hljs-keyword">if</span> (flag)
+                    {
+                        <span class="hljs-keyword">if</span> (Application.platform != RuntimePlatform.WebGLPlayer)
+                        {
+                            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;LAN Host(H)&quot;</span>))
+                            {
+                                <span class="hljs-keyword">this</span>.manager.StartHost();
+                            }
+                            num2 += <span class="hljs-number">24</span>;
+                        }
+                        <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">105</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;LAN Client(C)&quot;</span>))
+                        {
+                            <span class="hljs-keyword">this</span>.manager.StartClient();
+                        }
+                        <span class="hljs-keyword">this</span>.manager.networkAddress = GUI.TextField(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)(num + <span class="hljs-number">100</span>), (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">95</span>f, <span class="hljs-number">20</span>f), <span class="hljs-keyword">this</span>.manager.networkAddress);
+                        num2 += <span class="hljs-number">24</span>;
+                        <span class="hljs-keyword">if</span> (Application.platform == RuntimePlatform.WebGLPlayer)
+                        {
+                            GUI.Box(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">25</span>f), <span class="hljs-string">&quot;(  WebGL cannot be server  )&quot;</span>);
+                            num2 += <span class="hljs-number">24</span>;
+                        }
+                        <span class="hljs-keyword">else</span>
+                        {
+                            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;LAN Server Only(S)&quot;</span>))
+                            {
+                                <span class="hljs-keyword">this</span>.manager.StartServer();
+                            }
+                            num2 += <span class="hljs-number">24</span>;
+                        }
+                    }
+                    <span class="hljs-keyword">else</span>
+                    {
+                        GUI.Label(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-keyword">string</span>.Concat(<span class="hljs-keyword">new</span> <span class="hljs-keyword">object</span>[]
+                        {
+                            <span class="hljs-string">&quot;Connecting to &quot;</span>,
+                            <span class="hljs-keyword">this</span>.manager.networkAddress,
+                            <span class="hljs-string">&quot;:&quot;</span>,
+                            <span class="hljs-keyword">this</span>.manager.networkPort,
+                            <span class="hljs-string">&quot;..&quot;</span>
+                        }));
+                        num2 += <span class="hljs-number">24</span>;
+                        <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Cancel Connection Attempt&quot;</span>))
+                        {
+                            <span class="hljs-keyword">this</span>.manager.StopClient();
+                        }
+                    }
+                }
+                <span class="hljs-keyword">else</span>
+                {
+                    <span class="hljs-keyword">if</span> (NetworkServer.active)
+                    {
+                        <span class="hljs-keyword">string</span> text = <span class="hljs-string">&quot;Server: port=&quot;</span> + <span class="hljs-keyword">this</span>.manager.networkPort;
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.manager.useWebSockets)
+                        {
+                            text += <span class="hljs-string">&quot; (Using WebSockets)&quot;</span>;
+                        }
+                        GUI.Label(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">300</span>f, <span class="hljs-number">20</span>f), text);
+                        num2 += <span class="hljs-number">24</span>;
+                    }
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.manager.IsClientConnected())
+                    {
+                        GUI.Label(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">300</span>f, <span class="hljs-number">20</span>f), <span class="hljs-keyword">string</span>.Concat(<span class="hljs-keyword">new</span> <span class="hljs-keyword">object</span>[]
+                        {
+                            <span class="hljs-string">&quot;Client: address=&quot;</span>,
+                            <span class="hljs-keyword">this</span>.manager.networkAddress,
+                            <span class="hljs-string">&quot; port=&quot;</span>,
+                            <span class="hljs-keyword">this</span>.manager.networkPort
+                        }));
+                        num2 += <span class="hljs-number">24</span>;
+                    }
+                }
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.manager.IsClientConnected() &amp;&amp; !ClientScene.ready)
+                {
+                    <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Client Ready&quot;</span>))
+                    {
+                        ClientScene.Ready(<span class="hljs-keyword">this</span>.manager.client.connection);
+                        <span class="hljs-keyword">if</span> (ClientScene.localPlayers.Count == <span class="hljs-number">0</span>)
+                        {
+                            ClientScene.AddPlayer(<span class="hljs-number">0</span>);
+                        }
+                    }
+                    num2 += <span class="hljs-number">24</span>;
+                }
+                <span class="hljs-keyword">if</span> (NetworkServer.active || <span class="hljs-keyword">this</span>.manager.IsClientConnected())
+                {
+                    <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Stop (X)&quot;</span>))
+                    {
+                        <span class="hljs-keyword">this</span>.manager.StopHost();
+                    }
+                    num2 += <span class="hljs-number">24</span>;
+                }
+                <span class="hljs-keyword">if</span> (!NetworkServer.active &amp;&amp; !<span class="hljs-keyword">this</span>.manager.IsClientConnected() &amp;&amp; flag)
+                {
+                    num2 += <span class="hljs-number">10</span>;
+                    <span class="hljs-keyword">if</span> (Application.platform == RuntimePlatform.WebGLPlayer)
+                    {
+                        GUI.Box(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)(num - <span class="hljs-number">5</span>), (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">220</span>f, <span class="hljs-number">25</span>f), <span class="hljs-string">&quot;(WebGL cannot use Match Maker)&quot;</span>);
+                        <span class="hljs-keyword">return</span>;
+                    }
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.manager.matchMaker == <span class="hljs-keyword">null</span>)
+                    {
+                        <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Enable Match Maker (M)&quot;</span>))
+                        {
+                            <span class="hljs-keyword">this</span>.manager.StartMatchMaker();
+                        }
+                        num2 += <span class="hljs-number">24</span>;
+                    }
+                    <span class="hljs-keyword">else</span>
+                    {
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.manager.matchInfo == <span class="hljs-keyword">null</span>)
+                        {
+                            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.manager.matches == <span class="hljs-keyword">null</span>)
+                            {
+                                <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Create Internet Match&quot;</span>))
+                                {
+                                    <span class="hljs-keyword">this</span>.manager.matchMaker.CreateMatch(<span class="hljs-keyword">this</span>.manager.matchName, <span class="hljs-keyword">this</span>.manager.matchSize, <span class="hljs-keyword">true</span>, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-keyword">new</span> NetworkMatch.DataResponseDelegate&lt;MatchInfo&gt;(<span class="hljs-keyword">this</span>.manager.OnMatchCreate));
+                                }
+                                num2 += <span class="hljs-number">24</span>;
+                                GUI.Label(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">100</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Room Name:&quot;</span>);
+                                <span class="hljs-keyword">this</span>.manager.matchName = GUI.TextField(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)(num + <span class="hljs-number">100</span>), (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">100</span>f, <span class="hljs-number">20</span>f), <span class="hljs-keyword">this</span>.manager.matchName);
+                                num2 += <span class="hljs-number">24</span>;
+                                num2 += <span class="hljs-number">10</span>;
+                                <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Find Internet Match&quot;</span>))
+                                {
+                                    <span class="hljs-keyword">this</span>.manager.matchMaker.ListMatches(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-keyword">false</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-keyword">new</span> NetworkMatch.DataResponseDelegate&lt;List&lt;MatchInfoSnapshot&gt;&gt;(<span class="hljs-keyword">this</span>.manager.OnMatchList));
+                                }
+                                num2 += <span class="hljs-number">24</span>;
+                            }
+                            <span class="hljs-keyword">else</span>
+                            {
+                                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.manager.matches.Count; i++)
+                                {
+                                    MatchInfoSnapshot matchInfoSnapshot = <span class="hljs-keyword">this</span>.manager.matches[i];
+                                    <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Join Match:&quot;</span> + matchInfoSnapshot.name))
+                                    {
+                                        <span class="hljs-keyword">this</span>.manager.matchName = matchInfoSnapshot.name;
+                                        <span class="hljs-keyword">this</span>.manager.matchMaker.JoinMatch(matchInfoSnapshot.networkId, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-keyword">string</span>.Empty, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-keyword">new</span> NetworkMatch.DataResponseDelegate&lt;MatchInfo&gt;(<span class="hljs-keyword">this</span>.manager.OnMatchJoined));
+                                    }
+                                    num2 += <span class="hljs-number">24</span>;
+                                }
+                                <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Back to Match Menu&quot;</span>))
+                                {
+                                    <span class="hljs-keyword">this</span>.manager.matches = <span class="hljs-keyword">null</span>;
+                                }
+                                num2 += <span class="hljs-number">24</span>;
+                            }
+                        }
+                        <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Change MM server&quot;</span>))
+                        {
+                            <span class="hljs-keyword">this</span>.m_ShowServer = !<span class="hljs-keyword">this</span>.m_ShowServer;
+                        }
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.m_ShowServer)
+                        {
+                            num2 += <span class="hljs-number">24</span>;
+                            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">100</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Local&quot;</span>))
+                            {
+                                <span class="hljs-keyword">this</span>.manager.SetMatchHost(<span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-number">1337</span>, <span class="hljs-keyword">false</span>);
+                                <span class="hljs-keyword">this</span>.m_ShowServer = <span class="hljs-keyword">false</span>;
+                            }
+                            num2 += <span class="hljs-number">24</span>;
+                            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">100</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Internet&quot;</span>))
+                            {
+                                <span class="hljs-keyword">this</span>.manager.SetMatchHost(<span class="hljs-string">&quot;mm.unet.unity3d.com&quot;</span>, <span class="hljs-number">443</span>, <span class="hljs-keyword">true</span>);
+                                <span class="hljs-keyword">this</span>.m_ShowServer = <span class="hljs-keyword">false</span>;
+                            }
+                            num2 += <span class="hljs-number">24</span>;
+                            <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">100</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Staging&quot;</span>))
+                            {
+                                <span class="hljs-keyword">this</span>.manager.SetMatchHost(<span class="hljs-string">&quot;staging-mm.unet.unity3d.com&quot;</span>, <span class="hljs-number">443</span>, <span class="hljs-keyword">true</span>);
+                                <span class="hljs-keyword">this</span>.m_ShowServer = <span class="hljs-keyword">false</span>;
+                            }
+                        }
+                        num2 += <span class="hljs-number">24</span>;
+                        GUI.Label(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">300</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;MM Uri: &quot;</span> + <span class="hljs-keyword">this</span>.manager.matchMaker.baseUri);
+                        num2 += <span class="hljs-number">24</span>;
+                        <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect((<span class="hljs-keyword">float</span>)num, (<span class="hljs-keyword">float</span>)num2, <span class="hljs-number">200</span>f, <span class="hljs-number">20</span>f), <span class="hljs-string">&quot;Disable Match Maker&quot;</span>))
+                        {
+                            <span class="hljs-keyword">this</span>.manager.StopMatchMaker();
+                        }
+                        num2 += <span class="hljs-number">24</span>;
+                    }
+                }
+            }
+        }
+    }
+</code></pre>
 <p>&#x1F51A;</p>
 
                                 
@@ -3909,7 +4183,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.710 NetworkManagerHUD","level":"1.27.7.10","depth":3,"next":{"title":"6.711 NetworkProximityChecker","level":"1.27.7.11","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6711-networkproximitychecker.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6711-networkproximitychecker.md","articles":[]},"previous":{"title":"6.79 NetworkManager","level":"1.27.7.9","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/679-networkmanager.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/679-networkmanager.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6710-networkmanagerhud.md","mtime":"2018-04-10T11:58:42.783Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-10T13:22:45.147Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.710 NetworkManagerHUD","level":"1.27.7.10","depth":3,"next":{"title":"6.711 NetworkProximityChecker","level":"1.27.7.11","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6711-networkproximitychecker.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6711-networkproximitychecker.md","articles":[]},"previous":{"title":"6.79 NetworkManager","level":"1.27.7.9","depth":3,"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/679-networkmanager.md","ref":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/679-networkmanager.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/6710-networkmanagerhud.md","mtime":"2018-04-15T03:24:55.715Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-13T12:32:28.728Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

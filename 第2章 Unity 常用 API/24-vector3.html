@@ -2669,6 +2669,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.24.6" data-path="../第3章 UGUI/36-recttransformutility.html">
+            
+                <a href="../第3章 UGUI/36-recttransformutility.html">
+            
+                    
+                    3.6 RectTransformUtility
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3647,6 +3660,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.27.7.20" data-path="../第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/672-clientscene.html">
+            
+                <a href="../第6章 多人游戏和网络/网络概述/67-wang-luo-can-kao/672-clientscene.html">
+            
+                    
+                    6.72 ClientScene
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4202,6 +4228,346 @@
         }
     }
 </code></pre>
+<h3 id="&#x6E90;&#x7801;">&#x6E90;&#x7801;</h3>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Runtime.InteropServices;
+<span class="hljs-keyword">using</span> scm = System.ComponentModel;
+<span class="hljs-keyword">using</span> uei = UnityEngine.Internal;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">UnityEngine</span>
+{
+    <span class="hljs-comment">// Representation of 3D vectors and points.</span>
+    [StructLayout(LayoutKind.Sequential)]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">partial</span> <span class="hljs-keyword">struct</span> Vector3
+    {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> kEpsilon = <span class="hljs-number">0.00001</span>F;
+
+        <span class="hljs-comment">// X component of the vector.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> x;
+        <span class="hljs-comment">// Y component of the vector.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> y;
+        <span class="hljs-comment">// Z component of the vector.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> z;
+
+        <span class="hljs-comment">// Linearly interpolates between two vectors.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Lerp</span>(<span class="hljs-params">Vector3 a, Vector3 b, <span class="hljs-keyword">float</span> t</span>)
+        </span>{
+            t = Mathf.Clamp01(t);
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(
+                a.x + (b.x - a.x) * t,
+                a.y + (b.y - a.y) * t,
+                a.z + (b.z - a.z) * t
+                );
+        }
+
+        <span class="hljs-comment">// Linearly interpolates between two vectors without clamping the interpolant</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">LerpUnclamped</span>(<span class="hljs-params">Vector3 a, Vector3 b, <span class="hljs-keyword">float</span> t</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(
+                a.x + (b.x - a.x) * t,
+                a.y + (b.y - a.y) * t,
+                a.z + (b.z - a.z) * t
+                );
+        }
+
+        <span class="hljs-comment">// Moves a point /current/ in a straight line towards a /target/ point.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">MoveTowards</span>(<span class="hljs-params">Vector3 current, Vector3 target, <span class="hljs-keyword">float</span> maxDistanceDelta</span>)
+        </span>{
+            Vector3 toVector = target - current;
+            <span class="hljs-keyword">float</span> dist = toVector.magnitude;
+            <span class="hljs-keyword">if</span> (dist &lt;= maxDistanceDelta || dist &lt; <span class="hljs-keyword">float</span>.Epsilon)
+                <span class="hljs-keyword">return</span> target;
+            <span class="hljs-keyword">return</span> current + toVector / dist * maxDistanceDelta;
+        }
+
+        [uei.ExcludeFromDocs]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">SmoothDamp</span>(<span class="hljs-params">Vector3 current, Vector3 target, <span class="hljs-keyword">ref</span> Vector3 currentVelocity, <span class="hljs-keyword">float</span> smoothTime, <span class="hljs-keyword">float</span> maxSpeed</span>)
+        </span>{
+            <span class="hljs-keyword">float</span> deltaTime = Time.deltaTime;
+            <span class="hljs-keyword">return</span> SmoothDamp(current, target, <span class="hljs-keyword">ref</span> currentVelocity, smoothTime, maxSpeed, deltaTime);
+        }
+
+        [uei.ExcludeFromDocs]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">SmoothDamp</span>(<span class="hljs-params">Vector3 current, Vector3 target, <span class="hljs-keyword">ref</span> Vector3 currentVelocity, <span class="hljs-keyword">float</span> smoothTime</span>)
+        </span>{
+            <span class="hljs-keyword">float</span> deltaTime = Time.deltaTime;
+            <span class="hljs-keyword">float</span> maxSpeed = Mathf.Infinity;
+            <span class="hljs-keyword">return</span> SmoothDamp(current, target, <span class="hljs-keyword">ref</span> currentVelocity, smoothTime, maxSpeed, deltaTime);
+        }
+
+        <span class="hljs-comment">// Gradually changes a vector towards a desired goal over time.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">SmoothDamp</span>(<span class="hljs-params">Vector3 current, Vector3 target, <span class="hljs-keyword">ref</span> Vector3 currentVelocity, <span class="hljs-keyword">float</span> smoothTime, [uei.DefaultValue(<span class="hljs-string">&quot;Mathf.Infinity&quot;</span></span>)]  <span class="hljs-keyword">float</span> maxSpeed, [uei.<span class="hljs-title">DefaultValue</span>(<span class="hljs-params"><span class="hljs-string">&quot;Time.deltaTime&quot;</span></span>)]  <span class="hljs-keyword">float</span> deltaTime)
+        </span>{
+            smoothTime = Mathf.Max(<span class="hljs-number">0.0001</span>F, smoothTime);
+            <span class="hljs-keyword">float</span> omega = <span class="hljs-number">2</span>F / smoothTime;
+
+            <span class="hljs-keyword">float</span> x = omega * deltaTime;
+            <span class="hljs-keyword">float</span> exp = <span class="hljs-number">1</span>F / (<span class="hljs-number">1</span>F + x + <span class="hljs-number">0.48</span>F * x * x + <span class="hljs-number">0.235</span>F * x * x * x);
+            Vector3 change = current - target;
+            Vector3 originalTo = target;
+
+            <span class="hljs-keyword">float</span> maxChange = maxSpeed * smoothTime;
+            change = Vector3.ClampMagnitude(change, maxChange);
+            target = current - change;
+
+            Vector3 temp = (currentVelocity + omega * change) * deltaTime;
+            currentVelocity = (currentVelocity - omega * temp) * exp;
+            Vector3 output = target + (change + temp) * exp;
+
+            <span class="hljs-keyword">if</span> (Vector3.Dot(originalTo - current, output - originalTo) &gt; <span class="hljs-number">0</span>)
+            {
+                output = originalTo;
+                currentVelocity = (output - originalTo) / deltaTime;
+            }
+
+            <span class="hljs-keyword">return</span> output;
+        }
+
+        <span class="hljs-comment">// Access the x, y, z components using [0], [1], [2] respectively.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> <span class="hljs-keyword">this</span>[<span class="hljs-keyword">int</span> index]
+        {
+            <span class="hljs-keyword">get</span>
+            {
+                <span class="hljs-keyword">switch</span> (index)
+                {
+                    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> x;
+                    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> y;
+                    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">return</span> z;
+                    <span class="hljs-keyword">default</span>:
+                        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfRangeException(<span class="hljs-string">&quot;Invalid Vector3 index!&quot;</span>);
+                }
+            }
+
+            <span class="hljs-keyword">set</span>
+            {
+                <span class="hljs-keyword">switch</span> (index)
+                {
+                    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: x = <span class="hljs-keyword">value</span>; <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: y = <span class="hljs-keyword">value</span>; <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: z = <span class="hljs-keyword">value</span>; <span class="hljs-keyword">break</span>;
+                    <span class="hljs-keyword">default</span>:
+                        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfRangeException(<span class="hljs-string">&quot;Invalid Vector3 index!&quot;</span>);
+                }
+            }
+        }
+
+        <span class="hljs-comment">// Creates a new vector with given x, y, z components.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Vector3</span>(<span class="hljs-params"><span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y, <span class="hljs-keyword">float</span> z</span>) </span>{ <span class="hljs-keyword">this</span>.x = x; <span class="hljs-keyword">this</span>.y = y; <span class="hljs-keyword">this</span>.z = z; }
+        <span class="hljs-comment">// Creates a new vector with given x, y components and sets /z/ to zero.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Vector3</span>(<span class="hljs-params"><span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y</span>) </span>{ <span class="hljs-keyword">this</span>.x = x; <span class="hljs-keyword">this</span>.y = y; z = <span class="hljs-number">0</span>F; }
+
+        <span class="hljs-comment">// Set x, y and z components of an existing Vector3.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Set</span>(<span class="hljs-params"><span class="hljs-keyword">float</span> newX, <span class="hljs-keyword">float</span> newY, <span class="hljs-keyword">float</span> newZ</span>) </span>{ x = newX; y = newY; z = newZ; }
+
+        <span class="hljs-comment">// Multiplies two vectors component-wise.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Scale</span>(<span class="hljs-params">Vector3 a, Vector3 b</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(a.x * b.x, a.y * b.y, a.z * b.z); }
+
+        <span class="hljs-comment">// Multiplies every component of this vector by the same component of /scale/.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Scale</span>(<span class="hljs-params">Vector3 scale</span>) </span>{ x *= scale.x; y *= scale.y; z *= scale.z; }
+
+        <span class="hljs-comment">// Cross Product of two vectors.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Cross</span>(<span class="hljs-params">Vector3 lhs, Vector3 rhs</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(
+                lhs.y * rhs.z - lhs.z * rhs.y,
+                lhs.z * rhs.x - lhs.x * rhs.z,
+                lhs.x * rhs.y - lhs.y * rhs.x);
+        }
+
+        <span class="hljs-comment">// used to allow Vector3s to be used as keys in hash tables</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">int</span> <span class="hljs-title">GetHashCode</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-keyword">return</span> x.GetHashCode() ^ (y.GetHashCode() &lt;&lt; <span class="hljs-number">2</span>) ^ (z.GetHashCode() &gt;&gt; <span class="hljs-number">2</span>);
+        }
+
+        <span class="hljs-comment">// also required for being able to use Vector3s as keys in hash tables</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">Equals</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> other</span>)
+        </span>{
+            <span class="hljs-keyword">if</span> (!(other <span class="hljs-keyword">is</span> Vector3)) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+            Vector3 rhs = (Vector3)other;
+            <span class="hljs-keyword">return</span> x.Equals(rhs.x) &amp;&amp; y.Equals(rhs.y) &amp;&amp; z.Equals(rhs.z);
+        }
+
+        <span class="hljs-comment">// Reflects a vector off the plane defined by a normal.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Reflect</span>(<span class="hljs-params">Vector3 inDirection, Vector3 inNormal</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-2</span>F * Dot(inNormal, inDirection) * inNormal + inDirection;
+        }
+
+        <span class="hljs-comment">// *undoc* --- we have normalized property now</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Normalize</span>(<span class="hljs-params">Vector3 <span class="hljs-keyword">value</span></span>)
+        </span>{
+            <span class="hljs-keyword">float</span> mag = Magnitude(<span class="hljs-keyword">value</span>);
+            <span class="hljs-keyword">if</span> (mag &gt; kEpsilon)
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">value</span> / mag;
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">return</span> zero;
+        }
+
+        <span class="hljs-comment">// Makes this vector have a ::ref::magnitude of 1.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Normalize</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-keyword">float</span> mag = Magnitude(<span class="hljs-keyword">this</span>);
+            <span class="hljs-keyword">if</span> (mag &gt; kEpsilon)
+                <span class="hljs-keyword">this</span> = <span class="hljs-keyword">this</span> / mag;
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">this</span> = zero;
+        }
+
+        <span class="hljs-comment">// Returns this vector with a ::ref::magnitude of 1 (RO).</span>
+        <span class="hljs-keyword">public</span> Vector3 normalized { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> Vector3.Normalize(<span class="hljs-keyword">this</span>); } }
+
+        <span class="hljs-comment">// Dot Product of two vectors.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">Dot</span>(<span class="hljs-params">Vector3 lhs, Vector3 rhs</span>) </span>{ <span class="hljs-keyword">return</span> lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z; }
+
+        <span class="hljs-comment">// Projects a vector onto another vector.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Project</span>(<span class="hljs-params">Vector3 vector, Vector3 onNormal</span>)
+        </span>{
+            <span class="hljs-keyword">float</span> sqrMag = Dot(onNormal, onNormal);
+            <span class="hljs-keyword">if</span> (sqrMag &lt; Mathf.Epsilon)
+                <span class="hljs-keyword">return</span> zero;
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">return</span> onNormal * Dot(vector, onNormal) / sqrMag;
+        }
+
+        <span class="hljs-comment">// Projects a vector onto a plane defined by a normal orthogonal to the plane.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">ProjectOnPlane</span>(<span class="hljs-params">Vector3 vector, Vector3 planeNormal</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> vector - Project(vector, planeNormal);
+        }
+
+        <span class="hljs-comment">// Returns the angle in degrees between /from/ and /to/. This is always the smallest</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">Angle</span>(<span class="hljs-params">Vector3 <span class="hljs-keyword">from</span>, Vector3 to</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> Mathf.Acos(Mathf.Clamp(Vector3.Dot(<span class="hljs-keyword">from</span>.normalized, to.normalized), <span class="hljs-number">-1</span>F, <span class="hljs-number">1</span>F)) * Mathf.Rad2Deg;
+        }
+
+        <span class="hljs-comment">// The smaller of the two possible angles between the two vectors is returned, therefore the result will never be greater than 180 degrees or smaller than -180 degrees.</span>
+        <span class="hljs-comment">// If you imagine the from and to vectors as lines on a piece of paper, both originating from the same point, then the /axis/ vector would point up out of the paper.</span>
+        <span class="hljs-comment">// The measured angle between the two vectors would be positive in a clockwise direction and negative in an anti-clockwise direction.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">SignedAngle</span>(<span class="hljs-params">Vector3 <span class="hljs-keyword">from</span>, Vector3 to, Vector3 axis</span>)
+        </span>{
+            Vector3 fromNorm = <span class="hljs-keyword">from</span>.normalized, toNorm = to.normalized;
+            <span class="hljs-keyword">float</span> unsignedAngle = Mathf.Acos(Mathf.Clamp(Vector3.Dot(fromNorm, toNorm), <span class="hljs-number">-1</span>F, <span class="hljs-number">1</span>F)) * Mathf.Rad2Deg;
+            <span class="hljs-keyword">float</span> sign = Mathf.Sign(Vector3.Dot(axis, Vector3.Cross(fromNorm, toNorm)));
+            <span class="hljs-keyword">return</span> unsignedAngle * sign;
+        }
+
+        <span class="hljs-comment">// Returns the distance between /a/ and /b/.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">Distance</span>(<span class="hljs-params">Vector3 a, Vector3 b</span>)
+        </span>{
+            Vector3 vec = <span class="hljs-keyword">new</span> Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
+            <span class="hljs-keyword">return</span> Mathf.Sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
+        }
+
+        <span class="hljs-comment">// Returns a copy of /vector/ with its magnitude clamped to /maxLength/.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">ClampMagnitude</span>(<span class="hljs-params">Vector3 vector, <span class="hljs-keyword">float</span> maxLength</span>)
+        </span>{
+            <span class="hljs-keyword">if</span> (vector.sqrMagnitude &gt; maxLength * maxLength)
+                <span class="hljs-keyword">return</span> vector.normalized * maxLength;
+            <span class="hljs-keyword">return</span> vector;
+        }
+
+        <span class="hljs-comment">// *undoc* --- there&apos;s a property now</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">Magnitude</span>(<span class="hljs-params">Vector3 vector</span>) </span>{ <span class="hljs-keyword">return</span> Mathf.Sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z); }
+
+        <span class="hljs-comment">// Returns the length of this vector (RO).</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> magnitude { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> Mathf.Sqrt(x * x + y * y + z * z); } }
+
+        <span class="hljs-comment">// *undoc* --- there&apos;s a property now</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">SqrMagnitude</span>(<span class="hljs-params">Vector3 vector</span>) </span>{ <span class="hljs-keyword">return</span> vector.x * vector.x + vector.y * vector.y + vector.z * vector.z; }
+
+        <span class="hljs-comment">// Returns the squared length of this vector (RO).</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> sqrMagnitude { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> x * x + y * y + z * z; } }
+
+        <span class="hljs-comment">// Returns a vector that is made from the smallest components of two vectors.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Min</span>(<span class="hljs-params">Vector3 lhs, Vector3 rhs</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(Mathf.Min(lhs.x, rhs.x), Mathf.Min(lhs.y, rhs.y), Mathf.Min(lhs.z, rhs.z));
+        }
+
+        <span class="hljs-comment">// Returns a vector that is made from the largest components of two vectors.</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Max</span>(<span class="hljs-params">Vector3 lhs, Vector3 rhs</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(Mathf.Max(lhs.x, rhs.x), Mathf.Max(lhs.y, rhs.y), Mathf.Max(lhs.z, rhs.z));
+        }
+
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 zeroVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 oneVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>F, <span class="hljs-number">1</span>F, <span class="hljs-number">1</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 upVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>F, <span class="hljs-number">1</span>F, <span class="hljs-number">0</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 downVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>F, <span class="hljs-number">-1</span>F, <span class="hljs-number">0</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 leftVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">-1</span>F, <span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 rightVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>F, <span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 forwardVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F, <span class="hljs-number">1</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 backVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F, <span class="hljs-number">-1</span>F);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 positiveInfinityVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-keyword">float</span>.PositiveInfinity, <span class="hljs-keyword">float</span>.PositiveInfinity, <span class="hljs-keyword">float</span>.PositiveInfinity);
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> Vector3 negativeInfinityVector = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-keyword">float</span>.NegativeInfinity, <span class="hljs-keyword">float</span>.NegativeInfinity, <span class="hljs-keyword">float</span>.NegativeInfinity);
+
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(0, 0, 0)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 zero { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> zeroVector; } }
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(1, 1, 1)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 one { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> oneVector; } }
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(0, 0, 1)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 forward { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> forwardVector; } }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 back { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> backVector; } }
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(0, 1, 0)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 up { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> upVector; } }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 down { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> downVector; } }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 left { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> leftVector; } }
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(1, 0, 0)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 right { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> rightVector; } }
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 positiveInfinity { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> positiveInfinityVector; } }
+        <span class="hljs-comment">// Shorthand for writing @@Vector3(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity)@@</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 negativeInfinity { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> negativeInfinityVector; } }
+
+        <span class="hljs-comment">// Adds two vectors.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-keyword">operator</span>+(Vector3 a, Vector3 b) { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(a.x + b.x, a.y + b.y, a.z + b.z); }
+        <span class="hljs-comment">// Subtracts one vector from another.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-keyword">operator</span>-(Vector3 a, Vector3 b) { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(a.x - b.x, a.y - b.y, a.z - b.z); }
+        <span class="hljs-comment">// Negates a vector.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-keyword">operator</span>-(Vector3 a) { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(-a.x, -a.y, -a.z); }
+        <span class="hljs-comment">// Multiplies a vector by a number.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-keyword">operator</span>*(Vector3 a, <span class="hljs-keyword">float</span> d) { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(a.x * d, a.y * d, a.z * d); }
+        <span class="hljs-comment">// Multiplies a vector by a number.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-keyword">operator</span>*(<span class="hljs-keyword">float</span> d, Vector3 a) { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(a.x * d, a.y * d, a.z * d); }
+        <span class="hljs-comment">// Divides a vector by a number.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-keyword">operator</span>/(Vector3 a, <span class="hljs-keyword">float</span> d) { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(a.x / d, a.y / d, a.z / d); }
+
+        <span class="hljs-comment">// Returns true if the vectors are equal.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(Vector3 lhs, Vector3 rhs)
+        {
+            <span class="hljs-comment">// Returns false in the presence of NaN values.</span>
+            <span class="hljs-keyword">return</span> SqrMagnitude(lhs - rhs) &lt; kEpsilon * kEpsilon;
+        }
+
+        <span class="hljs-comment">// Returns true if vectors are different.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>!=(Vector3 lhs, Vector3 rhs)
+        {
+            <span class="hljs-comment">// Returns true in the presence of NaN values.</span>
+            <span class="hljs-keyword">return</span> !(lhs == rhs);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">string</span> <span class="hljs-title">ToString</span>(<span class="hljs-params"></span>)
+        </span>{
+            <span class="hljs-keyword">return</span> UnityString.Format(<span class="hljs-string">&quot;({0:F1}, {1:F1}, {2:F1})&quot;</span>, x, y, z);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> <span class="hljs-title">ToString</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> format</span>)
+        </span>{
+            <span class="hljs-keyword">return</span> UnityString.Format(<span class="hljs-string">&quot;({0}, {1}, {2})&quot;</span>, x.ToString(format), y.ToString(format), z.ToString(format));
+        }
+
+        [System.Obsolete(<span class="hljs-string">&quot;Use Vector3.forward instead.&quot;</span>)]
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 fwd { <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>F, <span class="hljs-number">0</span>F, <span class="hljs-number">1</span>F); } }
+        [System.Obsolete(<span class="hljs-string">&quot;Use Vector3.Angle instead. AngleBetween uses radians instead of degrees and was deprecated for this reason&quot;</span>)]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> <span class="hljs-title">AngleBetween</span>(<span class="hljs-params">Vector3 <span class="hljs-keyword">from</span>, Vector3 to</span>) </span>{ <span class="hljs-keyword">return</span> Mathf.Acos(Mathf.Clamp(Vector3.Dot(<span class="hljs-keyword">from</span>.normalized, to.normalized), <span class="hljs-number">-1</span>F, <span class="hljs-number">1</span>F)); }
+        [System.Obsolete(<span class="hljs-string">&quot;Use Vector3.ProjectOnPlane instead.&quot;</span>)]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Vector3 <span class="hljs-title">Exclude</span>(<span class="hljs-params">Vector3 excludeThis, Vector3 fromThat</span>) </span>{ <span class="hljs-keyword">return</span> ProjectOnPlane(fromThat, excludeThis); }
+    }
+}
+</code></pre>
 <p>&#x1F51A;</p>
 
                                 
@@ -4230,7 +4596,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.4 Vector3","level":"1.23.4","depth":2,"next":{"title":"2.5 Random","level":"1.23.5","depth":2,"path":"第2章 Unity 常用 API/25-random.md","ref":"第2章 Unity 常用 API/25-random.md","articles":[]},"previous":{"title":"2.3 Tranform","level":"1.23.3","depth":2,"path":"第2章 Unity 常用 API/23-tranform.md","ref":"第2章 Unity 常用 API/23-tranform.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/24-vector3.md","mtime":"2017-10-30T14:13:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-10T13:22:45.147Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.4 Vector3","level":"1.23.4","depth":2,"next":{"title":"2.5 Random","level":"1.23.5","depth":2,"path":"第2章 Unity 常用 API/25-random.md","ref":"第2章 Unity 常用 API/25-random.md","articles":[]},"previous":{"title":"2.3 Tranform","level":"1.23.3","depth":2,"path":"第2章 Unity 常用 API/23-tranform.md","ref":"第2章 Unity 常用 API/23-tranform.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第2章 Unity 常用 API/24-vector3.md","mtime":"2018-04-15T04:39:51.394Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-13T12:32:28.728Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
