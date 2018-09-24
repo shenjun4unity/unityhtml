@@ -3837,6 +3837,148 @@
             
         </li>
     
+        <li class="chapter " data-level="1.29" data-path="../第8章 SVN版本控制系统/第8章 SVN版本控制系统.html">
+            
+                <a href="../第8章 SVN版本控制系统/第8章 SVN版本控制系统.html">
+            
+                    
+                    第8章 SVN版本控制系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.29.1" data-path="../第8章 SVN版本控制系统/8.1 SVN简介.html">
+            
+                <a href="../第8章 SVN版本控制系统/8.1 SVN简介.html">
+            
+                    
+                    8.1 SVN简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.2" data-path="../第8章 SVN版本控制系统/8.2 配置SVN服务器.html">
+            
+                <a href="../第8章 SVN版本控制系统/8.2 配置SVN服务器.html">
+            
+                    
+                    8.2 配置SVN服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.3" data-path="../第8章 SVN版本控制系统/8.3 配置SVN客户端.html">
+            
+                <a href="../第8章 SVN版本控制系统/8.3 配置SVN客户端.html">
+            
+                    
+                    8.3 配置SVN客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.4" data-path="../第8章 SVN版本控制系统/8.4 项目发布与检出.html">
+            
+                <a href="../第8章 SVN版本控制系统/8.4 项目发布与检出.html">
+            
+                    
+                    8.4 项目发布与检出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.5" data-path="../第8章 SVN版本控制系统/8.5 冲突解决.html">
+            
+                <a href="../第8章 SVN版本控制系统/8.5 冲突解决.html">
+            
+                    
+                    8.5 冲突解决
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="../第9章 DOTween/">
+            
+                <a href="../第9章 DOTween/">
+            
+                    
+                    第9章 DOTween
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.30.1" data-path="../第9章 DOTween/9.1 入门.html">
+            
+                <a href="../第9章 DOTween/9.1 入门.html">
+            
+                    
+                    9.1 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.2" data-path="../第9章 DOTween/9.2 文档.html">
+            
+                <a href="../第9章 DOTween/9.2 文档.html">
+            
+                    
+                    9.2 文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.3" data-path="../第9章 DOTween/9.3 示例.html">
+            
+                <a href="../第9章 DOTween/9.3 示例.html">
+            
+                    
+                    9.3 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -3977,7 +4119,6 @@
 <h4 id="&#x8BBF;&#x95EE;&#x6570;&#x636E;">&#x8BBF;&#x95EE;&#x6570;&#x636E;</h4>
 <p>&#x4F7F;&#x7528;JsonData&#xFF0C;JsonMapper&#x6765;&#x5904;&#x7406;Json&#x7684;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x6790;</p>
 <pre><code class="lang-csharp">        JsonData jd = JsonMapper.ToObject(str);
-
         Debug.Log(<span class="hljs-string">&quot;name = &quot;</span> + (<span class="hljs-keyword">string</span>)jd[<span class="hljs-string">&quot;Name&quot;</span>]);
         Debug.Log(<span class="hljs-string">&quot;Age = &quot;</span> + (<span class="hljs-keyword">int</span>)jd[<span class="hljs-string">&quot;Age&quot;</span>]);
         Debug.Log(<span class="hljs-string">&quot;Birthday = &quot;</span> + (<span class="hljs-keyword">string</span>)jd[<span class="hljs-string">&quot;Birthday&quot;</span>]);
@@ -4000,7 +4141,7 @@
 
     T StreamReadJson&lt;T&gt;(<span class="hljs-keyword">string</span> path)
     {
-        <span class="hljs-keyword">using</span> (FileStream fsReader = File.Open (path, FileMode.Open, FileAccess.Read)) {
+            <span class="hljs-keyword">using</span> (FileStream fsReader = File.Open (path, FileMode.Open, FileAccess.Read)) {
             <span class="hljs-keyword">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];
             <span class="hljs-keyword">int</span> length;
             System.Text.StringBuilder sb = <span class="hljs-keyword">new</span> System.Text.StringBuilder ();
@@ -4092,7 +4233,7 @@ Debug.Log(writer2.ToString());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1 LitJson","level":"1.26.1","depth":2,"next":{"title":"5.2 XML","level":"1.26.2","depth":2,"path":"第5章 其他/52-xml.md","ref":"第5章 其他/52-xml.md","articles":[{"title":"5.21 XMLDocument","level":"1.26.2.1","depth":3,"path":"第5章 其他/521-xmldocument.md","ref":"第5章 其他/521-xmldocument.md","articles":[]},{"title":"5.22 XMLWrite和XMLReader","level":"1.26.2.2","depth":3,"path":"第5章 其他/522-xmlwrite和xmlreader.md","ref":"第5章 其他/522-xmlwrite和xmlreader.md","articles":[]},{"title":"5.23 XPath详解","level":"1.26.2.3","depth":3,"path":"第5章 其他/523-xpath详解.md","ref":"第5章 其他/523-xpath详解.md","articles":[]},{"title":"5.24 XML示例","level":"1.26.2.4","depth":3,"path":"第5章 其他/524-xmlshi-li.md","ref":"第5章 其他/524-xmlshi-li.md","articles":[]}]},"previous":{"title":"第5章 其他","level":"1.26","depth":1,"path":"第5章 其他/第5章 其他.md","ref":"第5章 其他/第5章 其他.md","articles":[{"title":"5.1 LitJson","level":"1.26.1","depth":2,"path":"第5章 其他/51-litjson.md","ref":"第5章 其他/51-litjson.md","articles":[]},{"title":"5.2 XML","level":"1.26.2","depth":2,"path":"第5章 其他/52-xml.md","ref":"第5章 其他/52-xml.md","articles":[{"title":"5.21 XMLDocument","level":"1.26.2.1","depth":3,"path":"第5章 其他/521-xmldocument.md","ref":"第5章 其他/521-xmldocument.md","articles":[]},{"title":"5.22 XMLWrite和XMLReader","level":"1.26.2.2","depth":3,"path":"第5章 其他/522-xmlwrite和xmlreader.md","ref":"第5章 其他/522-xmlwrite和xmlreader.md","articles":[]},{"title":"5.23 XPath详解","level":"1.26.2.3","depth":3,"path":"第5章 其他/523-xpath详解.md","ref":"第5章 其他/523-xpath详解.md","articles":[]},{"title":"5.24 XML示例","level":"1.26.2.4","depth":3,"path":"第5章 其他/524-xmlshi-li.md","ref":"第5章 其他/524-xmlshi-li.md","articles":[]}]},{"title":"5.3 数据库","level":"1.26.3","depth":2,"path":"第5章 其他/53-shu-ju-ku.md","ref":"第5章 其他/53-shu-ju-ku.md","articles":[]},{"title":"5.4 视频播放","level":"1.26.4","depth":2,"path":"第5章 其他/53-视频播放.md","ref":"第5章 其他/53-视频播放.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第5章 其他/51-litjson.md","mtime":"2017-10-30T14:13:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-13T12:32:28.728Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1 LitJson","level":"1.26.1","depth":2,"next":{"title":"5.2 XML","level":"1.26.2","depth":2,"path":"第5章 其他/52-xml.md","ref":"第5章 其他/52-xml.md","articles":[{"title":"5.21 XMLDocument","level":"1.26.2.1","depth":3,"path":"第5章 其他/521-xmldocument.md","ref":"第5章 其他/521-xmldocument.md","articles":[]},{"title":"5.22 XMLWrite和XMLReader","level":"1.26.2.2","depth":3,"path":"第5章 其他/522-xmlwrite和xmlreader.md","ref":"第5章 其他/522-xmlwrite和xmlreader.md","articles":[]},{"title":"5.23 XPath详解","level":"1.26.2.3","depth":3,"path":"第5章 其他/523-xpath详解.md","ref":"第5章 其他/523-xpath详解.md","articles":[]},{"title":"5.24 XML示例","level":"1.26.2.4","depth":3,"path":"第5章 其他/524-xmlshi-li.md","ref":"第5章 其他/524-xmlshi-li.md","articles":[]}]},"previous":{"title":"第5章 其他","level":"1.26","depth":1,"path":"第5章 其他/第5章 其他.md","ref":"第5章 其他/第5章 其他.md","articles":[{"title":"5.1 LitJson","level":"1.26.1","depth":2,"path":"第5章 其他/51-litjson.md","ref":"第5章 其他/51-litjson.md","articles":[]},{"title":"5.2 XML","level":"1.26.2","depth":2,"path":"第5章 其他/52-xml.md","ref":"第5章 其他/52-xml.md","articles":[{"title":"5.21 XMLDocument","level":"1.26.2.1","depth":3,"path":"第5章 其他/521-xmldocument.md","ref":"第5章 其他/521-xmldocument.md","articles":[]},{"title":"5.22 XMLWrite和XMLReader","level":"1.26.2.2","depth":3,"path":"第5章 其他/522-xmlwrite和xmlreader.md","ref":"第5章 其他/522-xmlwrite和xmlreader.md","articles":[]},{"title":"5.23 XPath详解","level":"1.26.2.3","depth":3,"path":"第5章 其他/523-xpath详解.md","ref":"第5章 其他/523-xpath详解.md","articles":[]},{"title":"5.24 XML示例","level":"1.26.2.4","depth":3,"path":"第5章 其他/524-xmlshi-li.md","ref":"第5章 其他/524-xmlshi-li.md","articles":[]}]},{"title":"5.3 数据库","level":"1.26.3","depth":2,"path":"第5章 其他/53-shu-ju-ku.md","ref":"第5章 其他/53-shu-ju-ku.md","articles":[]},{"title":"5.4 视频播放","level":"1.26.4","depth":2,"path":"第5章 其他/53-视频播放.md","ref":"第5章 其他/53-视频播放.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","dirction":"沈军","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"博军一笑的个人主页","language":"zh-cn","gitbook":">=2.0.0","description":"天道酬勤"},"file":{"path":"第5章 其他/51-litjson.md","mtime":"2018-09-24T12:36:32.899Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-24T12:43:33.554Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
